@@ -27,7 +27,7 @@
 
   <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|2|2|1|1|cell-tborder|0ln>|<cwith|3|3|1|1|cell-bborder|0ln>|<cwith|4|4|1|1|cell-tborder|0ln>|<cwith|2|3|1|1|cell-lborder|0ln>|<cwith|2|3|1|1|cell-rborder|0ln>|<cwith|2|3|2|2|cell-lborder|0ln>|<cwith|11|11|1|2|cell-hyphen|t>|<cwith|11|11|1|2|cell-halign|l>|<cwith|11|11|1|1|cell-width|25ex>|<cwith|11|11|1|1|cell-hmode|min>|<cwith|11|11|1|2|cell-lsep|1ex>|<cwith|11|11|1|2|cell-rsep|1ex>|<cwith|11|11|1|2|cell-bsep|1ex>|<cwith|11|11|1|2|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|11|11|1|1|cell-background|pastel
-  yellow>|<cwith|21|21|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
+  yellow>|<cwith|23|23|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
     Amdahl's Law
   </cell>|<\cell>
     Amdahl's Law models the improved performance of a fixed task when the
@@ -52,7 +52,7 @@
   </cell>|<\cell>
     A race condition is when two or more operations must execute in the
     correct order, but the program leaves the order of execution unspecified.
-    </cell>>|<row|<\cell>
+  </cell>>|<row|<\cell>
     Data Race
   </cell>|<\cell>
     A data race is a race condition in which two concurrent operations
@@ -67,7 +67,7 @@
 
       go func() { data++ }()
 
-      fmt.Printf("%v\\n" data)
+      fmt.Printf("%v\\n", data)
     </verbatim-code>
   </cell>>|<row|<\cell>
     Atomicity
@@ -88,7 +88,7 @@
 
       go func() { data++ }()
 
-      fmt.Printf("%v\\n" data)
+      fmt.Printf("%v\\n", data)
     </verbatim-code>
   </cell>>|<row|<\cell>
     Memory Access Synchronization
@@ -170,6 +170,19 @@
     be interrupted) are called coroutines. They feature multiple points to
     suspend or reenter computation.\ 
   </cell>>|<row|<\cell>
+    <verbatim|M:N> Scheduler
+  </cell>|<\cell>
+    A <verbatim|M:N> scheduler is the mechanism that Golang uses to host
+    goroutines and it consists of mapping <verbatim|M> green threads onto
+    <verbatim|N> OS threads.
+  </cell>>|<row|<\cell>
+    Fork-Join Model
+  </cell>|<\cell>
+    The model that Golang follows for concurrency, a fork-join model is one
+    in which a child branch can fork off from parent to be run concurrently.
+    After the termination of the child branch, it is joined back to the
+    parent branch at a join point.
+  </cell>>|<row|<\cell>
     Thread Pools
   </cell>|<\cell>
     Thread pools are a software design pattern that maintains a collection of
@@ -230,7 +243,7 @@
     outlined that help determine when you should use channels or OS thread
     primitives. Follow the first applicable statement.
 
-    <\enumerate>
+    <with|item-vsep|0fn|<\enumerate>
       <item>If your code is performance critical, use primitives
 
       <item>If you are trying to transfer ownership of data, use channels
@@ -241,7 +254,13 @@
       <item>If you are coordinating multiple pieces of logic, use channels
 
       <item>Use primitives
-    </enumerate>
+    </enumerate>>
+  </cell>>|<row|<\cell>
+    Mutex
+  </cell>|<\cell>
+    Mutex stands for \Pmutual exclusion\Q and enables a way to express
+    exclusive access to a shared resource. A mutex is often used for critical
+    selections.
   </cell>>>>>
 
   <section|Golang Features>
@@ -250,47 +269,53 @@
     <tabular|<tformat|<cwith|5|5|1|1|cell-background|pastel
     yellow>|<cwith|4|4|1|1|cell-background|pastel
     green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<cwith|3|3|1|1|cell-background|pastel
-    cyan>|<cwith|2|2|1|1|cell-background|pastel
-    blue>|<cwith|6|6|1|1|cell-background|pastel
-    orange>|<table|<row|<cell|Color Scheme
-    Key>>|<row|<cell|Concept>>|<row|<cell|Type>>|<row|<cell|Function>>|<row|<cell|Keyword>>|<row|<cell|Syntax>>>>>
+    cyan>|<cwith|2|2|1|1|cell-background|pastel blue>|<table|<row|<cell|Color
+    Scheme Key>>|<row|<cell|Concept>>|<row|<cell|Type>>|<row|<cell|Function>>|<row|<cell|Keyword>>>>>
   </padded-center>
 
-  <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|6|6|1|2|cell-hyphen|t>|<cwith|1|-1|1|1|cell-background|pastel
-  yellow>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<twith|table-hyphen|y>|<cwith|6|6|1|1|cell-background|pastel
-  cyan>|<cwith|3|3|1|1|cell-background|pastel
-  green>|<cwith|2|2|1|1|cell-background|pastel
-  blue>|<cwith|1|1|1|1|cell-background|pastel
-  blue>|<cwith|7|7|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
+  <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-background|pastel
+  yellow>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<twith|table-hyphen|y>|<cwith|1|1|1|1|cell-background|pastel
+  blue>|<cwith|4|4|1|1|cell-background|pastel
+  yellow>|<cwith|5|5|1|1|cell-background|pastel
+  cyan>|<cwith|6|6|1|2|cell-hyphen|t>|<cwith|6|6|1|2|cell-hyphen|t>|<cwith|6|6|1|1|cell-background|pastel
+  yellow>|<cwith|6|6|1|2|cell-halign|l>|<cwith|6|6|1|1|cell-width|25ex>|<cwith|6|6|1|1|cell-hmode|min>|<cwith|6|6|1|2|cell-lsep|1ex>|<cwith|6|6|1|2|cell-rsep|1ex>|<cwith|6|6|1|2|cell-bsep|1ex>|<cwith|6|6|1|2|cell-tsep|1ex>|<cwith|6|6|1|1|cell-background|pastel
+  cyan>|<cwith|7|7|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
     Format of a Golang Program
   </cell>|<\cell>
-    Every Golang program must contain at least one goroutine: the main
-    goroutine that is started when the process begins.\ 
-  </cell>>|<row|<\cell>
-    Goroutines
-  </cell>|<\cell>
-    A goroutine is a function, method, or closure that runs concurrently with
-    some other code. A goroutine can be created with the keyword
-    <verbatim|go>. Each goroutine is a special class of coroutine where you
-    do not have to manually describe the suspension and resuming of the
-    routine.
-  </cell>>|<row|<\cell>
-    <verbatim|fmt.Printf()>
-  </cell>|<\cell>
-    Similar to <verbatim|printf()> in C.
+    Every Golang program must contain at least one goroutine: the (implicit)
+    main goroutine that is started when the program is run.\ 
   </cell>>|<row|<\cell>
     <verbatim|go>
   </cell>|<\cell>
     Creates a <with|font-shape|italic|goroutine> that runs the function,
-    method, or closure concurrently by multiplexing onto OS threads. The
-    example below calls go on an anonymous function, running it concurrently.
+    method, or closure concurrently by multiplexing onto OS threads. Each
+    goroutine is a special class of coroutine where you do not have to
+    manually describe the suspension and resuming of the routine. At runtime,
+    Golang automatically suspends goroutines when they are blocked and
+    resumes them when they are unblocked. Goroutines use the fork-join model
+    for concurrency and during runtime, a <verbatim|M:N> scheduler is used.
+    See the following example using goroutines modified from the textbook
+    that uses closures to print <verbatim|"go">, <verbatim|"rust">, and
+    <verbatim|"c"> concurrently in an unspecified order.
 
     <\verbatim-code>
-      go func() {\ 
+      var wg sync.WaitGroup
 
-      \ \ \ \ fmt.Printf("Golang!\\n")\ 
+      for _, lang := range []string{"go", "rust", "c"} {
 
-      }()
+      \ \ \ \ wg.Add(1)
+
+      \ \ \ \ go func(l string) {
+
+      \ \ \ \ \ \ \ \ defer wg.Done()
+
+      \ \ \ \ \ \ \ \ fmt.Println(l)
+
+      \ \ \ \ }(lang)
+
+      }
+
+      wg.Wait()
     </verbatim-code>
   </cell>>|<row|<\cell>
     <verbatim|defer>
@@ -315,16 +340,10 @@
       }()
     </verbatim-code>
   </cell>>|<row|<\cell>
-    <verbatim|sync.Mutex>
-  </cell>|<\cell>
-    A mutex type that supports the <verbatim|.Lock()> and
-    <verbatim|.Unlock()> methods. These methods declare exclusive access to
-    the shared resource that the mutex represents.
-  </cell>>|<row|<\cell>
     <verbatim|func>
   </cell>|<\cell>
-    This keyword can be used to create named functions or anonymous
-    functions. A named function example is show below.
+    This keyword can be used to create named functions, closures, or
+    anonymous functions. A named function example is show below.
 
     <\verbatim-code>
       func helloWorld(numTimes int) {
@@ -351,9 +370,62 @@
 
       }
     </verbatim-code>
-  </cell>>>>>
+  </cell>>|<row|<\cell>
+    <verbatim|sync.WaitGroup>
+  </cell>|<\cell>
+    A waitgroup stops the execution of certain code past a point untill all
+    processes being waited on are completed. It supports methods such as
+    <verbatim|.Add(int)>, <verbatim|.Wait()>, and <verbatim|.Done()>. You
+    should use a <verbatim|WaitGroup> when you do not care about the results
+    of the concurrent operations or have another mean to collect the results.
+    If that is not the case, use a <verbatim|select> statement with channels.
+    See the exmaple below which prints the number from <verbatim|0> to
+    <verbatim|n-1> in some unspecified order.
 
-  \;
+    <\verbatim-code>
+      <\verbatim>
+        const n = 3
+
+        var wg sync.WaitGroup
+
+        wg.Add(n)
+
+        for i := 0; i \<less\> n; i++ {
+
+        \ \ \ \ go func(wg *sync.WaitGroup, i int) {
+
+        \ \ \ \ \ \ \ \ defer wg.Done()
+
+        \ \ \ \ \ \ \ \ fmt.Println("%v", i)
+
+        \ \ \ \ }(&wg, i)
+
+        }
+
+        wg.Wait()\ 
+      </verbatim>
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|sync.Mutex>
+  </cell>|<\cell>
+    A mutex type that supports the <verbatim|.Lock()>, <verbatim|.TryLock()>,
+    and <verbatim|.Unlock()> methods. These methods declare exclusive access
+    to the shared resource that the mutex represents. By convention, a mutex
+    unlock statement is in a <verbatim|defer> statement to avoid
+    <verbatim|panic>ing meaning that the mutex is not unlocked.
+  </cell>>|<row|<\cell>
+    <verbatim|sync.RWMutex>
+  </cell>|<\cell>
+    This form of mutex requires the specification of the type of access
+    desired. An arbitrary number of readers are allowed to read the same
+    resource granted that there are no writers. In exchange for the greater
+    control over the memory (and potentially less opportunity for
+    starvation), it gives lower performance than <verbatim|sync.Mutex> for a
+    small number of readers. When the number of readers is high, though, it's
+    performance is noticible. The supported methods are those from
+    <verbatim|sync.Mutex>, and the additional <verbatim|.RLock()>,
+    <verbatim|.TryRLock()>, <verbatim|.RUnlock()>, and <verbatim|.RLocker()>.
+    </cell>>>>>
 </body>
 
 <\initial>
@@ -366,7 +438,6 @@
   <\collection>
     <associate|auto-1|<tuple|1|1>>
     <associate|auto-2|<tuple|2|3>>
-    <associate|auto-3|<tuple|3|?>>
   </collection>
 </references>
 
