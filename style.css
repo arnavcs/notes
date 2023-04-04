@@ -1,0 +1,9 @@
+body {
+  max-width: 1200px;
+  margin: auto;
+}
+
+td p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
