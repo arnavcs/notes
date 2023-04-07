@@ -19,15 +19,19 @@
   <section|Concurrency Ideas>
 
   <\padded-center>
-    <tabular|<tformat|<cwith|3|3|1|1|cell-background|pastel
-    yellow>|<cwith|2|2|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<table|<row|<cell|Color
-    Scheme Key>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
+    <tabular|<tformat|<cwith|4|4|1|1|cell-background|pastel
+    yellow>|<cwith|3|3|1|1|cell-background|pastel
+    green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<cwith|2|2|1|1|cell-background|pastel
+    cyan>|<table|<row|<cell|Color Scheme Key>>|<row|<cell|Design
+    Pattern>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
   </padded-center>
 
   <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|2|2|1|1|cell-tborder|0ln>|<cwith|3|3|1|1|cell-bborder|0ln>|<cwith|4|4|1|1|cell-tborder|0ln>|<cwith|2|3|1|1|cell-lborder|0ln>|<cwith|2|3|1|1|cell-rborder|0ln>|<cwith|2|3|2|2|cell-lborder|0ln>|<cwith|11|11|1|2|cell-hyphen|t>|<cwith|11|11|1|2|cell-halign|l>|<cwith|11|11|1|1|cell-width|25ex>|<cwith|11|11|1|1|cell-hmode|min>|<cwith|11|11|1|2|cell-lsep|1ex>|<cwith|11|11|1|2|cell-rsep|1ex>|<cwith|11|11|1|2|cell-bsep|1ex>|<cwith|11|11|1|2|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|11|11|1|1|cell-background|pastel
-  yellow>|<cwith|23|23|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
+  yellow>|<cwith|23|23|1|1|cell-background|pastel
+  yellow>|<cwith|24|25|1|1|cell-background|pastel
+  cyan>|<cwith|17|17|1|1|cell-background|pastel
+  cyan>|<cwith|6|6|1|-1|cell-lsep|1ex>|<cwith|6|6|1|-1|cell-rsep|1ex>|<cwith|6|6|1|-1|cell-bsep|1ex>|<cwith|6|6|1|-1|cell-tsep|1ex>|<table|<row|<\cell>
     Amdahl's Law
   </cell>|<\cell>
     Amdahl's Law models the improved performance of a fixed task when the
@@ -39,7 +43,7 @@
     </equation*>
 
     <tabular|<tformat|<cwith|1|-1|2|2|cell-hyphen|t>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<table|<row|<cell|<math|S<rsub|latency>>>|<\cell>
+    green>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<table|<row|<cell|<math|S<rsub|latency>>>|<\cell>
       the theoretical speedup of the whole program
     </cell>>|<row|<cell|<math|s>>|<\cell>
       the speedup of the part of the task from improved resources
@@ -108,7 +112,7 @@
     deadlocks. The conditions are as follows:
 
     <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|4|4|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|>|<cwith|1|-1|1|1|cell-hmode|auto>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<twith|table-hyphen|n>|<table|<row|<\cell>
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<table|<row|<\cell>
       Mutual Exclusion
     </cell>|<\cell>
       A concurrent process must hold exclusive rights to a resource at any
@@ -261,6 +265,12 @@
     Mutex stands for \Pmutual exclusion\Q and enables a way to express
     exclusive access to a shared resource. A mutex is often used for critical
     selections.
+  </cell>>|<row|<\cell>
+    Object Pool
+  </cell>|<\cell>
+    This pattern is a way to create a fixed number of objects for use, and is
+    especially useful for objects that are computationally expensive or
+    objects that will take a lot of memory.
   </cell>>>>>
 
   <section|Golang Features>
@@ -270,20 +280,58 @@
     yellow>|<cwith|4|4|1|1|cell-background|pastel
     green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<cwith|3|3|1|1|cell-background|pastel
     cyan>|<cwith|2|2|1|1|cell-background|pastel blue>|<table|<row|<cell|Color
-    Scheme Key>>|<row|<cell|Concept>>|<row|<cell|Type>>|<row|<cell|Function>>|<row|<cell|Keyword>>>>>
+    Scheme Key>>|<row|<cell|Concept / Syntax>>|<row|<cell|Type>>|<row|<cell|Function>>|<row|<cell|Keyword>>>>>
   </padded-center>
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-background|pastel
-  yellow>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<twith|table-hyphen|y>|<cwith|1|1|1|1|cell-background|pastel
-  blue>|<cwith|4|4|1|1|cell-background|pastel
-  yellow>|<cwith|5|5|1|1|cell-background|pastel
-  cyan>|<cwith|6|6|1|2|cell-hyphen|t>|<cwith|6|6|1|2|cell-hyphen|t>|<cwith|6|6|1|1|cell-background|pastel
-  yellow>|<cwith|6|6|1|2|cell-halign|l>|<cwith|6|6|1|1|cell-width|25ex>|<cwith|6|6|1|1|cell-hmode|min>|<cwith|6|6|1|2|cell-lsep|1ex>|<cwith|6|6|1|2|cell-rsep|1ex>|<cwith|6|6|1|2|cell-bsep|1ex>|<cwith|6|6|1|2|cell-tsep|1ex>|<cwith|6|6|1|1|cell-background|pastel
-  cyan>|<cwith|7|7|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
-    Format of a Golang Program
+  yellow>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<twith|table-hyphen|y>|<cwith|7|7|1|1|cell-background|pastel
+  cyan>|<cwith|8|8|1|2|cell-hyphen|t>|<cwith|8|8|1|2|cell-hyphen|t>|<cwith|8|8|1|1|cell-background|pastel
+  yellow>|<cwith|8|8|1|2|cell-halign|l>|<cwith|8|8|1|1|cell-width|25ex>|<cwith|8|8|1|1|cell-hmode|min>|<cwith|8|8|1|2|cell-lsep|1ex>|<cwith|8|8|1|2|cell-rsep|1ex>|<cwith|8|8|1|2|cell-bsep|1ex>|<cwith|8|8|1|2|cell-tsep|1ex>|<cwith|8|8|1|1|cell-background|pastel
+  cyan>|<cwith|9|9|1|1|cell-background|pastel
+  cyan>|<cwith|10|10|1|1|cell-background|pastel
+  cyan>|<cwith|11|11|1|1|cell-background|pastel
+  cyan>|<cwith|12|12|1|1|cell-background|pastel
+  cyan>|<cwith|14|14|1|1|cell-background|pastel
+  green>|<cwith|15|15|1|1|cell-background|pastel
+  green>|<cwith|16|16|1|1|cell-background|pastel
+  blue>|<cwith|2|2|1|2|cell-hyphen|t>|<cwith|2|2|1|1|cell-background|pastel
+  yellow>|<cwith|2|2|1|2|cell-halign|l>|<cwith|2|2|1|1|cell-width|25ex>|<cwith|2|2|1|1|cell-hmode|min>|<cwith|2|2|1|2|cell-lsep|1ex>|<cwith|2|2|1|2|cell-rsep|1ex>|<cwith|2|2|1|2|cell-bsep|1ex>|<cwith|2|2|1|2|cell-tsep|1ex>|<cwith|2|2|1|1|cell-background|pastel
+  yellow>|<cwith|1|1|1|1|cell-background|pastel
+  blue>|<cwith|13|13|1|1|cell-background|pastel blue>|<table|<row|<\cell>
+    Variable Declaration and Initiation
   </cell>|<\cell>
-    Every Golang program must contain at least one goroutine: the (implicit)
-    main goroutine that is started when the program is run.\ 
+    \;
+  </cell>>|<row|<\cell>
+    <verbatim|func>
+  </cell>|<\cell>
+    This keyword can be used to create named functions, closures, or
+    anonymous functions. A named function example is show below.
+
+    <\verbatim-code>
+      func helloWorld(numTimes int) {
+
+      \ \ \ \ for ; numTimes \<gtr\> 0; numTimes-- {
+
+      \ \ \ \ \ \ \ \ fmt.Printf("Hello World!\\n")
+
+      \ \ \ \ }
+
+      }
+    </verbatim-code>
+
+    An anonymous version of the same function is also shown below.
+
+    <\verbatim-code>
+      var f := func(numTimes int) {
+
+      \ \ \ \ for ; numTimes \<gtr\> 0; numTimes-- {
+
+      \ \ \ \ \ \ \ \ fmt.Printf("Hello World!\\n")
+
+      \ \ \ \ }
+
+      }
+    </verbatim-code>
   </cell>>|<row|<\cell>
     <verbatim|go>
   </cell>|<\cell>
@@ -340,36 +388,13 @@
       }()
     </verbatim-code>
   </cell>>|<row|<\cell>
-    <verbatim|func>
+    <verbatim|struct>
   </cell>|<\cell>
-    This keyword can be used to create named functions, closures, or
-    anonymous functions. A named function example is show below.
-
-    <\verbatim-code>
-      func helloWorld(numTimes int) {
-
-      \ \ \ \ for ; numTimes \<gtr\> 0; numTimes-- {
-
-      \ \ \ \ \ \ \ \ fmt.Printf("Hello World!\\n")
-
-      \ \ \ \ }
-
-      }
-    </verbatim-code>
-
-    An anonymous version of the same function is also shown below.
-
-    <\verbatim-code>
-      var f := func(numTimes int) {
-
-      \ \ \ \ for ; numTimes \<gtr\> 0; numTimes-- {
-
-      \ \ \ \ \ \ \ \ fmt.Printf("Hello World!\\n")
-
-      \ \ \ \ }
-
-      }
-    </verbatim-code>
+    \;
+  </cell>>|<row|<\cell>
+    <verbatim|interface>
+  </cell>|<\cell>
+    \;
   </cell>>|<row|<\cell>
     <verbatim|sync.WaitGroup>
   </cell>|<\cell>
@@ -396,7 +421,7 @@
 
         \ \ \ \ \ \ \ \ defer wg.Done()
 
-        \ \ \ \ \ \ \ \ fmt.Println("%v", i)
+        \ \ \ \ \ \ \ \ fmt.Println(i)
 
         \ \ \ \ }(&wg, i)
 
@@ -425,7 +450,77 @@
     performance is noticible. The supported methods are those from
     <verbatim|sync.Mutex>, and the additional <verbatim|.RLock()>,
     <verbatim|.TryRLock()>, <verbatim|.RUnlock()>, and <verbatim|.RLocker()>.
-    </cell>>>>>
+  </cell>>|<row|<\cell>
+    <verbatim|sync.Cond>
+  </cell>|<\cell>
+    A <verbatim|sync.Cond> is a \Prendevous point\Q for goroutines waiting
+    for an event (an signal between two or more goroutines that carries no
+    information). The instantiation of a <verbatim|Cond> is done with
+    <verbatim|sync.NewCond> which takes a <verbatim|sync.Locker> interface
+    (accessible with <verbatim|.L>). Additionally, the methods
+    <verbatim|.Broadcast()>, <verbatim|.Signal()>, and <verbatim|.Wait()> are
+    avaliable to be used. Consider the following function from the textbook
+    that \Psubscribes\Q a function to a <verbatim|Cond>, running the function
+    once when the <verbatim|Cond> first broadcasts.
+
+    <\verbatim-code>
+      subscribe := func(c *sync.Cond, f func()) {
+
+      \ \ \ \ var goroutineRunning sync.Waitgroup
+
+      \ \ \ \ goroutineRunning.Add(1)
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ goroutineRunning.Done()
+
+      \ \ \ \ \ \ \ \ c.L.Lock()
+
+      \ \ \ \ \ \ \ \ defer c.L.Unlock()
+
+      \ \ \ \ \ \ \ \ c.Wait()
+
+      \ \ \ \ \ \ \ \ f()
+
+      \ \ \ \ }()
+
+      \ \ \ \ goroutineRunning.Wait()
+
+      }
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|sync.Once>
+  </cell>|<\cell>
+    A variable, <verbatim|once>, of type <verbatim|sync.Once> will support
+    the <verbatim|.Do(func())> method which will only execute the passed
+    function once regardless of what if a different function is passed.
+  </cell>>|<row|<\cell>
+    <verbatim|sync.Pool>
+  </cell>|<\cell>
+    A pool object is an implemenation of an object pool. It can be
+    instantiated by specifying the <verbatim|New> field which is a thread
+    safe member variable function that creates a new object in the pool. the
+    <verbatim|Pool> also supports the methods <verbatim|.Get()>, and
+    <verbatim|.Put(object)>. Make no assumptions about the state of the
+    instance you get back from <verbatim|.Get()>, but objects in the
+    <verbatim|Pool> should be roughly uniform in makeup.\ 
+  </cell>>|<row|<\cell>
+    Channels
+  </cell>|<\cell>
+    \;
+  </cell>>|<row|<\cell>
+    <verbatim|make()>
+  </cell>|<\cell>
+    \;
+  </cell>>|<row|<\cell>
+    <verbatim|new()>
+  </cell>|<\cell>
+    \;
+  </cell>>|<row|<\cell>
+    Type Assertions
+  </cell>|<\cell>
+    \;
+  </cell>>>>>
 </body>
 
 <\initial>
