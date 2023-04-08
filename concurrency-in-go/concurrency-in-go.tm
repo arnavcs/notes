@@ -1,6 +1,6 @@
 <TeXmacs|2.1>
 
-<style|generic>
+<style|<tuple|generic|compact-list>>
 
 <\body>
   <doc-data|<doc-title|\PConcurrency in Go\Q
@@ -16,13 +16,13 @@
     understading of the contents.
   </bothlined>
 
-  <section|Concurrency Ideas>
+  <section|Basic Concurrency Ideas>
 
   <\padded-center>
     <tabular|<tformat|<cwith|4|4|1|1|cell-background|pastel
     yellow>|<cwith|3|3|1|1|cell-background|pastel
     green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<cwith|2|2|1|1|cell-background|pastel
-    cyan>|<table|<row|<cell|Color Scheme Key>>|<row|<cell|Design
+    cyan>|<table|<row|<cell|Color Scheme Key>>|<row|<cell|Software / Design
     Pattern>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
   </padded-center>
 
@@ -31,7 +31,8 @@
   yellow>|<cwith|23|23|1|1|cell-background|pastel
   yellow>|<cwith|24|25|1|1|cell-background|pastel
   cyan>|<cwith|17|17|1|1|cell-background|pastel
-  cyan>|<cwith|6|6|1|-1|cell-lsep|1ex>|<cwith|6|6|1|-1|cell-rsep|1ex>|<cwith|6|6|1|-1|cell-bsep|1ex>|<cwith|6|6|1|-1|cell-tsep|1ex>|<table|<row|<\cell>
+  cyan>|<cwith|6|6|1|-1|cell-lsep|1ex>|<cwith|6|6|1|-1|cell-rsep|1ex>|<cwith|6|6|1|-1|cell-bsep|1ex>|<cwith|6|6|1|-1|cell-tsep|1ex>|<cwith|26|26|1|1|cell-background|pastel
+  cyan>|<table|<row|<\cell>
     Amdahl's Law
   </cell>|<\cell>
     Amdahl's Law models the improved performance of a fixed task when the
@@ -271,37 +272,49 @@
     This pattern is a way to create a fixed number of objects for use, and is
     especially useful for objects that are computationally expensive or
     objects that will take a lot of memory.
+  </cell>>|<row|<\cell>
+    Channels
+  </cell>|<\cell>
+    The channel pattern is a way to pass information. If there is nothing to
+    be read from a channel, reading from it blocks execution; waiting for a
+    value to be added to the channel. Additionally, channels can be closed
+    (to stop writing to the channel), in which case reading from the channel
+    further does not return a meaningful value, but will indicate that the
+    channel is closed. Channels can also have buffers to store values to be
+    read later.
+
+    As a pattern, to write robust code, seperate the ownership of the channel
+    so that the channel utilizers only have read access to the channel, and
+    the channel owner has the following responsibilities:
+
+    <\enumerate>
+      <item>Instantiate the channel
+
+      <item>Perform writes or pass write ownership to another goroutine
+
+      <item>Close the channel
+
+      <item>Expose a reader channel for the channel utilizers
+    </enumerate>
   </cell>>>>>
 
-  <section|Golang Features>
+  <section|Golang Features and Building Blocks>
 
   <\padded-center>
-    <tabular|<tformat|<cwith|5|5|1|1|cell-background|pastel
-    yellow>|<cwith|4|4|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<cwith|3|3|1|1|cell-background|pastel
-    cyan>|<cwith|2|2|1|1|cell-background|pastel blue>|<table|<row|<cell|Color
-    Scheme Key>>|<row|<cell|Concept / Syntax>>|<row|<cell|Type>>|<row|<cell|Function>>|<row|<cell|Keyword>>>>>
+    <tabular|<tformat|<cwith|3|3|1|1|cell-background|pastel
+    yellow>|<cwith|2|2|1|1|cell-background|pastel
+    green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<table|<row|<cell|Color
+    Scheme Key>>|<row|<cell|Type>>|<row|<cell|Function / Keyword>>>>>
   </padded-center>
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-background|pastel
-  yellow>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<twith|table-hyphen|y>|<cwith|7|7|1|1|cell-background|pastel
-  cyan>|<cwith|8|8|1|2|cell-hyphen|t>|<cwith|8|8|1|2|cell-hyphen|t>|<cwith|8|8|1|1|cell-background|pastel
-  yellow>|<cwith|8|8|1|2|cell-halign|l>|<cwith|8|8|1|1|cell-width|25ex>|<cwith|8|8|1|1|cell-hmode|min>|<cwith|8|8|1|2|cell-lsep|1ex>|<cwith|8|8|1|2|cell-rsep|1ex>|<cwith|8|8|1|2|cell-bsep|1ex>|<cwith|8|8|1|2|cell-tsep|1ex>|<cwith|8|8|1|1|cell-background|pastel
-  cyan>|<cwith|9|9|1|1|cell-background|pastel
-  cyan>|<cwith|10|10|1|1|cell-background|pastel
-  cyan>|<cwith|11|11|1|1|cell-background|pastel
-  cyan>|<cwith|12|12|1|1|cell-background|pastel
-  cyan>|<cwith|14|14|1|1|cell-background|pastel
-  green>|<cwith|15|15|1|1|cell-background|pastel
-  green>|<cwith|16|16|1|1|cell-background|pastel
-  blue>|<cwith|2|2|1|2|cell-hyphen|t>|<cwith|2|2|1|1|cell-background|pastel
-  yellow>|<cwith|2|2|1|2|cell-halign|l>|<cwith|2|2|1|1|cell-width|25ex>|<cwith|2|2|1|1|cell-hmode|min>|<cwith|2|2|1|2|cell-lsep|1ex>|<cwith|2|2|1|2|cell-rsep|1ex>|<cwith|2|2|1|2|cell-bsep|1ex>|<cwith|2|2|1|2|cell-tsep|1ex>|<cwith|2|2|1|1|cell-background|pastel
-  yellow>|<cwith|1|1|1|1|cell-background|pastel
-  blue>|<cwith|13|13|1|1|cell-background|pastel blue>|<table|<row|<\cell>
-    Variable Declaration and Initiation
-  </cell>|<\cell>
-    \;
-  </cell>>|<row|<\cell>
+  yellow>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<twith|table-hyphen|y>|<cwith|9|9|1|2|cell-hyphen|t>|<cwith|9|9|1|2|cell-hyphen|t>|<cwith|9|9|1|2|cell-halign|l>|<cwith|9|9|1|1|cell-width|25ex>|<cwith|9|9|1|1|cell-hmode|min>|<cwith|9|9|1|2|cell-lsep|1ex>|<cwith|9|9|1|2|cell-rsep|1ex>|<cwith|9|9|1|2|cell-bsep|1ex>|<cwith|9|9|1|2|cell-tsep|1ex>|<cwith|1|1|1|2|cell-hyphen|t>|<cwith|1|1|1|1|cell-background|pastel
+  yellow>|<cwith|1|1|1|2|cell-halign|l>|<cwith|1|1|1|1|cell-width|25ex>|<cwith|1|1|1|1|cell-hmode|min>|<cwith|1|1|1|2|cell-lsep|1ex>|<cwith|1|1|1|2|cell-rsep|1ex>|<cwith|1|1|1|2|cell-bsep|1ex>|<cwith|1|1|1|2|cell-tsep|1ex>|<cwith|1|1|1|1|cell-background|pastel
+  yellow>|<cwith|8|13|1|1|cell-background|pastel
+  green>|<cwith|15|16|1|1|cell-background|pastel
+  yellow>|<cwith|14|14|1|1|cell-background|pastel
+  green>|<cwith|17|17|1|1|cell-background|pastel
+  yellow>|<cwith|2|2|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
     <verbatim|func>
   </cell>|<\cell>
     This keyword can be used to create named functions, closures, or
@@ -332,6 +345,14 @@
 
       }
     </verbatim-code>
+  </cell>>|<row|<\cell>
+    Loops
+  </cell>|<\cell>
+    \;
+  </cell>>|<row|<\cell>
+    <verbatim|range>
+  </cell>|<\cell>
+    \;
   </cell>>|<row|<\cell>
     <verbatim|go>
   </cell>|<\cell>
@@ -390,11 +411,42 @@
   </cell>>|<row|<\cell>
     <verbatim|struct>
   </cell>|<\cell>
-    \;
+    A struct in Golang can be named or anonymous. To create a named struct,
+    follow the following syntax.
+
+    <\verbatim-code>
+      type Fruit struct {
+
+      \ \ \ \ name string
+
+      }
+
+      var apple Fruit = Fruit{"Apple"}
+    </verbatim-code>
+
+    And to create an anonymous struct, the following syntax holds.
+
+    <\verbatim-code>
+      apple = struct {name string} {name: "Apple"}
+    </verbatim-code>
   </cell>>|<row|<\cell>
     <verbatim|interface>
   </cell>|<\cell>
-    \;
+    Interfaces in Golang can be declared as follows.
+
+    <\verbatim-code>
+      type Plant interface {
+
+      \ \ \ \ getHeight() float
+
+      \ \ \ \ getSpecies() string
+
+      }
+    </verbatim-code>
+
+    Additionally, the existance of the empty <verbatim|interface> in Go is
+    special, because all types satisfy the empty interface, meaning it can
+    hold any value. It is <verbatim|interface{}>.
   </cell>>|<row|<\cell>
     <verbatim|sync.WaitGroup>
   </cell>|<\cell>
@@ -507,7 +559,44 @@
   </cell>>|<row|<\cell>
     Channels
   </cell>|<\cell>
-    \;
+    Channels that are read-write, read-only, and write-only that carry values
+    of type <verbatim|T> have types <verbatim|chan T>,
+    <verbatim|\<less\>-chan T>, and <verbatim|chan\<less\>- T> respectively.
+    A channel can be closed if it is writable, and is done so with
+    <verbatim|close()>. To read all the values in the channel until it is
+    closed, use <verbatim|range>. Additionally, buffer size of the channel
+    can be specified during initiation, and the default buffer size is 0.
+    Reading from a channel instantiated with a buffer of capacity 4 can look
+    as follows.\ 
+
+    <\verbatim-code>
+      channelOwner := func() \<less\>-chan int {
+
+      \ \ \ \ intStream := make(chan int, 4)
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ defer close(intStream)
+
+      \ \ \ \ \ \ \ \ for i := 0; i \<less\> 10; i++ { intStream \<less\>- i
+      }
+
+      \ \ \ \ }()
+
+      \ \ \ \ return intStream
+
+      }
+
+      \;
+
+      readIntStream := channelOwner()
+
+      for element := range readIntStream {
+
+      \ \ \ \ fmt.Println(element)
+
+      }
+    </verbatim-code>
   </cell>>|<row|<\cell>
     <verbatim|make()>
   </cell>|<\cell>
@@ -520,7 +609,63 @@
     Type Assertions
   </cell>|<\cell>
     \;
+  </cell>>|<row|<\cell>
+    <verbatim|select>
+  </cell>|<\cell>
+    The select statement is able to bind channels together. Namely, all
+    <verbatim|case> statements are simultaneously checked to see if they are
+    ready (for reading this is a populated or closed channel, and for writing
+    this is a channel not at capacity). If there is no <verbatim|defualt>,
+    then the execution is blocked until one of the channels is ready. One of
+    the cases is then chosen at random, and the associated statements run. If
+    there is a <verbatim|default>, then the execution isn't blocked. This can
+    be used to complete other tasks while waiting for a result. See the
+    example below modified from the textbook which demonstrates using a
+    select statement to complete work while waiting.
+
+    <\verbatim-code>
+      done := make(chan interface{})
+
+      go func() {
+
+      \ \ \ \ defer close(done)
+
+      \ \ \ \ time.Sleep(5 * time.Second)
+
+      }()
+
+      loop:
+
+      for {
+
+      \ \ \ \ select {
+
+      \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ break loop
+
+      \ \ \ \ default:
+
+      \ \ \ \ \ \ \ \ workCounter++
+
+      \ \ \ \ \ \ \ \ time.Sleep(time.Second)
+
+      \ \ \ \ }
+
+      }
+
+      fmt.Println(workCounter)
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|runtime. GOMAXPROCS()>
+  </cell>|<\cell>
+    Takes an integer parameter that specifies the number of OS threads that
+    will host \Pwork queues\Q.\ 
   </cell>>>>>
+
+  <section|Concurrency Patterns in Golang>
+
+  \;
 </body>
 
 <\initial>
@@ -532,7 +677,8 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|1>>
-    <associate|auto-2|<tuple|2|3>>
+    <associate|auto-2|<tuple|2|4>>
+    <associate|auto-3|<tuple|3|?>>
   </collection>
 </references>
 
