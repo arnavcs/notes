@@ -79,10 +79,11 @@
           <td style="width: 100%; padding-left: 0pt; padding-right: 0pt; border-top: 1px solid; border-bottom: 1px solid"><p>
             <i>Concurrency in Go</i> is a publication by O'Reilly Media Inc.
             written by Katherine Cox-Buday. This is a collection of notes that
-            I make about the text as I read it, and is not a summary or
-            recreation of the text, but rather a reference for anyone who has
-            already read the text. As such, please read the text to gain a
-            better understading of the contents.
+            I make about the text as I read it and of Golang as I learn it.
+            This is not a summary or recreation of the text, but rather a
+            reference for anyone who has already read the text. As such,
+            please read the text to gain a better understading of the
+            contents.
           </p></td>
         </tr></tbody>
       </table>
@@ -455,13 +456,14 @@ a?c -&gt; b!c]</pre>
           Channels
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          The channel pattern is a way to pass information. If there is
-          nothing to be read from a channel, reading from it blocks execution;
-          waiting for a value to be added to the channel. Additionally,
-          channels can be closed (to stop writing to the channel), in which
-          case reading from the channel further does not return a meaningful
-          value, but will indicate that the channel is closed. Channels can
-          also have buffers to store values to be read later.
+          The channel pattern comes from CSP and is a way to pass information.
+          If there is nothing to be read from a channel, reading from it
+          blocks execution; waiting for a value to be added to the channel.
+          Additionally, channels can be closed (to stop writing to the
+          channel), in which case reading from the channel further empties the
+          channel and reading from an empty closed channel will indicate that
+          the channel is closed. Channels can also have buffers to store
+          values to be read later.
         </p><p>
           As a pattern, to write robust code, seperate the ownership of the
           channel so that the channel utilizers only have read access to the
@@ -534,18 +536,86 @@ var f := func(numTimes int) {
           Loops
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          
-        </p></td>
+          All loops in Golang are declared with the keyword <tt class="verbatim">for</tt>.
+          You can supply a stepping mechanism, nothing (for an infinite loop),
+          a condition, or a range to describe the loop like in the examples
+          below.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+for i := 0; i &lt; 10; i++ { fmt.Println(i) }
+for { fmt.Println(&quot;looping forever&quot;) }
+j := 0; for j &lt; 10 { fmt.Println(j) }
+for i, v := range []int{1, 2} { fmt.Println(i, v) }</pre>
+        </div><p>
+          Breaking out of a loop and continuing to the next iteration can be
+          done with the <tt class="verbatim">break</tt> and <tt class="verbatim">continue</tt>
+          keywords. Adding labels to loops (by preceding the loop with <tt
+          class="verbatim">labelName:</tt>) can specify which loop to <tt class="verbatim">break</tt>
+          or <tt class="verbatim">continue</tt> out to. For example the following code
+          prints <tt class="verbatim">0 0</tt>.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+outside:
+for i := 0; i &lt; 2; i++ {
+    for j := 0; j &lt; 2; j++ {
+        if i &lt; j { break outside }
+        fmt.Println(i, j)
+    }
+}</pre>
+        </div></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 range</pre></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          
+          A range can be used to iterate over strings, arrays, slices,
+          key/value pairs of maps, and even channels.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
-go</pre></td>
+type</pre></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          This keyword creates a type macro, giving the second type the name
+          passed into the function. For example, the following creates a new
+          type called <tt class="verbatim">HouseNumber</tt>.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+type HouseNumber int</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+struct</pre></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          A struct in Golang can be created with the <tt class="verbatim">struct {}</tt>
+          syntax. Since this creates a new type, it can be saved to a type
+          variable with <tt class="verbatim">type</tt>.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+type Fruit struct {
+    name string
+}
+var apple Fruit = Fruit{&quot;Apple&quot;}</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+interface</pre></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Interfaces in Golang can be declared as follows. Here again, we use
+          <tt class="verbatim">type</tt> to assign a name to this <tt class="verbatim">interface</tt>.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+type Plant interface {
+    getHeight() float
+    getSpecies() string
+}</pre>
+        </div><p>
+          Additionally, the existance of the empty <tt class="verbatim">interface</tt>
+          in Go is special, because all types satisfy the empty interface,
+          meaning it can hold any value. It is <tt class="verbatim">interface{}</tt>.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+go</pre></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           Creates a <i>goroutine</i> that runs the function, method, or
           closure concurrently by multiplexing onto OS threads. Each goroutine
           is a special class of coroutine where you do not have to manually
@@ -570,9 +640,9 @@ for _, lang := range []string{&quot;go&quot;, &quot;rust&quot;, &quot;c&quot;} {
 wg.Wait()</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 defer</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           Defers the execution of the statement to the end of the function. In
           the following example, the mutex isn't unlocked until the after the
           value of <tt class="verbatim">data</tt> increments.
@@ -585,66 +655,6 @@ func inc() {
     defer mu.Unlock()
     data++
 }()</pre>
-        </div></td>
-      </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
-struct</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          A struct in Golang can be named or anonymous. To create a named
-          struct, follow the following syntax.
-        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
-          <pre class="verbatim" xml:space="preserve">
-type Fruit struct {
-    name string
-}
-var apple Fruit = Fruit{&quot;Apple&quot;}</pre>
-        </div><p>
-          And to create an anonymous struct, the following syntax holds.
-        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
-          <pre class="verbatim" xml:space="preserve">
-apple = struct {name string} {name: &quot;Apple&quot;}</pre>
-        </div></td>
-      </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
-interface</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Interfaces in Golang can be declared as follows.
-        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
-          <pre class="verbatim" xml:space="preserve">
-type Plant interface {
-    getHeight() float
-    getSpecies() string
-}</pre>
-        </div><p>
-          Additionally, the existance of the empty <tt class="verbatim">interface</tt>
-          in Go is special, because all types satisfy the empty interface,
-          meaning it can hold any value. It is <tt class="verbatim">interface{}</tt>.
-        </p></td>
-      </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
-sync.WaitGroup</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          A waitgroup stops the execution of certain code past a point untill
-          all processes being waited on are completed. It supports methods
-          such as <tt class="verbatim">.Add(int)</tt>, <tt class="verbatim">.Wait()</tt>, and <tt
-          class="verbatim">.Done()</tt>. You should use a <tt class="verbatim">WaitGroup</tt> when
-          you do not care about the results of the concurrent operations or
-          have another mean to collect the results. If that is not the case,
-          use a <tt class="verbatim">select</tt> statement with channels. See the
-          exmaple below which prints the number from <tt class="verbatim">0</tt> to <tt
-          class="verbatim">n-1</tt> in some unspecified order.
-        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
-          <pre class="verbatim" xml:space="preserve">
-<pre class="verbatim" xml:space="preserve">const n = 3
-var wg sync.WaitGroup
-wg.Add(n)
-for i := 0; i &lt; n; i++ {
-    go func(wg *sync.WaitGroup, i int) {
-        defer wg.Done()
-        fmt.Println(i)
-    }(&amp;wg, i)
-}
-wg.Wait() </pre></pre>
         </div></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
@@ -755,24 +765,35 @@ for element := range readIntStream {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020"><pre class="verbatim" xml:space="preserve">
-make()</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          
-        </p></td>
-      </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020"><pre class="verbatim" xml:space="preserve">
-new()</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          
-        </p></td>
-      </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020"><p>
+          <tt class="verbatim">make()</tt> vs. <tt class="verbatim">new()</tt>
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          <tt class="verbatim">make()</tt> creates slices, maps, and channels by taking
+          in a type <tt class="verbatim">T</tt> followed by a list of expressions and
+          returns a value of type <tt class="verbatim">T</tt>. On the other hand, <tt
+          class="verbatim">new()</tt> simply returns a pointer (type <tt class="verbatim">*T</tt>)
+          to allocated memory that is initialized with <tt class="verbatim">0</tt>s.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; background-color: #ffff0020"><p>
           Type Assertions
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          
-        </p></td>
+          Type assertions &ldquo;reveal the concrete value&rdquo; in an
+          interface variable. If the assertion is false, and that case isn't
+          handled, panic occurs. See the following example of the syntax of
+          type assertion.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+var i interface{} = 1
+v, ok := i.(int)
+if ok == false {
+    fmt.Println(&quot;Incorrect type&quot;)
+} else {
+    fmt.Println(v)
+}</pre>
+        </div></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 select</pre></td>
@@ -817,6 +838,9 @@ runtime. GOMAXPROCS()</pre></td>
       </tr></tbody>
     </table>
     <h2 id="auto-3">3<span style="margin-left: 1em"></span>Concurrency Patterns in Golang<span style="margin-left: 1em"></span></h2>
+    <p>
+      
+    </p>
     <p>
       
     </p>

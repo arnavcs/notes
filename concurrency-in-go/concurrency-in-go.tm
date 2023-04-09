@@ -1,6 +1,6 @@
 <TeXmacs|2.1>
 
-<style|<tuple|generic|compact-list>>
+<style|<tuple|generic|compact-list|python>>
 
 <\body>
   <doc-data|<doc-title|\PConcurrency in Go\Q
@@ -10,10 +10,10 @@
   <\bothlined>
     <with|font-shape|italic|Concurrency in Go> is a publication by O'Reilly
     Media Inc. written by Katherine Cox-Buday. This is a collection of notes
-    that I make about the text as I read it, and is not a summary or
-    recreation of the text, but rather a reference for anyone who has already
-    read the text. As such, please read the text to gain a better
-    understading of the contents.
+    that I make about the text as I read it and of Golang as I learn it. This
+    is not a summary or recreation of the text, but rather a reference for
+    anyone who has already read the text. As such, please read the text to
+    gain a better understading of the contents.
   </bothlined>
 
   <section|Basic Concurrency Ideas>
@@ -275,13 +275,13 @@
   </cell>>|<row|<\cell>
     Channels
   </cell>|<\cell>
-    The channel pattern is a way to pass information. If there is nothing to
-    be read from a channel, reading from it blocks execution; waiting for a
-    value to be added to the channel. Additionally, channels can be closed
-    (to stop writing to the channel), in which case reading from the channel
-    further does not return a meaningful value, but will indicate that the
-    channel is closed. Channels can also have buffers to store values to be
-    read later.
+    The channel pattern comes from CSP and is a way to pass information. If
+    there is nothing to be read from a channel, reading from it blocks
+    execution; waiting for a value to be added to the channel. Additionally,
+    channels can be closed (to stop writing to the channel), in which case
+    reading from the channel further empties the channel and reading from an
+    empty closed channel will indicate that the channel is closed. Channels
+    can also have buffers to store values to be read later.
 
     As a pattern, to write robust code, seperate the ownership of the channel
     so that the channel utilizers only have read access to the channel, and
@@ -313,8 +313,10 @@
   yellow>|<cwith|8|13|1|1|cell-background|pastel
   green>|<cwith|15|16|1|1|cell-background|pastel
   yellow>|<cwith|14|14|1|1|cell-background|pastel
-  green>|<cwith|17|17|1|1|cell-background|pastel
-  yellow>|<cwith|2|2|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
+  green>|<cwith|16|16|1|1|cell-background|pastel
+  yellow>|<cwith|2|2|1|1|cell-background|pastel
+  yellow>|<cwith|7|8|1|2|cell-hyphen|t>|<cwith|7|8|1|1|cell-background|pastel
+  yellow>|<cwith|7|8|1|2|cell-halign|l>|<cwith|7|8|1|1|cell-width|25ex>|<cwith|7|8|1|1|cell-hmode|min>|<cwith|7|8|1|2|cell-lsep|1ex>|<cwith|7|8|1|2|cell-rsep|1ex>|<cwith|7|8|1|2|cell-bsep|1ex>|<cwith|7|8|1|2|cell-tsep|1ex>|<table|<row|<\cell>
     <verbatim|func>
   </cell>|<\cell>
     This keyword can be used to create named functions, closures, or
@@ -348,11 +350,91 @@
   </cell>>|<row|<\cell>
     Loops
   </cell>|<\cell>
-    \;
+    All loops in Golang are declared with the keyword <verbatim|for>. You can
+    supply a stepping mechanism, nothing (for an infinite loop), a condition,
+    or a range to describe the loop like in the examples below.
+
+    <\verbatim-code>
+      for i := 0; i \<less\> 10; i++ { fmt.Println(i) }
+
+      for { fmt.Println("looping forever") }
+
+      j := 0; for j \<less\> 10 { fmt.Println(j) }
+
+      for i, v := range []int{1, 2} { fmt.Println(i, v) }
+    </verbatim-code>
+
+    Breaking out of a loop and continuing to the next iteration can be done
+    with the <verbatim|break> and <verbatim|continue> keywords. Adding labels
+    to loops (by preceding the loop with <verbatim|labelName:>) can specify
+    which loop to <verbatim|break> or <verbatim|continue> out to. For example
+    the following code prints <verbatim|0 0>.
+
+    <\verbatim-code>
+      outside:
+
+      for i := 0; i \<less\> 2; i++ {
+
+      \ \ \ \ for j := 0; j \<less\> 2; j++ {
+
+      \ \ \ \ \ \ \ \ if i \<less\> j { break outside }
+
+      \ \ \ \ \ \ \ \ fmt.Println(i, j)
+
+      \ \ \ \ }
+
+      }
+    </verbatim-code>
   </cell>>|<row|<\cell>
     <verbatim|range>
   </cell>|<\cell>
-    \;
+    A range can be used to iterate over strings, arrays, slices, key/value
+    pairs of maps, and even channels.
+  </cell>>|<row|<\cell>
+    <verbatim|type>
+  </cell>|<\cell>
+    This keyword creates a type macro, giving the second type the name passed
+    into the function. For example, the following creates a new type called
+    <verbatim|HouseNumber>.
+
+    <\verbatim-code>
+      type HouseNumber int
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|struct>
+  </cell>|<\cell>
+    A struct in Golang can be created with the <verbatim|struct {}> syntax.
+    Since this creates a new type, it can be saved to a type variable with
+    <verbatim|type>.
+
+    <\verbatim-code>
+      type Fruit struct {
+
+      \ \ \ \ name string
+
+      }
+
+      var apple Fruit = Fruit{"Apple"}
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|interface>
+  </cell>|<\cell>
+    Interfaces in Golang can be declared as follows. Here again, we use
+    <verbatim|type> to assign a name to this <verbatim|interface>.
+
+    <\verbatim-code>
+      type Plant interface {
+
+      \ \ \ \ getHeight() float
+
+      \ \ \ \ getSpecies() string
+
+      }
+    </verbatim-code>
+
+    Additionally, the existance of the empty <verbatim|interface> in Go is
+    special, because all types satisfy the empty interface, meaning it can
+    hold any value. It is <verbatim|interface{}>.
   </cell>>|<row|<\cell>
     <verbatim|go>
   </cell>|<\cell>
@@ -407,80 +489,6 @@
       \ \ \ \ data++
 
       }()
-    </verbatim-code>
-  </cell>>|<row|<\cell>
-    <verbatim|struct>
-  </cell>|<\cell>
-    A struct in Golang can be named or anonymous. To create a named struct,
-    follow the following syntax.
-
-    <\verbatim-code>
-      type Fruit struct {
-
-      \ \ \ \ name string
-
-      }
-
-      var apple Fruit = Fruit{"Apple"}
-    </verbatim-code>
-
-    And to create an anonymous struct, the following syntax holds.
-
-    <\verbatim-code>
-      apple = struct {name string} {name: "Apple"}
-    </verbatim-code>
-  </cell>>|<row|<\cell>
-    <verbatim|interface>
-  </cell>|<\cell>
-    Interfaces in Golang can be declared as follows.
-
-    <\verbatim-code>
-      type Plant interface {
-
-      \ \ \ \ getHeight() float
-
-      \ \ \ \ getSpecies() string
-
-      }
-    </verbatim-code>
-
-    Additionally, the existance of the empty <verbatim|interface> in Go is
-    special, because all types satisfy the empty interface, meaning it can
-    hold any value. It is <verbatim|interface{}>.
-  </cell>>|<row|<\cell>
-    <verbatim|sync.WaitGroup>
-  </cell>|<\cell>
-    A waitgroup stops the execution of certain code past a point untill all
-    processes being waited on are completed. It supports methods such as
-    <verbatim|.Add(int)>, <verbatim|.Wait()>, and <verbatim|.Done()>. You
-    should use a <verbatim|WaitGroup> when you do not care about the results
-    of the concurrent operations or have another mean to collect the results.
-    If that is not the case, use a <verbatim|select> statement with channels.
-    See the exmaple below which prints the number from <verbatim|0> to
-    <verbatim|n-1> in some unspecified order.
-
-    <\verbatim-code>
-      <\verbatim>
-        const n = 3
-
-        var wg sync.WaitGroup
-
-        wg.Add(n)
-
-        for i := 0; i \<less\> n; i++ {
-
-        \ \ \ \ go func(wg *sync.WaitGroup, i int) {
-
-        \ \ \ \ \ \ \ \ defer wg.Done()
-
-        \ \ \ \ \ \ \ \ fmt.Println(i)
-
-        \ \ \ \ }(&wg, i)
-
-        }
-
-        wg.Wait()\ 
-      </verbatim>
     </verbatim-code>
   </cell>>|<row|<\cell>
     <verbatim|sync.Mutex>
@@ -598,17 +606,35 @@
       }
     </verbatim-code>
   </cell>>|<row|<\cell>
-    <verbatim|make()>
+    <verbatim|make()> vs. <verbatim|new()>
   </cell>|<\cell>
-    \;
-  </cell>>|<row|<\cell>
-    <verbatim|new()>
-  </cell>|<\cell>
-    \;
+    <verbatim|make()> creates slices, maps, and channels by taking in a type
+    <verbatim|T> followed by a list of expressions and returns a value of
+    type <verbatim|T>. On the other hand, <verbatim|new()> simply returns a
+    pointer (type <verbatim|*T>) to allocated memory that is initialized with
+    <verbatim|0>s.
   </cell>>|<row|<\cell>
     Type Assertions
   </cell>|<\cell>
-    \;
+    Type assertions \Preveal the concrete value\Q in an interface variable.
+    If the assertion is false, and that case isn't handled, panic occurs. See
+    the following example of the syntax of type assertion.
+
+    <\verbatim-code>
+      var i interface{} = 1
+
+      v, ok := i.(int)
+
+      if ok == false {
+
+      \ \ \ \ fmt.Println("Incorrect type")
+
+      } else {
+
+      \ \ \ \ fmt.Println(v)
+
+      }
+    </verbatim-code>
   </cell>>|<row|<\cell>
     <verbatim|select>
   </cell>|<\cell>
@@ -666,6 +692,8 @@
   <section|Concurrency Patterns in Golang>
 
   \;
+
+  \;
 </body>
 
 <\initial>
@@ -678,20 +706,24 @@
   <\collection>
     <associate|auto-1|<tuple|1|1>>
     <associate|auto-2|<tuple|2|4>>
-    <associate|auto-3|<tuple|3|?>>
+    <associate|auto-3|<tuple|3|9>>
   </collection>
 </references>
 
 <\auxiliary>
   <\collection>
     <\associate|toc>
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Concurrency
-      Ideas> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Basic
+      Concurrency Ideas> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Golang
-      Features> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      Features and Building Blocks> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Concurrency
+      Patterns in Golang> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-3><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
