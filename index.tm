@@ -10,12 +10,32 @@
   <section*|Notes on Textbooks>
 
   <\itemize>
-    <item><with|font-shape|italic|Specifying Systems> by Leslie Lamport
-    <hlink|[pdf]|./specifying-systems/specifying-systems.pdf> <hlink|[html]|>
+    <item><with|font-shape|italic|Specifying Systems> by Leslie Lamport (WIP)
+    <hlink|[pdf]|./specifying-systems/specifying-systems.pdf>
+    <hlink|[html]|./specifying-systems/specifying-systems.html>
 
     <item><with|font-shape|italic|Concurrency in Go> by Katherine Cox-Buday
-    <hlink|[pdf]|./concurrency-in-go/concurrency-in-go.pdf>
+    (WIP) <hlink|[pdf]|./concurrency-in-go/concurrency-in-go.pdf>
     <hlink|[html]|./concurrency-in-go/concurrency-in-go.html>
+  </itemize>
+
+  <section*|Textbooks to Read>
+
+  <\itemize>
+    <item><with|font-shape|italic|Category Theory for Programmers> by Bartosz
+    Milewski
+
+    <item><with|font-shape|italic|Real World OCaml> by Anil Madhavapeddy, and
+    Yaron Minsky
+
+    <item><with|font-shape|italic|Real World Haskell> by Bryan O'Sullivan,
+    John Goerzen, and Don Stewart
+
+    <item><with|font-shape|italic|Seven Languages in Seven Weeks> by Bruce A.
+    Tate
+
+    <item><with|font-shape|italic|Seven More Languages in Seven Weeks> by
+    Bruce A. Tate
   </itemize>
 </body>
 
@@ -28,6 +48,7 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|?|1>>
+    <associate|auto-2|<tuple|<with|mode|<quote|math>|\<bullet\>>|?>>
   </collection>
 </references>
 
