@@ -3,7 +3,7 @@
 <style|<tuple|generic|compact-list|python>>
 
 <\body>
-  <doc-data|<doc-title|\PConcurrency in Go\Q
+  <doc-data|<doc-title|<with|font-shape|italic|Concurrency in Go>
   Notes>|<doc-author|<author-data|<author-name|Arnav
   Kumar>|<author-homepage|<slink|https://arnavcs.github.io>>>>>
 
