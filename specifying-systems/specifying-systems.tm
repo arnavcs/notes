@@ -28,7 +28,10 @@
   <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|10|10|1|1|cell-background|pastel
   yellow>|<cwith|12|12|1|1|cell-background|pastel
-  yellow>|<cwith|13|13|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
+  yellow>|<cwith|15|15|1|1|cell-background|pastel
+  yellow>|<cwith|16|16|1|1|cell-background|pastel
+  yellow>|<cwith|23|23|1|1|cell-background|pastel
+  yellow>|<cwith|24|24|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
     System Specification
   </cell>|<\cell>
     A system specification is a description of what a system should do or is
@@ -46,11 +49,11 @@
       <around*|[|<tabular|<tformat|<table|<row|<cell|a=1>>|<row|<cell|b=0>>>>>|]>\<rightarrow\><around*|[|<tabular|<tformat|<table|<row|<cell|a=1>>|<row|<cell|b=1>>>>>|]>
     </equation*>
   </cell>>|<row|<\cell>
-    Behaviour of a System
+    Behaviour
   </cell>|<\cell>
     Formally, a behaviour is a sequence of states.
   </cell>>|<row|<\cell>
-    Temporal Logic
+    Temporal Formula
   </cell>|<\cell>
     A temporal logic formula is a formula that describes a system's behaviour
     by relating the next state of a system with the current state.
@@ -131,14 +134,26 @@
       The relation is true if the step is valid, and false otherwise.
     </cell>>>>>
 
-    We can use the temporal-logic (<math|\<box\>>) unary operatior to ensure
-    that the ensuing formula is always true. Thus, given that <math|I> and
-    <math|N> are an initial predicate and a next-state relation respectively,
-    we see the specification of our system is described as
-    <math|I\<wedge\>\<box\>N>.
-
-    The specification is broken into Modules, each having their own
-    defintions, variables, and theorems.
+    We can use the temporal-logic unary operator (<math|\<box\>F>) to ensure
+    that <math|F> is always true. Thus, given that <math|I> and <math|N> are
+    an initial predicate and a next-state relation respectively, we see the
+    specification of our system is described as <math|I\<wedge\>\<box\>N>.
+  </cell>>|<row|<\cell>
+    Theorem
+  </cell>|<\cell>
+    A theorem is a temporal formula that is satisfied by every behaviour.
+  </cell>>|<row|<\cell>
+    Expressions and Operators
+  </cell>|<\cell>
+    The <math|\<triangleq\>> symbol is used to define both expressions and
+    operators, but what is the difference between the two? Firstly, the
+    definition operator assigns a corresponding expression or operator to the
+    symbol on the left hand side. For expressions, this will look like
+    <math|Id\<triangleq\>exp>, and for operators it looks like
+    <math|Id<around*|(|p<rsub|1>,p<rsub|2>,\<ldots\>p<rsub|n>|)>\<triangleq\>exp>.
+    Secondly, using the defined symbol in an expresion is different. An
+    expression is simply replaced, but for an operator, brackets must be used
+    to specify arguments.\ 
   </cell>>|<row|<\cell>
     Uniqueness of Specifications
   </cell>|<\cell>
@@ -146,7 +161,86 @@
     of the same thing are not neccessarly unique. The only thing that matters
     is that if <math|F<rsub|1>> and <math|F<rsub|2>> are formulas for the
     same behaviour, then <math|F<rsub|1>\<equiv\>F<rsub|2>> is a theorem.
+  </cell>>|<row|<\cell>
+    What to include in a Specification?
+  </cell>|<\cell>
+    It is important to only include certain aspects of a specification and
+    not include everything. For example, a step might consist of more than
+    one atomic operation in order to keep the specification simple. This
+    specification will still prove correctness for a system using the
+    intended interface. For hardware specifications, the implementer of a
+    system might not know, for example, that the <with|font-shape|italic|val>
+    line should stabilize before the <with|font-shape|italic|rdy> line is
+    changed, even though both of these actions happen in the same step.\ 
+
+    This is perhaps the hardest part of making a specification\Vthe task of
+    choosing the correct abstraction.\ 
+  </cell>>|<row|<\cell>
+    Constants and Variables
+  </cell>|<\cell>
+    In a module, a constant is a parameter of the specification that doesn't
+    change, whereas a variable is something that can vary depending on the
+    state.
+  </cell>>|<row|<\cell>
+    State Function and State Predicate
+  </cell>|<\cell>
+    This is an ordinary expression (without any <math|<rprime|'>> or
+    <math|\<box\>>) that can contain varibles and constants. When it is
+    boolean-valued, it is called a state predicate.
+  </cell>>|<row|<\cell>
+    Invariant
+  </cell>|<\cell>
+    If <math|I> is an invariant of a specification <math|S>, then
+    <math|S\<Rightarrow\>\<box\>I> is a theorem.
+  </cell>>|<row|<\cell>
+    Type
+  </cell>|<\cell>
+    A variable <math|v> has type <math|T> in a specification <math|S> if and
+    only if <math|v\<in\>T> is an invariant of <math|S>, or in order words,
+    <math|S\<Rightarrow\>\<box\><around*|(|v\<in\>T|)>> is a theorem. Types
+    for records can be specified with square brackets, like below.
+
+    <\equation*>
+      <around*|[|val:Data,rdy:<around*|{|0,1|}>,ack:<around*|{|0,1|}>|]>
+    </equation*>
+  </cell>>|<row|<\cell>
+    Type Invairant
+  </cell>|<\cell>
+    To specify the types of variables, a definition can be used to check that
+    the all variable are of the correct type.
+  </cell>>|<row|<\cell>
+    Enabled vs. Disabled Actions
+  </cell>|<\cell>
+    An action is enabled in a state when it is possible to take a step with
+    the action in question, otherwise it is disabled. The definition of any
+    action usually begins with its enabling condition.
+  </cell>>|<row|<\cell>
+    Avoiding Variable Proliferation
+  </cell>|<\cell>
+    To avoid the issue of having too many variables in a specifcation and its
+    interface, replace individual varibles with records or ordered tuples.
+    This allows for syntax that might be easier to read, the following
+    example ensures that the only changed record fields of chan are changing
+    <math|.rdy> to <math|1-chan.rdy> and setting <math|.val> to <math|d>.
+
+    <\equation*>
+      chan<rprime|'>=<around*|[|chan EXCEPT<space|0.4spc>
+      <space|0.2spc>!.val=d,!.rdy=1-@|]>
+    </equation*>
+  </cell>>|<row|<\cell>
+    Symbol Scope
+  </cell>|<\cell>
+    For constants, variables, and definitions, the scope is the part of the
+    module that follows after it. For operator definitions, the scope of the
+    arguments is local, and for predicate logic expression, the same is true.
+
+    <math|TLA<rsup|+>> has no variable overshadowing. A symbol cannot be
+    defined if one with the same name already exists.
   </cell>>>>>
+
+  <section|Examples of Specifications>
+
+  \;
 </body>
 
 <\initial>
@@ -158,6 +252,7 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|1>>
+    <associate|auto-2|<tuple|2|?>>
   </collection>
 </references>
 

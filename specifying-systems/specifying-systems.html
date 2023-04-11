@@ -135,14 +135,14 @@
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
-          Behaviour of a System
+          Behaviour
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           Formally, a behaviour is a sequence of states.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
-          Temporal Logic
+          Temporal Formula
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           A temporal logic formula is a formula that describes a system's
@@ -252,14 +252,33 @@
             </p></td>
           </tr></tbody>
         </table><p>
-          We can use the temporal-logic (\(\Box\)) unary operatior to ensure
-          that the ensuing formula is always true. Thus, given that \(I\) and
-          \(N\) are an initial predicate and a next-state relation
-          respectively, we see the specification of our system is described as
-          \(I \wedge \Box N\).
-        </p><p>
-          The specification is broken into Modules, each having their own
-          defintions, variables, and theorems.
+          We can use the temporal-logic unary operator (\(\Box F\)) to ensure
+          that \(F\) is always true. Thus, given that \(I\) and \(N\) are an
+          initial predicate and a next-state relation respectively, we see the
+          specification of our system is described as \(I \wedge \Box N\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Theorem
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          A theorem is a temporal formula that is satisfied by every
+          behaviour.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Expressions and Operators
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          The \(\triangleq\) symbol is used to define both expressions and
+          operators, but what is the difference between the two? Firstly, the
+          definition operator assigns a corresponding expression or operator
+          to the symbol on the left hand side. For expressions, this will look
+          like \(\operatorname{Id} \triangleq \exp\), and for operators it
+          looks like \(\operatorname{Id} (p_1, p_2, \ldots p_n) \triangleq
+          \exp\). Secondly, using the defined symbol in an expresion is
+          different. An expression is simply replaced, but for an operator,
+          brackets must be used to specify arguments. 
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
@@ -271,7 +290,116 @@
           only thing that matters is that if \(F_1\) and \(F_2\) are formulas
           for the same behaviour, then \(F_1 \equiv F_2\) is a theorem.
         </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          What to include in a Specification?
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          It is important to only include certain aspects of a specification
+          and not include everything. For example, a step might consist of
+          more than one atomic operation in order to keep the specification
+          simple. This specification will still prove correctness for a system
+          using the intended interface. For hardware specifications, the
+          implementer of a system might not know, for example, that the
+          <i>val</i> line should stabilize before the <i>rdy</i> line is
+          changed, even though both of these actions happen in the same step. 
+        </p><p>
+          This is perhaps the hardest part of making a specification&mdash;the
+          task of choosing the correct abstraction. 
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Constants and Variables
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          In a module, a constant is a parameter of the specification that
+          doesn't change, whereas a variable is something that can vary
+          depending on the state.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          State Function and State Predicate
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          This is an ordinary expression (without any \('\) or \(\Box\)) that
+          can contain varibles and constants. When it is boolean-valued, it is
+          called a state predicate.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Invariant
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          If \(I\) is an invariant of a specification \(S\), then \(S
+          \Rightarrow \Box I\) is a theorem.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Type
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          A variable \(v\) has type \(T\) in a specification \(S\) if and only
+          if \(v \in T\) is an invariant of \(S\), or in order words, \(S
+          \Rightarrow \Box (v \in T)\) is a theorem. Types for records can be
+          specified with square brackets, like below.
+        </p><center>
+          \(\displaystyle [\operatorname{val}: \operatorname{Data},
+          \operatorname{rdy}: \{ 0, 1 \},
+\operatorname{ack}: \{ 0, 1 \}]\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Type Invairant
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          To specify the types of variables, a definition can be used to check
+          that the all variable are of the correct type.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Enabled vs. Disabled Actions
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          An action is enabled in a state when it is possible to take a step
+          with the action in question, otherwise it is disabled. The
+          definition of any action usually begins with its enabling condition.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Avoiding Variable Proliferation
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          To avoid the issue of having too many variables in a specifcation
+          and its interface, replace individual varibles with records or
+          ordered tuples. This allows for syntax that might be easier to read,
+          the following example ensures that the only changed record fields of
+          chan are changing \(.\operatorname{rdy}\) to \(1
+          -\operatorname{chan}.\operatorname{rdy}\) and setting
+          \(.\operatorname{val}\) to \(d\).
+        </p><center>
+          \(\displaystyle \operatorname{chan}' = \left[
+          \operatorname{chan}\operatorname{EXCEPT} \: 
+          \,
+!.\operatorname{val}= d, !.\operatorname{rdy}= 1 - @ \right]\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Symbol Scope
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          For constants, variables, and definitions, the scope is the part of
+          the module that follows after it. For operator definitions, the
+          scope of the arguments is local, and for predicate logic expression,
+          the same is true.
+        </p><p>
+          \(\operatorname{TLA}^+\) has no variable overshadowing. A symbol
+          cannot be defined if one with the same name already exists.
+        </p></td>
       </tr></tbody>
     </table>
+    <h2 id="auto-2">2<span style="margin-left: 1em"></span>Examples of Specifications<span style="margin-left: 1em"></span></h2>
+    <p>
+      
+    </p>
   </body>
 </html>

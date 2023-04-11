@@ -112,8 +112,8 @@
     There are 4 Coffman Conditions that detect, prevent, and correct
     deadlocks. The conditions are as follows:
 
-    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|4|4|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|>|<cwith|1|-1|1|1|cell-hmode|auto>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<table|<row|<\cell>
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|4|4|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|>|<cwith|1|-1|1|1|cell-hmode|auto>|<table|<row|<\cell>
       Mutual Exclusion
     </cell>|<\cell>
       A concurrent process must hold exclusive rights to a resource at any
@@ -645,9 +645,104 @@
     then the execution is blocked until one of the channels is ready. One of
     the cases is then chosen at random, and the associated statements run. If
     there is a <verbatim|default>, then the execution isn't blocked. This can
-    be used to complete other tasks while waiting for a result. See the
-    example below modified from the textbook which demonstrates using a
-    select statement to complete work while waiting.
+    be used to complete other tasks while waiting for a result.\ 
+  </cell>>|<row|<\cell>
+    <verbatim|runtime. GOMAXPROCS()>
+  </cell>|<\cell>
+    Takes an integer parameter that specifies the number of OS threads that
+    will host \Pwork queues\Q.\ 
+  </cell>>>>>
+
+  <section|Concurrency Patterns in Golang>
+
+  <\padded-center>
+    <tabular|<tformat|<cwith|4|4|1|1|cell-background|pastel
+    yellow>|<cwith|3|3|1|1|cell-background|pastel
+    green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<cwith|2|2|1|1|cell-background|pastel
+    cyan>|<table|<row|<cell|Color Scheme Key>>|<row|<cell|Concurrency
+    Pattern>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
+  </padded-center>
+
+  <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+  green>|<cwith|1|1|1|1|cell-background|pastel
+  yellow>|<cwith|2|2|1|1|cell-background|pastel
+  cyan>|<cwith|3|3|1|1|cell-background|pastel
+  yellow>|<cwith|4|4|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
+    Safe Operations
+  </cell>|<\cell>
+    There are a couple different safe operations in concurrent programs,
+    including synchronization primitives for memory sharing, synchronization
+    with communicating, immutable data, and data produced by confinement.
+  </cell>>|<row|<\cell>
+    Confinement
+  </cell>|<\cell>
+    Confinement is when it is ensured that data is only accessed by a single
+    concurrent process. There are two types of confinement: ad hoc and
+    lexical.
+
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|>|<cwith|1|-1|1|1|cell-hmode|auto>|<table|<row|<\cell>
+      Ad Hoc
+    </cell>|<\cell>
+      This is confinement that adheres to a convention set, but is
+      problematic to enforce convention when working on large projects.
+    </cell>>|<row|<\cell>
+      Lexical
+    </cell>|<\cell>
+      This form of confinement uses the compiler to enforce confinement, by
+      limiting the scope of data and concurrency primitives. This is useful
+      for data structures that are not concurrent-safe such as
+      <verbatim|bytes.Buffer> as we can see in the example below from the
+      text.
+
+      <\verbatim-code>
+        printData := func (wg *sync.WaitGroup, data []byte) {
+
+        \ \ \ \ defer wg.Done()
+
+        \;
+
+        \ \ \ \ var buff bytes.Buffer
+
+        \ \ \ \ for _, b := range data {
+
+        \ \ \ \ \ \ \ \ fmt.Printf(&buff, "&c", b)
+
+        \ \ \ \ }
+
+        \ \ \ \ fmt.Println(buff.String())
+
+        }
+      </verbatim-code>
+    </cell>>>>>
+  </cell>>|<row|<\cell>
+    When to use Confinement?
+  </cell>|<\cell>
+    Confinement can mean code that is easier to write and keep track of, and
+    smaller critical sections, but the techniques to implement confinement
+    are more involved that using synchronization built-ins.
+  </cell>>|<row|<\cell>
+    <verbatim|for>-<verbatim|select> Loop
+  </cell>|<\cell>
+    The pattern of sitting a <verbatim|select> in a <verbatim|for> as below
+    is common. The example shows an infinite loop, but a range could be used.
+
+    <\verbatim-code>
+      for {
+
+      \ \ \ \ select {
+
+      \ \ \ \ // useful work with channels
+
+      \ \ \ \ }
+
+      }
+    </verbatim-code>
+
+    This pattern can be used to send an iteration variable on a channel or to
+    loop infinitely until stopped. See the example below modified from the
+    textbook which demonstrates using a select statement to complete work
+    while waiting.
 
     <\verbatim-code>
       done := make(chan interface{})
@@ -682,18 +777,7 @@
 
       fmt.Println(workCounter)
     </verbatim-code>
-  </cell>>|<row|<\cell>
-    <verbatim|runtime. GOMAXPROCS()>
-  </cell>|<\cell>
-    Takes an integer parameter that specifies the number of OS threads that
-    will host \Pwork queues\Q.\ 
   </cell>>>>>
-
-  <section|Concurrency Patterns in Golang>
-
-  \;
-
-  \;
 </body>
 
 <\initial>
