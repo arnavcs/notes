@@ -28,7 +28,7 @@
       { float: right; position: relative; top: -1em; } .no-breaks {
       white-space: nowrap; } 
     </style>
-    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" language="javascript"></script>
   </head>
   <body>
     <table class="title-block" style="margin-bottom: 2em">
@@ -78,11 +78,12 @@
         <tbody><tr>
           <td style="width: 100%; padding-left: 0pt; padding-right: 0pt; border-top: 1px solid; border-bottom: 1px solid"><p>
             <i>Specifying Systems</i> is a publication written by Leslie
-            Lamport on the <img src="specifying-systems-1.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242426em; margin-top: -0.0358787878787878em; vertical-align: 0em; height: 0.879854545454545em"></img> language. This is a
-            collection of notes that I make about the text as I read it, and
-            is not a summary or recreation of the text, but rather a reference
-            for anyone who has already read the text. As such, please read the
-            text to gain a better understading of the contents.
+            Lamport on the \(\operatorname{TLA}^+\) language. I choose
+            purposely to ommit leaving details in these notes about the
+            grammar of the language, since this can be easily found.
+            Additionally, this is not a summary or recreation of the next in
+            any manner. As such, please read the text to gain a better
+            understading of the contents.
           </p></td>
         </tr></tbody>
       </table>
@@ -114,6 +115,32 @@
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          State of a System and a Step
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          A state is an assignment of values to variables. A pair of
+          successive states is called a step. We can mathematically write a
+          pair as shown below.
+        </p><center>
+          \(\displaystyle \left[ \begin{array}{l}
+  a = 1\\
+  b =
+          0
+\end{array} \right] \rightarrow \left[ \begin{array}{l}
+  a = 1\\
+
+          b = 1
+\end{array} \right]\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Behaviour of a System
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Formally, a behaviour is a sequence of states.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
           Temporal Logic
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -123,11 +150,11 @@
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
-          <img src="specifying-systems-1.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242426em; margin-top: -0.0358787878787878em; vertical-align: 0em; height: 0.879854545454545em"></img>
+          \(\operatorname{TLA}^+\)
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          <img src="specifying-systems-1.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242426em; margin-top: -0.0358787878787878em; vertical-align: 0em; height: 0.879854545454545em"></img> stands for the Temporal Logic of Actions and
-          supports both assertional resoning along with temporal logic. This
+          \(\operatorname{TLA}^+\) stands for the Temporal Logic of Actions
+          and supports both assertional resoning and temporal logic. This
           system is quite good with describing asynchronous systems, but can
           be used for nearly any purpose: APIs and distributed systems
           included.
@@ -137,12 +164,10 @@
           Propositional Logic
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          The two basic boolean values, <img src="specifying-systems-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242422em; margin-top: -0.0199757575757576em; vertical-align: 0em; height: 0.781963636363636em"></img> and <img src="specifying-systems-3.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242426em; margin-top: -0.0572121212121213em; vertical-align: 0em; height: 0.8192em"></img> can be used in propositional logic with the operators
-          <span class="no-breaks"><img src="specifying-systems-4.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242424em; margin-top: -0.0246787878787879em; vertical-align: 0em; height: 0.494836363636364em"></img>,</span> <span class="no-breaks"><img src="specifying-systems-5.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0708363636363636em; vertical-align: 0em; height: 0.695078787878788em"></img>,</span> <span class="no-breaks"><img src="specifying-systems-6.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0708363636363636em; vertical-align: 0em; height: 0.695078787878788em"></img>,</span>
-          <span class="no-breaks"><img src="specifying-systems-7.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.125769696969697em; vertical-align: 0em; height: 0.620606060606061em"></img>,</span> and <img src="specifying-systems-8.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242424em; margin-top: -0.0292363636363637em; vertical-align: 0em; height: 0.533721212121212em"></img>
-          (from highest to lowest precendence).
+          The two basic boolean values, \(\operatorname{TRUE}\) and
+          \(\operatorname{FALSE}\) can be used in propositional logic with the
+          operators \(\neg\), \(\wedge\), \(\vee\), \(\Rightarrow\), and
+          \(\equiv\) (from highest to lowest precendence).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
@@ -153,7 +178,7 @@
           values of its identifiers. For example, the following
           logic-proposition is a tautology:
         </p><center>
-          <img src="specifying-systems-9.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242422em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img>
+          \(\displaystyle F \Rightarrow F \vee G\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
@@ -162,36 +187,88 @@
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           A set is a collection of elements that is determined by its
           elements. We denote sets with curly brackets, so the set of the
-          first three natural numbers is <span class="no-breaks"><img src="specifying-systems-10.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
-          The empty set will be denoted as <span class="no-breaks"><img src="specifying-systems-11.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242424em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>,</span>
-          and operations on sets are <span class="no-breaks"><img src="specifying-systems-12.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0708363636363636em; vertical-align: 0em; height: 0.695078787878788em"></img>,</span>
-          <span class="no-breaks"><img src="specifying-systems-13.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0708363636363636em; vertical-align: 0em; height: 0.695078787878788em"></img>,</span> <span class="no-breaks"><img src="specifying-systems-14.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0207515151515151em; margin-right: -0.0248242424242424em; margin-top: -0.0248727272727273em; vertical-align: -0.140606060606061em; height: 0.844024242424243em"></img>,</span> and <span class="no-breaks"><img src="specifying-systems-15.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242424em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
-          Membership is denoted with <span class="no-breaks"><img src="specifying-systems-16.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242424em; margin-top: -0.0257939393939394em; vertical-align: -0.0404363636363636em; height: 0.645430303030303em"></img>.</span>
+          first three natural numbers is \(\{ 1, 2, 3 \}\). The empty set will
+          be denoted as \(\{ \}\), and operations on sets are \(\cap\),
+          \(\cup\), \(\backslash\), and \(\subseteq\) (highest to lowest
+          precedence). Membership is denoted with \(\in\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
           Predicate Logic
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          The two quantifiers, <img src="specifying-systems-17.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.794375757575758em"></img> and <span class="no-breaks"><img
-          src="specifying-systems-18.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242424em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.769551515151515em"></img>,</span> are followed with a colon and the
-          variable in the quantifier is called &ldquo;bound&rdquo; as opposed
-          to a &ldquo;free&rdquo; variable. See the example below where <img
-          src="specifying-systems-19.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> and <img src="specifying-systems-20.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0347151515151515em; margin-right: -0.0266181818181818em; margin-top: -0.038739393939394em; vertical-align: -0.201115151515152em; height: 0.71990303030303em"></img> are both bound.
+          The two quantifiers, \(\forall\) and \(\exists\), are followed with
+          a colon and the variable in the quantifier is called
+          &ldquo;bound&rdquo; as opposed to a &ldquo;free&rdquo; variable. See
+          the example below where \(x\) and \(y\) are both bound.
         </p><center>
-          <img src="specifying-systems-21.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle \forall x \in S : (\forall y \in T : F)\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Formulas vs. Statements
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Note that by default, something like <img src="specifying-systems-22.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.00921212121212121em; margin-right: -0.0248242424242426em; margin-top: -0.040969696969697em; vertical-align: -0.0404363636363636em; height: 0.757139393939394em"></img> is a
-          noun; it is true or false depending on the value of <span class="no-breaks"><img
-          src="specifying-systems-19.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img>.</span> On the other hand, if we would like to
-          assert if the formula is true, then we should instead write the
-          statement <img src="specifying-systems-22.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.00921212121212121em; margin-right: -0.0248242424242426em; margin-top: -0.040969696969697em; vertical-align: -0.0404363636363636em; height: 0.757139393939394em"></img> is true.
+          Note that by default, something like \(2 \ast x > x\) is a noun; it
+          is true or false depending on the value of \(x\). On the other hand,
+          if we would like to assert if the formula is true, then we should
+          instead write the statement \(2 \ast x > x\) is true.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Action
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          An action is true or false of a step, meaning that it it contains
+          primed variables (from the second state) and unprimed variables
+          (from the first state). 
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Anatomy of a \(\operatorname{TLA}^+\) Specification
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          A \(\operatorname{TLA}^+\) specification usually consists of an
+          initial predicate and a next-state relation.
+        </p><table style="width: 100%">
+          <tbody><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020; border-top: 0px solid"><p>
+              Initial Predicate
+            </p></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid; border-top: 0px solid"><p>
+              Specifies all the possible initial values of the initial state.
+              This is a predicate that is true if the variables are possible
+              initial values and false otherwise.
+            </p></td>
+          </tr><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020"><p>
+              Next-State Relation
+            </p></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid"><p>
+              This is an action that specifies how the state can change in any
+              step. The relation is true if the step is valid, and false
+              otherwise.
+            </p></td>
+          </tr></tbody>
+        </table><p>
+          We can use the temporal-logic (\(\Box\)) unary operatior to ensure
+          that the ensuing formula is always true. Thus, given that \(I\) and
+          \(N\) are an initial predicate and a next-state relation
+          respectively, we see the specification of our system is described as
+          \(I \wedge \Box N\).
+        </p><p>
+          The specification is broken into Modules, each having their own
+          defintions, variables, and theorems.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Uniqueness of Specifications
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Since there are multiple ways to model the same thing, two
+          specifications of the same thing are not neccessarly unique. The
+          only thing that matters is that if \(F_1\) and \(F_2\) are formulas
+          for the same behaviour, then \(F_1 \equiv F_2\) is a theorem.
         </p></td>
       </tr></tbody>
     </table>

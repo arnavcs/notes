@@ -28,7 +28,7 @@
       { float: right; position: relative; top: -1em; } .no-breaks {
       white-space: nowrap; } 
     </style>
-    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" language="javascript"></script>
   </head>
   <body>
     <table class="title-block" style="margin-bottom: 2em">
@@ -115,20 +115,21 @@
           predict the speedup of using multiple processors. The relation is
           given as follows:
         </p><center>
-          <img src="concurrency-in-go-1.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363635em; margin-right: -0.0248242424242431em; margin-top: -0.0409696969696969em; vertical-align: -1.19059393939394em; height: 2.55597575757576em"></img>
+          \(\displaystyle S_{\operatorname{latency}} (s) = \frac{1}{(1 - p) +
+          \frac{p}{s}}\)
         </center><table style="width: 100%">
           <tbody><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020"><img src="concurrency-in-go-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0206545454545454em; margin-right: -0.0248242424242422em; margin-top: -0.0503757575757576em; vertical-align: -0.289066666666667em; height: 1.06686060606061em"></img></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020">\(S_{\operatorname{latency}}\)</td>
             <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
               the theoretical speedup of the whole program
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020"><img src="concurrency-in-go-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020">\(s\)</td>
             <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
               the speedup of the part of the task from improved resources
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020"><img src="concurrency-in-go-4.png" style="margin-left: -0.0620606060606061em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: -0.201115151515152em; height: 0.707490909090909em"></img></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020">\(p\)</td>
             <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
               the proportion of the execution time that benefits from the
               improved resources
