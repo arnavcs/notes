@@ -10,10 +10,11 @@
   <\bothlined>
     <with|font-shape|italic|Specifying Systems> is a publication written by
     Leslie Lamport on the <math|TLA<rsup|+>> language. I choose purposely to
-    ommit leaving details in these notes about the grammar of the language,
-    since this can be easily found. Additionally, this is not a summary or
-    recreation of the next in any manner. As such, please read the text to
-    gain a better understading of the contents.
+    omit leaving details in these notes about the grammar of the language,
+    since this can be easily found in the author's summary of the text on the
+    TLA website. Additionally, this is not a summary or recreation of the
+    next in any manner. As such, please read the text to gain a better
+    understading of the contents.
   </bothlined>
 
   <section|System Specifications>
@@ -149,8 +150,8 @@
     operators, but what is the difference between the two? Firstly, the
     definition operator assigns a corresponding expression or operator to the
     symbol on the left hand side. For expressions, this will look like
-    <math|Id\<triangleq\>exp>, and for operators it looks like
-    <math|Id<around*|(|p<rsub|1>,p<rsub|2>,\<ldots\>p<rsub|n>|)>\<triangleq\>exp>.
+    <math|S<rsub|id>\<triangleq\>E<rsub|exp>>, and for operators it looks
+    like <math|S<rsub|id><around*|(|p<rsub|1>,p<rsub|2>,\<ldots\>p<rsub|n>|)>\<triangleq\>E<rsub|exp>>.
     Secondly, using the defined symbol in an expresion is different. An
     expression is simply replaced, but for an operator, brackets must be used
     to specify arguments.\ 
@@ -169,9 +170,9 @@
     one atomic operation in order to keep the specification simple. This
     specification will still prove correctness for a system using the
     intended interface. For hardware specifications, the implementer of a
-    system might not know, for example, that the <with|font-shape|italic|val>
-    line should stabilize before the <with|font-shape|italic|rdy> line is
-    changed, even though both of these actions happen in the same step.\ 
+    system might not know, for example, that the <verbatim|val> line should
+    stabilize before the <verbatim|rdy> line is changed, even though both of
+    these actions happen in the same step.\ 
 
     This is perhaps the hardest part of making a specification\Vthe task of
     choosing the correct abstraction.\ 
@@ -185,7 +186,7 @@
     State Function and State Predicate
   </cell>|<\cell>
     This is an ordinary expression (without any <math|<rprime|'>> or
-    <math|\<box\>>) that can contain varibles and constants. When it is
+    <math|\<box\>>) that can contain variables and constants. When it is
     boolean-valued, it is called a state predicate.
   </cell>>|<row|<\cell>
     Invariant
@@ -200,9 +201,8 @@
     <math|S\<Rightarrow\>\<box\><around*|(|v\<in\>T|)>> is a theorem. Types
     for records can be specified with square brackets, like below.
 
-    <\equation*>
-      <around*|[|val:Data,rdy:<around*|{|0,1|}>,ack:<around*|{|0,1|}>|]>
-    </equation*>
+    <verbatim|<around*|[|val : Data, rdy : <around*|{|0,1|}>, ack :
+    <around*|{|0,1|}>|]>>
   </cell>>|<row|<\cell>
     Type Invairant
   </cell>|<\cell>
@@ -221,12 +221,10 @@
     interface, replace individual varibles with records or ordered tuples.
     This allows for syntax that might be easier to read, the following
     example ensures that the only changed record fields of chan are changing
-    <math|.rdy> to <math|1-chan.rdy> and setting <math|.val> to <math|d>.
+    <verbatim|.rdy> to <verbatim|1 - chan.rdy> and setting <verbatim|.val> to
+    <verbatim|d>.
 
-    <\equation*>
-      chan<rprime|'>=<around*|[|chan EXCEPT<space|0.4spc>
-      <space|0.2spc>!.val=d,!.rdy=1-@|]>
-    </equation*>
+    <verbatim|chan' = [chan EXCEPT !.val = d, !.rdy = 1 - @]>
   </cell>>|<row|<\cell>
     Symbol Scope
   </cell>|<\cell>
@@ -237,8 +235,6 @@
     <math|TLA<rsup|+>> has no variable overshadowing. A symbol cannot be
     defined if one with the same name already exists.
   </cell>>>>>
-
-  <section|Examples of Specifications>
 
   \;
 </body>
@@ -252,7 +248,7 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|1>>
-    <associate|auto-2|<tuple|2|?>>
+    <associate|auto-2|<tuple|2|3>>
   </collection>
 </references>
 
@@ -262,6 +258,10 @@
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>System
       Specifications> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Examples
+      of Specifications> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-2><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
