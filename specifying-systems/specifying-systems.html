@@ -80,11 +80,11 @@
           <td style="width: 100%; padding-left: 0pt; padding-right: 0pt; border-top: 1px solid; border-bottom: 1px solid"><p>
             <i>Specifying Systems</i> is a publication written by Leslie
             Lamport on the \(\operatorname{TLA}^+\) language. I choose
-            purposely to ommit leaving details in these notes about the
-            grammar of the language, since this can be easily found.
-            Additionally, this is not a summary or recreation of the next in
-            any manner. As such, please read the text to gain a better
-            understading of the contents.
+            purposely to omit leaving details in these notes about the grammar
+            of the language, since this can be easily found in the author's
+            summary of the text on the TLA website. Additionally, this is not
+            a summary or recreation of the next in any manner. As such, please
+            read the text to gain a better understading of the contents.
           </p></td>
         </tr></tbody>
       </table>
@@ -274,11 +274,11 @@
           operators, but what is the difference between the two? Firstly, the
           definition operator assigns a corresponding expression or operator
           to the symbol on the left hand side. For expressions, this will look
-          like \(\operatorname{Id} \triangleq \exp\), and for operators it
-          looks like \(\operatorname{Id} (p_1, p_2, \ldots p_n) \triangleq
-          \exp\). Secondly, using the defined symbol in an expresion is
-          different. An expression is simply replaced, but for an operator,
-          brackets must be used to specify arguments. 
+          like \(S_{\operatorname{id}} \triangleq E_{\exp}\), and for
+          operators it looks like \(S_{\operatorname{id}} (p_1, p_2, \ldots
+          p_n) \triangleq E_{\exp}\). Secondly, using the defined symbol in an
+          expresion is different. An expression is simply replaced, but for an
+          operator, brackets must be used to specify arguments. 
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
@@ -300,9 +300,10 @@
           more than one atomic operation in order to keep the specification
           simple. This specification will still prove correctness for a system
           using the intended interface. For hardware specifications, the
-          implementer of a system might not know, for example, that the
-          <i>val</i> line should stabilize before the <i>rdy</i> line is
-          changed, even though both of these actions happen in the same step. 
+          implementer of a system might not know, for example, that the <tt
+          class="verbatim">val</tt> line should stabilize before the <tt class="verbatim">rdy</tt>
+          line is changed, even though both of these actions happen in the
+          same step. 
         </p><p>
           This is perhaps the hardest part of making a specification&mdash;the
           task of choosing the correct abstraction. 
@@ -322,8 +323,8 @@
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           This is an ordinary expression (without any \('\) or \(\Box\)) that
-          can contain varibles and constants. When it is boolean-valued, it is
-          called a state predicate.
+          can contain variables and constants. When it is boolean-valued, it
+          is called a state predicate.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
@@ -342,11 +343,8 @@
           if \(v \in T\) is an invariant of \(S\), or in order words, \(S
           \Rightarrow \Box (v \in T)\) is a theorem. Types for records can be
           specified with square brackets, like below.
-        </p><center>
-          \(\displaystyle [\operatorname{val}: \operatorname{Data},
-          \operatorname{rdy}: \{ 0, 1 \},
-\operatorname{ack}: \{ 0, 1 \}]\)
-        </center></td>
+        </p><pre class="verbatim" xml:space="preserve">
+[val : Data, rdy : {0,1}, ack : {0,1}]</pre></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
           Type Invairant
@@ -373,15 +371,10 @@
           and its interface, replace individual varibles with records or
           ordered tuples. This allows for syntax that might be easier to read,
           the following example ensures that the only changed record fields of
-          chan are changing \(.\operatorname{rdy}\) to \(1
-          -\operatorname{chan}.\operatorname{rdy}\) and setting
-          \(.\operatorname{val}\) to \(d\).
-        </p><center>
-          \(\displaystyle \operatorname{chan}' = \left[
-          \operatorname{chan}\operatorname{EXCEPT} \: 
-          \,
-!.\operatorname{val}= d, !.\operatorname{rdy}= 1 - @ \right]\)
-        </center></td>
+          chan are changing <tt class="verbatim">.rdy</tt> to <tt class="verbatim">1 -
+          chan.rdy</tt> and setting <tt class="verbatim">.val</tt> to <tt class="verbatim">d</tt>.
+        </p><pre class="verbatim" xml:space="preserve">
+chan' = [chan EXCEPT !.val = d, !.rdy = 1 - @]</pre></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Symbol Scope
@@ -397,7 +390,6 @@
         </p></td>
       </tr></tbody>
     </table>
-    <h2 id="auto-2">2<span style="margin-left: 1em"></span>Examples of Specifications<span style="margin-left: 1em"></span></h2>
     <p>
       
     </p>

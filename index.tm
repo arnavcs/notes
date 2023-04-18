@@ -11,13 +11,11 @@
 
   <\itemize>
     <item><with|font-shape|italic|Specifying Systems> by Leslie Lamport (WIP)
-    <hlink|[pdf]|./specifying-systems/specifying-systems.pdf>
-    <hlink|[html]|./specifying-systems/specifying-systems.html>
+    <hlink|[notes]|./specifying-systems/specifying-systems.html>
     <hlink|[author's summary]|https://lamport.azurewebsites.net/tla/summary-standalone.pdf>
 
     <item><with|font-shape|italic|Concurrency in Go> by Katherine Cox-Buday
-    (WIP) <hlink|[pdf]|./concurrency-in-go/concurrency-in-go.pdf>
-    <hlink|[html]|./concurrency-in-go/concurrency-in-go.html>
+    (WIP) <hlink|[notes]|./concurrency-in-go/concurrency-in-go.html>
   </itemize>
 
   <section*|Textbooks to Read>
@@ -37,6 +35,9 @@
 
     <item><with|font-shape|italic|Seven More Languages in Seven Weeks> by
     Bruce A. Tate
+
+    <item><with|font-shape|italic|Structure and Interpretation of Computer
+    Programs> by \ Harold Abelson, Gerald Jay Sussman, and Julie Sussman
   </itemize>
 </body>
 
