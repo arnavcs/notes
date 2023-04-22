@@ -667,7 +667,10 @@
   green>|<cwith|1|1|1|1|cell-background|pastel
   yellow>|<cwith|2|2|1|1|cell-background|pastel
   cyan>|<cwith|3|3|1|1|cell-background|pastel
-  yellow>|<cwith|4|4|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
+  yellow>|<cwith|4|4|1|1|cell-background|pastel
+  cyan>|<cwith|5|5|1|1|cell-background|pastel
+  yellow>|<cwith|6|6|1|1|cell-background|pastel
+  cyan>|<cwith|7|7|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
     Safe Operations
   </cell>|<\cell>
     There are a couple different safe operations in concurrent programs,
@@ -776,6 +779,151 @@
       }
 
       fmt.Println(workCounter)
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    Goroutine Paths to Termination
+  </cell>|<\cell>
+    There are 3 paths for a goroutine to terminate. These are
+
+    <\itemize>
+      <item>When the goroutine has completed its work
+
+      <item>When it cannot continue its work due to an unrecoverable error
+
+      <item>When it is told to stop working
+    </itemize>
+
+    The third option is one which allows programs that could possibly cause
+    deadlock or take up unneccessary memory to be killed, and is the basis of
+    the <verbatim|done> channel concurrency pattern. The goroutine
+    responsible for creating a goroutine is also responsible for being able
+    to stop it.
+  </cell>>|<row|<\cell>
+    <verbatim|done> Channel
+  </cell>|<\cell>
+    This can be used to convey to a goroutine that it should stop execution.
+    In the following example, the goroutine created is signalled to stop
+    executing by passing a channel which will signal to stop either trying to
+    read or write to another channel.
+
+    <\verbatim-code>
+      printStrings := func(done \<less\>-chan interface{}, strings
+      \<less\>-chan string) \<less\>-chan interface{} {
+
+      \ \ \ \ ret := make(chan interface{})
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ defer close(ret)
+
+      \ \ \ \ \ \ \ \ for {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case s := \<less\>-strings:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fmt.Println(s)
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return
+
+      \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ }()
+
+      \ \ \ \ return ret
+
+      }
+
+      \;
+
+      done := make(chan interface{})
+
+      terminated := printStrings(done, nil)
+
+      \;
+
+      go func() {
+
+      \ \ \ \ time.Sleep(time.Second)
+
+      }()
+
+      \<less\>-terminated
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|or> Channel
+  </cell>|<\cell>
+    Suppose you have to compose multiple channels into one: a channel that
+    closes when any of the passed channels are closed or written to. While
+    you could simply have a different <verbatim|case> in the
+    <verbatim|for-select> loop for each <verbatim|done> channel, you could
+    alternatively combine the channels with the <verbatim|or> channel
+    pattern. Here's the composition function below, taken from the textbook.
+
+    <\verbatim-code>
+      var or func(chans <text-dots>\<less\>-chan interface{}) \<less\>-chan
+      interface{}
+
+      or = func(chans \<less\>-chan interface{}) \<less\>- chan interface{} {
+
+      \ \ \ \ switch len(chans) {
+
+      \ \ \ \ case 0:
+
+      \ \ \ \ \ \ \ \ return nil
+
+      \ \ \ \ case 1:
+
+      \ \ \ \ \ \ \ \ return chans[0]
+
+      \ \ \ \ }
+
+      \;
+
+      \ \ \ \ orDone := make(chan interface{})
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ defer close(orDone)
+
+      \ \ \ \ \ \ \ \ switch len(chans) {
+
+      \ \ \ \ \ \ \ \ case 2:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-chans[0]:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-chans[1]:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ default:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-chans[0]:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-chans[1]:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-chans[2]:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-or(append(chans[3:],
+      orDone)<text-dots>):
+
+      \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ }()
+
+      \ \ \ \ return orDone
+
+      }
     </verbatim-code>
   </cell>>>>>
 </body>

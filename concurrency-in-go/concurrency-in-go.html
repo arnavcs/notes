@@ -936,6 +936,115 @@ for {
 }
 fmt.Println(workCounter)</pre>
         </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+          Goroutine Paths to Termination
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          There are 3 paths for a goroutine to terminate. These are
+        </p><ul>
+          <li>
+            <p>
+              When the goroutine has completed its work
+            </p>
+          </li>
+          <li>
+            <p>
+              When it cannot continue its work due to an unrecoverable error
+            </p>
+          </li>
+          <li>
+            <p>
+              When it is told to stop working
+            </p>
+          </li>
+        </ul><p>
+          The third option is one which allows programs that could possibly
+          cause deadlock or take up unneccessary memory to be killed, and is
+          the basis of the <tt class="verbatim">done</tt> channel concurrency pattern.
+          The goroutine responsible for creating a goroutine is also
+          responsible for being able to stop it.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          <tt class="verbatim">done</tt> Channel
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          This can be used to convey to a goroutine that it should stop
+          execution. In the following example, the goroutine created is
+          signalled to stop executing by passing a channel which will signal
+          to stop either trying to read or write to another channel.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+printStrings := func(done &lt;-chan interface{}, strings &lt;-chan string) &lt;-chan interface{} {
+    ret := make(chan interface{})
+    go func() {
+        defer close(ret)
+        for {
+            select {
+            case s := &lt;-strings:
+                fmt.Println(s)
+            case &lt;-done:
+                return
+            }
+        }
+    }()
+    return ret
+}
+
+done := make(chan interface{})
+terminated := printStrings(done, nil)
+
+go func() {
+    time.Sleep(time.Second)
+}()
+&lt;-terminated</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          <tt class="verbatim">or</tt> Channel
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Suppose you have to compose multiple channels into one: a channel
+          that closes when any of the passed channels are closed or written
+          to. While you could simply have a different <tt class="verbatim">case</tt> in
+          the <tt class="verbatim">for-select</tt> loop for each <tt class="verbatim">done</tt>
+          channel, you could alternatively combine the channels with the <tt
+          class="verbatim">or</tt> channel pattern. Here's the composition function
+          below, taken from the textbook.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+var or func(chans <span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>&lt;-chan interface{}) &lt;-chan interface{}
+or = func(chans &lt;-chan interface{}) &lt;- chan interface{} {
+    switch len(chans) {
+    case 0:
+        return nil
+    case 1:
+        return chans[0]
+    }
+
+    orDone := make(chan interface{})
+    go func() {
+        defer close(orDone)
+        switch len(chans) {
+        case 2:
+            select {
+            case &lt;-chans[0]:
+            case &lt;-chans[1]:
+            }
+        default:
+            select {
+            case &lt;-chans[0]:
+            case &lt;-chans[1]:
+            case &lt;-chans[2]:
+            case &lt;-or(append(chans[3:], orDone)<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span
+          style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>):
+            }
+        }
+    }()
+    return orDone
+}</pre>
+        </div></td>
       </tr></tbody>
     </table>
   </body>

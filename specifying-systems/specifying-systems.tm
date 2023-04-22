@@ -9,12 +9,12 @@
 
   <\bothlined>
     <with|font-shape|italic|Specifying Systems> is a publication written by
-    Leslie Lamport on the <math|TLA<rsup|+>> language. I choose purposely to
-    omit leaving details in these notes about the grammar of the language,
-    since this can be easily found in the author's summary of the text on the
-    TLA website. Additionally, this is not a summary or recreation of the
-    next in any manner. As such, please read the text to gain a better
-    understading of the contents.
+    Leslie Lamport on the TLA<rsup|+> language. I choose purposely to omit
+    leaving details in these notes about the grammar of the language, since
+    this can be easily found in the author's summary of the text on the TLA
+    website. Additionally, this is not a summary or recreation of the next in
+    any manner. As such, please read the text to gain a better understading
+    of the contents.
   </bothlined>
 
   <section|System Specifications>
@@ -59,12 +59,12 @@
     A temporal logic formula is a formula that describes a system's behaviour
     by relating the next state of a system with the current state.
   </cell>>|<row|<\cell>
-    <math|TLA<rsup|+>>
+    TLA<rsup|+>
   </cell>|<\cell>
-    <math|TLA<rsup|+>> stands for the Temporal Logic of Actions and supports
-    both assertional resoning and temporal logic. This system is quite good
-    with describing asynchronous systems, but can be used for nearly any
-    purpose: APIs and distributed systems included.
+    TLA<rsup|+> stands for the Temporal Logic of Actions and supports both
+    assertional resoning and temporal logic. This system is quite good with
+    describing asynchronous systems, but can be used for nearly any purpose:
+    APIs and distributed systems included.
   </cell>>|<row|<\cell>
     Propositional Logic
   </cell>|<\cell>
@@ -116,10 +116,10 @@
     variables (from the second state) and unprimed variables (from the first
     state).\ 
   </cell>>|<row|<\cell>
-    Anatomy of a <math|TLA<rsup|+>> Specification
+    Anatomy of a TLA<rsup|+> Specification
   </cell>|<\cell>
-    A <math|TLA<rsup|+>> specification usually consists of an initial
-    predicate and a next-state relation.
+    A TLA<rsup|+> specification usually consists of an initial predicate and
+    a next-state relation.
 
     <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|>|<cwith|1|-1|1|1|cell-hmode|auto>|<cwith|1|-1|1|1|cell-background|pastel
     green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<table|<row|<\cell>
@@ -232,8 +232,8 @@
     module that follows after it. For operator definitions, the scope of the
     arguments is local, and for predicate logic expression, the same is true.
 
-    <math|TLA<rsup|+>> has no variable overshadowing. A symbol cannot be
-    defined if one with the same name already exists.
+    TLA<rsup|+> has no variable overshadowing. A symbol cannot be defined if
+    one with the same name already exists.
   </cell>>>>>
 
   \;
@@ -248,7 +248,6 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|1>>
-    <associate|auto-2|<tuple|2|3>>
   </collection>
 </references>
 
@@ -258,10 +257,6 @@
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>System
       Specifications> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
-
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Examples
-      of Specifications> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-2><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
