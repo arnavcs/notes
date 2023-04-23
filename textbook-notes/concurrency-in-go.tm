@@ -679,18 +679,23 @@
   yellow>|<cwith|3|3|1|1|cell-background|pastel
   yellow>|<cwith|4|4|1|1|cell-background|pastel
   cyan>|<cwith|5|5|1|1|cell-background|pastel
-  yellow>|<cwith|6|6|1|1|cell-background|pastel
-  cyan>|<cwith|7|7|1|1|cell-background|pastel
+  yellow>|<cwith|7|7|1|1|cell-background|pastel
   cyan>|<cwith|8|8|1|1|cell-background|pastel
+  cyan>|<cwith|9|9|1|1|cell-background|pastel
   yellow>|<cwith|2|2|1|1|cell-background|pastel
-  green>|<cwith|10|10|1|1|cell-background|pastel
-  yellow>|<cwith|11|11|1|1|cell-background|pastel
-  cyan>|<cwith|12|12|1|1|cell-background|pastel
+  green>|<cwith|11|11|1|1|cell-background|pastel
+  yellow>|<cwith|12|12|1|1|cell-background|pastel
   cyan>|<cwith|13|13|1|1|cell-background|pastel
   cyan>|<cwith|14|14|1|1|cell-background|pastel
-  yellow>|<cwith|15|15|1|1|cell-background|pastel
-  cyan>|<cwith|16|16|1|1|cell-background|pastel
-  green>|<cwith|17|17|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
+  cyan>|<cwith|15|15|1|1|cell-background|pastel
+  yellow>|<cwith|16|16|1|1|cell-background|pastel
+  cyan>|<cwith|17|17|1|1|cell-background|pastel
+  green>|<cwith|18|18|1|1|cell-background|pastel
+  cyan>|<cwith|19|19|1|1|cell-background|pastel
+  cyan>|<cwith|20|20|1|1|cell-background|pastel
+  cyan>|<cwith|21|21|1|1|cell-background|pastel
+  cyan>|<cwith|6|6|1|1|cell-background|pastel
+  yellow>|<cwith|22|22|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
     Safe Operations
   </cell>|<\cell>
     There are a couple different safe operations in concurrent programs,
@@ -815,9 +820,13 @@
 
     The third option is one which allows programs that could possibly cause
     deadlock or take up unneccessary memory to be killed, and is the basis of
-    the <verbatim|done> channel concurrency pattern. The goroutine
-    responsible for creating a goroutine is also responsible for being able
-    to stop it.
+    the <verbatim|done> channel concurrency pattern.\ 
+  </cell>>|<row|<\cell>
+    Goroutine Ownership
+  </cell>|<\cell>
+    As a good rule of thumb, the goroutine responsible for writing to a
+    channel and creating the channel is the one responsible for the lifetime
+    of the channel and stopping it.
   </cell>>|<row|<\cell>
     <verbatim|done> Channel
   </cell>|<\cell>
@@ -1113,14 +1122,250 @@
   </cell>>|<row|<\cell>
     Fan-Out
   </cell>|<\cell>
-    \;
+    One can create an array of stage goroutines as such
+
+    <\verbatim-code>
+      numRoutines := runtime.NumCPU()
+
+      routines := make([]\<less\>-chan interface{}, numRoutines)
+
+      for i := 0; i \<less\> numRoutines; i++ {
+
+      \ \ \ \ routines[i] = stage(done, inStream)
+
+      }
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    Fan-In or Multiplexing
+  </cell>|<\cell>
+    The following multiplexing code example is modified from the text and
+    requires that the order of output does not matter.
+
+    <\verbatim-code>
+      fanIn := func(done \<less\>-chan interface{}, chans
+      <text-dots>\<less\>-chan interface{}) \<less\>-chan interface{} {
+
+      \ \ \ \ var wg sync.WaitGroup
+
+      \ \ \ \ multiplexedStream := make(chan interface{})
+
+      \ \ \ \ multiplex := func(c \<less\>-chan interface{}) {
+
+      \ \ \ \ \ \ \ \ defer wg.Done()
+
+      \ \ \ \ \ \ \ \ for i := range c {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case multiplexedStream \<less\>- i:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ }
+
+      \ \ \ \ wg.Add(len(chans)
+
+      \ \ \ \ for _, c := range chans {
+
+      \ \ \ \ \ \ \ \ go multiplex(c)
+
+      \ \ \ \ }
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ wg.Wait()
+
+      \ \ \ \ \ \ \ \ close(multiplexedStream)
+
+      \ \ \ \ }()
+
+      \ \ \ \ return multiplexedStream
+
+      }
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|or-done> Channel
+  </cell>|<\cell>
+    We seem to be using a certain pattern of wrapping our reads from a
+    channel with a <verbatim|select> so that we can safely close our
+    goroutines with a <verbatim|done>. We can abstract this, as follows:
+
+    <\verbatim-code>
+      orDone := func(done, c \<less\>-chan interface{}) \<less\>-chan
+      interface{} {
+
+      \ \ \ \ ret := make(chan interface{})
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ defer close(ret)
+
+      \ \ \ \ \ \ \ \ for e := range c {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case ret \<less\>- e:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ }()
+
+      \ \ \ \ return ret
+
+      }
+    </verbatim-code>
+
+    But if the channel <verbatim|c> doesn't close, and <verbatim|done> is
+    closed, we could have our <verbatim|for> waiting unneccesarily on the
+    next element of <verbatim|c>, thus stalling. Thus, we prefer the
+    following code:
+
+    <\verbatim-code>
+      orDone := func(done, c \<less\>-chan interface{}) \<less\>-chan
+      interface{} {
+
+      \ \ \ \ ret := make(chan interface{})
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ defer close(ret)
+
+      \ \ \ \ \ \ \ \ for {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case v, ok := \<less\>-c:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case valStream \<less\>- v:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ }()
+
+      \ \ \ \ return ret
+
+      }
+    </verbatim-code>
+
+    This abstraction allows us to use simpler loops.
+  </cell>>|<row|<\cell>
+    <verbatim|tee> Channel
+  </cell>|<\cell>
+    This channel splits the incoming stream into two identical streams. This
+    code is from the textbook.
+
+    <\verbatim-code>
+      tee := func(done, in \<less\>-chan interface{}) (\<less\>-chan
+      interface{}, \<less\>-chan interface{}) {
+
+      \ \ \ \ out1 := make(chan interface{})
+
+      \ \ \ \ out2 := make(chan interface{})
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ defer close(out1)
+
+      \ \ \ \ \ \ \ \ defer close(out2)
+
+      \ \ \ \ \ \ \ \ for val := range orDone(done, in) {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ var out1, out2 = out1, out2 // shadowing
+
+      \ \ \ \ \ \ \ \ \ \ \ \ for i := 0; i \<less\> 2; i++ {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case out1 \<less\>- val:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out1 = nil
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case out2 \<less\>- val:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out2 = nil
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ }()
+
+      \ \ \ \ return out1, out2
+
+      }
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|bridge> Channel
+  </cell>|<\cell>
+    This channel flattens a channel of channels into a channel.
+
+    <\verbatim-code>
+      bridge := func(done \<less\>-chan interface{}, chans \<less\>-chan
+      \<less\>-chan interface{}) \<less\>-chan interface{} {
+
+      \ \ \ \ ret = make(chan interface{})
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ defer close(ret)
+
+      \ \ \ \ \ \ \ \ for chan := range orDone(done, chans) {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ for elem := range orDone(done, chan) {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case ret \<less\>- elem:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ }()
+
+      \ \ \ \ return ret
+
+      }
+    </verbatim-code>
   </cell>>>>>
 </body>
 
 <\initial>
   <\collection>
     <associate|info-flag|none>
-    <associate|page-medium|paper>
+    <associate|page-medium|automatic>
   </collection>
 </initial>
 

@@ -977,9 +977,16 @@ fmt.Println(workCounter)</pre>
         </ul><p>
           The third option is one which allows programs that could possibly
           cause deadlock or take up unneccessary memory to be killed, and is
-          the basis of the <tt class="verbatim">done</tt> channel concurrency pattern.
-          The goroutine responsible for creating a goroutine is also
-          responsible for being able to stop it.
+          the basis of the <tt class="verbatim">done</tt> channel concurrency pattern. 
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+          Goroutine Ownership
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          As a good rule of thumb, the goroutine responsible for writing to a
+          channel and creating the channel is the one responsible for the
+          lifetime of the channel and stopping it.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
@@ -1232,8 +1239,156 @@ take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) 
           Fan-Out
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          
+          One can create an array of stage goroutines as such
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+numRoutines := runtime.NumCPU()
+routines := make([]&lt;-chan interface{}, numRoutines)
+for i := 0; i &lt; numRoutines; i++ {
+    routines[i] = stage(done, inStream)
+}</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          Fan-In or Multiplexing
         </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          The following multiplexing code example is modified from the text
+          and requires that the order of output does not matter.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+fanIn := func(done &lt;-chan interface{}, chans <span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>&lt;-chan interface{}) &lt;-chan interface{} {
+    var wg sync.WaitGroup
+    multiplexedStream := make(chan interface{})
+    multiplex := func(c &lt;-chan interface{}) {
+        defer wg.Done()
+        for i := range c {
+            select {
+            case &lt;-done:
+                return
+            case multiplexedStream &lt;- i:
+            }
+        }
+    }
+    wg.Add(len(chans)
+    for _, c := range chans {
+        go multiplex(c)
+    }
+    go func() {
+        wg.Wait()
+        close(multiplexedStream)
+    }()
+    return multiplexedStream
+}</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          <tt class="verbatim">or-done</tt> Channel
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          We seem to be using a certain pattern of wrapping our reads from a
+          channel with a <tt class="verbatim">select</tt> so that we can safely close
+          our goroutines with a <tt class="verbatim">done</tt>. We can abstract this, as
+          follows:
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+orDone := func(done, c &lt;-chan interface{}) &lt;-chan interface{} {
+    ret := make(chan interface{})
+    go func() {
+        defer close(ret)
+        for e := range c {
+            select {
+            case &lt;-done:
+                return
+            case ret &lt;- e:
+            }
+        }
+    }()
+    return ret
+}</pre>
+        </div><p>
+          But if the channel <tt class="verbatim">c</tt> doesn't close, and <tt class="verbatim">done</tt>
+          is closed, we could have our <tt class="verbatim">for</tt> waiting
+          unneccesarily on the next element of <tt class="verbatim">c</tt>, thus
+          stalling. Thus, we prefer the following code:
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+orDone := func(done, c &lt;-chan interface{}) &lt;-chan interface{} {
+    ret := make(chan interface{})
+    go func() {
+        defer close(ret)
+        for {
+            select {
+            case &lt;-done:
+                return
+            case v, ok := &lt;-c:
+                select {
+                case valStream &lt;- v:
+                case &lt;-done:
+                }
+            }
+        }
+    }()
+    return ret
+}</pre>
+        </div><p>
+          This abstraction allows us to use simpler loops.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          <tt class="verbatim">tee</tt> Channel
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          This channel splits the incoming stream into two identical streams.
+          This code is from the textbook.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+tee := func(done, in &lt;-chan interface{}) (&lt;-chan interface{}, &lt;-chan interface{}) {
+    out1 := make(chan interface{})
+    out2 := make(chan interface{})
+    go func() {
+        defer close(out1)
+        defer close(out2)
+        for val := range orDone(done, in) {
+            var out1, out2 = out1, out2 // shadowing
+            for i := 0; i &lt; 2; i++ {
+                select {
+                case &lt;-done:
+                case out1 &lt;- val:
+                    out1 = nil
+                case out2 &lt;- val:
+                    out2 = nil
+                }
+            }
+        }
+    }()
+    return out1, out2
+}</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          <tt class="verbatim">bridge</tt> Channel
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          This channel flattens a channel of channels into a channel.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+bridge := func(done &lt;-chan interface{}, chans &lt;-chan &lt;-chan interface{}) &lt;-chan interface{} {
+    ret = make(chan interface{})
+    go func() {
+        defer close(ret)
+        for chan := range orDone(done, chans) {
+            for elem := range orDone(done, chan) {
+                select {
+                case &lt;-done:
+                case ret &lt;- elem:
+                }
+            }
+        }
+    }()
+    return ret
+}</pre>
+        </div></td>
       </tr></tbody>
     </table>
   </body>
