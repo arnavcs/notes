@@ -28,10 +28,10 @@
 
   <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|2|2|1|1|cell-tborder|0ln>|<cwith|3|3|1|1|cell-bborder|0ln>|<cwith|4|4|1|1|cell-tborder|0ln>|<cwith|2|3|1|1|cell-lborder|0ln>|<cwith|2|3|1|1|cell-rborder|0ln>|<cwith|2|3|2|2|cell-lborder|0ln>|<cwith|11|11|1|2|cell-hyphen|t>|<cwith|11|11|1|2|cell-halign|l>|<cwith|11|11|1|1|cell-width|25ex>|<cwith|11|11|1|1|cell-hmode|min>|<cwith|11|11|1|2|cell-lsep|1ex>|<cwith|11|11|1|2|cell-rsep|1ex>|<cwith|11|11|1|2|cell-bsep|1ex>|<cwith|11|11|1|2|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|11|11|1|1|cell-background|pastel
-  yellow>|<cwith|23|23|1|1|cell-background|pastel
-  yellow>|<cwith|24|25|1|1|cell-background|pastel
-  cyan>|<cwith|17|17|1|1|cell-background|pastel
-  cyan>|<cwith|6|6|1|-1|cell-lsep|1ex>|<cwith|6|6|1|-1|cell-rsep|1ex>|<cwith|6|6|1|-1|cell-bsep|1ex>|<cwith|6|6|1|-1|cell-tsep|1ex>|<cwith|26|26|1|1|cell-background|pastel
+  yellow>|<cwith|24|24|1|1|cell-background|pastel
+  yellow>|<cwith|25|26|1|1|cell-background|pastel
+  cyan>|<cwith|18|18|1|1|cell-background|pastel
+  cyan>|<cwith|6|6|1|-1|cell-lsep|1ex>|<cwith|6|6|1|-1|cell-rsep|1ex>|<cwith|6|6|1|-1|cell-bsep|1ex>|<cwith|6|6|1|-1|cell-tsep|1ex>|<cwith|27|27|1|1|cell-background|pastel
   cyan>|<table|<row|<\cell>
     Amdahl's Law
   </cell>|<\cell>
@@ -168,6 +168,12 @@
     Green Threads
   </cell>|<\cell>
     Green threads are threads that are managed by a program's runtime.
+  </cell>>|<row|<\cell>
+    Preemptive and Non-preemptive Scheduling
+  </cell>|<\cell>
+    Preemptive scheduling is when a process may be interrupted during
+    execution, whereas non-premptive scheduling involves processes which
+    cannot be interrupted, but rather just suspended at certain points.
   </cell>>|<row|<\cell>
     Coroutines
   </cell>|<\cell>
@@ -647,10 +653,15 @@
     there is a <verbatim|default>, then the execution isn't blocked. This can
     be used to complete other tasks while waiting for a result.\ 
   </cell>>|<row|<\cell>
-    <verbatim|runtime. GOMAXPROCS()>
+    <verbatim|runtime.GOMAXPROCS()>
   </cell>|<\cell>
     Takes an integer parameter that specifies the number of OS threads that
     will host \Pwork queues\Q.\ 
+  </cell>>|<row|<\cell>
+    <verbatim|runtime.NumCPU()>
+  </cell>|<\cell>
+    Returns the number of logical CPUs that can be used by the current
+    process.
   </cell>>>>>
 
   <section|Concurrency Patterns in Golang>
@@ -665,12 +676,21 @@
 
   <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|1|1|1|1|cell-background|pastel
-  yellow>|<cwith|2|2|1|1|cell-background|pastel
-  cyan>|<cwith|3|3|1|1|cell-background|pastel
+  yellow>|<cwith|3|3|1|1|cell-background|pastel
   yellow>|<cwith|4|4|1|1|cell-background|pastel
   cyan>|<cwith|5|5|1|1|cell-background|pastel
   yellow>|<cwith|6|6|1|1|cell-background|pastel
-  cyan>|<cwith|7|7|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
+  cyan>|<cwith|7|7|1|1|cell-background|pastel
+  cyan>|<cwith|8|8|1|1|cell-background|pastel
+  yellow>|<cwith|2|2|1|1|cell-background|pastel
+  green>|<cwith|10|10|1|1|cell-background|pastel
+  yellow>|<cwith|11|11|1|1|cell-background|pastel
+  cyan>|<cwith|12|12|1|1|cell-background|pastel
+  cyan>|<cwith|13|13|1|1|cell-background|pastel
+  cyan>|<cwith|14|14|1|1|cell-background|pastel
+  yellow>|<cwith|15|15|1|1|cell-background|pastel
+  cyan>|<cwith|16|16|1|1|cell-background|pastel
+  green>|<cwith|17|17|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
     Safe Operations
   </cell>|<\cell>
     There are a couple different safe operations in concurrent programs,
@@ -925,11 +945,181 @@
 
       }
     </verbatim-code>
+  </cell>>|<row|<\cell>
+    Handling Errors
+  </cell>|<\cell>
+    Consider encapsulating errors in a struct to handle them better upstream.
+    For example,
+
+    <\verbatim-code>
+      type Result struct {
+
+      \ \ \ \ Error error
+
+      \ \ \ \ Value interface{}
+
+      }
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    Pipelines and Pipeline stages
+  </cell>|<\cell>
+    A pipeline is a series of <with|font-shape|italic|stages> which take data
+    in, perform an operation, and pass the data out. Stages are connected by
+    passing of data. The stage must consume and return the same type, and
+    stages must be reified by the language so they can be passed around (like
+    functions). Stages can be either batch processing (where whole batches of
+    data are operated on at once) or stream processing (where stages only
+    operate on single elements at a time).
+  </cell>>|<row|<\cell>
+    Making a pipeline
+  </cell>|<\cell>
+    It is advised to make a stream pipeline when possible in Go. This is done
+    by making each stage a goroutine and returning and passing channels. Each
+    stage <verbatim|range>s over the passed channel. Additionally, a
+    generator function is required to pass input into the pipeline. The
+    <verbatim|done> channel pattern should be used to ensure the cleanup of
+    all goroutines, and will be passed into all stages of the pipeline as
+    well.
+
+    Two parts of a pipeline stage must be preeptable: the creation of the
+    discrete value and sending the discrete value on the channel.
+  </cell>>|<row|<\cell>
+    <verbatim|repeat> Generator
+  </cell>|<\cell>
+    The repeat generator outputs a stream which repeats the set of discrete
+    values passed. See the following code modified from the textbook.
+
+    <\verbatim-code>
+      repeat := func(done \<less\>-chan interface{}, vals
+      <text-dots>interface{}) \<less\>-chan interface{} {
+
+      \ \ \ \ ret := make(chan interface{})
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ defer close(ret)
+
+      \ \ \ \ \ \ \ \ for {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ for _, val := range vals {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case ret \<less\>- val:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ }()
+
+      \ \ \ \ return ret
+
+      }
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|take> Stage
+  </cell>|<\cell>
+    The take stage only takes the first <verbatim|num> elements of the
+    channel passed in. The following is modified code from the textbook.
+
+    <\verbatim-code>
+      take := func(done \<less\>-chan interface{}, values \<less\>-chan
+      interface{}, num int) \<less\>-chan interface{} {
+
+      \ \ \ \ ret := make(chan interface{})
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ defer close(ret)
+
+      \ \ \ \ \ \ \ \ for i := 0; i \<less\> num; i++ {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case ret \<less\>- \<less\>-values:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ }()
+
+      \ \ \ \ return ret
+
+      }
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|repeatFn> Generator
+  </cell>|<\cell>
+    Exactly like the <verbatim|repeat> generator, but with a signature of:
+
+    <verbatim|func(done \<less\>-chan interface{}, fn func() interface{})
+    \<less\>-chan interface{}>\ 
+
+    Additionally, rather than a loop over the values of <verbatim|vals>, a
+    simple <verbatim|select> can be used with one case as <verbatim|case ret
+    \<less\>- fn():>.
+  </cell>>|<row|<\cell>
+    Empty Interfaces in Pipelines
+  </cell>|<\cell>
+    Using empty interfaces allows the library of stages and generators used
+    in a pipeline to be common between different pipelines and at any stage
+    of a pipeline, type assertion can be used.
+  </cell>>|<row|<\cell>
+    Type Assertion Stage
+  </cell>|<\cell>
+    This stage has the following type signature (for some type <verbatim|T>):
+
+    <verbatim|func(done \<less\>-chan interface{}, vals \<less\>-chan
+    interface{}) \<less\>-chan T>\ 
+
+    This stage applies type assertion to everything passed in the pipeline.
+    It is similar to the <verbatim|take> stage, but rather it iterates over
+    the range of the whole channel, and performs a type assertion.
+  </cell>>|<row|<\cell>
+    Fan-Out Fan-In
+  </cell>|<\cell>
+    When one stage of the pipeline is slowing down the entire pipeline, you
+    can consider using more than one goroutine to do the operations of that
+    stage in parallel, so that more than one datum is being processed in that
+    stage at a time.
+
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|>|<cwith|1|-1|1|1|cell-hmode|auto>|<table|<row|<\cell>
+      Fan-Out
+    </cell>|<\cell>
+      The act of splitting the input of the pipeline into multiple
+      goroutines.
+    </cell>>|<row|<\cell>
+      Fan-In
+    </cell>|<\cell>
+      The act of joining multiple results or multiplexing back into one
+      channel for the pipeline.
+    </cell>>>>>
+
+    The pattern is applicable when the operation of the stage doesn't care
+    about computation history (including order).
+  </cell>>|<row|<\cell>
+    Fan-Out
+  </cell>|<\cell>
+    \;
   </cell>>>>>
 </body>
 
 <\initial>
   <\collection>
+    <associate|info-flag|none>
     <associate|page-medium|paper>
   </collection>
 </initial>

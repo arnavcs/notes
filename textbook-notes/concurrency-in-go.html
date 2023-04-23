@@ -300,6 +300,15 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020"><p>
+          Preemptive and Non-preemptive Scheduling
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Preemptive scheduling is when a process may be interrupted during
+          execution, whereas non-premptive scheduling involves processes which
+          cannot be interrupted, but rather just suspended at certain points.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020"><p>
           Coroutines
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -812,10 +821,17 @@ select</pre></td>
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
-runtime. GOMAXPROCS()</pre></td>
+runtime.GOMAXPROCS()</pre></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           Takes an integer parameter that specifies the number of OS threads
           that will host &ldquo;work queues&rdquo;. 
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+runtime.NumCPU()</pre></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Returns the number of logical CPUs that can be used by the current
+          process.
         </p></td>
       </tr></tbody>
     </table>
@@ -847,7 +863,7 @@ runtime. GOMAXPROCS()</pre></td>
           produced by confinement.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ff0020"><p>
           Confinement
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1045,6 +1061,179 @@ or = func(chans &lt;-chan interface{}) &lt;- chan interface{} {
     return orDone
 }</pre>
         </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+          Handling Errors
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Consider encapsulating errors in a struct to handle them better
+          upstream. For example,
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+type Result struct {
+    Error error
+    Value interface{}
+}</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020"><p>
+          Pipelines and Pipeline stages
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          A pipeline is a series of <i>stages</i> which take data in, perform
+          an operation, and pass the data out. Stages are connected by passing
+          of data. The stage must consume and return the same type, and stages
+          must be reified by the language so they can be passed around (like
+          functions). Stages can be either batch processing (where whole
+          batches of data are operated on at once) or stream processing (where
+          stages only operate on single elements at a time).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+          Making a pipeline
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          It is advised to make a stream pipeline when possible in Go. This is
+          done by making each stage a goroutine and returning and passing
+          channels. Each stage <tt class="verbatim">range</tt>s over the passed channel.
+          Additionally, a generator function is required to pass input into
+          the pipeline. The <tt class="verbatim">done</tt> channel pattern should be
+          used to ensure the cleanup of all goroutines, and will be passed
+          into all stages of the pipeline as well.
+        </p><p>
+          Two parts of a pipeline stage must be preeptable: the creation of
+          the discrete value and sending the discrete value on the channel.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          <tt class="verbatim">repeat</tt> Generator
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          The repeat generator outputs a stream which repeats the set of
+          discrete values passed. See the following code modified from the
+          textbook.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+repeat := func(done &lt;-chan interface{}, vals <span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>interface{}) &lt;-chan interface{} {
+    ret := make(chan interface{})
+    go func() {
+        defer close(ret)
+        for {
+            for _, val := range vals {
+                select {
+                case &lt;-done:
+                    return
+                case ret &lt;- val:
+                }
+            }
+        }
+    }()
+    return ret
+}</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          <tt class="verbatim">take</tt> Stage
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          The take stage only takes the first <tt class="verbatim">num</tt> elements of
+          the channel passed in. The following is modified code from the
+          textbook.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) &lt;-chan interface{} {
+    ret := make(chan interface{})
+    go func() {
+        defer close(ret)
+        for i := 0; i &lt; num; i++ {
+            select {
+            case &lt;-done:
+                return
+            case ret &lt;- &lt;-values:
+            }
+        }
+    }()
+    return ret
+}</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          <tt class="verbatim">repeatFn</tt> Generator
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Exactly like the <tt class="verbatim">repeat</tt> generator, but with a
+          signature of:
+        </p><p>
+          <tt class="verbatim">func(done &lt;-chan interface{}, fn func() interface{})
+          &lt;-chan interface{}</tt> 
+        </p><p>
+          Additionally, rather than a loop over the values of <tt class="verbatim">vals</tt>,
+          a simple <tt class="verbatim">select</tt> can be used with one case as <tt
+          class="verbatim">case ret &lt;- fn():</tt>.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+          Empty Interfaces in Pipelines
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Using empty interfaces allows the library of stages and generators
+          used in a pipeline to be common between different pipelines and at
+          any stage of a pipeline, type assertion can be used.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          Type Assertion Stage
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          This stage has the following type signature (for some type <tt
+          class="verbatim">T</tt>):
+        </p><p>
+          <tt class="verbatim">func(done &lt;-chan interface{}, vals &lt;-chan
+          interface{}) &lt;-chan T</tt> 
+        </p><p>
+          This stage applies type assertion to everything passed in the
+          pipeline. It is similar to the <tt class="verbatim">take</tt> stage, but
+          rather it iterates over the range of the whole channel, and performs
+          a type assertion.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ff0020"><p>
+          Fan-Out Fan-In
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          When one stage of the pipeline is slowing down the entire pipeline,
+          you can consider using more than one goroutine to do the operations
+          of that stage in parallel, so that more than one datum is being
+          processed in that stage at a time.
+        </p><table style="width: 100%">
+          <tbody><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020; border-top: 0px solid"><p>
+              Fan-Out
+            </p></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid; border-top: 0px solid"><p>
+              The act of splitting the input of the pipeline into multiple
+              goroutines.
+            </p></td>
+          </tr><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020"><p>
+              Fan-In
+            </p></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid"><p>
+              The act of joining multiple results or multiplexing back into
+              one channel for the pipeline.
+            </p></td>
+          </tr></tbody>
+        </table><p>
+          The pattern is applicable when the operation of the stage doesn't
+          care about computation history (including order).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          Fan-Out
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          
+        </p></td>
       </tr></tbody>
     </table>
   </body>

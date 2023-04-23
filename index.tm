@@ -11,11 +11,11 @@
 
   <\itemize>
     <item><with|font-shape|italic|Specifying Systems> by Leslie Lamport (WIP)
-    <hlink|[notes]|./specifying-systems/specifying-systems.html>
-    <hlink|[author's summary]|https://lamport.azurewebsites.net/tla/summary-standalone.pdf>
+    <hlink|[notes]|./textbook-notes/specifying-systems.html> <hlink|[author's
+    summary]|https://lamport.azurewebsites.net/tla/summary-standalone.pdf>
 
     <item><with|font-shape|italic|Concurrency in Go> by Katherine Cox-Buday
-    (WIP) <hlink|[notes]|./concurrency-in-go/concurrency-in-go.html>
+    (WIP) <hlink|[notes]|./textbook-notes/concurrency-in-go.html>
   </itemize>
 
   <section*|Textbooks to Read>
