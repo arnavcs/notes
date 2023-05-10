@@ -18,6 +18,8 @@
   arithmetic. This introduction is not formal in any sense, and assumes
   certain knowledge.
 
+  <section|What is Divisibility?>
+
   <\definition>
     Let <math|m,n\<in\>\<bbb-Z\>>. We say that <math|m>
     <with|font-series|bold|divides> <math|n> if there exists some
@@ -31,6 +33,8 @@
     <math|a\<mid\>0> since <math|0\<times\>a=0>. Additionally,
     <math|0\<mid\>a> if and only if <math|a=0>.
   </note>
+
+  <section|Introduction to Modular Arithmetic>
 
   Given an arbitrary integer, <math|n>, we can express all of the multiples
   of <math|n> as a set, namely <math|<around*|{|k*n:k\<in\>\<bbb-Z\>|}>>.
@@ -76,7 +80,8 @@
   divisibility tricks since <math|n\<mid\>m> if and only if <math|m\<equiv\>0
   <around*|(|mod n|)>>.
 
-  Playing around with the definitions given produces the following results:
+  Playing around with the definitions given produces the following basic
+  results:
 
   <\theorem>
     <dueto|Properties of Modular Arithmetic>If
@@ -94,6 +99,8 @@
       <math|a<rsup|m>\<equiv\>b<rsup|m> <around*|(|mod n|)>>
     </itemize-dot>
   </theorem>
+
+  <section|Putting it Together>
 
   So how does this relate back to divisibility and what is useful about this?
   Modular arithmetic is a very powerful idea in mathematics that helps you
@@ -163,6 +170,8 @@
     coprime numbers.
   </remark>
 
+  <section|Exercises>
+
   <\exercise>
     <dueto|1999 IMC A1>Find the remiander when
     122333444455555666666777777788888888999999999 is divided by 9.
@@ -184,7 +193,7 @@
 
   <\exercise>
     <dueto|1993 MMO A1>Denote by <math|S<around*|(|x|)>> the sum of the
-    digits of a positive integer <math|x>. Solve:
+    digits of a positive integer <math|x>. Solve the following:
 
     <\enumerate-alpha>
       <item><math|x+S<around*|(|x|)>+S<around*|(|S<around*|(|x|)>|)>=1993>
@@ -208,3 +217,12 @@
     <associate|page-width|auto>
   </collection>
 </initial>
+
+<\references>
+  <\collection>
+    <associate|auto-1|<tuple|1|?>>
+    <associate|auto-2|<tuple|2|?>>
+    <associate|auto-3|<tuple|3|?>>
+    <associate|auto-4|<tuple|4|?>>
+  </collection>
+</references>
