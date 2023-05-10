@@ -24,20 +24,20 @@
     Let <math|m,n\<in\>\<bbb-Z\>>. We say that <math|m>
     <with|font-series|bold|divides> <math|n> if there exists some
     <math|k\<in\>\<bbb-Z\>> such that <math|k*m*=n>. This is notated as
-    <math|m\<mid\>n>. We can also say that <math|n> is an (integer)
+    <math|m\<divides\>n>. We can also say that <math|n> is an (integer)
     <with|font-series|bold|multiple> of <math|m>.
   </definition>
 
   <\note>
     This definition means that for all <math|a\<in\>\<bbb-Z\>>, we have
-    <math|a\<mid\>0> since <math|0\<times\>a=0>. Additionally,
-    <math|0\<mid\>a> if and only if <math|a=0>.
+    <math|a\<divides\>0> since <math|0\<times\>a=0>. Additionally,
+    <math|0\<divides\>a> if and only if <math|a=0>.
   </note>
 
   <section|Introduction to Modular Arithmetic>
 
   Given an arbitrary integer, <math|n>, we can express all of the multiples
-  of <math|n> as a set, namely <math|<around*|{|k*n:k\<in\>\<bbb-Z\>|}>>.
+  of <math|n> as a set, namely <math|<around*|{|k*n\<suchthat\>k\<in\>\<bbb-Z\>|}>>.
   What about the rest of the integers? We seem to have created some sort of
   set of numbers, each a \Pdistance\Q <math|n> from its neighbour, all of
   which are divisible by <math|n>.
@@ -47,11 +47,11 @@
   question is a weird one if you start to think about negative numbers, so
   let's rephrase what we want to say. Instead, consider the set of numbers,
   which are divisible by <math|n> upon subtracting a fixed integer <math|a>
-  from it. This refers to the set <math|<around*|{|k*n+a:k\<in\>\<bbb-Z\>|}>>.
+  from it. This refers to the set <math|<around*|{|k*n+a\<suchthat\>k\<in\>\<bbb-Z\>|}>>.
 
   <\definition>
     Given a positive integer <math|n>, and an integer <math|a>, we say
-    <math|<around*|[|a|]><rsub|n>\<assign\><around*|{|k*n+a:k\<in\>\<bbb-Z\>|}>>
+    <math|<around*|[|a|]><rsub|n>\<assign\><around*|{|k*n+a\<suchthat\>k\<in\>\<bbb-Z\>|}>>
     is a <with|font-series|bold|congruence class>,
     <with|font-series|bold|residue class>, or
     <with|font-series|bold|equivalence class>. It is often implicit what the
@@ -65,9 +65,9 @@
 
   <\remark>
     As an aside, the notation <math|\<bbb-Z\><rsub|n>> is used to refer to
-    <math|<around*|{|<around*|[|x|]><rsub|n>:x\<in\>\<bbb-Z\>|}>>, the set of
-    congruence classes modulo <math|n>. This may seem confusing as it is a
-    set of sets, but is something you don't have to worry about.
+    <math|<around*|{|<around*|[|x|]><rsub|n>\<suchthat\>x\<in\>\<bbb-Z\>|}>>,
+    the set of congruence classes modulo <math|n>. This may seem confusing as
+    it is a set of sets, but is something you don't have to worry about.
   </remark>
 
   Now we can take some time to familiarize ourselves with what this means.
@@ -77,8 +77,8 @@
   other as well. An easy way to interpret a congruence relation is then to
   say that when dividing both sides by <math|n>, they yield the same
   remainder. This seems like a logical next step to help us determine
-  divisibility tricks since <math|n\<mid\>m> if and only if <math|m\<equiv\>0
-  <around*|(|mod n|)>>.
+  divisibility tricks since <math|n\<divides\>m> if and only if
+  <math|m\<equiv\>0 <around*|(|mod n|)>>.
 
   Playing around with the definitions given produces the following basic
   results:
@@ -108,56 +108,59 @@
   something about the behaviour of an entire set of numbers. It is often a
   technique to break problems into cases based on the congruence class of a
   variable, such as breaking a problem based on even or odd (which is just
-  modulo 2). Now let's dive into some divisibility tricks.
+  modulo <math|2>). Now let's dive into some divisibility tricks.
 
   <\theorem>
     <dueto|Divisibility Tricks>Let <math|n\<in\>\<bbb-N\>> be arbitrary where
     <math|0\<nin\>\<bbb-N\>>.\ 
 
-    Let <math|d<rsub|k>:\<bbb-N\>\<rightarrow\>\<bbb-N\>> be a function that
-    returns the last <math|k> digits of the input.\ 
+    Let <math|d<rsub|k>\<of\>\<bbb-N\>\<rightarrow\>\<bbb-N\>> be a function
+    that returns the last <math|k> digits of the input.\ 
 
-    Let <math|s:\<bbb-N\>\<rightarrow\>\<bbb-N\>> be a function which returns
-    the sum of the digits of the input.
+    Let <math|s\<of\>\<bbb-N\>\<rightarrow\>\<bbb-N\>> be a function which
+    returns the sum of the digits of the input.
 
-    Let <math|s<rprime|'>:\<bbb-N\>\<rightarrow\>\<bbb-N\>> be the sum of
-    digits of its input with alternating sign, where the units digit is
+    Let <math|s<rprime|'>\<of\>\<bbb-N\>\<rightarrow\>\<bbb-N\>> be the sum
+    of digits of its input with alternating sign, where the units digit is
     positive.
 
-    Let <math|s<rprime|''>:\<bbb-N\>\<rightarrow\>\<bbb-N\>> be the sum of
-    the two digit pairs of its input where the ones and tens digits are
+    Let <math|s<rprime|''>\<of\>\<bbb-N\>\<rightarrow\>\<bbb-N\>> be the sum
+    of the two digit pairs of its input where the ones and tens digits are
     paired together.
 
     <\itemize-dot>
-      <item><math|2\<mid\>n> if and only if
-      <math|2\<mid\>d<rsub|1><around*|(|n|)>>.
+      <item><math|2\<divides\>n> if and only if
+      <math|2\<divides\>d<rsub|1><around*|(|n|)>>.
 
-      <item><math|3\<mid\>n> if and only if <math|3\<mid\>s<around*|(|n|)>>.
+      <item><math|3\<divides\>n> if and only if
+      <math|3\<divides\>s<around*|(|n|)>>.
 
-      <item><math|4\<mid\>n> if and only if
-      <math|4\<mid\>d<rsub|2><around*|(|n|)>>.
+      <item><math|4\<divides\>n> if and only if
+      <math|4\<divides\>d<rsub|2><around*|(|n|)>>.
 
-      <item><math|5\<mid\>n> if and only if
-      <math|5\<mid\>d<rsub|1><around*|(|n|)>>.
+      <item><math|5\<divides\>n> if and only if
+      <math|5\<divides\>d<rsub|1><around*|(|n|)>>.
 
-      <item><math|6\<mid\>n> if and only if <math|2\<mid\>n> and
-      <math|3\<mid\>n>.
+      <item><math|6\<divides\>n> if and only if <math|2\<divides\>n> and
+      <math|3\<divides\>n>.
 
       <item>Let <math|a,b\<in\>\<bbb-Z\><rsub|\<geqslant\>0>> with
       <math|0\<leqslant\>b\<less\>10> such that <math|n=10*a+b>. Now,
-      <math|7\<mid\>n> if <math|7\<mid\>a-2*b>. The converse is not true.
+      <math|7\<divides\>n> if <math|7\<divides\>a-2*b>. The converse is not
+      necessarily true.
 
-      <item><math|8\<mid\>n> if and only if
-      <math|8\<mid\>d<rsub|3><around*|(|n|)>>.
+      <item><math|8\<divides\>n> if and only if
+      <math|8\<divides\>d<rsub|3><around*|(|n|)>>.
 
-      <item><math|9\<mid\>n> if and only if <math|9\<mid\>s<around*|(|n|)>>.
+      <item><math|9\<divides\>n> if and only if
+      <math|9\<divides\>s<around*|(|n|)>>.
 
-      <item><math|10\<mid\>n> if and only if the last digit of <math|n> is
-      <math|0>.
+      <item><math|10\<divides\>n> if and only if the last digit of <math|n>
+      is <math|0>.
 
-      <item><math|11\<mid\>n> if and only if
-      <math|11\<mid\>s<rprime|'><around*|(|n|)>> if and only if
-      <math|11\<mid\>s<rprime|''><around*|(|n|)>>.\ 
+      <item><math|11\<divides\>n> if and only if
+      <math|11\<divides\>s<rprime|'><around*|(|n|)>> if and only if
+      <math|11\<divides\>s<rprime|''><around*|(|n|)>>.\ 
     </itemize-dot>
   </theorem>
 
@@ -166,8 +169,8 @@
     important facts to consider are that we get nice results when considering
     numbers which divide a power of <math|10>, or who have a multiple which
     is very close to a power of <math|10>. Additionally, when the divisor is
-    composite (like 6), it may be useful to seperate it into a product of
-    coprime numbers.
+    composite (like <math|6>), it may be useful to seperate it into a product
+    of coprime numbers.
   </remark>
 
   <section|Exercises>
@@ -220,9 +223,31 @@
 
 <\references>
   <\collection>
-    <associate|auto-1|<tuple|1|?>>
-    <associate|auto-2|<tuple|2|?>>
-    <associate|auto-3|<tuple|3|?>>
-    <associate|auto-4|<tuple|4|?>>
+    <associate|auto-1|<tuple|1|1>>
+    <associate|auto-2|<tuple|2|1>>
+    <associate|auto-3|<tuple|3|2>>
+    <associate|auto-4|<tuple|4|2>>
   </collection>
 </references>
+
+<\auxiliary>
+  <\collection>
+    <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>What
+      is Divisibility?> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-1><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Introduction
+      to Modular Arithmetic> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-2><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Putting
+      it Together> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-3><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Exercises>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-4><vspace|0.5fn>
+    </associate>
+  </collection>
+</auxiliary>
