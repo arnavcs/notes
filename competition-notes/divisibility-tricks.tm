@@ -146,8 +146,7 @@
 
       <item>Let <math|a,b\<in\>\<bbb-Z\><rsub|\<geqslant\>0>> with
       <math|0\<leqslant\>b\<less\>10> such that <math|n=10*a+b>. Now,
-      <math|7\<divides\>n> if <math|7\<divides\>a-2*b>. The converse is not
-      necessarily true.
+      <math|7\<divides\>n> if and only if <math|7\<divides\>a-2*b>.
 
       <item><math|8\<divides\>n> if and only if
       <math|8\<divides\>d<rsub|3><around*|(|n|)>>.
