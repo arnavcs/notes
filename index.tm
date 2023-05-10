@@ -9,10 +9,16 @@
 
   <section*|Competition Lesson Notes>
 
+  The following is hopefully a very rough classification of lessons into 5
+  main categories, but it should be noted that the titles of the lessons are
+  often not complete representations of the content, and that the
+  classification assigned may be inaccurate to some degree.
+
   <\padded-center>
-    <tabular|<tformat|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|1ln>|<cwith|1|-1|1|-1|cell-rborder|1ln>|<table|<row|<cell|Topic>|<cell|Date>>|<row|<cell|Divisibility
-    Tricks <hlink|[pdf]|./competition-notes/divisibility-tricks.pdf>>|<cell|May
-    10<rsup|th>, 2023>>>>>
+    <tabular|<tformat|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|1ln>|<cwith|1|-1|1|-1|cell-rborder|1ln>|<cwith|1|2|2|2|cell-tborder|1ln>|<cwith|1|2|2|2|cell-bborder|1ln>|<cwith|1|2|2|2|cell-lborder|1ln>|<cwith|1|2|2|2|cell-rborder|1ln>|<cwith|1|2|3|3|cell-tborder|1ln>|<cwith|1|2|3|3|cell-bborder|1ln>|<cwith|1|2|3|3|cell-lborder|1ln>|<cwith|1|2|3|3|cell-rborder|1ln>|<table|<row|<cell|Arithmetic
+    and Algebra>|<cell|Combinatorics>|<cell|Geometry>|<cell|Number
+    Theory>|<cell|Other>>|<row|<cell|>|<cell|>|<cell|>|<cell|<hlink|Divisibility
+    Tricks|>>|<cell|>>>>>
   </padded-center>
 
   <section*|Notes on Textbooks>
@@ -59,20 +65,24 @@
   <\collection>
     <associate|auto-1|<tuple|?|1>>
     <associate|auto-2|<tuple|?|1>>
-    <associate|auto-3|<tuple|<with|mode|<quote|math>|\<bullet\>>|?>>
+    <associate|auto-3|<tuple|<with|mode|<quote|math>|\<bullet\>>|1>>
   </collection>
 </references>
 
 <\auxiliary>
   <\collection>
     <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Competition
+      Lesson Notes> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-1><vspace|0.5fn>
+
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Notes
       on Textbooks> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-1><vspace|0.5fn>
+      <no-break><pageref|auto-2><vspace|0.5fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Textbooks
       to Read> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-2><vspace|0.5fn>
+      <no-break><pageref|auto-3><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
