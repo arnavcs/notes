@@ -7,6 +7,14 @@
   Lessons>|<doc-author|<author-data|<author-name|Arnav
   Kumar>|<author-homepage|<slink|https://arnavcs.github.io>>>>>
 
+  <section*|Competition Lesson Notes>
+
+  <\padded-center>
+    <tabular|<tformat|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|1ln>|<cwith|1|-1|1|-1|cell-rborder|1ln>|<table|<row|<cell|Topic>|<cell|Date>>|<row|<cell|Divisibility
+    Tricks <hlink|[pdf]|./competition-notes/divisibility-tricks.pdf>>|<cell|May
+    10<rsup|th>, 2023>>>>>
+  </padded-center>
+
   <section*|Notes on Textbooks>
 
   <\itemize>
@@ -50,7 +58,8 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|?|1>>
-    <associate|auto-2|<tuple|<with|mode|<quote|math>|\<bullet\>>|1>>
+    <associate|auto-2|<tuple|?|1>>
+    <associate|auto-3|<tuple|<with|mode|<quote|math>|\<bullet\>>|?>>
   </collection>
 </references>
 

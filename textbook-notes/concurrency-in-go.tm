@@ -3,6 +3,8 @@
 <style|<tuple|generic|compact-list|python>>
 
 <\body>
+  \;
+
   <doc-data|<doc-title|<with|font-shape|italic|Concurrency in Go>
   Notes>|<doc-author|<author-data|<author-name|Arnav
   Kumar>|<author-homepage|<slink|https://arnavcs.github.io>>>>>
@@ -674,7 +676,7 @@
     Pattern>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
   </padded-center>
 
-  <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+  <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|1|1|1|1|cell-background|pastel
   yellow>|<cwith|3|3|1|1|cell-background|pastel
   yellow>|<cwith|4|4|1|1|cell-background|pastel
@@ -695,7 +697,12 @@
   cyan>|<cwith|20|20|1|1|cell-background|pastel
   cyan>|<cwith|21|21|1|1|cell-background|pastel
   cyan>|<cwith|6|6|1|1|cell-background|pastel
-  yellow>|<cwith|22|22|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
+  yellow>|<cwith|22|22|1|1|cell-background|pastel
+  cyan>|<cwith|25|25|1|1|cell-background|pastel
+  yellow>|<cwith|24|24|1|1|cell-background|pastel
+  green>|<cwith|23|23|1|2|cell-hyphen|t>|<cwith|23|23|1|2|cell-halign|l>|<cwith|23|23|1|2|cell-lsep|1ex>|<cwith|23|23|1|2|cell-rsep|1ex>|<cwith|23|23|1|2|cell-bsep|1ex>|<cwith|23|23|1|2|cell-tsep|1ex>|<cwith|23|23|1|1|cell-background|pastel
+  green>|<cwith|23|23|1|1|cell-background|pastel
+  cyan>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<table|<row|<\cell>
     Safe Operations
   </cell>|<\cell>
     There are a couple different safe operations in concurrent programs,
@@ -1359,6 +1366,94 @@
 
       }
     </verbatim-code>
+  </cell>>|<row|<\cell>
+    <verbatim|buffer> Stage
+  </cell>|<\cell>
+    Creates a buffer of the given size.
+
+    <\verbatim-code>
+      buffer := func(done \<less\>-chan interface{}, in \<less\>-chan
+      interface{}, bufferSize int) \<less\>-chan interface{} {
+
+      \ \ \ \ ret = make(chan interface{}, bufferSize)
+
+      \ \ \ \ go func() {
+
+      \ \ \ \ \ \ \ \ defer close(ret)
+
+      \ \ \ \ \ \ \ \ for val := range orDone(done, in) {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ select {
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case \<less\>-done:
+
+      \ \ \ \ \ \ \ \ \ \ \ \ case ret \<less\>- val:
+
+      \ \ \ \ \ \ \ \ }
+
+      \ \ \ \ }()
+
+      \ \ \ \ return ret
+
+      }
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    Queuing
+  </cell>|<\cell>
+    Queuing is the acceptance of work into the pipeline despite the fact that
+    the pipeline is not ready for more. This is usually implemented with
+    buffered channels.
+  </cell>>|<row|<\cell>
+    Runtime Performance and Uses of Queuing
+  </cell>|<\cell>
+    Despite accepting more work, the amount of work that must be ultimately
+    completed is the same, and the speed of the CPU is the same. The runtime
+    performance is not different with queuing, thus. Instead, queuing is used
+    so that the amount of time a goroutine (specifically a stage of the
+    pipeline) is spent blocking is reduced. Queuing, in some sense,
+    <with|font-shape|italic|decouples> certain stages of the pipeline a
+    reasonable amount. The book states that queuing should be used in the
+    following situations:
+
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|1|cell-background|pastel
+    yellow>|<cwith|2|2|1|1|cell-background|pastel green>|<table|<row|<\cell>
+      Batching requests in a stage saves time
+    </cell>|<\cell>
+      An example of this is the chunking of requests to a file, which is why
+      the <verbatim|bufio> package exists. Adidtionally, this is useful for
+      database transactions, calculating checksums, and allocating
+      continguous space.\ 
+    </cell>>|<row|<\cell>
+      Negative Feedback Loop
+    </cell>|<\cell>
+      A negative feedback loop, also called a downward-spiral or
+      death-spiral, is when if there is a delay in a stage of the pipeline,
+      there is more input for the pipeline. Since the time the pipeline takes
+      to clear the input is related to the amount of input, this causes a
+      downward spiral. For example, consider servers which bounce requests
+      instead of storing requests in a queue and processing them one by one.
+    </cell>>>>>
+
+    As such, only implement queuing at the entrance to the pipeline (negative
+    feedback loop) or at stages where batching is more efficient.
+  </cell>>|<row|<\cell>
+    Little's Law
+  </cell>|<\cell>
+    Little's Law requires sufficient sampling and determines the throughput
+    of a pipeline.\ 
+
+    <\equation*>
+      L=\<lambda\>W
+    </equation*>
+
+    <tabular|<tformat|<cwith|1|-1|2|2|cell-hyphen|t>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|1|cell-background|pastel
+    green>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<table|<row|<cell|<math|L>>|<\cell>
+      the average number of units in the pipeline
+    </cell>>|<row|<cell|<math|\<lambda\>>>|<\cell>
+      the average arrival rate of units
+    </cell>>|<row|<cell|<math|W>>|<\cell>
+      the average time a unit spends in the pipeline
+    </cell>>>>>
   </cell>>>>>
 </body>
 
