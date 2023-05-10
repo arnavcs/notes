@@ -18,7 +18,7 @@
     <tabular|<tformat|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|1ln>|<cwith|1|-1|1|-1|cell-rborder|1ln>|<cwith|1|2|2|2|cell-tborder|1ln>|<cwith|1|2|2|2|cell-bborder|1ln>|<cwith|1|2|2|2|cell-lborder|1ln>|<cwith|1|2|2|2|cell-rborder|1ln>|<cwith|1|2|3|3|cell-tborder|1ln>|<cwith|1|2|3|3|cell-bborder|1ln>|<cwith|1|2|3|3|cell-lborder|1ln>|<cwith|1|2|3|3|cell-rborder|1ln>|<table|<row|<cell|Arithmetic
     and Algebra>|<cell|Combinatorics>|<cell|Geometry>|<cell|Number
     Theory>|<cell|Other>>|<row|<cell|>|<cell|>|<cell|>|<cell|<hlink|Divisibility
-    Tricks|>>|<cell|>>>>>
+    Tricks|./competition-notes/divisibility-tricks.pdf>>|<cell|>>>>>
   </padded-center>
 
   <section*|Notes on Textbooks>
