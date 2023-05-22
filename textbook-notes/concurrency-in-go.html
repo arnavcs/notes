@@ -833,6 +833,28 @@ runtime.NumCPU()</pre></td>
           Returns the number of logical CPUs that can be used by the current
           process.
         </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+iota</pre></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          This keyword is used in conjuction with the <tt class="verbatim">constant</tt>
+          keyword. It represents an non-negative integer starting from 0. It
+          resetsits value back to 0 after every <tt class="verbatim">constant</tt>, and
+          can be used to define enums as such. For example, the following will
+          create an enum type, <tt class="verbatim">Size</tt>, where <tt class="verbatim">xs</tt>
+          is <tt class="verbatim">-2</tt>, and <tt class="verbatim">xl</tt> is <tt class="verbatim">2</tt>,
+          and there is no <tt class="verbatim">Size</tt> value <tt class="verbatim">m</tt>.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+type Size int
+const (
+    xs = Size(iota - 2)
+    s
+    _
+    l
+    xl
+}</pre>
+        </div></td>
       </tr></tbody>
     </table>
     <h2 id="auto-3">3<span style="margin-left: 1em"></span>Concurrency Patterns in Golang<span style="margin-left: 1em"></span></h2>
@@ -853,7 +875,7 @@ runtime.NumCPU()</pre></td>
     </center>
     <table style="width: 100%">
       <tbody><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Safe Operations
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -863,7 +885,7 @@ runtime.NumCPU()</pre></td>
           produced by confinement.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Confinement
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -905,7 +927,7 @@ printData := func (wg *sync.WaitGroup, data []byte) {
           </tr></tbody>
         </table></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           When to use Confinement?
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -914,7 +936,7 @@ printData := func (wg *sync.WaitGroup, data []byte) {
           confinement are more involved that using synchronization built-ins.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">for</tt>-<tt class="verbatim">select</tt> Loop
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -953,12 +975,12 @@ for {
 fmt.Println(workCounter)</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Goroutine Paths to Termination
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           There are 3 paths for a goroutine to terminate. These are
-        </p><ul>
+        </p><ol>
           <li>
             <p>
               When the goroutine has completed its work
@@ -974,13 +996,13 @@ fmt.Println(workCounter)</pre>
               When it is told to stop working
             </p>
           </li>
-        </ul><p>
+        </ol><p>
           The third option is one which allows programs that could possibly
           cause deadlock or take up unneccessary memory to be killed, and is
           the basis of the <tt class="verbatim">done</tt> channel concurrency pattern. 
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Goroutine Ownership
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -989,7 +1011,7 @@ fmt.Println(workCounter)</pre>
           lifetime of the channel and stopping it.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">done</tt> Channel
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1024,7 +1046,7 @@ go func() {
 &lt;-terminated</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">or</tt> Channel
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1069,7 +1091,7 @@ or = func(chans &lt;-chan interface{}) &lt;- chan interface{} {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Handling Errors
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1083,7 +1105,7 @@ type Result struct {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
           Pipelines and Pipeline stages
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1096,7 +1118,7 @@ type Result struct {
           stages only operate on single elements at a time).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Making a pipeline
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1112,7 +1134,7 @@ type Result struct {
           the discrete value and sending the discrete value on the channel.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">repeat</tt> Generator
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1139,7 +1161,7 @@ repeat := func(done &lt;-chan interface{}, vals <span style="margin-left: 0.1666
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">take</tt> Stage
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1164,7 +1186,7 @@ take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) 
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">repeatFn</tt> Generator
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1179,7 +1201,7 @@ take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) 
           class="verbatim">case ret &lt;- fn():</tt>.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Empty Interfaces in Pipelines
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1188,7 +1210,7 @@ take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) 
           any stage of a pipeline, type assertion can be used.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           Type Assertion Stage
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1204,7 +1226,7 @@ take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) 
           a type assertion.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Fan-Out Fan-In
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1235,7 +1257,7 @@ take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) 
           care about computation history (including order).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           Fan-Out
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1249,7 +1271,7 @@ for i := 0; i &lt; numRoutines; i++ {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           Fan-In or Multiplexing
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1282,7 +1304,7 @@ fanIn := func(done &lt;-chan interface{}, chans <span style="margin-left: 0.1666
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">or-done</tt> Channel
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1335,7 +1357,7 @@ orDone := func(done, c &lt;-chan interface{}) &lt;-chan interface{} {
           This abstraction allows us to use simpler loops.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">tee</tt> Channel
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1366,7 +1388,7 @@ tee := func(done, in &lt;-chan interface{}) (&lt;-chan interface{}, &lt;-chan in
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; width: 25ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">bridge</tt> Channel
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
@@ -1389,6 +1411,191 @@ bridge := func(done &lt;-chan interface{}, chans &lt;-chan &lt;-chan interface{}
     return ret
 }</pre>
         </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+          <tt class="verbatim">buffer</tt> Stage
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Creates a buffer of the given size.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+buffer := func(done &lt;-chan interface{}, in &lt;-chan interface{}, bufferSize int) &lt;-chan interface{} {
+    ret = make(chan interface{}, bufferSize)
+    go func() {
+        defer close(ret)
+        for val := range orDone(done, in) {
+            select {
+            case &lt;-done:
+            case ret &lt;- val:
+        }
+    }()
+    return ret
+}</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
+          Queuing
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Queuing is the acceptance of work into the pipeline despite the fact
+          that the pipeline is not ready for more. This is usually implemented
+          with buffered channels.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Runtime Performance and Uses of Queuing
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Despite accepting more work, the amount of work that must be
+          ultimately completed is the same, and the speed of the CPU is the
+          same. The runtime performance is not different with queuing, thus.
+          Instead, queuing is used so that the amount of time a goroutine
+          (specifically a stage of the pipeline) is spent blocking is reduced.
+          Queuing, in some sense, <i>decouples</i> certain stages of the
+          pipeline a reasonable amount. The book states that queuing should be
+          used in the following situations:
+        </p><table style="width: 100%">
+          <tbody><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; width: 25ex; background-color: #ffff0020; border-top: 0px solid"><p>
+              Batching requests in a stage saves time
+            </p></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid; border-top: 0px solid"><p>
+              An example of this is the chunking of requests to a file, which
+              is why the <tt class="verbatim">bufio</tt> package exists. Adidtionally,
+              this is useful for database transactions, calculating checksums,
+              and allocating continguous space. 
+            </p></td>
+          </tr><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; width: 25ex; background-color: #ffff0020; background-color: #00ff0020"><p>
+              Negative Feedback Loop
+            </p></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid"><p>
+              A negative feedback loop, also called a downward-spiral or
+              death-spiral, is when if there is a delay in a stage of the
+              pipeline, there is more input for the pipeline. Since the time
+              the pipeline takes to clear the input is related to the amount
+              of input, this causes a downward spiral. For example, consider
+              servers which bounce requests instead of storing requests in a
+              queue and processing them one by one.
+            </p></td>
+          </tr></tbody>
+        </table><p>
+          As such, only implement queuing at the entrance to the pipeline
+          (negative feedback loop) or at stages where batching is more
+          efficient.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Stable systems, Ingress, and Egress
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Ingress is the rate at which work enters the system, and egress is
+          the rate at which it exits the system. Stable systems are those in
+          which the egress is equal to the ingress. The two unstable systems
+          are when the ingress is more than the egress (which is a death
+          spiral) and when it is less than the egress. 
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+          Little's Law
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Little's Law requires sufficient sampling and determines the
+          throughput of a pipeline. This is only applicable in stable systems.
+        </p><center>
+          \(\displaystyle L = \lambda W\)
+        </center><table style="width: 100%">
+          <tbody><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020">\(L\)</td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+              the average number of units in the pipeline
+            </p></td>
+          </tr><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020">\(\lambda\)</td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+              the average arrival rate of units
+            </p></td>
+          </tr><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020">\(W\)</td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+              the average time a unit spends in the pipeline
+            </p></td>
+          </tr></tbody>
+        </table></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
+          Persistent Queues
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          If a pipeline panics with a queue in it, all requests stored in the
+          queue are lost. Thus, one may want to avoid using a queue in this
+          case, but if this is not possible, a persistent queue is used which
+          is persisted and can be read later.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><pre class="verbatim" xml:space="preserve">
+context</pre></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          From the package <tt class="verbatim">context</tt>, <tt class="verbatim">context.Context</tt>
+          is a data type that carries deadlines, timeouts, cancelation
+          signals, and &ldquo;request-scoped&rdquo; values between processes
+          and across API borders. An empty context can be created with <tt
+          class="verbatim">Background()</tt> and <tt class="verbatim">contexts</tt> cannot be
+          mutated so that any passed contexts will not be changed by the
+          processes they were passed to. Instead, the child process can create
+          its own <tt class="verbatim">context</tt> with the methods <tt class="verbatim">WithCancel</tt>,
+          <tt class="verbatim">WithTimeout</tt>, and <tt class="verbatim">WithDeadline</tt>. More
+          information at <a href="https://pkg.go.dev/context"><tt>https://pkg.go.dev/context</tt></a>.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          <tt class="verbatim">context</tt> values
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Each <tt class="verbatim">context</tt> also carries values with it in
+          key-value pairs. New contexts with different values can be created
+          with <tt class="verbatim">.WithValue(parent Context, key val any)</tt>. Values
+          can be accessed from a context with <tt class="verbatim">.Value</tt>. Since
+          the key and value are <tt class="verbatim">interface{}</tt> and can accept any
+          type, there is a loss of type safety, which is why it is recommended
+          to have data-hiding. 
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          When to use <tt class="verbatim">context</tt> values?
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          It is reocmmended to only use context values for request-scoped
+          data, and not as optional parameters to functions. The textbook
+          provides some heuristics on what can be considered
+          &ldquo;request-scoped data&rdquo;.
+        </p><ol>
+          <li>
+            <p>
+              Crosses processes or APIs
+            </p>
+          </li>
+          <li>
+            <p>
+              Immutable
+            </p>
+          </li>
+          <li>
+            <p>
+              Simple types
+            </p>
+          </li>
+          <li>
+            <p>
+              Is not types with methods, but rather just data
+            </p>
+          </li>
+          <li>
+            <p>
+              Doesn't &ldquo;drive&rdquo; operations
+            </p>
+          </li>
+        </ol></td>
       </tr></tbody>
     </table>
   </body>

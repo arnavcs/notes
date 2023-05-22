@@ -3,8 +3,6 @@
 <style|<tuple|generic|compact-list|python>>
 
 <\body>
-  \;
-
   <doc-data|<doc-title|<with|font-shape|italic|Concurrency in Go>
   Notes>|<doc-author|<author-data|<author-name|Arnav
   Kumar>|<author-homepage|<slink|https://arnavcs.github.io>>>>>
@@ -664,6 +662,33 @@
   </cell>|<\cell>
     Returns the number of logical CPUs that can be used by the current
     process.
+  </cell>>|<row|<\cell>
+    <verbatim|iota>
+  </cell>|<\cell>
+    This keyword is used in conjuction with the <verbatim|constant> keyword.
+    It represents an non-negative integer starting from 0. It resetsits value
+    back to 0 after every <verbatim|constant>, and can be used to define
+    enums as such. For example, the following will create an enum type,
+    <verbatim|Size>, where <verbatim|xs> is <verbatim|-2>, and <verbatim|xl>
+    is <verbatim|2>, and there is no <verbatim|Size> value <verbatim|m>.
+
+    <\verbatim-code>
+      type Size int
+
+      const (
+
+      \ \ \ \ xs = Size(iota - 2)
+
+      \ \ \ \ s
+
+      \ \ \ \ _
+
+      \ \ \ \ l
+
+      \ \ \ \ xl
+
+      }
+    </verbatim-code>
   </cell>>>>>
 
   <section|Concurrency Patterns in Golang>
@@ -702,7 +727,10 @@
   yellow>|<cwith|24|24|1|1|cell-background|pastel
   green>|<cwith|23|23|1|2|cell-hyphen|t>|<cwith|23|23|1|2|cell-halign|l>|<cwith|23|23|1|2|cell-lsep|1ex>|<cwith|23|23|1|2|cell-rsep|1ex>|<cwith|23|23|1|2|cell-bsep|1ex>|<cwith|23|23|1|2|cell-tsep|1ex>|<cwith|23|23|1|1|cell-background|pastel
   green>|<cwith|23|23|1|1|cell-background|pastel
-  cyan>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<table|<row|<\cell>
+  cyan>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|28|28|1|1|cell-background|pastel
+  green>|<cwith|29|29|1|1|cell-background|pastel
+  cyan>|<cwith|30|30|1|1|cell-background|pastel
+  yellow>|<cwith|31|31|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
     Safe Operations
   </cell>|<\cell>
     There are a couple different safe operations in concurrent programs,
@@ -817,13 +845,13 @@
   </cell>|<\cell>
     There are 3 paths for a goroutine to terminate. These are
 
-    <\itemize>
+    <\enumerate>
       <item>When the goroutine has completed its work
 
       <item>When it cannot continue its work due to an unrecoverable error
 
       <item>When it is told to stop working
-    </itemize>
+    </enumerate>
 
     The third option is one which allows programs that could possibly cause
     deadlock or take up unneccessary memory to be killed, and is the basis of
@@ -1437,10 +1465,18 @@
     As such, only implement queuing at the entrance to the pipeline (negative
     feedback loop) or at stages where batching is more efficient.
   </cell>>|<row|<\cell>
+    Stable systems, Ingress, and Egress
+  </cell>|<\cell>
+    Ingress is the rate at which work enters the system, and egress is the
+    rate at which it exits the system. Stable systems are those in which the
+    egress is equal to the ingress. The two unstable systems are when the
+    ingress is more than the egress (which is a death spiral) and when it is
+    less than the egress.\ 
+  </cell>>|<row|<\cell>
     Little's Law
   </cell>|<\cell>
     Little's Law requires sufficient sampling and determines the throughput
-    of a pipeline.\ 
+    of a pipeline. This is only applicable in stable systems.
 
     <\equation*>
       L=\<lambda\>W
@@ -1454,6 +1490,53 @@
     </cell>>|<row|<cell|<math|W>>|<\cell>
       the average time a unit spends in the pipeline
     </cell>>>>>
+  </cell>>|<row|<\cell>
+    Persistent Queues
+  </cell>|<\cell>
+    If a pipeline panics with a queue in it, all requests stored in the queue
+    are lost. Thus, one may want to avoid using a queue in this case, but if
+    this is not possible, a persistent queue is used which is persisted and
+    can be read later.
+  </cell>>|<row|<\cell>
+    <verbatim|context>
+  </cell>|<\cell>
+    From the package <verbatim|context>, <verbatim|context.Context> is a data
+    type that carries deadlines, timeouts, cancelation signals, and
+    \Prequest-scoped\Q values between processes and across API borders. An
+    empty context can be created with <verbatim|Background()> and
+    <verbatim|contexts> cannot be mutated so that any passed contexts will
+    not be changed by the processes they were passed to. Instead, the child
+    process can create its own <verbatim|context> with the methods
+    <verbatim|WithCancel>, <verbatim|WithTimeout>, and
+    <verbatim|WithDeadline>. More information at
+    <slink|https://pkg.go.dev/context>.
+  </cell>>|<row|<\cell>
+    <verbatim|context> values
+  </cell>|<\cell>
+    Each <verbatim|context> also carries values with it in key-value pairs.
+    New contexts with different values can be created with
+    <verbatim|.WithValue(parent Context, key val any)>. Values can be
+    accessed from a context with <verbatim|.Value>. Since the key and value
+    are <verbatim|interface{}> and can accept any type, there is a loss of
+    type safety, which is why it is recommended to have data-hiding.\ 
+  </cell>>|<row|<\cell>
+    When to use <verbatim|context> values?
+  </cell>|<\cell>
+    It is reocmmended to only use context values for request-scoped data, and
+    not as optional parameters to functions. The textbook provides some
+    heuristics on what can be considered \Prequest-scoped data\Q.
+
+    <\enumerate>
+      <item>Crosses processes or APIs
+
+      <item>Immutable
+
+      <item>Simple types
+
+      <item>Is not types with methods, but rather just data
+
+      <item>Doesn't \Pdrive\Q operations
+    </enumerate>
   </cell>>>>>
 </body>
 
