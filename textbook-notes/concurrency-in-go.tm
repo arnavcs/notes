@@ -1204,7 +1204,7 @@
 
       \ \ \ \ }
 
-      \ \ \ \ wg.Add(len(chans)
+      \ \ \ \ wg.Add(len(chans))
 
       \ \ \ \ for _, c := range chans {
 
@@ -1538,6 +1538,25 @@
       <item>Doesn't \Pdrive\Q operations
     </enumerate>
   </cell>>>>>
+
+  <section|Concurrency at Scale>
+
+  <\padded-center>
+    <tabular|<tformat|<cwith|3|3|1|1|cell-background|pastel
+    yellow>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<cwith|2|2|1|1|cell-background|pastel
+    cyan>|<table|<row|<cell|Color Scheme Key>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
+  </padded-center>
+
+  <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+  green>|<table|<row|<\cell>
+    \;
+  </cell>|<\cell>
+    \;
+  </cell>>|<row|<\cell>
+    \;
+  </cell>|<\cell>
+    \;
+  </cell>>>>>
 </body>
 
 <\initial>
@@ -1552,6 +1571,7 @@
     <associate|auto-1|<tuple|1|1>>
     <associate|auto-2|<tuple|2|4>>
     <associate|auto-3|<tuple|3|9>>
+    <associate|auto-4|<tuple|4|?>>
   </collection>
 </references>
 
@@ -1569,6 +1589,10 @@
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Concurrency
       Patterns in Golang> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-3><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Concurrency
+      at Scale> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-4><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
