@@ -20,7 +20,7 @@
   In either case, we see that it is required to be able to write good
   solutions. For this reason, it is important that you first solve the
   problem and then proceed to write out the solution.<\footnote>
-    But if you are writing a contest where you ddid not have enough time to
+    But if you are writing a contest where you do not have enough time to
     solve the problem, it is better to write what you have than nothing at
     all.
   </footnote> Here are some tips to remember:
@@ -43,18 +43,34 @@
   </itemize-dot>
 
   For example, consider a question which asks us to find the smallest
-  triangular number greater than 10.
+  triangular number greater than 100. If you are unfamiliar with traingular
+  numbers, they can be defined quite easily.
+
+  <\definition>
+    The <math|n><rsup|th> <with|font-series|bold|triangle number>,
+    <math|T<rsub|n>>, is the number of dots required to form an equilateral
+    triangle out of dots with <math|n> dots on each side. Here are the first
+    few triangular numbers which can be explicitly calculated with the
+    formula <math|T<rsub|n>=<frac|n*<around*|(|n+1|)>|2>>.
+
+    <\padded-center>
+      <tabular|<tformat|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|1ln>|<cwith|1|-1|1|-1|cell-rborder|1ln>|<cwith|1|-1|2|-1|cell-halign|c>|<table|<row|<cell|<math|n>>|<cell|<math|0>>|<cell|<math|1>>|<cell|<math|2>>|<cell|<math|3>>|<cell|<math|4>>|<cell|<math|5>>>|<row|<cell|<math|<math|T<rsub|n>>>>|<cell|<math|0>>|<cell|<math|1>>|<cell|<math|3>>|<cell|<math|6>>|<cell|<math|10>>|<cell|<math|15>>>>>>
+    </padded-center>
+  </definition>
+
+  Here's an example of how you might format the solution to this problem:
 
   <\solution*>
-    The smallest triangle number greater than 10 is 15.
+    The smallest triangle number greater than 100 is 105.
 
     <with|theorem-padding-above|0fn|<\proof>
       A triangular number is of the form <math|<frac|n*<around*|(|n+1|)>|2>>
       for some positive integer <math|n>, and we can see that this expression
-      is strictly increasing with respect to <math|n>. Thus, we see that
-      since <math|<frac|4*<around*|(|4+1|)>|2>=10\<leq\>10\<less\>15=<frac|5*<around*|(|5+1|)>|2>>,
-      the 5th triangle number, <tabular|<tformat|<cwith|1|1|1|1|cell-tborder|1ln>|<cwith|1|1|1|1|cell-bborder|1ln>|<cwith|1|1|1|1|cell-lborder|1ln>|<cwith|1|1|1|1|cell-rborder|1ln>|<cwith|1|1|1|1|cell-lsep|0.25ex>|<cwith|1|1|1|1|cell-bsep|0.25ex>|<cwith|1|1|1|1|cell-tsep|0.25ex>|<cwith|1|1|1|1|cell-rsep|0.5ex>|<table|<row|<cell|15>>>>>,
-      is the smallest triangle number greater than 10.
+      is strictly increasing with respect to <math|n> for <math|n\<geq\>0>.
+      Thus, we see that since <math|<frac|13*<around*|(|13+1|)>|2>=91\<leq\>100\<less\>105=<frac|14*<around*|(|14+1|)>|2>>,
+      the <math|14><rsup|th> triangle number,
+      <tabular|<tformat|<cwith|1|1|1|1|cell-tborder|1ln>|<cwith|1|1|1|1|cell-bborder|1ln>|<cwith|1|1|1|1|cell-lborder|1ln>|<cwith|1|1|1|1|cell-rborder|1ln>|<cwith|1|1|1|1|cell-lsep|0.25ex>|<cwith|1|1|1|1|cell-bsep|0.25ex>|<cwith|1|1|1|1|cell-tsep|0.25ex>|<cwith|1|1|1|1|cell-rsep|0.5ex>|<table|<row|<cell|105>>>>>,
+      is the smallest triangle number greater than 100.
     </proof>>
   </solution*>
 
@@ -75,35 +91,7 @@
 
 <\references>
   <\collection>
-    <associate|auto-1|<tuple|1|2>>
-    <associate|auto-2|<tuple|2|2>>
-    <associate|auto-3|<tuple|3|2>>
-    <associate|auto-4|<tuple|4|3>>
-    <associate|auto-5|<tuple|5|?>>
-    <associate|auto-6|<tuple|6|?>>
-    <associate|footnote-1|<tuple|1|?>>
-    <associate|footnr-1|<tuple|1|?>>
+    <associate|footnote-1|<tuple|1|1>>
+    <associate|footnr-1|<tuple|1|1>>
   </collection>
 </references>
-
-<\auxiliary>
-  <\collection>
-    <\associate|toc>
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>What
-      is Divisibility?> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-1><vspace|0.5fn>
-
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Introduction
-      to Modular Arithmetic> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-2><vspace|0.5fn>
-
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Putting
-      it Together> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-3><vspace|0.5fn>
-
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Exercises>
-      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-4><vspace|0.5fn>
-    </associate>
-  </collection>
-</auxiliary>
