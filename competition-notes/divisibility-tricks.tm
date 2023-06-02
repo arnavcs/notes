@@ -1,6 +1,6 @@
 <TeXmacs|2.1>
 
-<style|<tuple|generic|number-europe|hanging-theorems|compact-list>>
+<style|<tuple|generic|number-europe|compact-list|framed-theorems>>
 
 <\body>
   <\hide-preamble>
@@ -175,7 +175,7 @@
   <section|Exercises>
 
   <\exercise>
-    <dueto|1999 IMC A1>Find the remiander when
+    <dueto|1999 IMC A1>Find the remainder when
     122333444455555666666777777788888888999999999 is divided by 9.
   </exercise>
 

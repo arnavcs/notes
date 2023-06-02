@@ -26,13 +26,14 @@
     Scheme Key>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
   </padded-center>
 
-  <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
-  green>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|10|10|1|1|cell-background|pastel
+  <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+  green>|<cwith|10|10|1|1|cell-background|pastel
   yellow>|<cwith|12|12|1|1|cell-background|pastel
   yellow>|<cwith|15|15|1|1|cell-background|pastel
   yellow>|<cwith|16|16|1|1|cell-background|pastel
   yellow>|<cwith|23|23|1|1|cell-background|pastel
-  yellow>|<cwith|24|24|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
+  yellow>|<cwith|24|24|1|1|cell-background|pastel
+  yellow>|<twith|table-hyphen|n>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
     System Specification
   </cell>|<\cell>
     A system specification is a description of what a system should do or is
@@ -121,8 +122,8 @@
     A TLA<rsup|+> specification usually consists of an initial predicate and
     a next-state relation.
 
-    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|>|<cwith|1|-1|1|1|cell-hmode|auto>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<table|<row|<\cell>
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
       Initial Predicate
     </cell>|<\cell>
       Specifies all the possible initial values of the initial state. This is
@@ -241,7 +242,7 @@
 
 <\initial>
   <\collection>
-    <associate|page-medium|paper>
+    <associate|page-medium|automatic>
   </collection>
 </initial>
 

@@ -1,6 +1,6 @@
 <TeXmacs|2.1>
 
-<style|<tuple|generic|number-europe|hanging-theorems|compact-list>>
+<style|<tuple|generic|number-europe|compact-list|framed-theorems>>
 
 <\body>
   <\hide-preamble>
@@ -79,6 +79,7 @@
 
 <\initial>
   <\collection>
+    <associate|hang-length|0em>
     <associate|item-vsep|<macro|0fn>>
     <associate|ornament-extra-color|pastel yellow>
     <associate|ornament-shape|rounded>

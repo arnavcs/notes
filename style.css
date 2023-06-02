@@ -1,6 +1,4 @@
 
-/* STYLISTIC */
-
 body {
   background-color: #1f1f28;
   color: #dcd7ba;
@@ -32,7 +30,7 @@ a {
 }
 
 nav a {
-  border: 3px ridge;
+  border: 3px ridge #80a8bf;
   text-decoration: none;
 }
 
@@ -43,8 +41,6 @@ table, table th, table td {
 table {
   border-collapse: collapse;
 }
-
-/* LAYOUT */
 
 body {
   margin: auto;
@@ -74,5 +70,30 @@ table {
 table * {
   padding: 5px;
 }
+
+.card-container thead th {
+  text-align: left;
+}
+
+.card-container thead td {
+  text-align: right;
+}
+
+.card-container td, .card-container th {
+  border: none;
+}
+
+.card-container table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card-container tr {
+  border: 1px dotted white;
+}
+
+// .card-container thead {
+//   background-color: #54546C;
+// }
 
 

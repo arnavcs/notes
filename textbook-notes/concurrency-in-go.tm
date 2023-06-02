@@ -26,13 +26,13 @@
     Pattern>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
   </padded-center>
 
-  <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|2|2|1|1|cell-tborder|0ln>|<cwith|3|3|1|1|cell-bborder|0ln>|<cwith|4|4|1|1|cell-tborder|0ln>|<cwith|2|3|1|1|cell-lborder|0ln>|<cwith|2|3|1|1|cell-rborder|0ln>|<cwith|2|3|2|2|cell-lborder|0ln>|<cwith|11|11|1|2|cell-hyphen|t>|<cwith|11|11|1|2|cell-halign|l>|<cwith|11|11|1|1|cell-width|25ex>|<cwith|11|11|1|1|cell-hmode|min>|<cwith|11|11|1|2|cell-lsep|1ex>|<cwith|11|11|1|2|cell-rsep|1ex>|<cwith|11|11|1|2|cell-bsep|1ex>|<cwith|11|11|1|2|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+  <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|2|2|1|1|cell-tborder|0ln>|<cwith|3|3|1|1|cell-bborder|0ln>|<cwith|4|4|1|1|cell-tborder|0ln>|<cwith|2|3|1|1|cell-lborder|0ln>|<cwith|2|3|1|1|cell-rborder|0ln>|<cwith|2|3|2|2|cell-lborder|0ln>|<cwith|11|11|1|2|cell-hyphen|t>|<cwith|11|11|1|2|cell-halign|l>|<cwith|11|11|1|2|cell-lsep|1ex>|<cwith|11|11|1|2|cell-rsep|1ex>|<cwith|11|11|1|2|cell-bsep|1ex>|<cwith|11|11|1|2|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|11|11|1|1|cell-background|pastel
   yellow>|<cwith|24|24|1|1|cell-background|pastel
   yellow>|<cwith|25|26|1|1|cell-background|pastel
   cyan>|<cwith|18|18|1|1|cell-background|pastel
   cyan>|<cwith|6|6|1|-1|cell-lsep|1ex>|<cwith|6|6|1|-1|cell-rsep|1ex>|<cwith|6|6|1|-1|cell-bsep|1ex>|<cwith|6|6|1|-1|cell-tsep|1ex>|<cwith|27|27|1|1|cell-background|pastel
-  cyan>|<table|<row|<\cell>
+  cyan>|<twith|table-hyphen|n>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
     Amdahl's Law
   </cell>|<\cell>
     Amdahl's Law models the improved performance of a fixed task when the
@@ -44,7 +44,7 @@
     </equation*>
 
     <tabular|<tformat|<cwith|1|-1|2|2|cell-hyphen|t>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<table|<row|<cell|<math|S<rsub|latency>>>|<\cell>
+    green>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<cell|<math|S<rsub|latency>>>|<\cell>
       the theoretical speedup of the whole program
     </cell>>|<row|<cell|<math|s>>|<\cell>
       the speedup of the part of the task from improved resources
@@ -113,7 +113,7 @@
     deadlocks. The conditions are as follows:
 
     <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|4|4|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|>|<cwith|1|-1|1|1|cell-hmode|auto>|<table|<row|<\cell>
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
       Mutual Exclusion
     </cell>|<\cell>
       A concurrent process must hold exclusive rights to a resource at any
@@ -314,15 +314,15 @@
   </padded-center>
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-background|pastel
-  yellow>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<twith|table-hyphen|y>|<cwith|9|9|1|2|cell-hyphen|t>|<cwith|9|9|1|2|cell-hyphen|t>|<cwith|9|9|1|2|cell-halign|l>|<cwith|9|9|1|1|cell-width|25ex>|<cwith|9|9|1|1|cell-hmode|min>|<cwith|9|9|1|2|cell-lsep|1ex>|<cwith|9|9|1|2|cell-rsep|1ex>|<cwith|9|9|1|2|cell-bsep|1ex>|<cwith|9|9|1|2|cell-tsep|1ex>|<cwith|1|1|1|2|cell-hyphen|t>|<cwith|1|1|1|1|cell-background|pastel
-  yellow>|<cwith|1|1|1|2|cell-halign|l>|<cwith|1|1|1|1|cell-width|25ex>|<cwith|1|1|1|1|cell-hmode|min>|<cwith|1|1|1|2|cell-lsep|1ex>|<cwith|1|1|1|2|cell-rsep|1ex>|<cwith|1|1|1|2|cell-bsep|1ex>|<cwith|1|1|1|2|cell-tsep|1ex>|<cwith|1|1|1|1|cell-background|pastel
+  yellow>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|9|9|1|2|cell-hyphen|t>|<cwith|9|9|1|2|cell-hyphen|t>|<cwith|9|9|1|2|cell-halign|l>|<cwith|9|9|1|2|cell-lsep|1ex>|<cwith|9|9|1|2|cell-rsep|1ex>|<cwith|9|9|1|2|cell-bsep|1ex>|<cwith|9|9|1|2|cell-tsep|1ex>|<cwith|1|1|1|2|cell-hyphen|t>|<cwith|1|1|1|1|cell-background|pastel
+  yellow>|<cwith|1|1|1|2|cell-halign|l>|<cwith|1|1|1|2|cell-lsep|1ex>|<cwith|1|1|1|2|cell-rsep|1ex>|<cwith|1|1|1|2|cell-bsep|1ex>|<cwith|1|1|1|2|cell-tsep|1ex>|<cwith|1|1|1|1|cell-background|pastel
   yellow>|<cwith|8|13|1|1|cell-background|pastel
   green>|<cwith|15|16|1|1|cell-background|pastel
   yellow>|<cwith|14|14|1|1|cell-background|pastel
   green>|<cwith|16|16|1|1|cell-background|pastel
   yellow>|<cwith|2|2|1|1|cell-background|pastel
   yellow>|<cwith|7|8|1|2|cell-hyphen|t>|<cwith|7|8|1|1|cell-background|pastel
-  yellow>|<cwith|7|8|1|2|cell-halign|l>|<cwith|7|8|1|1|cell-width|25ex>|<cwith|7|8|1|1|cell-hmode|min>|<cwith|7|8|1|2|cell-lsep|1ex>|<cwith|7|8|1|2|cell-rsep|1ex>|<cwith|7|8|1|2|cell-bsep|1ex>|<cwith|7|8|1|2|cell-tsep|1ex>|<table|<row|<\cell>
+  yellow>|<cwith|7|8|1|2|cell-halign|l>|<cwith|7|8|1|2|cell-lsep|1ex>|<cwith|7|8|1|2|cell-rsep|1ex>|<cwith|7|8|1|2|cell-bsep|1ex>|<cwith|7|8|1|2|cell-tsep|1ex>|<twith|table-hyphen|n>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
     <verbatim|func>
   </cell>|<\cell>
     This keyword can be used to create named functions, closures, or
@@ -701,7 +701,7 @@
     Pattern>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
   </padded-center>
 
-  <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+  <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|1|1|1|1|cell-background|pastel
   yellow>|<cwith|3|3|1|1|cell-background|pastel
   yellow>|<cwith|4|4|1|1|cell-background|pastel
@@ -727,10 +727,11 @@
   yellow>|<cwith|24|24|1|1|cell-background|pastel
   green>|<cwith|23|23|1|2|cell-hyphen|t>|<cwith|23|23|1|2|cell-halign|l>|<cwith|23|23|1|2|cell-lsep|1ex>|<cwith|23|23|1|2|cell-rsep|1ex>|<cwith|23|23|1|2|cell-bsep|1ex>|<cwith|23|23|1|2|cell-tsep|1ex>|<cwith|23|23|1|1|cell-background|pastel
   green>|<cwith|23|23|1|1|cell-background|pastel
-  cyan>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|28|28|1|1|cell-background|pastel
+  cyan>|<cwith|28|28|1|1|cell-background|pastel
   green>|<cwith|29|29|1|1|cell-background|pastel
   cyan>|<cwith|30|30|1|1|cell-background|pastel
-  yellow>|<cwith|31|31|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
+  yellow>|<cwith|31|31|1|1|cell-background|pastel
+  yellow>|<twith|table-hyphen|n>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
     Safe Operations
   </cell>|<\cell>
     There are a couple different safe operations in concurrent programs,
@@ -744,7 +745,7 @@
     lexical.
 
     <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|>|<cwith|1|-1|1|1|cell-hmode|auto>|<table|<row|<\cell>
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
       Ad Hoc
     </cell>|<\cell>
       This is confinement that adheres to a convention set, but is
@@ -1140,7 +1141,7 @@
     stage at a time.
 
     <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|>|<cwith|1|-1|1|1|cell-hmode|auto>|<table|<row|<\cell>
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
       Fan-Out
     </cell>|<\cell>
       The act of splitting the input of the pipeline into multiple
@@ -1443,8 +1444,9 @@
     reasonable amount. The book states that queuing should be used in the
     following situations:
 
-    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|1|cell-background|pastel
-    yellow>|<cwith|2|2|1|1|cell-background|pastel green>|<table|<row|<\cell>
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+    yellow>|<cwith|2|2|1|1|cell-background|pastel
+    green>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
       Batching requests in a stage saves time
     </cell>|<\cell>
       An example of this is the chunking of requests to a file, which is why
@@ -1483,7 +1485,7 @@
     </equation*>
 
     <tabular|<tformat|<cwith|1|-1|2|2|cell-hyphen|t>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<table|<row|<cell|<math|L>>|<\cell>
+    green>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<cell|<math|L>>|<\cell>
       the average number of units in the pipeline
     </cell>>|<row|<cell|<math|\<lambda\>>>|<\cell>
       the average arrival rate of units
@@ -1522,7 +1524,7 @@
   </cell>>|<row|<\cell>
     When to use <verbatim|context> values?
   </cell>|<\cell>
-    It is reocmmended to only use context values for request-scoped data, and
+    It is recommended to only use context values for request-scoped data, and
     not as optional parameters to functions. The textbook provides some
     heuristics on what can be considered \Prequest-scoped data\Q.
 
@@ -1547,8 +1549,8 @@
     cyan>|<table|<row|<cell|Color Scheme Key>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
   </padded-center>
 
-  <tabular|<tformat|<twith|table-hyphen|y>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|min>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
-  green>|<table|<row|<\cell>
+  <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+  green>|<twith|table-hyphen|n>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
     \;
   </cell>|<\cell>
     \;
