@@ -20,10 +20,9 @@
   <section|System Specifications>
 
   <\padded-center>
-    <tabular|<tformat|<cwith|3|3|1|1|cell-background|pastel
-    yellow>|<cwith|2|2|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<table|<row|<cell|Color
-    Scheme Key>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
+    <tabular|<tformat|<cwith|1|1|1|1|cell-background|pastel
+    green>|<cwith|1|1|1|-1|cell-tborder|1ln>|<cwith|1|1|1|-1|cell-bborder|1ln>|<cwith|1|1|1|-1|cell-lborder|1ln>|<cwith|1|1|1|-1|cell-rborder|1ln>|<cwith|1|1|2|2|cell-background|pastel
+    yellow>|<table|<row|<cell|Definition>|<cell|Note>>>>>
   </padded-center>
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
@@ -33,7 +32,7 @@
   yellow>|<cwith|16|16|1|1|cell-background|pastel
   yellow>|<cwith|23|23|1|1|cell-background|pastel
   yellow>|<cwith|24|24|1|1|cell-background|pastel
-  yellow>|<twith|table-hyphen|n>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
+  yellow>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|y>|<table|<row|<\cell>
     System Specification
   </cell>|<\cell>
     A system specification is a description of what a system should do or is

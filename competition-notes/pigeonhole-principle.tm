@@ -84,8 +84,8 @@
 
   <\exercise>
     Given a set, <math|S>, of <math|n> integers, prove that there exists a
-    subset, <math|T\<subseteq\>S>, such that the sum of all the elements of
-    <math|T > is divisible by <math|n>.
+    nonempty subset, <math|T>, of <math|S> such that the sum of all the
+    elements of <math|T > is divisible by <math|n>.
   </exercise>
 
   SUMO refers to the Soviet Union Mathematical Olympiad and HMO refers to the

@@ -1,6 +1,6 @@
 <TeXmacs|2.1>
 
-<style|<tuple|generic|compact-list|python>>
+<style|article>
 
 <\body>
   <doc-data|<doc-title|<with|font-shape|italic|Concurrency in Go>
@@ -19,20 +19,20 @@
   <section|Basic Concurrency Ideas>
 
   <\padded-center>
-    <tabular|<tformat|<cwith|4|4|1|1|cell-background|pastel
-    yellow>|<cwith|3|3|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<cwith|2|2|1|1|cell-background|pastel
-    cyan>|<table|<row|<cell|Color Scheme Key>>|<row|<cell|Software / Design
-    Pattern>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
+    <tabular|<tformat|<cwith|1|1|1|1|cell-background|pastel
+    cyan>|<cwith|1|1|2|2|cell-background|pastel
+    green>|<cwith|1|1|3|3|cell-background|pastel
+    yellow>|<cwith|1|1|1|-1|cell-tborder|1ln>|<cwith|1|1|1|-1|cell-bborder|1ln>|<cwith|1|1|1|-1|cell-lborder|1ln>|<cwith|1|1|1|-1|cell-rborder|1ln>|<table|<row|<cell|Software
+    / Design Pattern>|<cell|Definition>|<cell|Note>>>>>
   </padded-center>
 
-  <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|2|2|1|1|cell-tborder|0ln>|<cwith|3|3|1|1|cell-bborder|0ln>|<cwith|4|4|1|1|cell-tborder|0ln>|<cwith|2|3|1|1|cell-lborder|0ln>|<cwith|2|3|1|1|cell-rborder|0ln>|<cwith|2|3|2|2|cell-lborder|0ln>|<cwith|11|11|1|2|cell-hyphen|t>|<cwith|11|11|1|2|cell-halign|l>|<cwith|11|11|1|2|cell-lsep|1ex>|<cwith|11|11|1|2|cell-rsep|1ex>|<cwith|11|11|1|2|cell-bsep|1ex>|<cwith|11|11|1|2|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+  <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|11|11|1|2|cell-hyphen|t>|<cwith|11|11|1|2|cell-halign|l>|<cwith|11|11|1|2|cell-lsep|1ex>|<cwith|11|11|1|2|cell-rsep|1ex>|<cwith|11|11|1|2|cell-bsep|1ex>|<cwith|11|11|1|2|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|11|11|1|1|cell-background|pastel
   yellow>|<cwith|24|24|1|1|cell-background|pastel
   yellow>|<cwith|25|26|1|1|cell-background|pastel
   cyan>|<cwith|18|18|1|1|cell-background|pastel
   cyan>|<cwith|6|6|1|-1|cell-lsep|1ex>|<cwith|6|6|1|-1|cell-rsep|1ex>|<cwith|6|6|1|-1|cell-bsep|1ex>|<cwith|6|6|1|-1|cell-tsep|1ex>|<cwith|27|27|1|1|cell-background|pastel
-  cyan>|<twith|table-hyphen|n>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
+  cyan>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|y>|<table|<row|<\cell>
     Amdahl's Law
   </cell>|<\cell>
     Amdahl's Law models the improved performance of a fixed task when the
@@ -44,7 +44,7 @@
     </equation*>
 
     <tabular|<tformat|<cwith|1|-1|2|2|cell-hyphen|t>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<cell|<math|S<rsub|latency>>>|<\cell>
+    green>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<table|<row|<cell|<math|S<rsub|latency>>>|<\cell>
       the theoretical speedup of the whole program
     </cell>>|<row|<cell|<math|s>>|<\cell>
       the speedup of the part of the task from improved resources
@@ -112,8 +112,8 @@
     There are 4 Coffman Conditions that detect, prevent, and correct
     deadlocks. The conditions are as follows:
 
-    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|4|4|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<table|<row|<\cell>
       Mutual Exclusion
     </cell>|<\cell>
       A concurrent process must hold exclusive rights to a resource at any
@@ -275,9 +275,9 @@
   </cell>>|<row|<\cell>
     Object Pool
   </cell>|<\cell>
-    This pattern is a way to create a fixed number of objects for use, and is
-    especially useful for objects that are computationally expensive or
-    objects that will take a lot of memory.
+    The object pool pattern is a way to create a fixed number of objects for
+    use, and is especially useful for objects that are computationally
+    expensive or objects that will take a lot of memory.
   </cell>>|<row|<\cell>
     Channels
   </cell>|<\cell>
@@ -307,10 +307,10 @@
   <section|Golang Features and Building Blocks>
 
   <\padded-center>
-    <tabular|<tformat|<cwith|3|3|1|1|cell-background|pastel
-    yellow>|<cwith|2|2|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<table|<row|<cell|Color
-    Scheme Key>>|<row|<cell|Type>>|<row|<cell|Function / Keyword>>>>>
+    <tabular|<tformat|<cwith|1|1|1|1|cell-background|pastel
+    green>|<cwith|1|1|2|2|cell-background|pastel
+    yellow>|<cwith|1|1|1|-1|cell-tborder|1ln>|<cwith|1|1|1|-1|cell-bborder|1ln>|<cwith|1|1|1|-1|cell-lborder|1ln>|<cwith|1|1|1|-1|cell-rborder|1ln>|<table|<row|<cell|Type>|<cell|Function
+    / Keyword>>>>>
   </padded-center>
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-background|pastel
@@ -322,7 +322,7 @@
   green>|<cwith|16|16|1|1|cell-background|pastel
   yellow>|<cwith|2|2|1|1|cell-background|pastel
   yellow>|<cwith|7|8|1|2|cell-hyphen|t>|<cwith|7|8|1|1|cell-background|pastel
-  yellow>|<cwith|7|8|1|2|cell-halign|l>|<cwith|7|8|1|2|cell-lsep|1ex>|<cwith|7|8|1|2|cell-rsep|1ex>|<cwith|7|8|1|2|cell-bsep|1ex>|<cwith|7|8|1|2|cell-tsep|1ex>|<twith|table-hyphen|n>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
+  yellow>|<cwith|7|8|1|2|cell-halign|l>|<cwith|7|8|1|2|cell-lsep|1ex>|<cwith|7|8|1|2|cell-rsep|1ex>|<cwith|7|8|1|2|cell-bsep|1ex>|<cwith|7|8|1|2|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|y>|<table|<row|<\cell>
     <verbatim|func>
   </cell>|<\cell>
     This keyword can be used to create named functions, closures, or
@@ -694,11 +694,11 @@
   <section|Concurrency Patterns in Golang>
 
   <\padded-center>
-    <tabular|<tformat|<cwith|4|4|1|1|cell-background|pastel
-    yellow>|<cwith|3|3|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<cwith|2|2|1|1|cell-background|pastel
-    cyan>|<table|<row|<cell|Color Scheme Key>>|<row|<cell|Concurrency
-    Pattern>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
+    <tabular|<tformat|<cwith|1|1|1|1|cell-background|pastel
+    cyan>|<cwith|1|1|2|2|cell-background|pastel
+    green>|<cwith|1|1|3|3|cell-background|pastel
+    yellow>|<cwith|1|1|1|-1|cell-tborder|1ln>|<cwith|1|1|1|-1|cell-bborder|1ln>|<cwith|1|1|1|-1|cell-lborder|1ln>|<cwith|1|1|1|-1|cell-rborder|1ln>|<table|<row|<cell|Concurrency
+    Pattern>|<cell|Definition>|<cell|Note>>>>>
   </padded-center>
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
@@ -731,7 +731,7 @@
   green>|<cwith|29|29|1|1|cell-background|pastel
   cyan>|<cwith|30|30|1|1|cell-background|pastel
   yellow>|<cwith|31|31|1|1|cell-background|pastel
-  yellow>|<twith|table-hyphen|n>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
+  yellow>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|y>|<table|<row|<\cell>
     Safe Operations
   </cell>|<\cell>
     There are a couple different safe operations in concurrent programs,
@@ -744,8 +744,8 @@
     concurrent process. There are two types of confinement: ad hoc and
     lexical.
 
-    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<table|<row|<\cell>
       Ad Hoc
     </cell>|<\cell>
       This is confinement that adheres to a convention set, but is
@@ -1140,8 +1140,8 @@
     stage in parallel, so that more than one datum is being processed in that
     stage at a time.
 
-    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<cwith|1|-1|1|1|cell-background|pastel
+    green>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<table|<row|<\cell>
       Fan-Out
     </cell>|<\cell>
       The act of splitting the input of the pipeline into multiple
@@ -1444,9 +1444,9 @@
     reasonable amount. The book states that queuing should be used in the
     following situations:
 
-    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|1|cell-lborder|0ln>|<cwith|1|-1|2|2|cell-rborder|0ln>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
     yellow>|<cwith|2|2|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
+    green>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<table|<row|<\cell>
       Batching requests in a stage saves time
     </cell>|<\cell>
       An example of this is the chunking of requests to a file, which is why
@@ -1485,7 +1485,7 @@
     </equation*>
 
     <tabular|<tformat|<cwith|1|-1|2|2|cell-hyphen|t>|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|1|cell-background|pastel
-    green>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<cell|<math|L>>|<\cell>
+    green>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<table|<row|<cell|<math|L>>|<\cell>
       the average number of units in the pipeline
     </cell>>|<row|<cell|<math|\<lambda\>>>|<\cell>
       the average arrival rate of units
@@ -1544,21 +1544,110 @@
   <section|Concurrency at Scale>
 
   <\padded-center>
-    <tabular|<tformat|<cwith|3|3|1|1|cell-background|pastel
-    yellow>|<cwith|1|-1|1|1|cell-tborder|1ln>|<cwith|1|-1|1|1|cell-bborder|1ln>|<cwith|1|-1|1|1|cell-lborder|1ln>|<cwith|1|-1|1|1|cell-rborder|1ln>|<cwith|2|2|1|1|cell-background|pastel
-    cyan>|<table|<row|<cell|Color Scheme Key>>|<row|<cell|Definition>>|<row|<cell|Note>>>>>
+    <tabular|<tformat|<cwith|1|1|1|1|cell-background|pastel
+    green>|<cwith|1|1|2|2|cell-background|pastel
+    yellow>|<cwith|1|1|1|-1|cell-tborder|1ln>|<cwith|1|1|1|-1|cell-bborder|1ln>|<cwith|1|1|1|-1|cell-lborder|1ln>|<cwith|1|1|1|-1|cell-rborder|1ln>|<table|<row|<cell|Definition>|<cell|Note>>>>>
   </padded-center>
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
-  green>|<twith|table-hyphen|n>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<table|<row|<\cell>
-    \;
+  green>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|2|2|1|1|cell-background|pastel
+  yellow>|<cwith|3|3|1|1|cell-background|pastel
+  yellow>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<cwith|1|1|1|1|cell-background|pastel
+  green>|<twith|table-hyphen|y>|<cwith|4|4|1|1|cell-background|pastel
+  green>|<table|<row|<\cell>
+    Errors
   </cell>|<\cell>
-    \;
+    Errors are first-class citizens in Go, and they represent when your
+    program cannot fulfill the requested instructions. There are two main
+    types of errors that can come up in your program: bugs, and known edge
+    cases. It is important to convey lots of information in known edge cases.
+    In Go, <verbatim|error> is an interface with one method:
+    <verbatim|Error()> which returns a <verbatim|string>.
   </cell>>|<row|<\cell>
-    \;
+    What should errors convey?
   </cell>|<\cell>
-    \;
+    Errors should convey the following important information:
+
+    <\enumerate-numeric>
+      <item>What caused the error
+
+      <item>When and where the error happened
+
+      <item>A \Pfriendly user-facing message\Q
+
+      <item>Resources for getting more information
+    </enumerate-numeric>
+
+    Providing this information differentiates the known edge cases from the
+    bugs in the program. Consider the following struct which implements
+    <verbatim|error>.
+
+    <\verbatim-code>
+      type WrappedError struct {
+
+      \ \ \ \ Inner \ \ \ \ \ error
+
+      \ \ \ \ Message \ \ \ string
+
+      \ \ \ \ StackTrace string
+
+      \ \ \ \ Misc \ \ \ \ \ \ map[string]interface{}
+
+      }
+
+      \;
+
+      func wrapError (err error, msgf string, msgArgs <text-dots>interface{})
+      WrappedError {
+
+      \ \ \ \ return WrappedError {
+
+      \ \ \ \ \ \ \ \ Inner: \ \ \ \ \ err,
+
+      \ \ \ \ \ \ \ \ Message: \ \ \ fmt.Sprintf(msgf, msgArgs<text-dots>),
+
+      \ \ \ \ \ \ \ \ StackTrace: string(debug.Stack()),
+
+      \ \ \ \ \ \ \ \ Misc: \ \ \ \ \ \ make(map[string]interface{}),
+
+      \ \ \ \ }
+
+      }
+
+      \;
+
+      func (err WrappedError) Error() string {
+
+      \ \ \ \ return err.Message
+
+      }
+    </verbatim-code>
+  </cell>>|<row|<\cell>
+    How to handle errors between modules?
+  </cell>|<\cell>
+    It is suggested for errors to have a special type for each module, and
+    any error which is not of the module's error type is malformed, or a bug.
+    This means that if a module calls another, it should wrap the potential
+    error in its own error type, while potentially adding more information.
+  </cell>>|<row|<\cell>
+    Why should processes support timeouts?
+  </cell>|<\cell>
+    There are many responses to a timeout, but why should processes timeout
+    in the first place? Timeouts can:
+
+    <\enumerate-numeric>
+      <item>Reduce the amount of pipeline saturation (if the request won't be
+      repeated if timed out and there's not enough resources to store it)
+
+      <item>Avoid stale data (data which is no longer relevant after a
+      certain amount of time)
+
+      <item>Avoid deadlocks (at the expense of potentially turning the
+      deadlock into a livelock)
+    </enumerate-numeric>
   </cell>>>>>
+
+  \;
 </body>
 
 <\initial>
@@ -1573,7 +1662,8 @@
     <associate|auto-1|<tuple|1|1>>
     <associate|auto-2|<tuple|2|4>>
     <associate|auto-3|<tuple|3|9>>
-    <associate|auto-4|<tuple|4|?>>
+    <associate|auto-4|<tuple|4|19>>
+    <associate|auto-5|<tuple|1|?>>
   </collection>
 </references>
 

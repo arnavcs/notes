@@ -30,7 +30,6 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" language="javascript"></script>
     <link rel="stylesheet" href="../notes.css">
-    <meta name="viewport">
   </head>
   <body>
     <table class="title-block" style="margin-bottom: 2em">
@@ -95,12 +94,8 @@
       <p style="margin-top: 0.5em; margin-bottom: 0.5em">
         <table style="display: inline-table; vertical-align: middle">
           <tbody><tr>
-            <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid">Color Scheme Key</td>
-          </tr><tr>
             <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #00ffff20">Software / Design Pattern</td>
-          </tr><tr>
             <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #00ff0020">Definition</td>
-          </tr><tr>
             <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #ffff0020">Note</td>
           </tr></tbody>
         </table>
@@ -108,10 +103,10 @@
     </center>
     <table style="width: 100%">
       <tbody><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Amdahl's Law
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Amdahl's Law models the improved performance of a fixed task when
           the resources are improved. In parallel computing, it is used to
           predict the speedup of using multiple processors. The relation is
@@ -121,37 +116,37 @@
           \frac{p}{s}}\)
         </center><table style="width: 100%">
           <tbody><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 15ex">\(S_{\operatorname{latency}}\)</td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 15ex">\(S_{\operatorname{latency}}\)</td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               the theoretical speedup of the whole program
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 15ex">\(s\)</td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 15ex">\(s\)</td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               the speedup of the part of the task from improved resources
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 15ex">\(p\)</td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 15ex">\(p\)</td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               the proportion of the execution time that benefits from the
               improved resources
             </p></td>
           </tr></tbody>
         </table></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; border-top: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Race Conditions
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A race condition is when two or more operations must execute in the
           correct order, but the program leaves the order of execution
           unspecified.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Data Race
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A data race is a race condition in which two concurrent operations
           attempt to read the same data at an unspecified time (namely one
           that could potentially conflict). In the following example, the
@@ -165,20 +160,20 @@ go func() { data++ }()
 fmt.Printf(&quot;%v\n&quot;, data)</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; border-top: 0px solid"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Atomicity
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           An atomic operation is indivisible or uninteruptable in the context
           in which it is operating. For example, the statement <tt class="verbatim">i++</tt>
           consists of 3 atomic operations: retriving, incrementing, and
           storing the value of <tt class="verbatim">i</tt>.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Critical Selection
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A critical selection is a section of code that requires exclusive
           access to a shared resource. In the following code, the <tt class="verbatim">fmt.Printf()</tt>
           and the goroutine are both critical selections.
@@ -189,60 +184,60 @@ go func() { data++ }()
 fmt.Printf(&quot;%v\n&quot;, data)</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           Memory Access Synchronization
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           To solve the problem of multiple critical selections, only enable
           one critical selection to access the same shared resource at a time.
           This can be achieved, for example, with a mutex.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Deadlock
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A deadlock is a state in which all concurrent processes are waiting
           on each other. A deadlock can be identified by the Coffman
           Conditions.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Coffman Conditions
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           There are 4 Coffman Conditions that detect, prevent, and correct
           deadlocks. The conditions are as follows:
         </p><table style="width: 100%">
           <tbody><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex; border-top: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
               Mutual Exclusion
             </p></td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid; border-top: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               A concurrent process must hold exclusive rights to a resource at
               any one time.
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
               Wait For Condition
             </p></td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               A concurrent process must hold a resource and be waiting for
               another resource.
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
               No Preemption
             </p></td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               A resource held by a concurrent process can only be released by
               that process.
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex; border-bottom: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
               Circular Wait
             </p></td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid; border-bottom: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               A process must be waiting on a chain of processes which is
               circular (meaning that the process is directly or indirectly
               waiting on itself to give a result).
@@ -250,19 +245,19 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
           </tr></tbody>
         </table></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Livelock
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A livelock is when the current concurrent processes are performing
           operations, but these operations do not terminate or move the
           program closer to termination.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Starvation
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Starvation is a superset of a livelock or deadlock where, more
           generally, a concurrent process does not recieve access to the
           resources it needs. A common example is having a &ldquo;greedy
@@ -271,10 +266,10 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
           the resource: it is starved.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020"><p>
           &ldquo;Finding a Balance&rdquo;
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           What should the range of a memory lock be? Should it be broad and
           cover multiple critical selections, or should each critical
           selection get its own lock? It is important to strike a balance in
@@ -283,73 +278,73 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
           mitigate starvation.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           OS Threads
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           OS threads are a primitve at the OS context that can be used to run
           pocesses concurrently. The operating system is responsible for
           creating and managing the threads. The threads all have access to a
           shared resource space.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Green Threads
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Green threads are threads that are managed by a program's runtime.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Preemptive and Non-preemptive Scheduling
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Preemptive scheduling is when a process may be interrupted during
           execution, whereas non-premptive scheduling involves processes which
           cannot be interrupted, but rather just suspended at certain points.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Coroutines
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Concurrent subroutines that are non-preemptive (meaning that they
           can't be interrupted) are called coroutines. They feature multiple
           points to suspend or reenter computation. 
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           <tt class="verbatim">M:N</tt> Scheduler
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A <tt class="verbatim">M:N</tt> scheduler is the mechanism that Golang uses to
           host goroutines and it consists of mapping <tt class="verbatim">M</tt> green
           threads onto <tt class="verbatim">N</tt> OS threads.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Fork-Join Model
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           The model that Golang follows for concurrency, a fork-join model is
           one in which a child branch can fork off from parent to be run
           concurrently. After the termination of the child branch, it is
           joined back to the parent branch at a join point.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           Thread Pools
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Thread pools are a software design pattern that maintains a
           collection of threads to map incoming tasks to threads for
           concurrent execution.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Concurrency vs. Parallelism
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Parallelism is a property of a machine to be able to run two tasks
           simulatiously in the considered context. On the other hand,
           concurrency refers to when two processes have a lifespan that
@@ -361,20 +356,20 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
           of the execution of the code.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Process
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A process is a portion of code that requires input to run and
           produces an output that is consumed by another process. The input
           and output of a process is called <class style="font-style: normal">communication</class>
           between processes.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Communicating Sequential Processes (CSP)
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           CSP is the name of a paper, programming language, and the idea of a
           descibing programs as processes which are sequential and
           communicate. Used in the paper describing CSP, the CSP language
@@ -384,10 +379,10 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
           programming that Golang's channels are based on.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Guarded Command
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           When a statement should not be executed if another statement was
           false or a command exited, it is a guarded command. The CSP example
           below denotes a process <tt class="verbatim">a</tt>, from which a character
@@ -399,18 +394,18 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
 a?c -&gt; b!c]</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Process Calculus
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Process calculus is a mathematical way to model concurrent systems
           and analyze their properties.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Should I use CSP style or OS threads?
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           The CSP style has certain advantages that it comes with, and more
           generally, the Golang developing team suggest to use the CSP style
           over primitves like <tt class="verbatim">sync.Mutex</tt>, but there are
@@ -446,28 +441,28 @@ a?c -&gt; b!c]</pre>
           </li>
         </ol></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           Mutex
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Mutex stands for &ldquo;mutual exclusion&rdquo; and enables a way to
           express exclusive access to a shared resource. A mutex is often used
           for critical selections.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           Object Pool
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          This pattern is a way to create a fixed number of objects for use,
-          and is especially useful for objects that are computationally
-          expensive or objects that will take a lot of memory.
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          The object pool pattern is a way to create a fixed number of objects
+          for use, and is especially useful for objects that are
+          computationally expensive or objects that will take a lot of memory.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           Channels
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           The channel pattern comes from CSP and is a way to pass information.
           If there is nothing to be read from a channel, reading from it
           blocks execution; waiting for a value to be added to the channel.
@@ -510,10 +505,7 @@ a?c -&gt; b!c]</pre>
       <p style="margin-top: 0.5em; margin-bottom: 0.5em">
         <table style="display: inline-table; vertical-align: middle">
           <tbody><tr>
-            <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid">Color Scheme Key</td>
-          </tr><tr>
             <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #00ff0020">Type</td>
-          </tr><tr>
             <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #ffff0020">Function / Keyword</td>
           </tr></tbody>
         </table>
@@ -521,9 +513,9 @@ a?c -&gt; b!c]</pre>
     </center>
     <table style="width: 100%">
       <tbody><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020"><pre class="verbatim" xml:space="preserve">
 func</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           This keyword can be used to create named functions, closures, or
           anonymous functions. A named function example is show below.
         </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
@@ -544,10 +536,10 @@ var f := func(numTimes int) {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #ffff0020"><p>
           Loops
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           All loops in Golang are declared with the keyword <tt class="verbatim">for</tt>.
           You can supply a stepping mechanism, nothing (for an infinite loop),
           a condition, or a range to describe the loop like in the examples
@@ -576,16 +568,16 @@ for i := 0; i &lt; 2; i++ {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 range</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A range can be used to iterate over strings, arrays, slices,
           key/value pairs of maps, and even channels.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 type</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           This keyword creates a type macro, giving the second type the name
           passed into the function. For example, the following creates a new
           type called <tt class="verbatim">HouseNumber</tt>.
@@ -594,9 +586,9 @@ type</pre></td>
 type HouseNumber int</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 struct</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A struct in Golang can be created with the <tt class="verbatim">struct {}</tt>
           syntax. Since this creates a new type, it can be saved to a type
           variable with <tt class="verbatim">type</tt>.
@@ -608,9 +600,9 @@ type Fruit struct {
 var apple Fruit = Fruit{&quot;Apple&quot;}</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 interface</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Interfaces in Golang can be declared as follows. Here again, we use
           <tt class="verbatim">type</tt> to assign a name to this <tt class="verbatim">interface</tt>.
         </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
@@ -625,9 +617,9 @@ type Plant interface {
           meaning it can hold any value. It is <tt class="verbatim">interface{}</tt>.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020"><pre class="verbatim" xml:space="preserve">
 go</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           Creates a <i>goroutine</i> that runs the function, method, or
           closure concurrently by multiplexing onto OS threads. Each goroutine
           is a special class of coroutine where you do not have to manually
@@ -652,9 +644,9 @@ for _, lang := range []string{&quot;go&quot;, &quot;rust&quot;, &quot;c&quot;} {
 wg.Wait()</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; background-color: #ffff0020"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; background-color: #ffff0020"><pre class="verbatim" xml:space="preserve">
 defer</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           Defers the execution of the statement to the end of the function. In
           the following example, the mutex isn't unlocked until the after the
           value of <tt class="verbatim">data</tt> increments.
@@ -669,9 +661,9 @@ func inc() {
 }()</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
 sync.Mutex</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           A mutex type that supports the <tt class="verbatim">.Lock()</tt>, <tt class="verbatim">.TryLock()</tt>,
           and <tt class="verbatim">.Unlock()</tt> methods. These methods declare
           exclusive access to the shared resource that the mutex represents.
@@ -680,9 +672,9 @@ sync.Mutex</pre></td>
           is not unlocked.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
 sync.RWMutex</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           This form of mutex requires the specification of the type of access
           desired. An arbitrary number of readers are allowed to read the same
           resource granted that there are no writers. In exchange for the
@@ -695,9 +687,9 @@ sync.RWMutex</pre></td>
           class="verbatim">.RLocker()</tt>.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
 sync.Cond</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A <tt class="verbatim">sync.Cond</tt> is a &ldquo;rendevous point&rdquo; for
           goroutines waiting for an event (an signal between two or more
           goroutines that carries no information). The instantiation of a <tt
@@ -725,18 +717,18 @@ subscribe := func(c *sync.Cond, f func()) {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
 sync.Once</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A variable, <tt class="verbatim">once</tt>, of type <tt class="verbatim">sync.Once</tt>
           will support the <tt class="verbatim">.Do(func())</tt> method which will only
           execute the passed function once regardless of what if a different
           function is passed.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
 sync.Pool</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A pool object is an implemenation of an object pool. It can be
           instantiated by specifying the <tt class="verbatim">New</tt> field which is a
           thread safe member variable function that creates a new object in
@@ -747,10 +739,10 @@ sync.Pool</pre></td>
           be roughly uniform in makeup. 
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><p>
           Channels
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Channels that are read-write, read-only, and write-only that carry
           values of type <tt class="verbatim">T</tt> have types <tt class="verbatim">chan T</tt>,
           <tt class="verbatim">&lt;-chan T</tt>, and <tt class="verbatim">chan&lt;- T</tt>
@@ -777,10 +769,10 @@ for element := range readIntStream {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #ffff0020"><p>
           <tt class="verbatim">make()</tt> vs. <tt class="verbatim">new()</tt>
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           <tt class="verbatim">make()</tt> creates slices, maps, and channels by taking
           in a type <tt class="verbatim">T</tt> followed by a list of expressions and
           returns a value of type <tt class="verbatim">T</tt>. On the other hand, <tt
@@ -788,10 +780,10 @@ for element := range readIntStream {
           to allocated memory that is initialized with <tt class="verbatim">0</tt>s.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; background-color: #ffff0020"><p>
           Type Assertions
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Type assertions &ldquo;reveal the concrete value&rdquo; in an
           interface variable. If the assertion is false, and that case isn't
           handled, panic occurs. See the following example of the syntax of
@@ -807,9 +799,9 @@ if ok == false {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 select</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           The select statement is able to bind channels together. Namely, all
           <tt class="verbatim">case</tt> statements are simultaneously checked to see if
           they are ready (for reading this is a populated or closed channel,
@@ -821,23 +813,23 @@ select</pre></td>
           tasks while waiting for a result. 
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 runtime.GOMAXPROCS()</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Takes an integer parameter that specifies the number of OS threads
           that will host &ldquo;work queues&rdquo;. 
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 runtime.NumCPU()</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Returns the number of logical CPUs that can be used by the current
           process.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 iota</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           This keyword is used in conjuction with the <tt class="verbatim">constant</tt>
           keyword. It represents an non-negative integer starting from 0. It
           resetsits value back to 0 after every <tt class="verbatim">constant</tt>, and
@@ -863,12 +855,8 @@ const (
       <p style="margin-top: 0.5em; margin-bottom: 0.5em">
         <table style="display: inline-table; vertical-align: middle">
           <tbody><tr>
-            <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid">Color Scheme Key</td>
-          </tr><tr>
             <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #00ffff20">Concurrency Pattern</td>
-          </tr><tr>
             <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #00ff0020">Definition</td>
-          </tr><tr>
             <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #ffff0020">Note</td>
           </tr></tbody>
         </table>
@@ -876,38 +864,38 @@ const (
     </center>
     <table style="width: 100%">
       <tbody><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Safe Operations
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           There are a couple different safe operations in concurrent programs,
           including synchronization primitives for memory sharing,
           synchronization with communicating, immutable data, and data
           produced by confinement.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Confinement
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Confinement is when it is ensured that data is only accessed by a
           single concurrent process. There are two types of confinement: ad
           hoc and lexical.
         </p><table style="width: 100%">
           <tbody><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex; border-top: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
               Ad Hoc
             </p></td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid; border-top: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               This is confinement that adheres to a convention set, but is
               problematic to enforce convention when working on large
               projects.
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
               Lexical
             </p></td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               This form of confinement uses the compiler to enforce
               confinement, by limiting the scope of data and concurrency
               primitives. This is useful for data structures that are not
@@ -928,19 +916,19 @@ printData := func (wg *sync.WaitGroup, data []byte) {
           </tr></tbody>
         </table></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           When to use Confinement?
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Confinement can mean code that is easier to write and keep track of,
           and smaller critical sections, but the techniques to implement
           confinement are more involved that using synchronization built-ins.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">for</tt>-<tt class="verbatim">select</tt> Loop
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           The pattern of sitting a <tt class="verbatim">select</tt> in a <tt class="verbatim">for</tt>
           as below is common. The example shows an infinite loop, but a range
           could be used.
@@ -976,10 +964,10 @@ for {
 fmt.Println(workCounter)</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Goroutine Paths to Termination
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           There are 3 paths for a goroutine to terminate. These are
         </p><ol>
           <li>
@@ -1003,19 +991,19 @@ fmt.Println(workCounter)</pre>
           the basis of the <tt class="verbatim">done</tt> channel concurrency pattern. 
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Goroutine Ownership
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           As a good rule of thumb, the goroutine responsible for writing to a
           channel and creating the channel is the one responsible for the
           lifetime of the channel and stopping it.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">done</tt> Channel
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           This can be used to convey to a goroutine that it should stop
           execution. In the following example, the goroutine created is
           signalled to stop executing by passing a channel which will signal
@@ -1047,10 +1035,10 @@ go func() {
 &lt;-terminated</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">or</tt> Channel
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Suppose you have to compose multiple channels into one: a channel
           that closes when any of the passed channels are closed or written
           to. While you could simply have a different <tt class="verbatim">case</tt> in
@@ -1092,10 +1080,10 @@ or = func(chans &lt;-chan interface{}) &lt;- chan interface{} {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Handling Errors
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Consider encapsulating errors in a struct to handle them better
           upstream. For example,
         </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
@@ -1106,10 +1094,10 @@ type Result struct {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Pipelines and Pipeline stages
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A pipeline is a series of <i>stages</i> which take data in, perform
           an operation, and pass the data out. Stages are connected by passing
           of data. The stage must consume and return the same type, and stages
@@ -1119,10 +1107,10 @@ type Result struct {
           stages only operate on single elements at a time).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Making a pipeline
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           It is advised to make a stream pipeline when possible in Go. This is
           done by making each stage a goroutine and returning and passing
           channels. Each stage <tt class="verbatim">range</tt>s over the passed channel.
@@ -1135,10 +1123,10 @@ type Result struct {
           the discrete value and sending the discrete value on the channel.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">repeat</tt> Generator
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           The repeat generator outputs a stream which repeats the set of
           discrete values passed. See the following code modified from the
           textbook.
@@ -1162,10 +1150,10 @@ repeat := func(done &lt;-chan interface{}, vals <span style="margin-left: 0.1666
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">take</tt> Stage
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           The take stage only takes the first <tt class="verbatim">num</tt> elements of
           the channel passed in. The following is modified code from the
           textbook.
@@ -1187,10 +1175,10 @@ take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) 
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">repeatFn</tt> Generator
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Exactly like the <tt class="verbatim">repeat</tt> generator, but with a
           signature of:
         </p><p>
@@ -1202,19 +1190,19 @@ take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) 
           class="verbatim">case ret &lt;- fn():</tt>.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Empty Interfaces in Pipelines
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Using empty interfaces allows the library of stages and generators
           used in a pipeline to be common between different pipelines and at
           any stage of a pipeline, type assertion can be used.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           Type Assertion Stage
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           This stage has the following type signature (for some type <tt
           class="verbatim">T</tt>):
         </p><p>
@@ -1227,28 +1215,28 @@ take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) 
           a type assertion.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Fan-Out Fan-In
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           When one stage of the pipeline is slowing down the entire pipeline,
           you can consider using more than one goroutine to do the operations
           of that stage in parallel, so that more than one datum is being
           processed in that stage at a time.
         </p><table style="width: 100%">
           <tbody><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex; border-top: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
               Fan-Out
             </p></td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid; border-top: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               The act of splitting the input of the pipeline into multiple
               goroutines.
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #00ff0020; width: 15ex"><p>
               Fan-In
             </p></td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               The act of joining multiple results or multiplexing back into
               one channel for the pipeline.
             </p></td>
@@ -1258,10 +1246,10 @@ take := func(done &lt;-chan interface{}, values &lt;-chan interface{}, num int) 
           care about computation history (including order).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           Fan-Out
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           One can create an array of stage goroutines as such
         </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
           <pre class="verbatim" xml:space="preserve">
@@ -1272,10 +1260,10 @@ for i := 0; i &lt; numRoutines; i++ {
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           Fan-In or Multiplexing
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           The following multiplexing code example is modified from the text
           and requires that the order of output does not matter.
         </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
@@ -1305,10 +1293,10 @@ fanIn := func(done &lt;-chan interface{}, chans <span style="margin-left: 0.1666
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">or-done</tt> Channel
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           We seem to be using a certain pattern of wrapping our reads from a
           channel with a <tt class="verbatim">select</tt> so that we can safely close
           our goroutines with a <tt class="verbatim">done</tt>. We can abstract this, as
@@ -1358,10 +1346,10 @@ orDone := func(done, c &lt;-chan interface{}) &lt;-chan interface{} {
           This abstraction allows us to use simpler loops.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">tee</tt> Channel
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           This channel splits the incoming stream into two identical streams.
           This code is from the textbook.
         </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
@@ -1389,10 +1377,10 @@ tee := func(done, in &lt;-chan interface{}) (&lt;-chan interface{}, &lt;-chan in
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
           <tt class="verbatim">bridge</tt> Channel
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           This channel flattens a channel of channels into a channel.
         </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
           <pre class="verbatim" xml:space="preserve">
@@ -1413,10 +1401,10 @@ bridge := func(done &lt;-chan interface{}, chans &lt;-chan &lt;-chan interface{}
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; background-color: #00ffff20"><p>
           <tt class="verbatim">buffer</tt> Stage
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
           Creates a buffer of the given size.
         </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
           <pre class="verbatim" xml:space="preserve">
@@ -1434,19 +1422,19 @@ buffer := func(done &lt;-chan interface{}, in &lt;-chan interface{}, bufferSize 
 }</pre>
         </div></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Queuing
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Queuing is the acceptance of work into the pipeline despite the fact
           that the pipeline is not ready for more. This is usually implemented
           with buffered channels.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Runtime Performance and Uses of Queuing
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Despite accepting more work, the amount of work that must be
           ultimately completed is the same, and the speed of the CPU is the
           same. The runtime performance is not different with queuing, thus.
@@ -1457,20 +1445,20 @@ buffer := func(done &lt;-chan interface{}, in &lt;-chan interface{}, bufferSize 
           used in the following situations:
         </p><table style="width: 100%">
           <tbody><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #ffff0020; width: 15ex; border-top: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #ffff0020; width: 15ex"><p>
               Batching requests in a stage saves time
             </p></td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid; border-top: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               An example of this is the chunking of requests to a file, which
               is why the <tt class="verbatim">bufio</tt> package exists. Adidtionally,
               this is useful for database transactions, calculating checksums,
               and allocating continguous space. 
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-left: 0px solid; text-align: left; background-color: #ffff0020; width: 15ex; background-color: #00ff0020"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #ffff0020; width: 15ex; background-color: #00ff0020"><p>
               Negative Feedback Loop
             </p></td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-right: 0px solid"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               A negative feedback loop, also called a downward-spiral or
               death-spiral, is when if there is a delay in a stage of the
               pipeline, there is more input for the pipeline. Since the time
@@ -1486,10 +1474,10 @@ buffer := func(done &lt;-chan interface{}, in &lt;-chan interface{}, bufferSize 
           efficient.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Stable systems, Ingress, and Egress
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Ingress is the rate at which work enters the system, and egress is
           the rate at which it exits the system. Stable systems are those in
           which the egress is equal to the ingress. The two unstable systems
@@ -1497,46 +1485,46 @@ buffer := func(done &lt;-chan interface{}, in &lt;-chan interface{}, bufferSize 
           spiral) and when it is less than the egress. 
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Little's Law
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Little's Law requires sufficient sampling and determines the
           throughput of a pipeline. This is only applicable in stable systems.
         </p><center>
           \(\displaystyle L = \lambda W\)
         </center><table style="width: 100%">
           <tbody><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 15ex">\(L\)</td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 15ex">\(L\)</td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               the average number of units in the pipeline
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 15ex">\(\lambda\)</td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 15ex">\(\lambda\)</td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               the average arrival rate of units
             </p></td>
           </tr><tr>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 15ex">\(W\)</td>
-            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 15ex">\(W\)</td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               the average time a unit spends in the pipeline
             </p></td>
           </tr></tbody>
         </table></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Persistent Queues
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           If a pipeline panics with a queue in it, all requests stored in the
           queue are lost. Thus, one may want to avoid using a queue in this
           case, but if this is not possible, a persistent queue is used which
           is persisted and can be read later.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><pre class="verbatim" xml:space="preserve">
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><pre class="verbatim" xml:space="preserve">
 context</pre></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           From the package <tt class="verbatim">context</tt>, <tt class="verbatim">context.Context</tt>
           is a data type that carries deadlines, timeouts, cancelation
           signals, and &ldquo;request-scoped&rdquo; values between processes
@@ -1549,10 +1537,10 @@ context</pre></td>
           information at <a href="https://pkg.go.dev/context"><tt>https://pkg.go.dev/context</tt></a>.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           <tt class="verbatim">context</tt> values
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Each <tt class="verbatim">context</tt> also carries values with it in
           key-value pairs. New contexts with different values can be created
           with <tt class="verbatim">.WithValue(parent Context, key val any)</tt>. Values
@@ -1562,10 +1550,10 @@ context</pre></td>
           to have data-hiding. 
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           When to use <tt class="verbatim">context</tt> values?
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           It is recommended to only use context values for request-scoped
           data, and not as optional parameters to functions. The textbook
           provides some heuristics on what can be considered
@@ -1604,10 +1592,7 @@ context</pre></td>
       <p style="margin-top: 0.5em; margin-bottom: 0.5em">
         <table style="display: inline-table; vertical-align: middle">
           <tbody><tr>
-            <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid">Color Scheme Key</td>
-          </tr><tr>
-            <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #00ffff20">Definition</td>
-          </tr><tr>
+            <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #00ff0020">Definition</td>
             <td style="border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid; background-color: #ffff0020">Note</td>
           </tr></tbody>
         </table>
@@ -1615,20 +1600,114 @@ context</pre></td>
     </center>
     <table style="width: 100%">
       <tbody><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
-          
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
+          Errors
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Errors are first-class citizens in Go, and they represent when your
+          program cannot fulfill the requested instructions. There are two
+          main types of errors that can come up in your program: bugs, and
+          known edge cases. It is important to convey lots of information in
+          known edge cases. In Go, <tt class="verbatim">error</tt> is an interface with
+          one method: <tt class="verbatim">Error()</tt> which returns a <tt class="verbatim">string</tt>.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex"><p>
-          
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          What should errors convey?
         </p></td>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Errors should convey the following important information:
+        </p><ol>
+          <li>
+            <p>
+              What caused the error
+            </p>
+          </li>
+          <li>
+            <p>
+              When and where the error happened
+            </p>
+          </li>
+          <li>
+            <p>
+              A &ldquo;friendly user-facing message&rdquo;
+            </p>
+          </li>
+          <li>
+            <p>
+              Resources for getting more information
+            </p>
+          </li>
+        </ol><p>
+          Providing this information differentiates the known edge cases from
+          the bugs in the program. Consider the following struct which
+          implements <tt class="verbatim">error</tt>.
+        </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+          <pre class="verbatim" xml:space="preserve">
+type WrappedError struct {
+    Inner      error
+    Message    string
+    StackTrace string
+    Misc       map[string]interface{}
+}
+
+func wrapError (err error, msgf string, msgArgs <span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>interface{}) WrappedError {
+    return WrappedError {
+        Inner:      err,
+        Message:    fmt.Sprintf(msgf, msgArgs<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span
+          style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>),
+        StackTrace: string(debug.Stack()),
+        Misc:       make(map[string]interface{}),
+    }
+}
+
+func (err WrappedError) Error() string {
+    return err.Message
+}</pre>
+        </div></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          How to handle errors between modules?
         </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          It is suggested for errors to have a special type for each module,
+          and any error which is not of the module's error type is malformed,
+          or a bug. This means that if a module calls another, it should wrap
+          the potential error in its own error type, while potentially adding
+          more information.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
+          Why should processes support timeouts?
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          There are many responses to a timeout, but why should processes
+          timeout in the first place? Timeouts can:
+        </p><ol>
+          <li>
+            <p>
+              Reduce the amount of pipeline saturation (if the request won't
+              be repeated if timed out and there's not enough resources to
+              store it)
+            </p>
+          </li>
+          <li>
+            <p>
+              Avoid stale data (data which is no longer relevant after a
+              certain amount of time)
+            </p>
+          </li>
+          <li>
+            <p>
+              Avoid deadlocks (at the expense of potentially turning the
+              deadlock into a livelock)
+            </p>
+          </li>
+        </ol></td>
       </tr></tbody>
     </table>
+    <p>
+      
+    </p>
   </body>
 </html>
