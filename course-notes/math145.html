@@ -149,6 +149,9 @@
           ring, \(R\), an element with a multiplicative inverse is called a
           unit. The group of units of \(R\) is \(R^{\times} := \{ a \in R :
           a^{- 1} \operatorname{exists} \}\). 
+        </p><p>
+          By convention, we say that the trivial ring, \(\{ 0 \}\) is
+          non-unital.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
@@ -184,7 +187,7 @@
           </li>
           <li>
             <p>
-              \((\forall a, b \in R) ((- a) b = a (- b) = - (ab))\) 
+              \((\forall a, b \in R) ((- a) b = a (- b) = - (ab))\)
             </p>
           </li>
         </ol><p>
@@ -242,10 +245,9 @@ a}_{n\operatorname{times}}\)
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Let \(R\) be a ring.
         </p><center>
-          \(\displaystyle (R\operatorname{is}\operatorname{commutative})
-          \Leftrightarrow (\forall a, b
-\in R) ((a + b)^2 = a^2 + 2 ab +
-          b^2)\)
+          \(\displaystyle (R\operatorname{commutative}) \Leftrightarrow
+          (\forall a, b \in R) ((a + b)^2
+= a^2 + 2 ab + b^2)\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
@@ -292,6 +294,83 @@ S) (a \times b \in S \wedge a - b
           We have that \(Z (R)\) is always a subring of \(R\), and is
           commutative.
         </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Zero Divisors and Integral Domains
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be a commutative ring. We call \(0_R \neq a \in R\) a zero
+          divisor if \((\exists b \in R, b \neq 0) (ab = 0_R)\). If a ring is
+          commutative, unital, and has no zero divisors, it is an integral
+          domain (or ID for short).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Cancellation
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be an integral domain. \((\forall a, b, c \in R, a \neq
+          0_R)\)
+        </p><center>
+          \(\displaystyle ab = ac \Rightarrow b = c\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Fields
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          A field is a commutative unital ring where every non-zero element is
+          a unit.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Polynomial Rings
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be a commutative ring. We say the polynomial ring in \(x\)
+          over \(R\) is the ring of polynomials in \(x\) with coefficients in
+          \(R\). This is to say
+        </p><center>
+          \(\displaystyle R [x] := \{ p_0 + p_1 x + \cdots + p_m x^m : m \in
+          \mathbb{N}, p_i \in R, p_m
+\neq 0_R \operatorname{if}m \neq 0 \}\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Properties of Fields and Integral Domains
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be a commutative, unital ring.
+        </p><ol>
+          <li>
+            <p>
+              \((R\operatorname{integral}\operatorname{domain}) \Rightarrow (R
+              [x]
+\operatorname{integral}\operatorname{domain})\).
+            </p>
+          </li>
+          <li>
+            <p>
+              If \(0_R \neq a \in R\) is a zero divisor, then \(a \not\in
+              R^{\times}\).
+            </p>
+          </li>
+          <li>
+            <p>
+              \((R\operatorname{field})
+              \Rightarrow
+(R\operatorname{integral}\operatorname{domain})\).
+            </p>
+          </li>
+          <li>
+            <p>
+              \((R\operatorname{integral}\operatorname{domain})
+              \wedge
+(R\operatorname{finite}) \Rightarrow
+              (R\operatorname{field})\).
+            </p>
+          </li>
+        </ol></td>
       </tr></tbody>
     </table>
     <p>
@@ -301,7 +380,9 @@ S) (a \times b \in S \wedge a - b
       
     </p>
     <p>
-      
+      buffer: division algorithm, division, mod integers, Bezout's identity,
+      \([a]_n \in \mathbb{Z}_n^{\times} \Leftrightarrow (a, n) = 1\),
+      \(\mathbb{Z}_n\) field iff n prime
     </p>
   </body>
 </html>

@@ -83,7 +83,7 @@
             I make about the text as I read it and of Golang as I learn it.
             This is not a summary or recreation of the text, but rather a
             reference for anyone who has already read the text. As such,
-            please read the text to gain a better understading of the
+            please read the text to gain a better understanding of the
             contents.
           </p></td>
         </tr></tbody>
@@ -164,9 +164,9 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
           Atomicity
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          An atomic operation is indivisible or uninteruptable in the context
+          An atomic operation is indivisible or uninterruptible in the context
           in which it is operating. For example, the statement <tt class="verbatim">i++</tt>
-          consists of 3 atomic operations: retriving, incrementing, and
+          consists of 3 atomic operations: retrieving, incrementing, and
           storing the value of <tt class="verbatim">i</tt>.
         </p></td>
       </tr><tr>
@@ -259,7 +259,7 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Starvation is a superset of a livelock or deadlock where, more
-          generally, a concurrent process does not recieve access to the
+          generally, a concurrent process does not receive access to the
           resources it needs. A common example is having a &ldquo;greedy
           worker&rdquo; hold on to access to the resource, while a
           &ldquo;polite worker&rdquo; does not, and thus has less access to
@@ -282,8 +282,8 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
           OS Threads
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          OS threads are a primitve at the OS context that can be used to run
-          pocesses concurrently. The operating system is responsible for
+          OS threads are a primitive at the OS context that can be used to run
+          processes concurrently. The operating system is responsible for
           creating and managing the threads. The threads all have access to a
           shared resource space.
         </p></td>
@@ -300,8 +300,9 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Preemptive scheduling is when a process may be interrupted during
-          execution, whereas non-premptive scheduling involves processes which
-          cannot be interrupted, but rather just suspended at certain points.
+          execution, whereas non-preemptive scheduling involves processes
+          which cannot be interrupted, but rather just suspended at certain
+          points.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
@@ -346,10 +347,10 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Parallelism is a property of a machine to be able to run two tasks
-          simulatiously in the considered context. On the other hand,
+          simultaneously in the considered context. On the other hand,
           concurrency refers to when two processes have a lifespan that
           overlaps. In this sense, you could have a concurrent program running
-          on a single thread where multiple threads are simluated. It is also
+          on a single thread where multiple threads are simulated. It is also
           possible that the concurrent processes run in parallel.
         </p><p>
           Concurrency is a property of the code, and parallelism is a property
@@ -371,7 +372,7 @@ fmt.Printf(&quot;%v\n&quot;, data)</pre>
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           CSP is the name of a paper, programming language, and the idea of a
-          descibing programs as processes which are sequential and
+          describing programs as processes which are sequential and
           communicate. Used in the paper describing CSP, the CSP language
           supported the use of <tt class="verbatim">!</tt> and <tt class="verbatim">?</tt> to send
           input into and read output from a process respectively. In addition,
@@ -408,7 +409,7 @@ a?c -&gt; b!c]</pre>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           The CSP style has certain advantages that it comes with, and more
           generally, the Golang developing team suggest to use the CSP style
-          over primitves like <tt class="verbatim">sync.Mutex</tt>, but there are
+          over primitives like <tt class="verbatim">sync.Mutex</tt>, but there are
           certain guidelines outlined that help determine when you should use
           channels or OS thread primitives. Follow the first applicable
           statement.
@@ -472,8 +473,8 @@ a?c -&gt; b!c]</pre>
           the channel is closed. Channels can also have buffers to store
           values to be read later.
         </p><p>
-          As a pattern, to write robust code, seperate the ownership of the
-          channel so that the channel utilizers only have read access to the
+          As a pattern, to write robust code, separate the ownership of the
+          channel so that the channel users only have read access to the
           channel, and the channel owner has the following responsibilities:
         </p><ol>
           <li>
@@ -493,7 +494,7 @@ a?c -&gt; b!c]</pre>
           </li>
           <li>
             <p>
-              Expose a reader channel for the channel utilizers
+              Expose a reader channel for the channel users
             </p>
           </li>
         </ol></td>
@@ -612,7 +613,7 @@ type Plant interface {
     getSpecies() string
 }</pre>
         </div><p>
-          Additionally, the existance of the empty <tt class="verbatim">interface</tt>
+          Additionally, the existence of the empty <tt class="verbatim">interface</tt>
           in Go is special, because all types satisfy the empty interface,
           meaning it can hold any value. It is <tt class="verbatim">interface{}</tt>.
         </p></td>
@@ -681,7 +682,7 @@ sync.RWMutex</pre></td>
           greater control over the memory (and potentially less opportunity
           for starvation), it gives lower performance than <tt class="verbatim">sync.Mutex</tt>
           for a small number of readers. When the number of readers is high,
-          though, it's performance is noticible. The supported methods are
+          though, it's performance is noticeable. The supported methods are
           those from <tt class="verbatim">sync.Mutex</tt>, and the additional <tt class="verbatim">.RLock()</tt>,
           <tt class="verbatim">.TryRLock()</tt>, <tt class="verbatim">.RUnlock()</tt>, and <tt
           class="verbatim">.RLocker()</tt>.
@@ -690,13 +691,13 @@ sync.RWMutex</pre></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
 sync.Cond</pre></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          A <tt class="verbatim">sync.Cond</tt> is a &ldquo;rendevous point&rdquo; for
+          A <tt class="verbatim">sync.Cond</tt> is a &ldquo;rendezvous point&rdquo; for
           goroutines waiting for an event (an signal between two or more
           goroutines that carries no information). The instantiation of a <tt
           class="verbatim">Cond</tt> is done with <tt class="verbatim">sync.NewCond</tt> which
           takes a <tt class="verbatim">sync.Locker</tt> interface (accessible with <tt
           class="verbatim">.L</tt>). Additionally, the methods <tt class="verbatim">.Broadcast()</tt>,
-          <tt class="verbatim">.Signal()</tt>, and <tt class="verbatim">.Wait()</tt> are avaliable
+          <tt class="verbatim">.Signal()</tt>, and <tt class="verbatim">.Wait()</tt> are available
           to be used. Consider the following function from the textbook that
           &ldquo;subscribes&rdquo; a function to a <tt class="verbatim">Cond</tt>,
           running the function once when the <tt class="verbatim">Cond</tt> first
@@ -722,21 +723,22 @@ sync.Once</pre></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A variable, <tt class="verbatim">once</tt>, of type <tt class="verbatim">sync.Once</tt>
           will support the <tt class="verbatim">.Do(func())</tt> method which will only
-          execute the passed function once regardless of what if a different
-          function is passed.
+          execute the passed function once regardless of which goroutine the
+          <tt class="verbatim">Do</tt> method is called, and even what the passed
+          function is to <tt class="verbatim">Do</tt>.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><pre class="verbatim" xml:space="preserve">
 sync.Pool</pre></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          A pool object is an implemenation of an object pool. It can be
-          instantiated by specifying the <tt class="verbatim">New</tt> field which is a
-          thread safe member variable function that creates a new object in
-          the pool. the <tt class="verbatim">Pool</tt> also supports the methods <tt
-          class="verbatim">.Get()</tt>, and <tt class="verbatim">.Put(object)</tt>. Make no
-          assumptions about the state of the instance you get back from <tt
-          class="verbatim">.Get()</tt>, but objects in the <tt class="verbatim">Pool</tt> should
-          be roughly uniform in makeup. 
+          <tt class="verbatim">sync.Pool</tt> is an implementation of an object pool. It
+          can be instantiated by specifying the <tt class="verbatim">New</tt> field
+          which is a thread safe member variable function that creates a new
+          object in the pool. the <tt class="verbatim">Pool</tt> also supports the
+          methods <tt class="verbatim">.Get()</tt>, and <tt class="verbatim">.Put(object)</tt>.
+          Make no assumptions about the state of the instance you get back
+          from <tt class="verbatim">.Get()</tt>, but objects in the <tt class="verbatim">Pool</tt>
+          should be roughly uniform in makeup. 
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><p>
@@ -830,9 +832,9 @@ runtime.NumCPU()</pre></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #ffff0020; width: 25ex"><pre class="verbatim" xml:space="preserve">
 iota</pre></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          This keyword is used in conjuction with the <tt class="verbatim">constant</tt>
+          This keyword is used in conjunction with the <tt class="verbatim">constant</tt>
           keyword. It represents an non-negative integer starting from 0. It
-          resetsits value back to 0 after every <tt class="verbatim">constant</tt>, and
+          resets its value back to 0 after every <tt class="verbatim">constant</tt>, and
           can be used to define enums as such. For example, the following will
           create an enum type, <tt class="verbatim">Size</tt>, where <tt class="verbatim">xs</tt>
           is <tt class="verbatim">-2</tt>, and <tt class="verbatim">xl</tt> is <tt class="verbatim">2</tt>,
@@ -987,7 +989,7 @@ fmt.Println(workCounter)</pre>
           </li>
         </ol><p>
           The third option is one which allows programs that could possibly
-          cause deadlock or take up unneccessary memory to be killed, and is
+          cause deadlock or take up unnecessary memory to be killed, and is
           the basis of the <tt class="verbatim">done</tt> channel concurrency pattern. 
         </p></td>
       </tr><tr>
@@ -1006,8 +1008,8 @@ fmt.Println(workCounter)</pre>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           This can be used to convey to a goroutine that it should stop
           execution. In the following example, the goroutine created is
-          signalled to stop executing by passing a channel which will signal
-          to stop either trying to read or write to another channel.
+          signaled to stop executing by passing a channel which will signal to
+          stop either trying to read or write to another channel.
         </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
           <pre class="verbatim" xml:space="preserve">
 printStrings := func(done &lt;-chan interface{}, strings &lt;-chan string) &lt;-chan interface{} {
@@ -1119,7 +1121,7 @@ type Result struct {
           used to ensure the cleanup of all goroutines, and will be passed
           into all stages of the pipeline as well.
         </p><p>
-          Two parts of a pipeline stage must be preeptable: the creation of
+          Two parts of a pipeline stage must be preemptable: the creation of
           the discrete value and sending the discrete value on the channel.
         </p></td>
       </tr><tr>
@@ -1320,7 +1322,7 @@ orDone := func(done, c &lt;-chan interface{}) &lt;-chan interface{} {
         </div><p>
           But if the channel <tt class="verbatim">c</tt> doesn't close, and <tt class="verbatim">done</tt>
           is closed, we could have our <tt class="verbatim">for</tt> waiting
-          unneccesarily on the next element of <tt class="verbatim">c</tt>, thus
+          unnecessarily on the next element of <tt class="verbatim">c</tt>, thus
           stalling. Thus, we prefer the following code:
         </p><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
           <pre class="verbatim" xml:space="preserve">
@@ -1450,9 +1452,9 @@ buffer := func(done &lt;-chan interface{}, in &lt;-chan interface{}, bufferSize 
             </p></td>
             <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
               An example of this is the chunking of requests to a file, which
-              is why the <tt class="verbatim">bufio</tt> package exists. Adidtionally,
+              is why the <tt class="verbatim">bufio</tt> package exists. Additionally,
               this is useful for database transactions, calculating checksums,
-              and allocating continguous space. 
+              and allocating contiguous space. 
             </p></td>
           </tr><tr>
             <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; background-color: #ffff0020; width: 15ex; background-color: #00ff0020"><p>
@@ -1475,7 +1477,7 @@ buffer := func(done &lt;-chan interface{}, in &lt;-chan interface{}, bufferSize 
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
-          Stable systems, Ingress, and Egress
+          Stable Systems, Ingress, and Egress
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Ingress is the rate at which work enters the system, and egress is
@@ -1526,7 +1528,7 @@ buffer := func(done &lt;-chan interface{}, in &lt;-chan interface{}, bufferSize 
 context</pre></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           From the package <tt class="verbatim">context</tt>, <tt class="verbatim">context.Context</tt>
-          is a data type that carries deadlines, timeouts, cancelation
+          is a data type that carries deadlines, timeouts, cancellation
           signals, and &ldquo;request-scoped&rdquo; values between processes
           and across API borders. An empty context can be created with <tt
           class="verbatim">Background()</tt> and <tt class="verbatim">contexts</tt> cannot be
@@ -1667,7 +1669,7 @@ func (err WrappedError) Error() string {
         </div></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
-          How to handle errors between modules?
+          How to handle errors between modules
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           It is suggested for errors to have a special type for each module,
@@ -1677,7 +1679,7 @@ func (err WrappedError) Error() string {
           more information.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Why should processes support timeouts?
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
@@ -1704,6 +1706,122 @@ func (err WrappedError) Error() string {
             </p>
           </li>
         </ol></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Why are processes canceled?
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          The outlined reasons for cancellation include:
+        </p><ol>
+          <li>
+            <p>
+              Timeouts
+            </p>
+          </li>
+          <li>
+            <p>
+              User intervention
+            </p>
+          </li>
+          <li>
+            <p>
+              Parent cancellation
+            </p>
+          </li>
+          <li>
+            <p>
+              Replicated requests
+            </p>
+          </li>
+        </ol></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Cancellation based Design
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Cancellation can occur any time during the execution of a process,
+          and it is important to be able to elegantly stop the process. Here
+          are the biggest issues and what to keep in mind:
+        </p><table style="width: 100%">
+          <tbody><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; width: 15ex; background-color: #ffff0020"><p>
+              Size of Atomic Operations
+            </p></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
+              It may be that one of the non-preemptable operations in a
+              particular algorithm takes a particularly long amount of time.
+              In this time, what if the process was canceled? Split large
+              processes which are non-preemptable into smaller
+              non-preemptable, atomic operations that take less time to
+              execute.
+            </p></td>
+          </tr><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; width: 15ex; background-color: #ffff0020"><p>
+              Modifying Global State
+            </p></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
+              What if a goroutine happens to modify a global state, and was
+              partly done doing so until the routine was canceled. Rolling
+              back the changes made may be very tough. Try to keep the number
+              of changes done to a minimum, perhaps keep track of what changes
+              are to be made, and then make all the changes at the end of the
+              routine.
+            </p></td>
+          </tr><tr>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; width: 15ex; background-color: #ffff0020"><p>
+              Duplicate Messages
+            </p></td>
+            <td style="padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 0px solid; border-bottom: 0px solid; border-left: 0px solid; border-right: 0px solid"><p>
+              Suppose we delegate a task to a process <tt class="verbatim">A1</tt>,
+              which is taking a long time to complete. We then realize that
+              <tt class="verbatim">A1</tt> has not read from the channel leading into it
+              for a while, so we cancel it and send the same request to
+              process <tt class="verbatim">A2</tt> to handle. In the time we send the
+              cancel signal, <tt class="verbatim">A1</tt> could have already sent the
+              result to the next process, which then receives 2 identical
+              messages (from <tt class="verbatim">A1</tt> and <tt class="verbatim">A2</tt>). How
+              do we address this? Here are some recommendations:
+            </p><ol>
+              <li>
+                <p>
+                  Use heartbeats
+                </p>
+              </li>
+              <li>
+                <p>
+                  Have the recipient process accept either the first or last
+                  result reported
+                </p>
+              </li>
+              <li>
+                <p>
+                  Poll the parent goroutine for permission to send the message
+                  to the next process before sending it
+                </p>
+              </li>
+            </ol></td>
+          </tr></tbody>
+        </table></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Heartbeats
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Generally, out of the 3 mentioned methods to avoid issues with
+          duplicate messages, using what are called heartbeats is the most
+          straightforward. Heartbeats are just a way for goroutines to let
+          others know that they are still alive, which is to say that they
+          have not experienced any sort of deadlock and are getting work done.
+          The two type of heartbeats are those that beat based on a time
+          interval, and those that beat at the start of a unit of work.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          
+        </p></td>
       </tr></tbody>
     </table>
     <p>

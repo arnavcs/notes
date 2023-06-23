@@ -13,7 +13,7 @@
     that I make about the text as I read it and of Golang as I learn it. This
     is not a summary or recreation of the text, but rather a reference for
     anyone who has already read the text. As such, please read the text to
-    gain a better understading of the contents.
+    gain a better understanding of the contents.
   </bothlined>
 
   <section|Basic Concurrency Ideas>
@@ -77,10 +77,10 @@
   </cell>>|<row|<\cell>
     Atomicity
   </cell>|<\cell>
-    An atomic operation is indivisible or uninteruptable in the context in
+    An atomic operation is indivisible or uninterruptible in the context in
     which it is operating. For example, the statement <verbatim|i++> consists
-    of 3 atomic operations: retriving, incrementing, and storing the value of
-    <verbatim|i>.
+    of 3 atomic operations: retrieving, incrementing, and storing the value
+    of <verbatim|i>.
   </cell>>|<row|<\cell>
     Critical Selection
   </cell>|<\cell>
@@ -145,7 +145,7 @@
     Starvation
   </cell>|<\cell>
     Starvation is a superset of a livelock or deadlock where, more generally,
-    a concurrent process does not recieve access to the resources it needs. A
+    a concurrent process does not receive access to the resources it needs. A
     common example is having a \Pgreedy worker\Q hold on to access to the
     resource, while a \Ppolite worker\Q does not, and thus has less access to
     the resource: it is starved.
@@ -160,8 +160,8 @@
   </cell>>|<row|<\cell>
     OS Threads
   </cell>|<\cell>
-    OS threads are a primitve at the OS context that can be used to run
-    pocesses concurrently. The operating system is responsible for creating
+    OS threads are a primitive at the OS context that can be used to run
+    processes concurrently. The operating system is responsible for creating
     and managing the threads. The threads all have access to a shared
     resource space.
   </cell>>|<row|<\cell>
@@ -172,7 +172,7 @@
     Preemptive and Non-preemptive Scheduling
   </cell>|<\cell>
     Preemptive scheduling is when a process may be interrupted during
-    execution, whereas non-premptive scheduling involves processes which
+    execution, whereas non-preemptive scheduling involves processes which
     cannot be interrupted, but rather just suspended at certain points.
   </cell>>|<row|<\cell>
     Coroutines
@@ -202,10 +202,10 @@
     Concurrency vs. Parallelism
   </cell>|<\cell>
     Parallelism is a property of a machine to be able to run two tasks
-    simulatiously in the considered context. On the other hand, concurrency
+    simultaneously in the considered context. On the other hand, concurrency
     refers to when two processes have a lifespan that overlaps. In this
     sense, you could have a concurrent program running on a single thread
-    where multiple threads are simluated. It is also possible that the
+    where multiple threads are simulated. It is also possible that the
     concurrent processes run in parallel.
 
     Concurrency is a property of the code, and parallelism is a property of
@@ -221,7 +221,7 @@
     Communicating Sequential Processes (CSP)
   </cell>|<\cell>
     CSP is the name of a paper, programming language, and the idea of a
-    descibing programs as processes which are sequential and communicate.
+    describing programs as processes which are sequential and communicate.
     Used in the paper describing CSP, the CSP language supported the use of
     <verbatim|!> and <verbatim|?> to send input into and read output from a
     process respectively. In addition, it supported guarded commands. This is
@@ -250,7 +250,7 @@
   </cell>|<\cell>
     The CSP style has certain advantages that it comes with, and more
     generally, the Golang developing team suggest to use the CSP style over
-    primitves like <verbatim|sync.Mutex>, but there are certain guidelines
+    primitives like <verbatim|sync.Mutex>, but there are certain guidelines
     outlined that help determine when you should use channels or OS thread
     primitives. Follow the first applicable statement.
 
@@ -289,9 +289,9 @@
     empty closed channel will indicate that the channel is closed. Channels
     can also have buffers to store values to be read later.
 
-    As a pattern, to write robust code, seperate the ownership of the channel
-    so that the channel utilizers only have read access to the channel, and
-    the channel owner has the following responsibilities:
+    As a pattern, to write robust code, separate the ownership of the channel
+    so that the channel users only have read access to the channel, and the
+    channel owner has the following responsibilities:
 
     <\enumerate>
       <item>Instantiate the channel
@@ -300,7 +300,7 @@
 
       <item>Close the channel
 
-      <item>Expose a reader channel for the channel utilizers
+      <item>Expose a reader channel for the channel users
     </enumerate>
   </cell>>>>>
 
@@ -438,7 +438,7 @@
       }
     </verbatim-code>
 
-    Additionally, the existance of the empty <verbatim|interface> in Go is
+    Additionally, the existence of the empty <verbatim|interface> in Go is
     special, because all types satisfy the empty interface, meaning it can
     hold any value. It is <verbatim|interface{}>.
   </cell>>|<row|<\cell>
@@ -513,19 +513,19 @@
     control over the memory (and potentially less opportunity for
     starvation), it gives lower performance than <verbatim|sync.Mutex> for a
     small number of readers. When the number of readers is high, though, it's
-    performance is noticible. The supported methods are those from
+    performance is noticeable. The supported methods are those from
     <verbatim|sync.Mutex>, and the additional <verbatim|.RLock()>,
     <verbatim|.TryRLock()>, <verbatim|.RUnlock()>, and <verbatim|.RLocker()>.
   </cell>>|<row|<\cell>
     <verbatim|sync.Cond>
   </cell>|<\cell>
-    A <verbatim|sync.Cond> is a \Prendevous point\Q for goroutines waiting
+    A <verbatim|sync.Cond> is a \Prendezvous point\Q for goroutines waiting
     for an event (an signal between two or more goroutines that carries no
     information). The instantiation of a <verbatim|Cond> is done with
     <verbatim|sync.NewCond> which takes a <verbatim|sync.Locker> interface
     (accessible with <verbatim|.L>). Additionally, the methods
     <verbatim|.Broadcast()>, <verbatim|.Signal()>, and <verbatim|.Wait()> are
-    avaliable to be used. Consider the following function from the textbook
+    available to be used. Consider the following function from the textbook
     that \Psubscribes\Q a function to a <verbatim|Cond>, running the function
     once when the <verbatim|Cond> first broadcasts.
 
@@ -559,11 +559,12 @@
   </cell>|<\cell>
     A variable, <verbatim|once>, of type <verbatim|sync.Once> will support
     the <verbatim|.Do(func())> method which will only execute the passed
-    function once regardless of what if a different function is passed.
+    function once regardless of which goroutine the <verbatim|Do> method is
+    called, and even what the passed function is to <verbatim|Do>.
   </cell>>|<row|<\cell>
     <verbatim|sync.Pool>
   </cell>|<\cell>
-    A pool object is an implemenation of an object pool. It can be
+    <verbatim|sync.Pool> is an implementation of an object pool. It can be
     instantiated by specifying the <verbatim|New> field which is a thread
     safe member variable function that creates a new object in the pool. the
     <verbatim|Pool> also supports the methods <verbatim|.Get()>, and
@@ -665,12 +666,13 @@
   </cell>>|<row|<\cell>
     <verbatim|iota>
   </cell>|<\cell>
-    This keyword is used in conjuction with the <verbatim|constant> keyword.
-    It represents an non-negative integer starting from 0. It resetsits value
-    back to 0 after every <verbatim|constant>, and can be used to define
-    enums as such. For example, the following will create an enum type,
-    <verbatim|Size>, where <verbatim|xs> is <verbatim|-2>, and <verbatim|xl>
-    is <verbatim|2>, and there is no <verbatim|Size> value <verbatim|m>.
+    This keyword is used in conjunction with the <verbatim|constant> keyword.
+    It represents an non-negative integer starting from 0. It resets its
+    value back to 0 after every <verbatim|constant>, and can be used to
+    define enums as such. For example, the following will create an enum
+    type, <verbatim|Size>, where <verbatim|xs> is <verbatim|-2>, and
+    <verbatim|xl> is <verbatim|2>, and there is no <verbatim|Size> value
+    <verbatim|m>.
 
     <\verbatim-code>
       type Size int
@@ -855,7 +857,7 @@
     </enumerate>
 
     The third option is one which allows programs that could possibly cause
-    deadlock or take up unneccessary memory to be killed, and is the basis of
+    deadlock or take up unnecessary memory to be killed, and is the basis of
     the <verbatim|done> channel concurrency pattern.\ 
   </cell>>|<row|<\cell>
     Goroutine Ownership
@@ -867,7 +869,7 @@
     <verbatim|done> Channel
   </cell>|<\cell>
     This can be used to convey to a goroutine that it should stop execution.
-    In the following example, the goroutine created is signalled to stop
+    In the following example, the goroutine created is signaled to stop
     executing by passing a channel which will signal to stop either trying to
     read or write to another channel.
 
@@ -1026,7 +1028,7 @@
     all goroutines, and will be passed into all stages of the pipeline as
     well.
 
-    Two parts of a pipeline stage must be preeptable: the creation of the
+    Two parts of a pipeline stage must be preemptable: the creation of the
     discrete value and sending the discrete value on the channel.
   </cell>>|<row|<\cell>
     <verbatim|repeat> Generator
@@ -1264,7 +1266,7 @@
     </verbatim-code>
 
     But if the channel <verbatim|c> doesn't close, and <verbatim|done> is
-    closed, we could have our <verbatim|for> waiting unneccesarily on the
+    closed, we could have our <verbatim|for> waiting unnecessarily on the
     next element of <verbatim|c>, thus stalling. Thus, we prefer the
     following code:
 
@@ -1450,9 +1452,9 @@
       Batching requests in a stage saves time
     </cell>|<\cell>
       An example of this is the chunking of requests to a file, which is why
-      the <verbatim|bufio> package exists. Adidtionally, this is useful for
-      database transactions, calculating checksums, and allocating
-      continguous space.\ 
+      the <verbatim|bufio> package exists. Additionally, this is useful for
+      database transactions, calculating checksums, and allocating contiguous
+      space.\ 
     </cell>>|<row|<\cell>
       Negative Feedback Loop
     </cell>|<\cell>
@@ -1467,7 +1469,7 @@
     As such, only implement queuing at the entrance to the pipeline (negative
     feedback loop) or at stages where batching is more efficient.
   </cell>>|<row|<\cell>
-    Stable systems, Ingress, and Egress
+    Stable Systems, Ingress, and Egress
   </cell>|<\cell>
     Ingress is the rate at which work enters the system, and egress is the
     rate at which it exits the system. Stable systems are those in which the
@@ -1503,7 +1505,7 @@
     <verbatim|context>
   </cell>|<\cell>
     From the package <verbatim|context>, <verbatim|context.Context> is a data
-    type that carries deadlines, timeouts, cancelation signals, and
+    type that carries deadlines, timeouts, cancellation signals, and
     \Prequest-scoped\Q values between processes and across API borders. An
     empty context can be created with <verbatim|Background()> and
     <verbatim|contexts> cannot be mutated so that any passed contexts will
@@ -1554,7 +1556,8 @@
   yellow>|<cwith|3|3|1|1|cell-background|pastel
   yellow>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<cwith|1|1|1|1|cell-background|pastel
   green>|<twith|table-hyphen|y>|<cwith|4|4|1|1|cell-background|pastel
-  green>|<table|<row|<\cell>
+  yellow>|<cwith|5|5|1|1|cell-background|pastel
+  yellow>|<cwith|6|6|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
     Errors
   </cell>|<\cell>
     Errors are first-class citizens in Go, and they represent when your
@@ -1623,7 +1626,7 @@
       }
     </verbatim-code>
   </cell>>|<row|<\cell>
-    How to handle errors between modules?
+    How to handle errors between modules
   </cell>|<\cell>
     It is suggested for errors to have a special type for each module, and
     any error which is not of the module's error type is malformed, or a bug.
@@ -1645,6 +1648,80 @@
       <item>Avoid deadlocks (at the expense of potentially turning the
       deadlock into a livelock)
     </enumerate-numeric>
+  </cell>>|<row|<\cell>
+    Why are processes canceled?
+  </cell>|<\cell>
+    The outlined reasons for cancellation include:
+
+    <\enumerate-numeric>
+      <item>Timeouts
+
+      <item>User intervention
+
+      <item>Parent cancellation
+
+      <item>Replicated requests
+    </enumerate-numeric>
+  </cell>>|<row|<\cell>
+    Cancellation based Design
+  </cell>|<\cell>
+    Cancellation can occur any time during the execution of a process, and it
+    is important to be able to elegantly stop the process. Here are the
+    biggest issues and what to keep in mind:
+
+    <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|1|cell-halign|l>|<twith|table-hyphen|n>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-width|15ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|0ln>|<cwith|1|-1|1|-1|cell-bborder|0ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<cwith|1|-1|1|1|cell-background|pastel
+    yellow>|<table|<row|<\cell>
+      Size of Atomic Operations
+    </cell>|<\cell>
+      It may be that one of the non-preemptable operations in a particular
+      algorithm takes a particularly long amount of time. In this time, what
+      if the process was canceled? Split large processes which are
+      non-preemptable into smaller non-preemptable, atomic operations that
+      take less time to execute.
+    </cell>>|<row|<\cell>
+      Modifying Global State
+    </cell>|<\cell>
+      What if a goroutine happens to modify a global state, and was partly
+      done doing so until the routine was canceled. Rolling back the changes
+      made may be very tough. Try to keep the number of changes done to a
+      minimum, perhaps keep track of what changes are to be made, and then
+      make all the changes at the end of the routine.
+    </cell>>|<row|<\cell>
+      Duplicate Messages
+    </cell>|<\cell>
+      Suppose we delegate a task to a process <verbatim|A1>, which is taking
+      a long time to complete. We then realize that <verbatim|A1> has not
+      read from the channel leading into it for a while, so we cancel it and
+      send the same request to process <verbatim|A2> to handle. In the time
+      we send the cancel signal, <verbatim|A1> could have already sent the
+      result to the next process, which then receives 2 identical messages
+      (from <verbatim|A1> and <verbatim|A2>). How do we address this? Here
+      are some recommendations:
+
+      <\enumerate-numeric>
+        <item>Use heartbeats
+
+        <item>Have the recipient process accept either the first or last
+        result reported
+
+        <item>Poll the parent goroutine for permission to send the message to
+        the next process before sending it
+      </enumerate-numeric>
+    </cell>>>>>
+  </cell>>|<row|<\cell>
+    Heartbeats
+  </cell>|<\cell>
+    Generally, out of the 3 mentioned methods to avoid issues with duplicate
+    messages, using what are called heartbeats is the most straightforward.
+    Heartbeats are just a way for goroutines to let others know that they are
+    still alive, which is to say that they have not experienced any sort of
+    deadlock and are getting work done. The two type of heartbeats are those
+    that beat based on a time interval, and those that beat at the start of a
+    unit of work.
+  </cell>>|<row|<\cell>
+    \;
+  </cell>|<\cell>
+    \;
   </cell>>>>>
 
   \;
@@ -1663,7 +1740,6 @@
     <associate|auto-2|<tuple|2|4>>
     <associate|auto-3|<tuple|3|9>>
     <associate|auto-4|<tuple|4|19>>
-    <associate|auto-5|<tuple|1|?>>
   </collection>
 </references>
 
