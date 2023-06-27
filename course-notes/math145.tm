@@ -8,25 +8,34 @@
   Kumar>|<author-homepage|<slink|https://arnavcs.github.io>>>>>
 
   <\bothlined>
-    These are takeaway notes for the fall 2022 offering of Math 145,
-    instructed by Blake Madill at the University of Waterloo.
+    These are notes for the fall 2022 offering of Math 145, instructed by
+    Blake Madill at the University of Waterloo.
   </bothlined>
 
   <\padded-center>
-    <tabular|<tformat|<cwith|1|1|2|2|cell-background|pastel
-    cyan>|<cwith|1|1|3|3|cell-background|pastel
-    green>|<cwith|1|1|4|4|cell-background|pastel
-    yellow>|<cwith|1|1|1|-1|cell-tborder|1ln>|<cwith|1|1|1|-1|cell-bborder|1ln>|<cwith|1|1|1|-1|cell-lborder|1ln>|<cwith|1|1|1|-1|cell-rborder|1ln>|<cwith|1|1|1|1|cell-background|pastel
-    blue>|<table|<row|<cell|Note>|<cell|Example>|<cell|Definition>|<cell|Results>>>>>
+    <tabular|<tformat|<cwith|1|1|1|1|cell-background|pastel
+    cyan>|<cwith|1|1|2|2|cell-background|pastel
+    green>|<cwith|1|1|3|3|cell-background|pastel
+    yellow>|<cwith|1|1|1|-1|cell-tborder|1ln>|<cwith|1|1|1|-1|cell-bborder|1ln>|<cwith|1|1|1|-1|cell-lborder|1ln>|<cwith|1|1|1|-1|cell-rborder|1ln>|<table|<row|<cell|Example>|<cell|Definition>|<cell|Results>>>>>
   </padded-center>
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|y>|<cwith|4|4|1|1|cell-background|pastel
-  yellow>|<cwith|5|5|1|1|cell-background|pastel
-  blue>|<cwith|6|6|1|1|cell-background|pastel
+  yellow>|<cwith|6|6|1|1|cell-background|pastel
   yellow>|<cwith|7|7|1|1|cell-background|pastel
   yellow>|<cwith|9|9|1|1|cell-background|pastel
-  yellow>|<cwith|12|12|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
+  yellow>|<cwith|12|12|1|1|cell-background|pastel
+  yellow>|<cwith|15|28|1|1|cell-background|pastel
+  yellow>|<cwith|16|16|1|1|cell-background|pastel
+  green>|<cwith|17|17|1|1|cell-background|pastel
+  green>|<cwith|18|18|1|1|cell-background|pastel
+  green>|<cwith|20|20|1|1|cell-background|pastel
+  green>|<cwith|21|21|1|1|cell-background|pastel
+  green>|<cwith|22|22|1|1|cell-background|pastel
+  green>|<cwith|23|23|1|1|cell-background|pastel
+  green>|<cwith|25|25|1|1|cell-background|pastel
+  green>|<cwith|5|5|1|1|cell-background|pastel
+  green>|<cwith|26|27|1|1|cell-background|pastel green>|<table|<row|<\cell>
     Rings
   </cell>|<\cell>
     A ring, <math|<around*|(|R,+,\<times\>|)>>, is a set, <math|R>, along
@@ -55,7 +64,7 @@
     A unital ring is a ring with a multiplicative identity. In a unital ring,
     <math|R>, an element with a multiplicative inverse is called a unit. The
     group of units of <math|R> is <math|R<rsup|\<times\>>\<assign\><around*|{|a\<in\>R\<suchthat\>a<rsup|-1>
-    exists|}>>.\ 
+    <text|exists>|}>>.\ 
 
     By convention, we say that the trivial ring, <math|<around*|{|0|}>> is
     non-unital.
@@ -98,14 +107,11 @@
     <\enumerate-numeric>
       <item><math|a-b\<equiv\>a+<around*|(|-b|)>>
 
-      <item><math|n*a\<equiv\><wide*|a+a+\<cdots\>+a|\<wide-underbrace\>><rsub|n
-      times><rsub|>>.
+      <item><math|n*a\<equiv\>a+<above|\<ldots\>|n\<times\>>+a<rsub|>>.\ 
 
-      <item>If <math|R> is unital, <math|n\<equiv\>n*1\<equiv\><wide*|1+1+\<cdots\>+1|\<wide-underbrace\>><rsub|n
-      times>>
+      <item>If <math|R> is unital, <math|n\<equiv\>n*1\<equiv\>1+<above|\<ldots\>|n\<times\>>+1>
 
-      <item><math|a<rsup|n>\<equiv\><wide*|a\<times\>a\<times\>\<cdots\>\<times\>a|\<wide-underbrace\>><rsub|n
-      times>>
+      <item><math|a<rsup|n>\<equiv\>a\<times\><above|\<ldots\>|n\<times\>>\<times\>a>
     </enumerate-numeric>
   </cell>>|<row|<\cell>
     Checking Commutativity
@@ -113,7 +119,7 @@
     Let <math|R> be a ring.
 
     <\equation*>
-      <around*|(|R commutative|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>R|)><around*|(|<around*|(|a+b|)><rsup|2>=a<rsup|2>+2*a*b+b<rsup|2>|)>
+      <around*|(|R <text|commutative>|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>R|)><around*|(|<around*|(|a+b|)><rsup|2>=a<rsup|2>+2*a*b+b<rsup|2>|)>
     </equation*>
   </cell>>|<row|<\cell>
     Binomial Theorem
@@ -135,7 +141,7 @@
     Let <math|R> be a ring, and let <math|\<varnothing\>\<neq\>S\<subseteq\>R>.\ 
 
     <\equation*>
-      <around*|(|S subring of R|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>S|)><around*|(|a\<times\>b\<in\>S\<wedge\>a-b\<in\>S|)>
+      <around*|(|S <text|subring of> R|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>S|)><around*|(|a\<times\>b\<in\>S\<wedge\>a-b\<in\>S|)>
     </equation*>
   </cell>>|<row|<\cell>
     Center of a Ring
@@ -187,18 +193,157 @@
     Let <math|R> be a commutative, unital ring.
 
     <\enumerate-numeric>
-      <item><math|<around*|(|R integral domain|)>\<Rightarrow\><around*|(|R<around*|[|x|]>
-      integral domain|)>>.
+      <item><math|<around*|(|R <text|integral
+      domain>|)>\<Rightarrow\><around*|(|R<around*|[|x|]><text|integral
+      domain>|)>>.
 
       <item>If <math|<rsub|>0<rsub|R>\<neq\>a\<in\>R> is a zero divisor, then
       <math|a\<nin\>R<rsup|\<times\>>>.
 
-      <item><math|<around*|(|R field|)>\<Rightarrow\><around*|(|R integral
-      domain|)>>.
+      <item><math|<around*|(|R <text|field>|)>\<Rightarrow\><around*|(|R
+      <text|integral domain>|)>>.
 
-      <item><math|<around*|(|R integral domain|)>\<wedge\><around*|(|R
-      finite|)>\<Rightarrow\><around*|(|R field|)>>.
+      <item><math|<around*|(|R <text|integral domain>|)>\<wedge\><around*|(|R
+      <text|finite>|)>\<Rightarrow\><around*|(|R <text|field>|)>>.
     </enumerate-numeric>
+  </cell>>|<row|<\cell>
+    Image and Preimage
+  </cell>|<\cell>
+    Let <math|f\<of\>A\<rightarrow\>B> be a function. And let
+    <math|C\<subseteq\>A>, and <math|D\<subseteq\>B>. We define the image of
+    <math|C> as <math|f<around*|(|C|)>\<assign\><around*|{|f<around*|(|x|)>\<suchthat\>x\<in\>C|}>>
+    and we define the preimage of <math|D> as
+    <math|f<rsup|-1><around*|(|D|)>\<assign\><around*|{|x\<in\>A\<suchthat\>f<around*|(|x|)>\<in\>D|}>>.
+  </cell>>|<row|<\cell>
+    Injective, Surjective, and Bijective
+  </cell>|<\cell>
+    Consider a function <math|f\<of\>A\<rightarrow\>B>. We say <math|f> is
+    injective (or one-to-one) if\ 
+
+    <\equation*>
+      <around*|(|\<forall\>x,y\<in\>A|)><around*|(|f<around*|(|x|)>=f<around*|(|y|)>\<Rightarrow\>x=y|)>
+    </equation*>
+
+    We say <math|f> is surjective (or onto) if\ 
+
+    <\equation*>
+      <around*|(|\<forall\>y\<in\>B|)><around*|(|\<exists\>x\<in\>A|)><around*|(|f<around*|(|x|)>=y|)>
+    </equation*>
+
+    And if <math|f> is both surjective and injective, it is bijective (or
+    invertible) and thus has an inverse function, <math|f<rsup|-1>>.
+  </cell>>|<row|<\cell>
+    Homomorphisms
+  </cell>|<\cell>
+    Let <math|R,S> be rings. We say that <math|\<varphi\>\<of\>R\<rightarrow\>S>
+    is a homomorphism if <math|<around*|(|\<forall\>a,b\<in\>R|)>>
+
+    <\enumerate-numeric>
+      <item><math|\<varphi\><around*|(|a+b|)>=\<varphi\><around*|(|a|)>+\<varphi\><around*|(|b|)>>
+
+      <item><math|\<varphi\><around*|(|a*b|)>=\<varphi\><around*|(|a|)>*\<varphi\><around*|(|b|)>>
+    </enumerate-numeric>
+  </cell>>|<row|<\cell>
+    Properties of Homomorphisms
+  </cell>|<\cell>
+    Let <math|\<varphi\>\<of\>R\<rightarrow\>S> be a homomorphism. Then:
+
+    <\enumerate-numeric>
+      <item><math|\<varphi\><around*|(|0<rsub|R>|)>=0<rsub|S>>
+
+      <item><math|<around*|(|\<forall\>r\<in\>R|)><around*|(|\<varphi\><around*|(|-r|)>=-\<varphi\><around*|(|r|)>|)>>
+
+      <item><math|<around*|(|A <text|subring of>
+      R|)>\<Rightarrow\><around*|(|\<varphi\><around*|(|A|)> <text|subring
+      of> S|)>>
+
+      <item><math|<around*|(|B <text|subring of>
+      S|)>\<Rightarrow\><around*|(|\<varphi\><rsup|-1><around*|(|B|)>
+      <text|subring of> R|)>>
+    </enumerate-numeric>
+
+    Additionally, if <math|\<varphi\>> is surjective and <math|R> is unital,
+    then:
+
+    <\enumerate-numeric>
+      <item><math|S> is unital with <math|1<rsub|S>=\<varphi\><around*|(|1<rsub|R>|)>>
+
+      <item><math|<around*|(|a\<in\>R<rsup|\<times\>>|)>\<Rightarrow\><around*|(|\<varphi\><around*|(|a|)>\<in\>S<rsup|\<times\>>\<wedge\>\<varphi\><around*|(|a<rsup|-1>|)>=\<varphi\><around*|(|a|)><rsup|-1>|)>>
+    </enumerate-numeric>
+  </cell>>|<row|<\cell>
+    Kernel
+  </cell>|<\cell>
+    Let <math|\<varphi\>\<of\>R\<rightarrow\>S> be a homomorphism. The kernel
+    of <math|\<varphi\>> is
+
+    <\equation*>
+      Ker \<varphi\>\<assign\><around*|{|x\<in\>R\<suchthat\>\<varphi\><around*|(|x|)>=0<rsub|S>|}>=\<varphi\><rsup|-1><around*|(|0<rsub|S>|)>
+    </equation*>
+
+    Then from above, since <math|<around*|{|0<rsub|S><rsub|>|}>> is a subring
+    of <math|S>, we see that <math|Ker \<varphi\>> is a subring of <math|R>.
+  </cell>>|<row|<\cell>
+    Embedding
+  </cell>|<\cell>
+    Let <math|\<varphi\>\<of\>R\<rightarrow\>S> be a homomorphism. We say
+    that if <math|\<varphi\>> is injective, then it is an embedding.
+    Additionally, we can determine if <math|\<varphi\>> is an embedding since\ 
+
+    <\equation*>
+      <around*|(|\<varphi\> <text|embedding>|)>\<Leftrightarrow\><around*|(|Ker
+      \<varphi\>=<around*|{|0<rsub|R>|}>|)>
+    </equation*>
+  </cell>>|<row|<\cell>
+    Isomorphism and Isomorphic
+  </cell>|<\cell>
+    Let <math|\<varphi\>\<of\>R\<rightarrow\>S> be a homomorphism. If
+    <math|\<varphi\>> is bijective, we call it an isomorphism. Additionally,
+    we then say that <math|R> is isomorphic to <math|S>, denoted
+    <math|R\<cong\>S>.
+  </cell>>|<row|<\cell>
+    Ideal
+  </cell>|<\cell>
+    Let <math|R> be a ring. We say <math|I> is an ideal of <math|R> if it is
+    a subring of <math|R> and <math|<around*|(|\<forall\>r\<in\>R|)><around*|(|\<forall\>a\<in\>I|)><around*|(|a*r,r*a\<in\>I|)>>.
+  </cell>>|<row|<\cell>
+    Ideal Test
+  </cell>|<\cell>
+    Let <math|R> be a ring, and let <math|\<varnothing\>\<neq\>I\<subseteq\>R>.
+
+    <\equation*>
+      <around*|(|I <text|ideal>|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>I|)><around*|(|\<forall\>r\<in\>R|)><around*|(|a-b,a*r,r*a\<in\>I|)>
+    </equation*>
+  </cell>>|<row|<\cell>
+    Principal Ideal
+  </cell>|<\cell>
+    Let <math|R> be a commutative, unital ring, and let <math|r\<in\>R> be
+    fixed. The principal ideal generated by <math|r> is
+    <math|<around*|\<langle\>|r|\<rangle\>>\<assign\><around*|{|r*x\<suchthat\>x\<in\>R|}>>.
+  </cell>>|<row|<\cell>
+    Equivalence Relations
+  </cell>|<\cell>
+    An equivalence relation is a relation that is reflexive, symmetric, and
+    transitive.
+  </cell>>|<row|<\cell>
+    Modular Arithmetic, Equivalence Classes, and Quotient Rings
+  </cell>|<\cell>
+    Let <math|I> be an ideal of the ring <math|R>. We define an equivalence
+    relation, <math|\<sim\>>, such that <math|<around*|(|\<forall\>a,b\<in\>R|)><around*|(|a\<sim\>b\<Leftrightarrow\>b-a\<in\>I|)>>.
+    We will use the notation <math|a\<equiv\>b <around*|(|mod I|)>> to mean
+    <math|a\<sim\>b>.
+
+    For some <math|a\<in\>R>, the equivalence class of <math|a> in <math|R>
+    is <math|<around*|[|a|]><rsub|I>\<assign\><around*|{|x\<in\>R\<suchthat\>a\<equiv\>x
+    <around*|(|mod I|)>|}>>. Notationally, <math|<wide|a|\<bar\>>> is the
+    same as <math|<around*|[|a|]><rsub|I>>.
+
+    Now define <math|R> mod <math|I> as <math|<frac*|R|I>\<assign\><around*|{|<around*|[|a|]><rsub|I>\<suchthat\>a\<in\>R|}>>
+    with operations defined so that <math|<around*|(|\<forall\>a,b\<in\>R|)><around*|(|<around*|[|a|]><rsub|I>+<around*|[|b|]><rsub|I>=<around*|[|a+b|]><rsub|I>\<wedge\><around*|[|a|]><rsub|I>\<cdot\><around*|[|b|]><rsub|I>=<around*|[|a\<cdot\>b|]><rsub|I>|)>>.
+    This is a what we call a quotient ring.
+  </cell>>|<row|<\cell>
+    Fermat's Little Theorem
+  </cell>|<\cell>
+    \;
   </cell>>>>>
 
   \;

@@ -11,10 +11,10 @@
     <with|font-shape|italic|Specifying Systems> is a publication written by
     Leslie Lamport on the TLA<rsup|+> language. I choose purposely to omit
     leaving details in these notes about the grammar of the language, since
-    this can be easily found in the author's summary of the text on the TLA
-    website. Additionally, this is not a summary or recreation of the next in
-    any manner. As such, please read the text to gain a better understading
-    of the contents.
+    this can be easily found in the <hlink|author's
+    summary|https://lamport.azurewebsites.net/tla/summary-standalone.pdf> of
+    the text on the TLA website. Additionally, this is not a summary or
+    recreation of the text in any manner.
   </bothlined>
 
   <section|System Specifications>
