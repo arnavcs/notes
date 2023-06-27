@@ -27,13 +27,13 @@
 
   <\itemize-dot>
     <item>Consider an outline or overview for long/difficult proofs (not
-    required for proofs in contests which are alwasy short).
+    required for proofs in contests which are always short).
 
     <item>Consider splitting your proof into smaller lemmas which are
     individually proved.
 
     <item>Use visual demarcation (such as indents, spacing, and underlining)
-    to denote seperate parts of the proof and maintain a hierarchy when the
+    to denote separate parts of the proof and maintain a hierarchy when the
     casework has subcases.
 
     <item>Explicitly denote the end of a proof with \PQED\Q or a small box.
@@ -43,7 +43,7 @@
   </itemize-dot>
 
   For example, consider a question which asks us to find the smallest
-  triangular number greater than 100. If you are unfamiliar with traingular
+  triangular number greater than 100. If you are unfamiliar with triangular
   numbers, they can be defined quite easily.
 
   <\definition>

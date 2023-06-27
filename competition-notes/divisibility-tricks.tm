@@ -43,7 +43,7 @@
   which are divisible by <math|n>.
 
   What if we consider those numbers which aren't divisible by <math|n>, but
-  always yeild the same \Premainder\Q when divided by <math|n>? Perhaps this
+  always yield the same \Premainder\Q when divided by <math|n>? Perhaps this
   question is a weird one if you start to think about negative numbers, so
   let's rephrase what we want to say. Instead, consider the set of numbers,
   which are divisible by <math|n> upon subtracting a fixed integer <math|a>
@@ -72,10 +72,10 @@
 
   Now we can take some time to familiarize ourselves with what this means.
   For the integers, our definition of congruence classes gives us exactly
-  what we want, all of the numbers which have a certain remainer when divided
-  by <math|n>. These numbers are spaced every <math|n> numbers away from each
-  other as well. An easy way to interpret a congruence relation is then to
-  say that when dividing both sides by <math|n>, they yield the same
+  what we want, all of the numbers which have a certain remainder when
+  divided by <math|n>. These numbers are spaced every <math|n> numbers away
+  from each other as well. An easy way to interpret a congruence relation is
+  then to say that when dividing both sides by <math|n>, they yield the same
   remainder. This seems like a logical next step to help us determine
   divisibility tricks since <math|n\<divides\>m> if and only if
   <math|m\<equiv\>0 <around*|(|mod n|)>>.
@@ -168,7 +168,7 @@
     important facts to consider are that we get nice results when considering
     numbers which divide a power of <math|10>, or who have a multiple which
     is very close to a power of <math|10>. Additionally, when the divisor is
-    composite (like <math|6>), it may be useful to seperate it into a product
+    composite (like <math|6>), it may be useful to separate it into a product
     of coprime numbers.
   </remark>
 

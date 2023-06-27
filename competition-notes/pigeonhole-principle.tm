@@ -32,7 +32,7 @@
   of the theorem do exist. If you have to use a generalized version of the
   pigeonhole principle, it is generally not required to cite a theorem or
   give a proof for it in a contest. Here is one of the main generalizations
-  of the pigeonhoole principle (though others do exist).
+  of the pigeonhole principle (though others do exist).
 
   <\theorem>
     <dueto|Generalized Pigeonhole Principle>If
