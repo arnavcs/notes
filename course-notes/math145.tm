@@ -64,7 +64,7 @@
     A unital ring is a ring with a multiplicative identity. In a unital ring,
     <math|R>, an element with a multiplicative inverse is called a unit. The
     group of units of <math|R> is <math|R<rsup|\<times\>>\<assign\><around*|{|a\<in\>R\<suchthat\>a<rsup|-1>
-    <text|exists>|}>>.\ 
+    <text| exists>|}>>.\ 
 
     By convention, we say that the trivial ring, <math|<around*|{|0|}>> is
     non-unital.
@@ -119,7 +119,7 @@
     Let <math|R> be a ring.
 
     <\equation*>
-      <around*|(|R <text|commutative>|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>R|)><around*|(|<around*|(|a+b|)><rsup|2>=a<rsup|2>+2*a*b+b<rsup|2>|)>
+      <around*|(|R <text| commutative>|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>R|)><around*|(|<around*|(|a+b|)><rsup|2>=a<rsup|2>+2*a*b+b<rsup|2>|)>
     </equation*>
   </cell>>|<row|<\cell>
     Binomial Theorem
@@ -141,7 +141,7 @@
     Let <math|R> be a ring, and let <math|\<varnothing\>\<neq\>S\<subseteq\>R>.\ 
 
     <\equation*>
-      <around*|(|S <text|subring of> R|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>S|)><around*|(|a\<times\>b\<in\>S\<wedge\>a-b\<in\>S|)>
+      <around*|(|S <text| subring of > R|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>S|)><around*|(|a\<times\>b\<in\>S\<wedge\>a-b\<in\>S|)>
     </equation*>
   </cell>>|<row|<\cell>
     Center of a Ring
@@ -190,21 +190,20 @@
   </cell>>|<row|<\cell>
     Properties of Fields and Integral Domains
   </cell>|<\cell>
-    Let <math|R> be a commutative, unital ring.
+    Let <math|R> be a commutative, unital ring. We have the following:
 
     <\enumerate-numeric>
-      <item><math|<around*|(|R <text|integral
-      domain>|)>\<Rightarrow\><around*|(|R<around*|[|x|]><text|integral
-      domain>|)>>.
+      <item><math|<around*|(|R <text| ID>|)>\<Rightarrow\><around*|(|R<around*|[|x|]><text|
+      ID>|)>>.
 
       <item>If <math|<rsub|>0<rsub|R>\<neq\>a\<in\>R> is a zero divisor, then
       <math|a\<nin\>R<rsup|\<times\>>>.
 
-      <item><math|<around*|(|R <text|field>|)>\<Rightarrow\><around*|(|R
-      <text|integral domain>|)>>.
+      <item><math|<around*|(|R <text| field>|)>\<Rightarrow\><around*|(|R
+      <text| ID>|)>>.
 
-      <item><math|<around*|(|R <text|integral domain>|)>\<wedge\><around*|(|R
-      <text|finite>|)>\<Rightarrow\><around*|(|R <text|field>|)>>.
+      <item><math|<around*|(|R <text| ID>|)>\<wedge\><around*|(|R <text|
+      finite>|)>\<Rightarrow\><around*|(|R <text| field>|)>>.
     </enumerate-numeric>
   </cell>>|<row|<\cell>
     Image and Preimage
@@ -253,13 +252,13 @@
 
       <item><math|<around*|(|\<forall\>r\<in\>R|)><around*|(|\<varphi\><around*|(|-r|)>=-\<varphi\><around*|(|r|)>|)>>
 
-      <item><math|<around*|(|A <text|subring of>
-      R|)>\<Rightarrow\><around*|(|\<varphi\><around*|(|A|)> <text|subring
-      of> S|)>>
+      <item><math|<around*|(|A <text| subring of >
+      R|)>\<Rightarrow\><around*|(|\<varphi\><around*|(|A|)> <text| subring
+      of > S|)>>
 
-      <item><math|<around*|(|B <text|subring of>
-      S|)>\<Rightarrow\><around*|(|\<varphi\><rsup|-1><around*|(|B|)>
-      <text|subring of> R|)>>
+      <item><math|<around*|(|B <text| subring of >
+      S|)>\<Rightarrow\><around*|(|\<varphi\><rsup|-1><around*|(|B|)> <text|
+      subring of > R|)>>
     </enumerate-numeric>
 
     Additionally, if <math|\<varphi\>> is surjective and <math|R> is unital,
@@ -290,7 +289,7 @@
     Additionally, we can determine if <math|\<varphi\>> is an embedding since\ 
 
     <\equation*>
-      <around*|(|\<varphi\> <text|embedding>|)>\<Leftrightarrow\><around*|(|Ker
+      <around*|(|\<varphi\> <text| embedding>|)>\<Leftrightarrow\><around*|(|Ker
       \<varphi\>=<around*|{|0<rsub|R>|}>|)>
     </equation*>
   </cell>>|<row|<\cell>
@@ -311,7 +310,7 @@
     Let <math|R> be a ring, and let <math|\<varnothing\>\<neq\>I\<subseteq\>R>.
 
     <\equation*>
-      <around*|(|I <text|ideal>|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>I|)><around*|(|\<forall\>r\<in\>R|)><around*|(|a-b,a*r,r*a\<in\>I|)>
+      <around*|(|I <text| ideal>|)>\<Leftrightarrow\><around*|(|\<forall\>a,b\<in\>I|)><around*|(|\<forall\>r\<in\>R|)><around*|(|a-b,a*r,r*a\<in\>I|)>
     </equation*>
   </cell>>|<row|<\cell>
     Principal Ideal
