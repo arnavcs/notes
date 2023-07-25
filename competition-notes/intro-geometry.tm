@@ -45,6 +45,14 @@
     C<rsup|2>=A C<rsup|2>>.
   </theorem>
 
+  <\theorem>
+    <dueto|Area of a Triangle>Let <math|A B C > be a triangle. Let <math|h>
+    be the length of the perpendicular dropped from <math|A> to <math|B C>.
+    Let <math|b> be the length of segment <math|B C>. The area of <math|A B
+    C>, sometimes denoted <math|<around*|\||A B C|\|>> is
+    <math|<frac|1|2>*b*h>.
+  </theorem>
+
   There are also some well known triangles which might be useful to know the
   dimensions of. The most notable of these is the equilateral triangle. If an
   equilateral triangle has side length 2, then the height is <math|<sqrt|3>>,
@@ -151,7 +159,7 @@
     <associate|auto-1|<tuple|1|1>>
     <associate|auto-2|<tuple|2|1>>
     <associate|auto-3|<tuple|3|1>>
-    <associate|auto-4|<tuple|4|?>>
+    <associate|auto-4|<tuple|4|2>>
   </collection>
 </references>
 
@@ -166,9 +174,13 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|0.5fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Exercises>
-      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Scaling,
+      Transformations, and Translations> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-3><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Exercises>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-4><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
