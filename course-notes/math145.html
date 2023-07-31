@@ -494,12 +494,13 @@ R)\)
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; background-color: #00ff0020"><p>
-          Ideal
+          Ideal and Proper Ideal
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Let \(R\) be a ring. We say \(I\) is an ideal of \(R\) if it is a
           subring of \(R\) and \((\forall r \in R) (\forall a \in I) (ar, ra
-          \in I)\).
+          \in I)\). If \(I\) is an ideal of \(R\) and \(I \neq R\), then \(I\)
+          is a proper ideal of \(R\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
@@ -551,10 +552,180 @@ b, ar, ra \in I)\)
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Modular Arithmetic with \(\mathbb{Z}\)
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          For \(n \in \mathbb{Z}^+\), we define \(\mathbb{Z}_n :=
+          {}^{\mathbb{Z}} /_{\langle n \rangle} = \{ \bar{0}, \bar{1},
+\ldots,
+          \overline{n - 1} \}\), and by convention we write
+          \((\operatorname{mod}n)\) to mean \((\operatorname{mod} \langle n
+          \rangle)\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Fermat's Little Theorem
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          
+          Let \(p\) be prime, then \((\forall a \in \mathbb{Z}_p, a \neq
+          0_{\mathbb{Z}_p})\)
+        </p><center>
+          \(\displaystyle a^{p - 1} = 1_{\mathbb{Z}_p}\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Prime and Maximal Ideals
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          With reference to prime and maximal ideals of a ring \(R\), we
+          assume that \(R\) is a commutative, unital ring. We say an ideal,
+          \(I\), of \(R\), is prime if
+        </p><ol>
+          <li>
+            <p>
+              \(I\) is a proper ideal of \(R\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \((\forall a, b \in R) ((ab \in I) \Rightarrow (a, b \in I))\)
+            </p>
+          </li>
+        </ol><p>
+          Additionally, we say that \(I\) is maximal if
+        </p><ol>
+          <li>
+            <p>
+              \(I\) is a proper ideal of \(R\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \((\forall \text{ ideals } J \text{ of } R) ((I \subsetneq J
+              \subseteq R)
+\Rightarrow (J = R))\)
+            </p>
+          </li>
+        </ol></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Prime and Maximal Ideal Quotient Rings
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(I\) be an ideal of ring \(R\). We have the following two
+          results:
+        </p><ol>
+          <li>
+            <p>
+              \((I \text{ prime}) \Leftrightarrow \left( {}^R /_I \text{ ID}
+              \right)\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \((I \text{ maximal}) \Leftrightarrow \left( {}^R /_I \text{
+              field} \right)\)
+            </p>
+          </li>
+        </ol><p>
+          And since \(\left( {}^R /_I \text{ field} \right) \Rightarrow \left(
+          {}^R /_I \text{ ID}
+\right)\), we get as a corollory that \((I
+          \text{ maximal}) \Leftrightarrow \left( {}^R /_I \text{ field}
+          \right)
+\Rightarrow \left( {}^R /_I \text{ ID} \right)
+          \Leftrightarrow (I \text{
+prime})\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Corollory of Zorn's Lemma
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be a commutative, unital ring. \((\forall I \text{ proper
+          ideal of } R) (\exists M \text{ maximal ideal of } R)
+(I \subseteq
+          M)\). 
+        </p><p>
+          Additionally, if \(a \not\in R^{\times}\), then \((\exists M \text{
+          maximal ideal of } R) (a \in M)\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Existence of a homomorphsim
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(I\) be an ideal of ring \(R\). Then, there is some ring \(S\)
+          and homomorphism \(\varphi : R \rightarrow S\) such that \(I
+          =\operatorname{Ker} \varphi\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          First Isomorphism Theorem
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(\varphi : R \rightarrow S\) be a ring homomorphism between
+          rings \(R\) and \(S\). Now,
+        </p><center>
+          \(\displaystyle {}^R /_{\operatorname{Ker} \varphi} \cong \varphi
+          (R)\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Ideal Sum
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(I, J\) be ideals of \(R\). We define the ideal sum \(I + J\)
+          as follows:
+        </p><center>
+          \(\displaystyle I + J := \{ a + b : a \in I, b \in J \}\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Comaximal Ideals
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Ideals \(I, J\) of \(R\) are comaximal if \(I + J = R\)
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Ideal Product
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(I, J\) be ideals of \(R\). The ideal product of \(I\) and
+          \(J\) is defined as:
+        </p><center>
+          \(\displaystyle IJ := \{ a_1 b_1 + \cdots + a_n b_n : n \in
+          \mathbb{N}, a_i \in I, a_j \in J
+\}\)
+        </center><p>
+          If we have multiple ideals \(I_1, I_2, \ldots, I_m\), then we can
+          simplify the product to get
+        </p><center>
+          \(\displaystyle I_1 I_2 \cdots I_m = \{ a_{1 1} \cdots a_{1 m} +
+          \cdots + a_{n 1} \cdots a_{n
+m} : n \in \mathbb{N}, a_{i j} \in I_j
+          \}\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Property of Comaximality
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(I, J\) be comaximal ideals of the commutative, unital ring
+          \(R\). We then have that \(IJ = I \cap J\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Chinese Remainder Theorem
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be a commutative, unital ring with comaximal ideals \(I\)
+          and \(J\). We have that
+        </p><center>
+          \(\displaystyle {}^R /_{IJ} \cong {}^R /_I \times {}^R /_J\)
+        </center><p>
+          Where \(\times\) is the cartesian product.
         </p></td>
       </tr></tbody>
     </table>
@@ -565,9 +736,40 @@ b, ar, ra \in I)\)
       
     </p>
     <p>
-      buffer: division algorithm, division, mod integers, Bezout's identity,
-      \([a]_n \in \mathbb{Z}_n^{\times} \Leftrightarrow (a, n) = 1\),
-      \(\mathbb{Z}_n\) field iff n prime
+      Things to add:
     </p>
+    <ul>
+      <li>
+        <p>
+          division algorithm
+        </p>
+      </li>
+      <li>
+        <p>
+          division
+        </p>
+      </li>
+      <li>
+        <p>
+          Bezout's identity
+        </p>
+      </li>
+      <li>
+        <p>
+          \([a]_n \in \mathbb{Z}_n^{\times} \Leftrightarrow (a, n) = 1
+          \boldsymbol{}\)
+        </p>
+      </li>
+      <li>
+        <p>
+          \(\mathbb{Z}_n\) field iff n prime
+        </p>
+      </li>
+      <li>
+        <p>
+          Size of a Quotient of \(\mathbb{Z}_p [x]\)
+        </p>
+      </li>
+    </ul>
   </body>
 </html>

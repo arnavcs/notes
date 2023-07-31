@@ -25,7 +25,7 @@
   yellow>|<cwith|7|7|1|1|cell-background|pastel
   yellow>|<cwith|9|9|1|1|cell-background|pastel
   yellow>|<cwith|12|12|1|1|cell-background|pastel
-  yellow>|<cwith|15|28|1|1|cell-background|pastel
+  yellow>|<cwith|15|29|1|1|cell-background|pastel
   yellow>|<cwith|16|16|1|1|cell-background|pastel
   green>|<cwith|17|17|1|1|cell-background|pastel
   green>|<cwith|18|18|1|1|cell-background|pastel
@@ -35,7 +35,11 @@
   green>|<cwith|23|23|1|1|cell-background|pastel
   green>|<cwith|25|25|1|1|cell-background|pastel
   green>|<cwith|5|5|1|1|cell-background|pastel
-  green>|<cwith|26|27|1|1|cell-background|pastel green>|<table|<row|<\cell>
+  green>|<cwith|26|27|1|1|cell-background|pastel
+  green>|<cwith|31|31|1|1|cell-background|pastel
+  yellow>|<cwith|36|36|1|1|cell-background|pastel
+  yellow>|<cwith|35|35|1|1|cell-background|pastel
+  yellow>|<cwith|37|37|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
     Rings
   </cell>|<\cell>
     A ring, <math|<around*|(|R,+,\<times\>|)>>, is a set, <math|R>, along
@@ -300,10 +304,12 @@
     we then say that <math|R> is isomorphic to <math|S>, denoted
     <math|R\<cong\>S>.
   </cell>>|<row|<\cell>
-    Ideal
+    Ideal and Proper Ideal
   </cell>|<\cell>
     Let <math|R> be a ring. We say <math|I> is an ideal of <math|R> if it is
     a subring of <math|R> and <math|<around*|(|\<forall\>r\<in\>R|)><around*|(|\<forall\>a\<in\>I|)><around*|(|a*r,r*a\<in\>I|)>>.
+    If <math|I> is an ideal of <math|R> and <math|I\<neq\>R>, then <math|I>
+    is a proper ideal of <math|R>.
   </cell>>|<row|<\cell>
     Ideal Test
   </cell>|<\cell>
@@ -340,18 +346,155 @@
     with operations defined so that <math|<around*|(|\<forall\>a,b\<in\>R|)><around*|(|<around*|[|a|]><rsub|I>+<around*|[|b|]><rsub|I>=<around*|[|a+b|]><rsub|I>\<wedge\><around*|[|a|]><rsub|I>\<cdot\><around*|[|b|]><rsub|I>=<around*|[|a\<cdot\>b|]><rsub|I>|)>>.
     This is a what we call a quotient ring.
   </cell>>|<row|<\cell>
+    Modular Arithmetic with <math|\<bbb-Z\>>
+  </cell>|<\cell>
+    For <math|n\<in\>\<bbb-Z\><rsup|+>>, we define
+    <math|\<bbb-Z\><rsub|n>\<assign\><frac*|\<bbb-Z\>|<around*|\<langle\>|n|\<rangle\>>>=<around*|{|<wide|0|\<bar\>>,<wide|1|\<bar\>>,\<ldots\>,<wide|n-1|\<bar\>>|}>>,
+    and by convention we write <math|<around*|(|mod n|)>> to mean
+    <math|<around*|(|mod <around*|\<langle\>|n|\<rangle\>>|)>>.
+  </cell>>|<row|<\cell>
     Fermat's Little Theorem
   </cell>|<\cell>
-    \;
+    Let <math|p> be prime, then <math|<around*|(|\<forall\>a\<in\>\<bbb-Z\><rsub|p>,a\<neq\>0<rsub|\<bbb-Z\><rsub|p>>|)>>
+
+    <\equation*>
+      a<rsup|p-1>=1<rsub|\<bbb-Z\><rsub|p>>
+    </equation*>
+  </cell>>|<row|<\cell>
+    Prime and Maximal Ideals
+  </cell>|<\cell>
+    With reference to prime and maximal ideals of a ring <math|R>, we assume
+    that <math|R> is a commutative, unital ring. We say an ideal, <math|I>,
+    of <math|R>, is prime if
+
+    <\enumerate-numeric>
+      <item><math|I> is a proper ideal of <math|R>
+
+      <item><math|<around*|(|\<forall\>a,b\<in\>R|)><around*|(|<around*|(|a*b\<in\>I|)>\<Rightarrow\><around*|(|a,b\<in\>I|)>|)>>
+    </enumerate-numeric>
+
+    Additionally, we say that <math|I> is maximal if
+
+    <\enumerate-numeric>
+      <item><math|I> is a proper ideal of <math|R>
+
+      <item><math|<around*|(|\<forall\><text| ideals >J<text| of
+      >R|)><around*|(|<around*|(|I\<subsetneq\>J\<subseteq\>R|)>\<Rightarrow\><around*|(|J=R|)>|)>>
+    </enumerate-numeric>
+  </cell>>|<row|<\cell>
+    Prime and Maximal Ideal Quotient Rings
+  </cell>|<\cell>
+    Let <math|I> be an ideal of ring <math|R>. We have the following two
+    results:
+
+    <\enumerate-numeric>
+      <item><math|<around*|(|I<text| prime>|)>\<Leftrightarrow\><around*|(|<frac*|R|I><text|
+      ID>|)>>
+
+      <item><math|<around*|(|I<text| maximal>|)>\<Leftrightarrow\><around*|(|<frac*|R|I><text|
+      field>|)>>
+    </enumerate-numeric>
+
+    And since <math|<around*|(|<frac*|R|I><text|
+    field>|)>\<Rightarrow\><around*|(|<frac*|R|I><text| ID>|)>>, we get as a
+    corollory that <math|<around*|(|I<text|
+    maximal>|)>\<Leftrightarrow\><around*|(|<frac*|R|I><text|
+    field>|)>\<Rightarrow\><around*|(|<frac*|R|I><text|
+    ID>|)>\<Leftrightarrow\><around*|(|I<text| prime>|)>>.
+  </cell>>|<row|<\cell>
+    Corollory of Zorn's Lemma
+  </cell>|<\cell>
+    Let <math|R> be a commutative, unital ring.
+    <math|<around*|(|\<forall\>I<text| proper ideal of
+    >R|)><around*|(|\<exists\>M<text| maximal ideal of
+    >R|)><around*|(|I\<subseteq\>M|)>>.\ 
+
+    Additionally, if <math|a\<nin\>R<rsup|\<times\>>>, then
+    <math|<around*|(|\<exists\>M<text| maximal ideal of
+    >R|)><around*|(|a\<in\>M|)>>.
+  </cell>>|<row|<\cell>
+    Existence of a homomorphsim
+  </cell>|<\cell>
+    Let <math|I> be an ideal of ring <math|R>. Then, there is some ring
+    <math|S> and homomorphism <math|\<varphi\>\<of\>R\<rightarrow\>S> such
+    that <math|I=Ker \<varphi\>>.
+  </cell>>|<row|<\cell>
+    First Isomorphism Theorem
+  </cell>|<\cell>
+    Let <math|\<varphi\>\<of\>R\<rightarrow\>S> be a ring homomorphism
+    between rings <math|R> and <math|S>. Now,
+
+    <\equation*>
+      <frac*|R|Ker \<varphi\>>\<cong\>\<varphi\><around*|(|R|)>
+    </equation*>
+  </cell>>|<row|<\cell>
+    Ideal Sum
+  </cell>|<\cell>
+    Let <math|I,J> be ideals of <math|R>. We define the ideal sum <math|I+J>
+    as follows:
+
+    <\equation*>
+      I+J\<assign\><around*|{|a+b\<suchthat\>a\<in\>I,b\<in\>J|}>
+    </equation*>
+  </cell>>|<row|<\cell>
+    Comaximal Ideals
+  </cell>|<\cell>
+    Ideals <math|I,J> of <math|R> are comaximal if <math|I+J=R>
+  </cell>>|<row|<\cell>
+    Ideal Product
+  </cell>|<\cell>
+    Let <math|I,J> be ideals of <math|R>. The ideal product of <math|I> and
+    <math|J> is defined as:
+
+    <\equation*>
+      I*J\<assign\><around*|{|a<rsub|1>*b<rsub|1>+\<cdots\>+a<rsub|n>*b<rsub|n>\<suchthat\>n\<in\>\<bbb-N\>,a<rsub|i>\<in\>I,a<rsub|j>\<in\>J|}>
+    </equation*>
+
+    If we have multiple ideals <math|I<rsub|1>,I<rsub|2>,\<ldots\>,I<rsub|m>>,
+    then we can simplify the product to get
+
+    <\equation*>
+      I<rsub|1>*I<rsub|2>*\<cdots\>*I<rsub|m>=<around*|{|a<rsub|1
+      1>**\<cdots\>**a<rsub|1 m>+\<cdots\>+a<rsub|n 1>*\<cdots\>*a<rsub|n
+      m>\<suchthat\>n\<in\>\<bbb-N\>,a<rsub|i j>\<in\>I<rsub|j>|}>
+    </equation*>
+  </cell>>|<row|<\cell>
+    Property of Comaximality
+  </cell>|<\cell>
+    Let <math|I,J> be comaximal ideals of the commutative, unital ring
+    <math|R>. We then have that <math|I*J=I\<cap\>J>.
+  </cell>>|<row|<\cell>
+    Chinese Remainder Theorem
+  </cell>|<\cell>
+    Let <math|R> be a commutative, unital ring with comaximal ideals <math|I>
+    and <math|J>. We have that
+
+    <\equation*>
+      <frac*|R|I*J>\<cong\><frac*|R|I>\<times\><frac*|R|J>
+    </equation*>
+
+    Where <math|\<times\>> is the cartesian product.
   </cell>>>>>
 
   \;
 
   \;
 
-  buffer: division algorithm, division, mod integers, Bezout's identity,
-  <math|<around*|[|a|]><rsub|n>\<in\>\<bbb-Z\><rsub|n><rsup|\<times\>>\<Leftrightarrow\><around*|(|a,n|)>=1>,
-  <math|\<bbb-Z\><rsub|n>> field iff n prime
+  Things to add:
+
+  <\itemize-dot>
+    <item>division algorithm
+
+    <item>division
+
+    <item>Bezout's identity
+
+    <item><math|<around*|[|a|]><rsub|n>\<in\>\<bbb-Z\><rsub|n><rsup|\<times\>>\<Leftrightarrow\><around*|(|a,n|)>=1<with|font-series|bold|>>
+
+    <item><math|\<bbb-Z\><rsub|n>> field iff n prime
+
+    <item>Size of a Quotient of <math|\<bbb-Z\><rsub|p><around*|[|x|]>>
+  </itemize-dot>
 </body>
 
 <\initial>
