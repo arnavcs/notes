@@ -88,6 +88,10 @@ table caption {
   margin: 0px;
 }
 
+.table-container table th, .table-container table td {
+  max-width: 300px;
+}
+
 .card-container thead th {
   text-align: left;
 }
