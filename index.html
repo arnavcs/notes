@@ -14,7 +14,7 @@
     </header>
     <main>
       <p>These notes were created with GNU TeXmacs. If the notes do not render well on your mobile browser, most mobile browsers also support viewing a page as a desktop site.</p>
-      <p>The status of an entry is indicated by the following icons: 🟢 complete, 🟡 in-progress, 🔴 unstarted.</p>
+      <p>The status of an entry is indicated by the following icons: <span class="complete"></span>complete, <span class="in-progress"></span>in-progress, <span class="unstarted"></span>unstarted.</p>
       <section class="table-container">
         <table>
           <caption>High School Math Competition Lessons</caption>
@@ -27,27 +27,32 @@
           <tbody>
             <tr>
               <td>1</td>
-              <td>🟢 <a href="./competition-notes/divisibility-tricks.pdf">Divisibility Tricks</a></td>
+              <td><span class="complete"></span><a href="./competition-notes/divisibility-tricks.pdf">Divisibility Tricks</a></td>
               <!-- IMC-1999-A1 IMC-1999-A3 IMC-2000-A1 MMO-1993-A1 -->
             </tr>
             <tr>
               <td>2</td>
-              <td>🟢 <a href="./competition-notes/writing-solutions.pdf">Writing Solutions</a></td>
+              <td><span class="complete"></span><a href="./competition-notes/writing-solutions.pdf">Writing Solutions</a></td>
               <!-- -->
             </tr>
             <tr>
               <td>3</td>
-              <td>🟢 <a href="./competition-notes/pigeonhole-principle.pdf">Pigeonhole Principle</a></td>
+              <td><span class="complete"></span><a href="./competition-notes/pigeonhole-principle.pdf">Pigeonhole Principle</a></td>
               <!-- SUMO-1961-8.4 HMC-1947 -->
             </tr>
             <tr>
               <td>4</td>
-              <td>🟢 <a href="./competition-notes/finite-series-and-products.pdf">Finite Series & Products</a></td>
+              <td><span class="complete"></span><a href="./competition-notes/finite-series-and-products.pdf">Finite Series & Products</a></td>
               <!-- IMC-1999-A5 IMC-2009-A6 Brilliant -->
             </tr>
             <tr>
               <td>5</td>
-              <td>🟢 <a href="./competition-notes/intro-geometry.pdf">Introductory Geometry</a></td>
+              <td><span class="complete"></span><a href="./competition-notes/intro-geometry.pdf">Introductory Geometry</a></td>
+              <!-- IMC-1999-A2 IMC-1999-A4 IMC-1999-A7 IMC-1999-A10 IMC-2000-A7 IMC-2000-A9 -->
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><span class="in-progress"></span><a>Cyclic Quadrilaterals and Incircles</a></td>
               <!-- IMC-1999-A2 IMC-1999-A4 IMC-1999-A7 IMC-1999-A10 IMC-2000-A7 IMC-2000-A9 -->
             </tr>
           </tbody>
@@ -61,10 +66,10 @@
           </thead>
           <tbody>
             <tr>
-              <td>🟡 The Red Book of Mathematical Problems</td>
+              <td><span class="in-progress"></span>The Red Book of Mathematical Problems</td>
             </tr>
             <tr>
-              <td>🔴 The Green Book of Mathematical Problems</td>
+              <td><span class="unstarted"></span>The Green Book of Mathematical Problems</td>
             </tr>
           </tbody>
         </table>
@@ -73,38 +78,55 @@
           <thead>
             <tr>
               <th scope=col rowspan=2>Term</th>
-              <th scope=col colspan=5>Course</th>
+              <th scope=col colspan=7>Course</th>
             </tr>
             <tr>
               <th scope=col colspan=2>Math</th>
               <th scope=col colspan=1>Stat</th>
-              <th scope=col colspan=2>CS</th>
+              <th scope=col colspan=1>CO</th>
+              <th scope=col colspan=3>CS</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Fall '22</td>
-              <td>🟡 <a href="./course-notes/math145.html">Math 145</a></td>
-              <td>🟡 <a>Math 147</a></td>
+              <td><span class="in-progress"></span><a href="./course-notes/math145.html">Math 145</a></td>
+              <td><span class="unstarted"></span><a>Math 147</a></td>
               <td></td>
-              <td>🟡 <a>CS 145</a></td>
+              <td></td>
+              <td><span class="unstarted"></span><a>CS 145</a></td>
+              <td></td>
               <td></td>
             </tr>
             <tr>
               <td>Winter '23</td>
-              <td>🟡 <a>Math 146</a></td>
-              <td>🟡 <a>Math 148</a></td>
+              <td><span class="unstarted"></span><a>Math 146</a></td>
+              <td><span class="unstarted"></span><a>Math 148</a></td>
               <td></td>
-              <td>🟡 <a>CS 146</a></td>
+              <td></td>
+              <td><span class="unstarted"></span><a>CS 146</a></td>
+              <td></td>
               <td></td>
             </tr>
             <tr>
               <td>Fall '23</td>
-              <td>🔴 <a>Math 245</a></td>
-              <td>🔴 <a>Math 247</a></td>
-              <td>🔴 <a>Stat 240</a></td>
-              <td>🔴 <a>CS 245E</a></td>
-              <td>🔴 <a>CS 246E</a></td>
+              <td><span class="unstarted"></span><a>Math 245</a></td>
+              <td><span class="unstarted"></span><a>Math 247</a></td>
+              <td><span class="unstarted"></span><a>Stat 240</a></td>
+              <td></td>
+              <td><span class="unstarted"></span><a>CS 241E</a></td>
+              <td><span class="unstarted"></span><a>CS 245E</a></td>
+              <td><span class="unstarted"></span><a>CS 246E</a></td>
+            </tr>
+            <tr>
+              <td>Winter '24</td>
+              <td><span class="unstarted"></span><a>Math 249</a></td>
+              <td></td>
+              <td><span class="unstarted"></span><a>Stat 241</a></td>
+              <td><span class="unstarted"></span><a>CO 255</a></td>
+              <td><span class="unstarted"></span><a>CS 240E</a></td>
+              <td></td>
+              <td></td>
             </tr>
           </tbody>
         </table>
@@ -117,19 +139,19 @@
           </thead>
           <tbody>
             <tr>
-              <td>🟢 Learn You a Haskell for Great Good!</td>
+              <td><span class="complete"></span>Learn You a Haskell for Great Good!</td>
             </tr>
             <tr>
-              <td>🟡 <a href="./textbook-notes/concurrency-in-go.html">Concurrency in Go</a></td>
+              <td><span class="in-progress"></span><a href="./textbook-notes/concurrency-in-go.html">Concurrency in Go</a></td>
             </tr>
             <tr>
-              <td>🟡 Specifying Systems</td>
+              <td><span class="in-progress"></span>Specifying Systems</td>
             </tr>
             <tr>
-              <td>🔴 Real World Haskell</td>
+              <td><span class="unstarted"></span>Real World Haskell</td>
             </tr>
             <tr>
-              <td>🔴 Structure and Interpretation of Computer Programs</td>
+              <td><div class="unstarted"></div>Structure and Interpretation of Computer Programs</td>
             </tr>
           </tbody>
         </table>
