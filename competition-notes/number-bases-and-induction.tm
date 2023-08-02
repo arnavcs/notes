@@ -116,37 +116,35 @@
   <\lemma>
     If <math|n=<wide|c<rsub|k>c<rsub|k-1>\<ldots\>c<rsub|1>c<rsub|0>|\<bar\>><rsub|<around*|(|p|)>>>,
     then <math|a<rsub|n+1>=1+<big|sum><rsub|i=1><rsup|k><around*|(|c<rsub|i><space|0.5em>mod
-    2|)>>.
+    2|)>>. Here, <math|<around*|(|x<space|0.5em>mod 2|)>> is an operation
+    with value 0 or 1.\ 
   </lemma>
 
   <\proof>
     You can observe this by doing examples, and it can be proven with
     induction.
 
-    Base case: <math|n=1>
+    <with|font-series|bold|Base case:> <math|n=1>
 
     <\indent>
       In this base case, we indeed have that
       <math|a<rsub|2>=1+<around*|(|1<space|0.5em>mod 2|)>=2>
     </indent>
 
-    Inductive step:\ 
+    <with|font-series|bold|Inductive step:> Assuming that if
+    <math|l=<wide|c<rsub|k>c<rsub|k-1>\<ldots\>c<rsub|1>c<rsub|0>|\<bar\>><rsub|<around*|(|p|)>>>
+    satisfies <math|a<rsub|l+1>=1+<big|sum><rsub|i=1><rsup|l><around*|(|c<rsub|i><space|0.5em>mod
+    2|)>>, we will show that <math|l+1=<wide|d<rsub|k>d<rsub|k-1>\<ldots\>d<rsub|1>d<rsub|0>|\<bar\>><rsub|<around*|(|p|)>>>
+    satisfies <math|a<rsub|l+2>=1+<big|sum><rsub|i=1><rsup|l+1><around*|(|d<rsub|i><space|0.5em>mod
+    2|)>>.
 
     <\indent>
-      Assuming that if <math|l=<wide|c<rsub|k>c<rsub|k-1>\<ldots\>c<rsub|1>c<rsub|0>|\<bar\>><rsub|<around*|(|p|)>>>
-      satisfies <math|a<rsub|l+1>=1+<big|sum><rsub|i=1><rsup|l><around*|(|c<rsub|i><space|0.5em>mod
-      2|)>>, I will show that <math|l+1=<wide|d<rsub|k>d<rsub|k-1>\<ldots\>d<rsub|1>d<rsub|0>|\<bar\>><rsub|<around*|(|p|)>>>
-      satisfies <math|a<rsub|l+2>=1+<big|sum><rsub|i=1><rsup|l+1><around*|(|d<rsub|i><space|0.5em>mod
-      2|)>>.
-
       Let <math|j> be the smallest integer such that <math|c<rsub|j>\<neq\>0>
       and <math|c<rsub|j>\<neq\>p-1>. Now, we see that
       <math|l+1=<wide|c<rsub|k>c<rsub|k-1>\<ldots\>c<rsub|j+1><around*|(|c<rsub|j>+1|)>0\<ldots\>0|\<bar\>><rsub|<around*|(|p|)>>>,
       thus <math|d<rsub|i>=c<rsub|i>> if <math|i\<gtr\>j>,
       <math|d<rsub|i>=c<rsub|i+1>> if <math|i=j>, and <math|d<rsub|i>=0>
-      otherwise.
-
-      Then,
+      otherwise. Then,
 
       <\eqnarray*>
         <tformat|<table|<row|<cell|a<rsub|l+2>>|<cell|=>|<cell|a<rsub|l+1>+<around*|(|-1|)><rsup|f<around*|(|l+1|)>+1>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=1><rsup|l><around*|(|c<rsub|i><space|0.5em>mod
@@ -168,13 +166,12 @@
     Thus, the induction is complete, and the lemma is proven
   </proof>
 
-  From this lemma, we see that for any <math|m\<in\>\<bbb-N\>>, we have that
-  <math|<around*|(|\<exists\><text| infinitely many
-  >k\<in\>\<bbb-N\>|)><around*|(|a<rsub|k>=m|)>> because we can choose
-  <math|m> to have the digits we desire in base <math|p>. Namely, for any
-  <math|m>, let <math|s\<assign\><frac|<around*|(|p<rsup|m>-1|)>|<around*|(|p-1|)>>>.
-  Now, from Lemma 2, we see that for any non-negative <math|i>, we have
-  <math|a<rsub|s*\<cdot\>p<rsup|i>+1>=m<rsub|>>.
+  Now, for any <math|m\<in\>\<bbb-Z\><rsup|+>>, let
+  <math|s\<assign\><frac|<around*|(|p<rsup|m>-1|)>|<around*|(|p-1|)>>>. From
+  Lemma 2, we see that for any non-negative <math|i>, we have
+  <math|a<rsub|s*\<cdot\>p<rsup|i>+1>=m<rsub|>>. Thus,
+  <math|<around*|(|\<forall\>m\<in\>\<bbb-Z\><rsup|+>|)><around*|(|\<exists\><text|
+  infinitely many >k\<in\>\<bbb-Z\><rsup|+>|)><around*|(|m=a<rsub|k>|)>>.
 </body>
 
 <\initial>
