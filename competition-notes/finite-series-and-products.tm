@@ -63,7 +63,7 @@
     <math|F<rsub|100>>, and <math|F<rsub|101>>:
 
     <\equation*>
-      <frac|1|F<rsub|0>*F<rsub|2>>+<frac|1|F<rsub|1>*F<rsub|3>>+\<cdots\>+<frac|1|F<rsub|n-1>*F<rsub|n+1>>
+      <frac|1|F<rsub|0>*F<rsub|2>>+<frac|1|F<rsub|1>*F<rsub|3>>+\<cdots\>+<frac|1|F<rsub|99>*F<rsub|101>>
     </equation*>
   </problem>
 
