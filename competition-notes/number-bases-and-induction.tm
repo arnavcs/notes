@@ -57,14 +57,15 @@
   <\theorem>
     <dueto|Strong Induction>Let <math|P(n)> be a statement that depends on a
     <math|n\<in\>\<bbb-Z\><rsup|+>>. If <math|P(1)> is true, and if
-    <math|<around*|(|\<forall\>k\<in\>\<bbb-Z\><rsup|+>|)><around*|(|<around*|(|P<around*|(|1|)>\<wedge\>P<around*|(|2|)>\<wedge\>\<cdots\>\<wedge\>P<around*|(|K|)>|)>\<Rightarrow\>P<around*|(|k+1|)>|)>>,
+    <math|<around*|(|\<forall\>k\<in\>\<bbb-Z\><rsup|+>|)><around*|(|<around*|(|P<around*|(|1|)>\<wedge\>P<around*|(|2|)>\<wedge\>\<cdots\>\<wedge\>P<around*|(|k|)>|)>\<Rightarrow\>P<around*|(|k+1|)>|)>>,
     then <math|P(n)> is true for all positive integers <math|n>.
   </theorem>
 
   When using induction, it may not be true that what you are trying to prove
-  CAN be proven by induction because it may be a weak result that doesn't
-  give you enough information for the inductive step. In that case, you have
-  to prove something even stronger. For example, consider the following:
+  can be proven by induction. The result which you are trying to prove may be
+  too weak result to give you enough information for the inductive step. In
+  such a case, change the statement to something stronger. For example,
+  consider the following:
 
   <\example>
     <dueto|AoPS Induction Handout>It is true that for all <math|n\<geq\>1>,
