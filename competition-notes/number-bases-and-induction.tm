@@ -111,7 +111,19 @@
   </lemma>
 
   <\proof>
-    From class
+    Since we know that <math|p\<nmid\>d>, and that <math|d\<barsuchthat\>n>,
+    we can write <math|n=p<rsup|e>*d>. Additionally, there is a <math|q> such
+    that <math|d=p*q+f<around*|(|n|)>> where <math|f<around*|(|n|)>\<less\>p>
+    (since it is the remainder when <math|d> is divided by <math|p>). Taking
+    these together, we see that\ 
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|n>|<cell|=>|<cell|p<rsup|e><around*|(|p*q+f<around*|(|n|)>|)>>>|<row|<cell|>|<cell|=>|<cell|p<rsup|e+1>*q+p<rsup|e>*f<around*|(|n|)>>>|<row|<cell|>|<cell|=>|<cell|p<rsup|e+1>*q+f<around*|(|n|)>*p<rsup|e>+0\<cdot\>p<rsup|e-1>*+0\<cdot\>p<rsup|e-2>+\<cdots\>+0\<cdot\>p<rsup|1>+0\<cdot\>p<rsup|0>*>>>>
+    </eqnarray*>
+
+    Thus, the last non-zero digit of <math|n> in base <math|p> is
+    <math|f<around*|(|n|)>>. Therefore, <math|c<rsub|0>=f<around*|(|n|)>> as
+    desired.
   </proof>
 
   <\lemma>
@@ -167,11 +179,20 @@
     Thus, the induction is complete, and the lemma is proven
   </proof>
 
-  Now, for any <math|m\<in\>\<bbb-Z\><rsup|+>>, let
+  Now, for any <math|m\<in\>\<bbb-Z\>, m\<gtr\>1>, let
   <math|s\<assign\><frac|<around*|(|p<rsup|m>-1|)>|<around*|(|p-1|)>>>. From
   Lemma 2, we see that for any non-negative <math|i>, we have
-  <math|a<rsub|s*\<cdot\>p<rsup|i>+1>=m<rsub|>>. Thus,
-  <math|<around*|(|\<forall\>m\<in\>\<bbb-Z\><rsup|+>|)><around*|(|\<exists\><text|
+  <math|a<rsub|s*\<cdot\>p<rsup|i>+1>=m<rsub|>> because
+  <math|s*\<cdot\>p<rsup|i>> has the form
+  <math|<wide|<wide*|11\<ldots\>1|\<wide-underbrace\>><rsub|m\<times\>><wide*|00\<ldots\>0|\<wide-underbrace\>><rsub|i\<times\>>|\<bar\>>
+  <rsub|<around*|(|p|)>>>.\ 
+
+  And when <math|m=1>, note that for any non-negative integer <math|i>, we
+  have <math|a<rsub|2*p<rsup|i>+1>=m> since
+  <math|2*p<rsup|i>=<wide|2<wide*|00\<ldots\>0|\<wide-underbrace\>><rsub|i\<times\>>|\<bar\>>
+  <rsub|<around*|(|p|)>>>.\ 
+
+  Thus, <math|<around*|(|\<forall\>m\<in\>\<bbb-Z\><rsup|+>|)><around*|(|\<exists\><text|
   infinitely many >k\<in\>\<bbb-Z\><rsup|+>|)><around*|(|m=a<rsub|k>|)>>.
 </body>
 
