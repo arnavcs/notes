@@ -733,7 +733,9 @@
   green>|<cwith|29|29|1|1|cell-background|pastel
   cyan>|<cwith|30|30|1|1|cell-background|pastel
   yellow>|<cwith|31|31|1|1|cell-background|pastel
-  yellow>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|y>|<table|<row|<\cell>
+  yellow>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|y>|<cwith|8|8|1|1|cell-hyphen|t>|<cwith|8|8|1|1|cell-halign|l>|<cwith|8|8|1|1|cell-lsep|1ex>|<cwith|8|8|1|1|cell-rsep|1ex>|<cwith|8|8|1|1|cell-bsep|1ex>|<cwith|8|8|1|1|cell-tsep|1ex>|<cwith|8|8|1|1|cell-background|pastel
+  green>|<cwith|8|8|1|1|cell-background|pastel
+  yellow>|<cwith|8|8|1|1|cell-width|25ex>|<cwith|8|8|1|1|cell-hmode|exact>|<cwith|8|8|1|1|cell-tborder|1ln>|<cwith|8|8|1|1|cell-bborder|1ln>|<cwith|8|8|1|1|cell-lborder|0ln>|<cwith|8|8|1|1|cell-rborder|0ln>|<table|<row|<\cell>
     Safe Operations
   </cell>|<\cell>
     There are a couple different safe operations in concurrent programs,
@@ -922,7 +924,7 @@
       \<less\>-terminated
     </verbatim-code>
   </cell>>|<row|<\cell>
-    <verbatim|or> Channel
+    Safe Operations
   </cell>|<\cell>
     Suppose you have to compose multiple channels into one: a channel that
     closes when any of the passed channels are closed or written to. While
