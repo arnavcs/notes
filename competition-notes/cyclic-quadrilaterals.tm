@@ -9,8 +9,8 @@
     <assign|theorem-sep|<macro|<enunciation-sep>>>
   </hide-preamble>
 
-  <doc-data|<doc-title|Cyclic Quadrilaterals>|<doc-author|<author-data|<author-name|Arnav
-  Kumar>>>>
+  <doc-data|<doc-title|Cyclic Quadrilaterals and More
+  Triangles>|<doc-author|<author-data|<author-name|Arnav Kumar>>>>
 
   <section|Cyclic Quadrilaterals>
 
@@ -60,12 +60,22 @@
   <\theorem>
     <dueto|Brahmagupta's Formula>If <math|A B C D> is a cyclic quadrilateral
     with sides of length <math|a>, <math|b>, <math|c>, and <math|d>, then let
-    <math|s\<assign\><tfrac|1|2><around*|(|a+b+c+d|)>>. We have that:
+    the semiperimeter be <math|s\<assign\><tfrac|1|2><around*|(|a+b+c+d|)>>.
+    We have that:
 
     <\equation*>
       <around*|[|A B C D|]>=<sqrt|<around*|(|s-a|)>*<around*|(|s-b|)>*<around*|(|s-c|)>*<around*|(|s-d|)>>
     </equation*>
   </theorem>
+
+  <\corollary>
+    <dueto|Heron's Formula>For a triangle <math|A B C>, if <math|s> is the
+    semiperimeter, <math|<frac|1|2><around*|(|a+b+c|)>>, we have:
+
+    <\equation*>
+      <around*|[|A B C|]>=<sqrt|s*<around*|(|s-a|)>*<around*|(|s-b|)>*<around*|(|s-c|)>>
+    </equation*>
+  </corollary>
 
   <section|Exercises>
 
@@ -76,10 +86,9 @@
   </exercise>
 
   <\exercise>
-    Although not related to cyclic quadrilaterals, this is a well known
-    theorem. Prove that if <math|l> is a line tangent to the circumcircle of
-    <math|A B C> at <math|A>, and <math|D> lies on <math|l> such that
-    <math|\<leangle\>D A C\<gtr\>\<leangle\>D A B>, then prove
+    This is a well known fact. Prove that if <math|l> is a line tangent to
+    the circumcircle of <math|A B C> at <math|A>, and <math|D> lies on
+    <math|l> such that <math|\<leangle\>D A C\<gtr\>\<leangle\>D A B>, then
     <math|\<leangle\>D A B=\<leangle\>A C B>.
   </exercise>
 
@@ -111,40 +120,23 @@
     <associate|auto-1|<tuple|1|1>>
     <associate|auto-2|<tuple|2|1>>
     <associate|auto-3|<tuple|3|1>>
-    <associate|auto-4|<tuple|4|2>>
-    <associate|auto-5|<tuple|5|2>>
-    <associate|auto-6|<tuple|6|2>>
-    <associate|auto-7|<tuple|7|?>>
-    <associate|auto-8|<tuple|8|?>>
   </collection>
 </references>
 
 <\auxiliary>
   <\collection>
     <\associate|toc>
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Circumcircles
-      and Circumcenters> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Cyclic
+      Quadrilaterals> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Incircles
-      and Incenters> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Related
+      Theorems> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|0.5fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Excenters
-      and Excircles> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Exercises>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-3><vspace|0.5fn>
-
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Orthocenters>
-      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-4><vspace|0.5fn>
-
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Centroids>
-      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-5><vspace|0.5fn>
-
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Exercises>
-      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-6><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
