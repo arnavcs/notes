@@ -40,8 +40,8 @@
   </corollary>
 
   <\theorem>
-    <dueto|Pythagorean Theorem>Let <math|A B C> be a right triangle with
-    <math|\<leangle\>A B C=90\<degree\>>. Now we have <math|A B<rsup|2>+B
+    <dueto|Pythagorean Theorem>Triangle <math|A B C> is a right triangle with
+    <math|\<leangle\>A B C=90\<degree\>>. Now iff we have <math|A B<rsup|2>+B
     C<rsup|2>=A C<rsup|2>>.
   </theorem>
 
