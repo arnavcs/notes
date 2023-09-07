@@ -26,13 +26,13 @@
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|y>|<cwith|1|1|1|1|cell-background|pastel
-  yellow>|<cwith|3|3|1|1|cell-background|pastel
   yellow>|<cwith|4|4|1|1|cell-background|pastel
-  yellow>|<cwith|6|6|1|1|cell-background|pastel
+  yellow>|<cwith|5|5|1|1|cell-background|pastel
+  yellow>|<cwith|7|7|1|1|cell-background|pastel
   yellow>|<cwith|2|2|1|1|cell-background|pastel
-  green>|<cwith|1|7|1|2|cell-hyphen|t>|<cwith|1|7|1|2|cell-halign|l>|<cwith|1|7|1|2|cell-lsep|1ex>|<cwith|1|7|1|2|cell-rsep|1ex>|<cwith|1|7|1|2|cell-bsep|1ex>|<cwith|1|7|1|2|cell-tsep|1ex>|<cwith|1|7|1|1|cell-background|pastel
-  yellow>|<cwith|1|7|1|1|cell-width|25ex>|<cwith|1|7|1|1|cell-hmode|exact>|<cwith|4|4|1|1|cell-background|pastel
-  cyan>|<table|<row|<\cell>
+  green>|<cwith|1|8|1|2|cell-hyphen|t>|<cwith|1|8|1|2|cell-halign|l>|<cwith|1|8|1|2|cell-lsep|1ex>|<cwith|1|8|1|2|cell-rsep|1ex>|<cwith|1|8|1|2|cell-bsep|1ex>|<cwith|1|8|1|2|cell-tsep|1ex>|<cwith|1|8|1|1|cell-background|pastel
+  yellow>|<cwith|1|8|1|1|cell-width|25ex>|<cwith|1|8|1|1|cell-hmode|exact>|<cwith|5|5|1|1|cell-background|pastel
+  cyan>|<cwith|3|3|1|1|cell-background|pastel green>|<table|<row|<\cell>
     Divisibility
   </cell>|<\cell>
     For <math|m,n\<in\>\<bbb-Z\>>, we have that <math|m> divides <math|n>,
@@ -52,6 +52,14 @@
     as <math|b\<equiv\>c<space|0.5em><around*|(|mod n|)>>. This is equivalent
     to saying <math|n\<divides\>b-c>. When it is obvious what the modulus is,
     we can omit the <math|<around*|(|mod n|)>>.
+  </cell>>|<row|<\cell>
+    Deriving Divisibility Rules
+  </cell>|<\cell>
+    To derive a divisibility rule for a number, it is important to consider
+    the form of the number as a base 10 number, and see how that plays modulo
+    the desired divisor. For example, if we consider divisibility by nine, we
+    see that if <math|n=<big|sum><rsub|i=0><rsup|k>a<rsub|i>\<cdot\>10<rsup|i>>,
+    then modulo 9 we have that <math|n\<equiv\><big|sum><rsub|i=0><rsup|k>a<rsub|i>\<cdot\>10<rsup|i>\<equiv\><big|sum><rsub|i=0><rsup|k>a<rsub|i>\<cdot\>1<rsup|i>\<equiv\><big|sum><rsub|i=0><rsup|k>a<rsub|i>>.
   </cell>>|<row|<\cell>
     Ring of Integers Mod <math|n>
   </cell>|<\cell>
@@ -126,14 +134,15 @@
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|y>|<cwith|1|1|1|1|cell-background|pastel
-  yellow>|<cwith|3|3|1|1|cell-background|pastel
   yellow>|<cwith|4|4|1|1|cell-background|pastel
+  yellow>|<cwith|5|5|1|1|cell-background|pastel
   yellow>|<cwith|2|2|1|1|cell-background|pastel
-  green>|<cwith|1|6|1|2|cell-hyphen|t>|<cwith|1|6|1|2|cell-halign|l>|<cwith|1|6|1|2|cell-lsep|1ex>|<cwith|1|6|1|2|cell-rsep|1ex>|<cwith|1|6|1|2|cell-bsep|1ex>|<cwith|1|6|1|2|cell-tsep|1ex>|<cwith|1|6|1|1|cell-background|pastel
-  yellow>|<cwith|1|6|1|1|cell-width|25ex>|<cwith|1|6|1|1|cell-hmode|exact>|<cwith|4|4|1|1|cell-background|pastel
-  cyan>|<cwith|1|5|1|2|cell-hyphen|t>|<cwith|1|5|1|2|cell-halign|l>|<cwith|1|5|1|2|cell-lsep|1ex>|<cwith|1|5|1|2|cell-rsep|1ex>|<cwith|1|5|1|2|cell-bsep|1ex>|<cwith|1|5|1|2|cell-tsep|1ex>|<cwith|1|5|1|1|cell-background|pastel
-  yellow>|<cwith|1|5|1|1|cell-width|25ex>|<cwith|1|5|1|1|cell-hmode|exact>|<cwith|1|1|1|1|cell-background|pastel
-  green>|<cwith|3|5|1|1|cell-background|pastel cyan>|<table|<row|<\cell>
+  green>|<cwith|1|7|1|2|cell-hyphen|t>|<cwith|1|7|1|2|cell-halign|l>|<cwith|1|7|1|2|cell-lsep|1ex>|<cwith|1|7|1|2|cell-rsep|1ex>|<cwith|1|7|1|2|cell-bsep|1ex>|<cwith|1|7|1|2|cell-tsep|1ex>|<cwith|1|7|1|1|cell-background|pastel
+  yellow>|<cwith|1|7|1|1|cell-width|25ex>|<cwith|1|7|1|1|cell-hmode|exact>|<cwith|5|5|1|1|cell-background|pastel
+  cyan>|<cwith|1|6|1|2|cell-hyphen|t>|<cwith|1|6|1|2|cell-halign|l>|<cwith|1|6|1|2|cell-lsep|1ex>|<cwith|1|6|1|2|cell-rsep|1ex>|<cwith|1|6|1|2|cell-bsep|1ex>|<cwith|1|6|1|2|cell-tsep|1ex>|<cwith|1|6|1|1|cell-background|pastel
+  yellow>|<cwith|1|6|1|1|cell-width|25ex>|<cwith|1|6|1|1|cell-hmode|exact>|<cwith|1|1|1|1|cell-background|pastel
+  green>|<cwith|4|6|1|1|cell-background|pastel
+  cyan>|<cwith|3|3|1|1|cell-background|pastel green>|<table|<row|<\cell>
     Telescoping Series and Products
   </cell>|<\cell>
     Telescoping series are when individual terms in a sum or product can be
@@ -146,11 +155,19 @@
     Fibonacci number is given by
 
     <\equation*>
-      F<rsub|n>\<assign\><around*|{|<tabular|<tformat|<table|<row|<cell|1>|<cell|<text|if
+      F<rsub|n>\<assign\><around*|{|<tabular|<tformat|<table|<row|<cell|n>|<cell|<text|if
       >n\<leq\>1>>|<row|<cell|F<rsub|n-1>+F<rsub|n-2>>|<cell|<text|otherwise>>>>>>|\<nobracket\>>
     </equation*>
   </cell>>|<row|<\cell>
-    Arithmetic Series
+    Reciprocal of Product of Fibonacci Terms
+  </cell>|<\cell>
+    For <math|n\<in\>\<bbb-Z\>,n\<geq\>1>, we have that
+
+    <\equation*>
+      <frac|1|F<rsub|n-1>*F<rsub|n+1>>=<frac|1|F<rsub|n-1>*F<rsub|n>>-<frac|1|F<rsub|n>*F<rsub|n+1>>
+    </equation*>
+  </cell>>|<row|<\cell>
+    Finite Arithmetic Series
   </cell>|<\cell>
     For <math|a,d\<in\>\<bbb-R\>> and <math|n\<in\>\<bbb-Z\><rsup|+>>, we
     have:
@@ -159,7 +176,7 @@
       a+<around*|(|a+d|)>+<around*|(|a+2*d|)>+\<cdots\>+<around*|(|a+<around*|(|n-1|)>*d|)>=<big|sum><rsup|n-1><rsub|i=0><around*|(|a+i*d|)>=<frac|1|2>*n*<around*|(|2*a+<around*|(|n-1|)>*d|)>
     </equation*>
   </cell>>|<row|<\cell>
-    Geometric Series
+    Finite Geometric Series
   </cell>|<\cell>
     For <math|a,r\<in\>\<bbb-R\>>, <math|r\<neq\>1>, and
     <math|n\<in\>\<bbb-Z\><rsup|+>>, we have that
@@ -188,16 +205,17 @@
   yellow>|<cwith|3|3|1|1|cell-background|pastel
   yellow>|<cwith|4|4|1|1|cell-background|pastel
   yellow>|<cwith|2|2|1|1|cell-background|pastel
-  green>|<cwith|1|5|1|2|cell-hyphen|t>|<cwith|1|5|1|2|cell-halign|l>|<cwith|1|5|1|2|cell-lsep|1ex>|<cwith|1|5|1|2|cell-rsep|1ex>|<cwith|1|5|1|2|cell-bsep|1ex>|<cwith|1|5|1|2|cell-tsep|1ex>|<cwith|1|5|1|1|cell-background|pastel
-  yellow>|<cwith|1|5|1|1|cell-width|25ex>|<cwith|1|5|1|1|cell-hmode|exact>|<cwith|4|4|1|1|cell-background|pastel
-  cyan>|<cwith|1|5|1|2|cell-hyphen|t>|<cwith|1|5|1|2|cell-halign|l>|<cwith|1|5|1|2|cell-lsep|1ex>|<cwith|1|5|1|2|cell-rsep|1ex>|<cwith|1|5|1|2|cell-bsep|1ex>|<cwith|1|5|1|2|cell-tsep|1ex>|<cwith|1|5|1|1|cell-background|pastel
-  yellow>|<cwith|1|5|1|1|cell-width|25ex>|<cwith|1|5|1|1|cell-hmode|exact>|<cwith|1|1|1|1|cell-background|pastel
-  green>|<cwith|3|5|1|1|cell-background|pastel
+  green>|<cwith|1|6|1|2|cell-hyphen|t>|<cwith|1|6|1|2|cell-halign|l>|<cwith|1|6|1|2|cell-lsep|1ex>|<cwith|1|6|1|2|cell-rsep|1ex>|<cwith|1|6|1|2|cell-bsep|1ex>|<cwith|1|6|1|2|cell-tsep|1ex>|<cwith|1|6|1|1|cell-background|pastel
+  yellow>|<cwith|1|6|1|1|cell-width|25ex>|<cwith|1|6|1|1|cell-hmode|exact>|<cwith|4|4|1|1|cell-background|pastel
+  cyan>|<cwith|1|6|1|2|cell-hyphen|t>|<cwith|1|6|1|2|cell-halign|l>|<cwith|1|6|1|2|cell-lsep|1ex>|<cwith|1|6|1|2|cell-rsep|1ex>|<cwith|1|6|1|2|cell-bsep|1ex>|<cwith|1|6|1|2|cell-tsep|1ex>|<cwith|1|6|1|1|cell-background|pastel
+  yellow>|<cwith|1|6|1|1|cell-width|25ex>|<cwith|1|6|1|1|cell-hmode|exact>|<cwith|1|1|1|1|cell-background|pastel
+  green>|<cwith|3|6|1|1|cell-background|pastel
   cyan>|<cwith|1|4|1|2|cell-hyphen|t>|<cwith|1|4|1|2|cell-halign|l>|<cwith|1|4|1|2|cell-lsep|1ex>|<cwith|1|4|1|2|cell-rsep|1ex>|<cwith|1|4|1|2|cell-bsep|1ex>|<cwith|1|4|1|2|cell-tsep|1ex>|<cwith|1|4|1|1|cell-background|pastel
   yellow>|<cwith|1|4|1|1|cell-width|25ex>|<cwith|1|4|1|1|cell-hmode|exact>|<cwith|2|2|1|1|cell-background|pastel
   cyan>|<cwith|3|3|1|1|cell-background|pastel
   cyan>|<cwith|4|4|1|1|cell-background|pastel
-  cyan>|<cwith|1|1|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
+  cyan>|<cwith|1|1|1|1|cell-background|pastel
+  yellow>|<cwith|5|5|1|1|cell-background|pastel green>|<table|<row|<\cell>
     Directed Angles
   </cell>|<\cell>
     A directed angle <math|\<measuredangle\>A B C> is always measured as the
@@ -223,9 +241,19 @@
     Area of a Triangle
   </cell>|<\cell>
     Let <math|A B C > be a triangle. Let <math|h> be the length of the
-    perpendicular dropped from <math|A> to <math|B C>. Let <math|b> be the
-    length of segment <math|B C>. The area of <math|A B C>, sometimes denoted
-    <math|<around*|\||A B C|\|>> is <math|<frac|1|2>*b*h>.
+    perpendicular dropped from <math|B> to <math|A C>. Let <math|b> be the
+    length of segment opposite <math|B>. The area of <math|A B C>, sometimes
+    denoted <math|<around*|\||A B C|\|>> is <math|<frac|1|2>*b*h>.
+
+    The area of the triangle can be alternately expressed as
+    <math|<frac|1|2>*b*c\<cdot\>sin A> where <math|b> and <math|c> are the
+    lengths of the sides opposite veriticies <math|B> and <math|C>
+    respectively, and <math|A> is the measure of the angle at vertex
+    <math|A>.
+  </cell>>|<row|<\cell>
+    Scaling, Translations, Rotations, and Homothety
+  </cell>|<\cell>
+    \;
   </cell>>>>>
 
   <section|Trigonometry>
@@ -336,6 +364,33 @@
     </equation*>
   </cell>>>>>
 
+  <section|Graph Theory>
+
+  <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
+  green>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|y>|<cwith|1|1|1|1|cell-background|pastel
+  yellow>|<cwith|1|3|1|2|cell-hyphen|t>|<cwith|1|3|1|2|cell-halign|l>|<cwith|1|3|1|2|cell-lsep|1ex>|<cwith|1|3|1|2|cell-rsep|1ex>|<cwith|1|3|1|2|cell-bsep|1ex>|<cwith|1|3|1|2|cell-tsep|1ex>|<cwith|1|3|1|1|cell-background|pastel
+  yellow>|<cwith|1|3|1|1|cell-width|25ex>|<cwith|1|3|1|1|cell-hmode|exact>|<cwith|1|3|1|2|cell-hyphen|t>|<cwith|1|3|1|2|cell-halign|l>|<cwith|1|3|1|2|cell-lsep|1ex>|<cwith|1|3|1|2|cell-rsep|1ex>|<cwith|1|3|1|2|cell-bsep|1ex>|<cwith|1|3|1|2|cell-tsep|1ex>|<cwith|1|3|1|1|cell-width|25ex>|<cwith|1|3|1|1|cell-hmode|exact>|<cwith|1|3|1|1|cell-background|pastel
+  cyan>|<table|<row|<\cell>
+    Pigeonhole Principle
+  </cell>|<\cell>
+    Suppose there are at least <math|n\<times\>k+1> pigeons and <math|k>
+    pigeonholes. If every pigeon is in a pigeonhole, then the there exists at
+    least one pigeonhole with <math|n+1> pigeons in it.
+  </cell>>|<row|<\cell>
+    Ramsey's Theorem
+  </cell>|<\cell>
+    One can find a monochromatic clique in any edge colouring of a
+    sufficiently large complete graph. If we have <math|c> colours, and we
+    want to ensure the existence of either a <math|n<rsub|1>>-clique of
+    colour <math|1>, a <math|n<rsub|2>>-clique of colour <math|2>,
+    <text-dots>, or a <math|n<rsub|c>>-clique of colour <math|c>, then the
+    minimum required degree of the graph is
+    <math|R<around*|(|n<rsub|1>,n<rsub|2>,\<ldots\>,n<rsub|c>|)>>.
+
+    As an example, we have that <math|R<around*|(|3,3|)>=6> which can be
+    proved with the pigeonhole principle.
+  </cell>>>>>
+
   <section|Miscellaneous>
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
@@ -409,6 +464,7 @@
     <associate|auto-4|<tuple|4|?>>
     <associate|auto-5|<tuple|5|?>>
     <associate|auto-6|<tuple|6|?>>
+    <associate|auto-7|<tuple|7|?>>
   </collection>
 </references>
 
@@ -435,9 +491,13 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-5><vspace|0.5fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Miscellaneous>
-      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Graph
+      Theory> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-6><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|7<space|2spc>Miscellaneous>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-7><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>

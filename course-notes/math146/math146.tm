@@ -8,8 +8,8 @@
   Kumar>|<author-homepage|<slink|https://arnavcs.github.io>>>>>
 
   <\bothlined>
-    These are notes for the fall 2022 offering of Math 145, instructed by
-    Blake Madill at the University of Waterloo.
+    These are notes for the winter 2023 offering of Math 146, instructed by
+    Kateryna Tatarko at the University of Waterloo.
   </bothlined>
 
   <\padded-center>
@@ -579,15 +579,7 @@
   Things to add:
 
   <\itemize-dot>
-    <item>division algorithm
-
-    <item>Bezout's identity
-
-    <item><math|<around*|[|a|]><rsub|n>\<in\>\<bbb-Z\><rsub|n><rsup|\<times\>>\<Leftrightarrow\><around*|(|a,n|)>=1<with|font-series|bold|>>
-
-    <item><math|\<bbb-Z\><rsub|n>> field iff n prime
-
-    <item>Size of a Quotient of <math|\<bbb-Z\><rsub|p><around*|[|x|]>>
+    <item>Wronskian Matricies
   </itemize-dot>
 </body>
 

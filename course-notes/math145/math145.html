@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:x="https://www.texmacs.org/2002/extensions" xmlns:m="http://www.w3.org/1998/Math/MathML">
   <head>
-    <title>Math 145: Algebra (Advanced Level) Notes</title>
+    <title>Math 145: Algebra (Advanced) Notes</title>
     <meta content="TeXmacs 2.1" name="generator"></meta>
     <style type="text/css">
       body { text-align: justify } h5 { display: inline; padding-right: 1em }
@@ -29,13 +29,14 @@
       white-space: nowrap; } 
     </style>
     <link href="https://arnavcs.github.io/assets/texmacs.css" type="text/css" rel="stylesheet"></link>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" language="javascript"></script>
   </head>
   <body>
     <table class="title-block" style="margin-bottom: 2em">
       <tr>
         <td><table class="title-block" style="margin-top: 0.5em; margin-bottom: 0.5em">
           <tr>
-            <td><font style="font-size: 168.2%"><strong>Math 145: Algebra (Advanced Level)
+            <td><font style="font-size: 168.2%"><strong>Math 145: Algebra (Advanced)
             Notes</strong></font></td>
           </tr>
         </table><div class="compact-block" style="margin-top: 1em; margin-bottom: 1em">
@@ -100,10 +101,9 @@
           Rings
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          A ring, <span class="no-breaks"><img src="math145-1.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>,</span> is a set, <span
-          class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>,</span> along with two functions,
-          <img src="math145-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0255515151515151em; margin-right: -0.0248242424242422em; margin-top: -0.0423272727272728em; vertical-align: -0.0861575757575758em; height: 0.991563636363636em"></img> and <span class="no-breaks"><img src="math145-4.png" style="margin-left: -0.0248242424242424em; margin-bottom: 0.0365090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0423272727272728em; vertical-align: -0.0861575757575758em; height: 0.92950303030303em"></img>,</span>
-          which we call addition and multiplication. We must have the
+          A ring, \((R, +, \times)\), is a set, \(R\), along with two
+          functions, \(+ : R^2 \rightarrow R\) and \(\times : R^2 \rightarrow
+          R\), which we call addition and multiplication. We must have the
           following ring axioms:
         </p><ol>
           <li>
@@ -137,8 +137,7 @@
             </p>
           </li>
         </ol><p>
-          We often simply denote this ring by it set of elements, <span class="no-breaks"><img
-          src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span>
+          We often simply denote this ring by it set of elements, \(R\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
@@ -146,67 +145,62 @@
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           A unital ring is a ring with a multiplicative identity. In a unital
-          ring, <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>,</span> an element with a
-          multiplicative inverse is called a unit. The group of units of <img
-          src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> is <span class="no-breaks"><img src="math145-5.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0423272727272728em; vertical-align: -0.258569696969697em; height: 1.16533333333333em"></img>.</span> 
+          ring, \(R\), an element with a multiplicative inverse is called a
+          unit. The group of units of \(R\) is \(R^{\times} := \{ a \in R :
+          a^{- 1}  \text{ exists} \}\). 
         </p><p>
-          By convention, we say that the trivial ring, <img src="math145-6.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242426em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
-          is non-unital.
+          By convention, we say that the trivial ring, \(\{ 0 \}\) is
+          non-unital.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Commutative Rings
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          A ring, <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>,</span> is commutative
-          if multiplication commutes, which is to say that <span class="no-breaks"><img
-          src="math145-7.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+          A ring, \(R\), is commutative if multiplication commutes, which is
+          to say that \((\forall a, b \in R) (ab = ba)\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Properties of Rings
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          From the ring axioms, we get the following results for a ring, <span
-          class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>:</span>
+          From the ring axioms, we get the following results for a ring,
+          \(R\):
         </p><ol>
           <li>
             <p>
-              The additive inverse of any <img src="math145-8.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242426em; margin-top: -0.0255515151515152em; vertical-align: -0.0404363636363636em; height: 0.794375757575758em"></img> is unique
-              and denoted <span class="no-breaks"><img src="math145-9.png" style="margin-left: -0.0248242424242424em; margin-bottom: 0.0489212121212121em; margin-right: -0.0248242424242424em; margin-top: 0.119272727272727em; vertical-align: -0.0861575757575758em; height: 0.521309090909091em"></img>.</span>
+              The additive inverse of any \(a \in R\) is unique and denoted
+              \(- a\).
             </p>
           </li>
           <li>
             <p>
-              The additive identity is unique, and denoted <span class="no-breaks"><img
-              src="math145-10.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.040969696969697em; vertical-align: -0.148363636363636em; height: 0.893090909090909em"></img>.</span>
+              The additive identity is unique, and denoted \(0_R\).
             </p>
           </li>
           <li>
             <p>
-              <span class="no-breaks"><img src="math145-11.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+              \((\forall a \in R) (a \cdot 0_R = 0_R \cdot a = 0_R)\).
             </p>
           </li>
           <li>
             <p>
-              <img src="math145-12.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \((\forall a, b \in R) ((- a) b = a (- b) = - (ab))\)
             </p>
           </li>
         </ol><p>
-          And for a unital ring, <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>,</span>
-          we see:
+          And for a unital ring, \(R\), we see:
         </p><ol>
           <li>
             <p>
-              The multiplicative identity is unique, and denoted <span class="no-breaks"><img
-              src="math145-13.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.040969696969697em; vertical-align: -0.148363636363636em; height: 0.893090909090909em"></img>.</span>
+              The multiplicative identity is unique, and denoted \(1_R\).
             </p>
           </li>
           <li>
             <p>
-              If <span class="no-breaks"><img src="math145-14.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242422em; margin-top: 0.0385939393939394em; vertical-align: -0.0404363636363636em; height: 0.842618181818182em"></img>,</span> then the
-              multiplicative inverse of <img src="math145-15.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> is unique and
-              denoted <span class="no-breaks"><img src="math145-16.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0423272727272728em; vertical-align: 0em; height: 0.917090909090909em"></img>.</span>
+              If \(a \in R^{\times}\), then the multiplicative inverse of
+              \(a\) is unique and denoted \(a^{- 1}\).
             </p>
           </li>
         </ol></td>
@@ -215,27 +209,28 @@
           Ring Notation
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          In a ring, <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>,</span> and for some
-          <span class="no-breaks"><img src="math145-17.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242422em; margin-top: -0.0255515151515152em; vertical-align: -0.0404363636363636em; height: 0.794375757575758em"></img>,</span> we generally say that
+          In a ring, \(R\), and for some \(n \in \mathbb{N}\), we generally
+          say that
         </p><ol>
           <li>
             <p>
-              <img src="math145-18.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \(a - b \equiv a + (- b)\)
             </p>
           </li>
           <li>
             <p>
-              <span class="no-breaks"><img src="math145-19.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242422em; margin-top: 0.0385939393939394em; vertical-align: -0.148363636363636em; height: 1.01333333333333em"></img>.</span> 
+              \(na \equiv a + \overset{n \times}{\ldots} + a \). 
             </p>
           </li>
           <li>
             <p>
-              If <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> is unital, <img src="math145-20.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0255515151515151em; margin-right: -0.0248242424242413em; margin-top: 0.0385939393939394em; vertical-align: -0.0861575757575758em; height: 0.951854545454546em"></img>
+              If \(R\) is unital, \(n \equiv n 1 \equiv 1 + \overset{n
+              \times}{\ldots} + 1\)
             </p>
           </li>
           <li>
             <p>
-              <img src="math145-21.png" style="margin-left: -0.0248242424242424em; margin-bottom: 0.0489212121212121em; margin-right: -0.0248242424242422em; margin-top: 0.0385939393939394em; vertical-align: -0.0861575757575758em; height: 0.877381818181818em"></img>
+              \(a^n \equiv a \times \overset{n \times}{\ldots} \times a\)
             </p>
           </li>
         </ol></td>
@@ -244,71 +239,75 @@
           Checking Commutativity
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a ring.
+          Let \(R\) be a ring.
         </p><center>
-          <img src="math145-22.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242449em; margin-top: -0.0423272727272728em; vertical-align: -0.258569696969697em; height: 1.16533333333333em"></img>
+          \(\displaystyle (R \text{ commutative}) \Leftrightarrow (\forall a,
+          b \in R) ((a + b)^2 = a^2
++ 2 ab + b^2)\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Binomial Theorem
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a commutative ring. <img src="math145-23.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          Let \(R\) be a commutative ring. \((\forall a, b \in R) (\forall n
+          \in \mathbb{N})\)
         </p><center>
-          <img src="math145-24.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363635em; margin-right: -0.0248242424242431em; margin-top: -0.0358303030303031em; vertical-align: -1.21178181818182em; height: 2.87490909090909em"></img>
+          \(\displaystyle (a + b)^n = \sum_{k = 0}^n \binom{n}{k} a^k b^{n -
+          k}\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Subring
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          A subring, <span class="no-breaks"><img src="math145-25.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img>,</span> of <img src="math145-2.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> is a subset of <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> which maintains
-          the same ring structure of <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span>
-          This means it is a ring under the same addition and multiplication
-          definitions for <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span>
+          A subring, \(S\), of \(R\) is a subset of \(R\) which maintains the
+          same ring structure of \(R\). This means it is a ring under the same
+          addition and multiplication definitions for \(R\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Subring Test
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a ring, and let <span class="no-breaks"><img
-          src="math145-26.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span> 
+          Let \(R\) be a ring, and let \(\varnothing \neq S \subseteq R\). 
         </p><center>
-          <img src="math145-27.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242449em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle (S \text{ subring of } R) \Leftrightarrow (\forall
+          a, b \in S) (a \times b \in
+S \wedge a - b \in S)\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Center of a Ring
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a ring. The center of the ring is
-          defined by:
+          Let \(R\) be a ring. The center of the ring is defined by:
         </p><center>
-          <img src="math145-28.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle Z (R) := \{ a \in R : (\forall b \in R) (ab = ba)
+          \}\)
         </center><p>
-          We have that <img src="math145-29.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242426em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is always a subring of <span
-          class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>,</span> and is commutative.
+          We have that \(Z (R)\) is always a subring of \(R\), and is
+          commutative.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
-          Zero Divisors and Integral Domains
+          Zero Divisors and Integral Domains (ID)
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a commutative ring. We call <img src="math145-30.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> a zero divisor if <span class="no-breaks"><img src="math145-31.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
-          If a ring is commutative, unital, and has no zero divisors, it is an
-          integral domain (or ID for short).
+          Let \(R\) be a commutative ring. We call \(0_R \neq a \in R\) a zero
+          divisor if \((\exists b \in R, b \neq 0) (ab = 0_R)\). If a ring is
+          commutative, unital, and has no zero divisors, it is an integral
+          domain (or ID for short).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Cancellation
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be an integral domain. <img src="math145-32.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          Let \(R\) be an integral domain. \((\forall a, b, c \in R, a \neq
+          0_R)\)
         </p><center>
-          <img src="math145-33.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242431em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.794375757575758em"></img>
+          \(\displaystyle ab = ac \Rightarrow b = c\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
@@ -323,41 +322,41 @@
           Polynomial Rings
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a commutative ring. We say the
-          polynomial ring in <img src="math145-34.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> over <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>
-          is the ring of polynomials in <img src="math145-34.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> with
-          coefficients in <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span> This is
-          to say
+          Let \(R\) be a commutative ring. We say the polynomial ring in \(x\)
+          over \(R\) is the ring of polynomials in \(x\) with coefficients in
+          \(R\). This is to say
         </p><center>
-          <img src="math145-35.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle R [x] := \{ p_0 + p_1 x + \cdots + p_m x^m : m \in
+          \mathbb{N}, p_i \in R, p_m
+\neq 0_R \operatorname{if}m \neq 0 \}\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Properties of Fields and Integral Domains
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a commutative, unital ring. We have
-          the following:
+          Let \(R\) be a commutative, unital ring. We have the following:
         </p><ol>
           <li>
             <p>
-              <span class="no-breaks"><img src="math145-36.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+              \((R \text{ ID}) \Rightarrow (R [x] \text{ ID})\).
             </p>
           </li>
           <li>
             <p>
-              If <img src="math145-37.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is a zero divisor, then <span class="no-breaks"><img
-              src="math145-38.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: 0.0123636363636364em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+              If \(0_R \neq a \in R\) is a zero divisor, then \(a \not\in
+              R^{\times}\).
             </p>
           </li>
           <li>
             <p>
-              <span class="no-breaks"><img src="math145-39.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+              \((R \text{ field}) \Rightarrow (R \text{ ID})\).
             </p>
           </li>
           <li>
             <p>
-              <span class="no-breaks"><img src="math145-40.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+              \((R \text{ ID}) \wedge (R \text{ finite}) \Rightarrow (R \text{
+              field})\).
             </p>
           </li>
         </ol></td>
@@ -366,46 +365,45 @@
           Image and Preimage
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-41.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0347151515151515em; margin-right: -0.0248242424242422em; margin-top: -0.0512969696969697em; vertical-align: -0.201115151515152em; height: 1.00538181818182em"></img> be a function. And let <span class="no-breaks"><img
-          src="math145-42.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0207515151515151em; margin-right: -0.0248242424242426em; margin-top: -0.0627878787878788em; vertical-align: -0.140606060606061em; height: 0.930909090909091em"></img>,</span> and <span class="no-breaks"><img src="math145-43.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0207515151515151em; margin-right: -0.0248242424242422em; margin-top: -0.0255515151515152em; vertical-align: -0.140606060606061em; height: 0.893672727272727em"></img>.</span>
-          We define the image of <img src="math145-44.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0675393939393939em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img> as <img src="math145-45.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
-          and we define the preimage of <img src="math145-46.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> as <span
-          class="no-breaks"><img src="math145-47.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0423272727272728em; vertical-align: -0.258569696969697em; height: 1.16533333333333em"></img>.</span>
+          Let \(f : A \rightarrow B\) be a function. And let \(C \subseteq
+          A\), and \(D \subseteq B\). We define the image of \(C\) as \(f (C)
+          := \{ f (x) : x \in C \}\) and we define the preimage of \(D\) as
+          \(f^{- 1} (D) := \{ x \in A : f (x) \in D \}\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; background-color: #00ff0020"><p>
           Injective, Surjective, and Bijective
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Consider a function <span class="no-breaks"><img src="math145-41.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0347151515151515em; margin-right: -0.0248242424242422em; margin-top: -0.0512969696969697em; vertical-align: -0.201115151515152em; height: 1.00538181818182em"></img>.</span> We
-          say <img src="math145-48.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0347151515151515em; margin-right: -0.0894060606060606em; margin-top: -0.0388848484848485em; vertical-align: -0.201115151515152em; height: 0.992969696969697em"></img> is injective (or one-to-one) if 
+          Consider a function \(f : A \rightarrow B\). We say \(f\) is
+          injective (or one-to-one) if 
         </p><center>
-          <img src="math145-49.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle (\forall x, y \in A) (f (x) = f (y) \Rightarrow x =
+          y)\)
         </center><p>
-          We say <img src="math145-48.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0347151515151515em; margin-right: -0.0894060606060606em; margin-top: -0.0388848484848485em; vertical-align: -0.201115151515152em; height: 0.992969696969697em"></img> is surjective (or onto) if 
+          We say \(f\) is surjective (or onto) if 
         </p><center>
-          <img src="math145-50.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle (\forall y \in B) (\exists x \in A) (f (x) = y)\)
         </center><p>
-          And if <img src="math145-48.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0347151515151515em; margin-right: -0.0894060606060606em; margin-top: -0.0388848484848485em; vertical-align: -0.201115151515152em; height: 0.992969696969697em"></img> is both surjective and injective, it
-          is bijective (or invertible) and thus has an inverse function, <span
-          class="no-breaks"><img src="math145-51.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0347151515151515em; margin-right: -0.0248242424242424em; margin-top: -0.0423272727272728em; vertical-align: -0.201115151515152em; height: 1.11568484848485em"></img>.</span>
+          And if \(f\) is both surjective and injective, it is bijective (or
+          invertible) and thus has an inverse function, \(f^{- 1}\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; background-color: #00ff0020"><p>
           Homomorphisms
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-52.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: -0.201115151515152em; height: 0.980557575757576em"></img> be rings. We say that <img src="math145-53.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: -0.201115151515152em; height: 1.00538181818182em"></img>
-          is a homomorphism if <img src="math145-54.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          Let \(R, S\) be rings. We say that \(\varphi : R \rightarrow S\) is
+          a homomorphism if \((\forall a, b \in R)\)
         </p><ol>
           <li>
             <p>
-              <img src="math145-55.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \(\varphi (a + b) = \varphi (a) + \varphi (b)\)
             </p>
           </li>
           <li>
             <p>
-              <img src="math145-56.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \(\varphi (ab) = \varphi (a) \varphi (b)\)
             </p>
           </li>
         </ol></td>
@@ -414,40 +412,45 @@
           Properties of Homomorphisms
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-53.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: -0.201115151515152em; height: 1.00538181818182em"></img> be a homomorphism. Then:
+          Let \(\varphi : R \rightarrow S\) be a homomorphism. Then:
         </p><ol>
           <li>
             <p>
-              <img src="math145-57.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0258424242424242em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \(\varphi (0_R) = 0_S\)
             </p>
           </li>
           <li>
             <p>
-              <img src="math145-58.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \((\forall r \in R) (\varphi (- r) = - \varphi (r))\)
             </p>
           </li>
           <li>
             <p>
-              <img src="math145-59.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \((A \text{ subring of } R) \Rightarrow (\varphi (A)  \text{
+              subring of } S)\)
             </p>
           </li>
           <li>
             <p>
-              <img src="math145-60.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242449em; margin-top: -0.0423272727272728em; vertical-align: -0.258569696969697em; height: 1.16533333333333em"></img>
+              \((B \text{ subring of } S) \Rightarrow (\varphi^{- 1} (B) 
+              \text{ subring of }
+R)\)
             </p>
           </li>
         </ol><p>
-          Additionally, if <img src="math145-61.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: -0.201115151515152em; height: 0.732315151515152em"></img> is surjective and <img src="math145-2.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> is unital, then:
+          Additionally, if \(\varphi\) is surjective and \(R\) is unital,
+          then:
         </p><ol>
           <li>
             <p>
-              <img src="math145-25.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img> is unital with <img src="math145-62.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \(S\) is unital with \(1_S = \varphi (1_R)\)
             </p>
           </li>
           <li>
             <p>
-              <img src="math145-63.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0423272727272728em; vertical-align: -0.258569696969697em; height: 1.16533333333333em"></img>
+              \((a \in R^{\times}) \Rightarrow (\varphi (a) \in S^{\times}
+              \wedge \varphi
+(a^{- 1}) = \varphi (a)^{- 1})\)
             </p>
           </li>
         </ol></td>
@@ -456,67 +459,68 @@
           Kernel
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-53.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: -0.201115151515152em; height: 1.00538181818182em"></img> be a homomorphism. The kernel of <img
-          src="math145-61.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: -0.201115151515152em; height: 0.732315151515152em"></img> is
+          Let \(\varphi : R \rightarrow S\) be a homomorphism. The kernel of
+          \(\varphi\) is
         </p><center>
-          <img src="math145-64.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0423272727272728em; vertical-align: -0.258569696969697em; height: 1.16533333333333em"></img>
+          \(\displaystyle \operatorname{Ker} \varphi := \{ x \in R : \varphi
+          (x) = 0_S \} = \varphi^{-
+1} (0_S)\)
         </center><p>
-          Then from above, since <img src="math145-65.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.36790303030303em; height: 1.19951515151515em"></img> is a subring of <span
-          class="no-breaks"><img src="math145-25.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img>,</span> we see that <img src="math145-66.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0248242424242422em; margin-top: -0.0199757575757576em; vertical-align: -0.201115151515152em; height: 0.980557575757576em"></img>
-          is a subring of <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span>
+          Then from above, since \(\left\{ {0_S}  \right\}\) is a subring of
+          \(S\), we see that \(\operatorname{Ker} \varphi\) is a subring of
+          \(R\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; background-color: #00ff0020"><p>
           Embedding
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-53.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: -0.201115151515152em; height: 1.00538181818182em"></img> be a homomorphism. We say that if <img
-          src="math145-61.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: -0.201115151515152em; height: 0.732315151515152em"></img> is injective, then it is an embedding.
-          Additionally, we can determine if <img src="math145-61.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: -0.201115151515152em; height: 0.732315151515152em"></img> is an
-          embedding since 
+          Let \(\varphi : R \rightarrow S\) be a homomorphism. We say that if
+          \(\varphi\) is injective, then it is an embedding. Additionally, we
+          can determine if \(\varphi\) is an embedding since 
         </p><center>
-          <img src="math145-67.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle (\varphi \text{ embedding}) \Leftrightarrow
+          (\operatorname{Ker} \varphi = \{
+0_R \})\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; background-color: #00ff0020"><p>
           Isomorphism and Isomorphic
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-53.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: -0.201115151515152em; height: 1.00538181818182em"></img> be a homomorphism. If <img src="math145-61.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: -0.201115151515152em; height: 0.732315151515152em"></img>
+          Let \(\varphi : R \rightarrow S\) be a homomorphism. If \(\varphi\)
           is bijective, we call it an isomorphism. Additionally, we then say
-          that <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> is isomorphic to <span class="no-breaks"><img src="math145-25.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img>,</span> denoted <span class="no-breaks"><img src="math145-68.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img>.</span>
+          that \(R\) is isomorphic to \(S\), denoted \(R \cong S\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; background-color: #00ff0020"><p>
           Ideal and Proper Ideal
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a ring. We say <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img>
-          is an ideal of <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> if it is a subring of <img
-          src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> and <span class="no-breaks"><img src="math145-70.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
-          If <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> is an ideal of <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>
-          and <span class="no-breaks"><img src="math145-71.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242426em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>,</span> then <img src="math145-69.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> is a proper ideal of <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span>
+          Let \(R\) be a ring. We say \(I\) is an ideal of \(R\) if it is a
+          subring of \(R\) and \((\forall r \in R) (\forall a \in I) (ar, ra
+          \in I)\). If \(I\) is an ideal of \(R\) and \(I \neq R\), then \(I\)
+          is a proper ideal of \(R\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Ideal Test
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a ring, and let <span class="no-breaks"><img
-          src="math145-72.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+          Let \(R\) be a ring, and let \(\varnothing \neq I \subseteq R\).
         </p><center>
-          <img src="math145-73.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle (I \text{ ideal}) \Leftrightarrow (\forall a, b \in
+          I) (\forall r \in R) (a -
+b, ar, ra \in I)\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; background-color: #00ff0020"><p>
           Principal Ideal
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a commutative, unital ring, and let
-          <img src="math145-74.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242426em; margin-top: -0.0255515151515152em; vertical-align: -0.0404363636363636em; height: 0.794375757575758em"></img> be fixed. The principal ideal generated by
-          <img src="math145-75.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242425em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> is <span class="no-breaks"><img src="math145-76.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+          Let \(R\) be a commutative, unital ring, and let \(r \in R\) be
+          fixed. The principal ideal generated by \(r\) is \(\langle r \rangle
+          := \{ rx : x \in R \}\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; background-color: #00ff0020"><p>
@@ -531,71 +535,75 @@
           Modular Arithmetic, Equivalence Classes, and Quotient Rings
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> be an ideal of the ring <span class="no-breaks"><img
-          src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span> We define an equivalence relation, <span
-          class="no-breaks"><img src="math145-77.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242424em; margin-top: -0.0248242424242424em; vertical-align: 0em; height: 0.494836363636364em"></img>,</span> such that <span class="no-breaks"><img
-          src="math145-78.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span> We will use the notation <img src="math145-79.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
-          to mean <span class="no-breaks"><img src="math145-80.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242426em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span>
+          Let \(I\) be an ideal of the ring \(R\). We define an equivalence
+          relation, \(\sim\), such that \((\forall a, b \in R) (a \sim b
+          \Leftrightarrow b - a \in I)\). We will use the notation \(a \equiv
+          b (\operatorname{mod}I)\) to mean \(a \sim b\).
         </p><p>
-          For some <span class="no-breaks"><img src="math145-8.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242426em; margin-top: -0.0255515151515152em; vertical-align: -0.0404363636363636em; height: 0.794375757575758em"></img>,</span> the
-          equivalence class of <img src="math145-15.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> in <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>
-          is <span class="no-breaks"><img src="math145-81.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span> Notationally, <img
-          src="math145-82.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0457696969696969em; vertical-align: 0em; height: 0.6704em"></img> is the same as <span class="no-breaks"><img src="math145-83.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0144969696969697em; margin-right: -0.0306424242424244em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.07985454545455em"></img>.</span>
+          For some \(a \in R\), the equivalence class of \(a\) in \(R\) is
+          \([a]_I := \{ x \in R : a \equiv x (\operatorname{mod}I) \}\).
+          Notationally, \(\bar{a}\) is the same as \([a]_I\).
         </p><p>
-          Now define <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> mod <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> as
-          <img src="math145-84.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0534303030303029em; vertical-align: -0.258569696969697em; height: 1.14395151515152em"></img> with operations defined so that <span class="no-breaks"><img
-          src="math145-85.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span> This is a what we call a quotient ring.
+          Now define \(R\) mod \(I\) as \({}^R /_I := \{ [a]_I : a \in R \}\)
+          with operations defined so that \((\forall a, b \in R) ([a]_I +
+          [b]_I = [a + b]_I \wedge [a]_I \cdot [b]_I = [a
+\cdot b]_I)\). This
+          is a what we call a quotient ring.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
-          Modular Arithmetic with <img src="math145-86.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242425em; margin-top: -0.0379636363636364em; vertical-align: 0em; height: 0.769551515151515em"></img>
+          Modular Arithmetic with \(\mathbb{Z}\)
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          For <span class="no-breaks"><img src="math145-87.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242422em; margin-top: -0.0358787878787878em; vertical-align: -0.0404363636363636em; height: 0.917090909090909em"></img>,</span> we define <span
-          class="no-breaks"><img src="math145-88.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0176em; margin-right: -0.0248242424242413em; margin-top: -0.0368484848484848em; vertical-align: -0.413818181818182em; height: 1.28989090909091em"></img>,</span> and by convention we write
-          <img src="math145-89.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> to mean <span class="no-breaks"><img src="math145-90.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+          For \(n \in \mathbb{Z}^+\), we define \(\mathbb{Z}_n :=
+          {}^{\mathbb{Z}} /_{\langle n \rangle} = \{ \bar{0}, \bar{1},
+\ldots,
+          \overline{n - 1} \}\), and by convention we write
+          \((\operatorname{mod}n)\) to mean \((\operatorname{mod} \langle n
+          \rangle)\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Fermat's Little Theorem
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-91.png" style="margin-left: -0.0620606060606061em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: -0.201115151515152em; height: 0.707490909090909em"></img> be prime, then <img src="math145-92.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0236121212121212em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.352727272727273em; height: 1.18312727272727em"></img>
+          Let \(p\) be prime, then \((\forall a \in \mathbb{Z}_p, a \neq
+          0_{\mathbb{Z}_p})\)
         </p><center>
-          <img src="math145-93.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0236121212121212em; margin-right: -0.0248242424242422em; margin-top: -0.0423272727272728em; vertical-align: -0.352727272727273em; height: 1.25619393939394em"></img>
+          \(\displaystyle a^{p - 1} = 1_{\mathbb{Z}_p}\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
           Prime and Maximal Ideals
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          With reference to prime and maximal ideals of a ring <span class="no-breaks"><img
-          src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>,</span> we assume that <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> is
-          a commutative, unital ring. We say an ideal, <span class="no-breaks"><img src="math145-69.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img>,</span> of <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>,</span>
-          is prime if
+          With reference to prime and maximal ideals of a ring \(R\), we
+          assume that \(R\) is a commutative, unital ring. We say an ideal,
+          \(I\), of \(R\), is prime if
         </p><ol>
           <li>
             <p>
-              <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> is a proper ideal of <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>
+              \(I\) is a proper ideal of \(R\)
             </p>
           </li>
           <li>
             <p>
-              <img src="math145-94.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \((\forall a, b \in R) ((ab \in I) \Rightarrow (a, b \in I))\)
             </p>
           </li>
         </ol><p>
-          Additionally, we say that <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> is maximal if
+          Additionally, we say that \(I\) is maximal if
         </p><ol>
           <li>
             <p>
-              <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> is a proper ideal of <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>
+              \(I\) is a proper ideal of \(R\)
             </p>
           </li>
           <li>
             <p>
-              <img src="math145-95.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \((\forall \text{ ideals } J \text{ of } R) ((I \subsetneq J
+              \subseteq R)
+\Rightarrow (J = R))\)
             </p>
           </li>
         </ol></td>
@@ -604,111 +612,245 @@
           Prime and Maximal Ideal Quotient Rings
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> be an ideal of ring <span class="no-breaks"><img
-          src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span> We have the following two results:
+          Let \(I\) be an ideal of ring \(R\). We have the following two
+          results:
         </p><ol>
           <li>
             <p>
-              <img src="math145-96.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0534303030303029em; vertical-align: -0.258569696969697em; height: 1.14395151515152em"></img>
+              \((I \text{ prime}) \Leftrightarrow \left( {}^R /_I \text{ ID}
+              \right)\)
             </p>
           </li>
           <li>
             <p>
-              <img src="math145-97.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0534303030303029em; vertical-align: -0.258569696969697em; height: 1.14395151515152em"></img>
+              \((I \text{ maximal}) \Leftrightarrow \left( {}^R /_I \text{
+              field} \right)\)
             </p>
           </li>
         </ol><p>
-          And since <span class="no-breaks"><img src="math145-98.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0534303030303029em; vertical-align: -0.258569696969697em; height: 1.14395151515152em"></img>,</span> we get as a
-          corollory that <span class="no-breaks"><img src="math145-99.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0534303030303029em; vertical-align: -0.258569696969697em; height: 1.14395151515152em"></img>.</span>
+          And since \(\left( {}^R /_I \text{ field} \right) \Rightarrow \left(
+          {}^R /_I \text{ ID}
+\right)\), we get as a corollory that \((I
+          \text{ maximal}) \Leftrightarrow \left( {}^R /_I \text{ field}
+          \right)
+\Rightarrow \left( {}^R /_I \text{ ID} \right)
+          \Leftrightarrow (I \text{
+prime})\).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Corollory of Zorn's Lemma
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a commutative, unital ring. <span
-          class="no-breaks"><img src="math145-100.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span> 
+          Let \(R\) be a commutative, unital ring. \((\forall I \text{ proper
+          ideal of } R) (\exists M \text{ maximal ideal of } R)
+(I \subseteq
+          M)\). 
         </p><p>
-          Additionally, if <span class="no-breaks"><img src="math145-38.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: 0.0123636363636364em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>,</span> then
-          <span class="no-breaks"><img src="math145-101.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+          Additionally, if \(a \not\in R^{\times}\), then \((\exists M \text{
+          maximal ideal of } R) (a \in M)\).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Existence of a homomorphsim
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> be an ideal of ring <span class="no-breaks"><img
-          src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span> Then, there is some ring <img src="math145-25.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img>
-          and homomorphism <img src="math145-53.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: -0.201115151515152em; height: 1.00538181818182em"></img> such that <span class="no-breaks"><img
-          src="math145-102.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0248242424242422em; margin-top: -0.0199757575757576em; vertical-align: -0.201115151515152em; height: 0.980557575757576em"></img>.</span>
+          Let \(I\) be an ideal of ring \(R\). Then, there is some ring \(S\)
+          and homomorphism \(\varphi : R \rightarrow S\) such that \(I
+          =\operatorname{Ker} \varphi\).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           First Isomorphism Theorem
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-53.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0471272727272727em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: -0.201115151515152em; height: 1.00538181818182em"></img> be a ring homomorphism between rings
-          <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> and <span class="no-breaks"><img src="math145-25.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0608484848484849em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img>.</span>
-          Now,
+          Let \(\varphi : R \rightarrow S\) be a ring homomorphism between
+          rings \(R\) and \(S\). Now,
         </p><center>
-          <img src="math145-103.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.045430303030303em; margin-right: -0.0248242424242431em; margin-top: -0.0534303030303029em; vertical-align: -0.329212121212121em; height: 1.23311515151515em"></img>
+          \(\displaystyle {}^R /_{\operatorname{Ker} \varphi} \cong \varphi
+          (R)\)
         </center></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Ideal Sum
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-104.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0967272727272725em; margin-top: -0.0255515151515152em; vertical-align: -0.201115151515152em; height: 0.955733333333333em"></img> be ideals of <span class="no-breaks"><img src="math145-2.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span> We define the ideal sum <img src="math145-105.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0255515151515151em; margin-right: -0.0967272727272728em; margin-top: -0.0255515151515152em; vertical-align: -0.0861575757575758em; height: 0.844024242424242em"></img>
+          Let \(I, J\) be ideals of \(R\). We define the ideal sum \(I + J\)
           as follows:
         </p><center>
-          <img src="math145-106.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle I + J := \{ a + b : a \in I, b \in J \}\)
         </center></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Comaximal Ideals
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Ideals <img src="math145-104.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0967272727272725em; margin-top: -0.0255515151515152em; vertical-align: -0.201115151515152em; height: 0.955733333333333em"></img> of <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> are
-          comaximal if <img src="math145-107.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0255515151515151em; margin-right: -0.0248242424242422em; margin-top: -0.0255515151515152em; vertical-align: -0.0861575757575758em; height: 0.844024242424242em"></img>
+          Ideals \(I, J\) of \(R\) are comaximal if \(I + J = R\)
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Ideal Product
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-104.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0967272727272725em; margin-top: -0.0255515151515152em; vertical-align: -0.201115151515152em; height: 0.955733333333333em"></img> be ideals of <span class="no-breaks"><img src="math145-2.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span> The ideal product of <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img>
-          and <img src="math145-108.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0967272727272728em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> is defined as:
+          Let \(I, J\) be ideals of \(R\). The ideal product of \(I\) and
+          \(J\) is defined as:
         </p><center>
-          <img src="math145-109.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0330181818181818em; margin-right: -0.0248242424242449em; margin-top: -0.0310787878787879em; vertical-align: -0.289115151515152em; height: 1.12892121212121em"></img>
+          \(\displaystyle IJ := \{ a_1 b_1 + \cdots + a_n b_n : n \in
+          \mathbb{N}, a_i \in I, a_j \in J
+\}\)
         </center><p>
-          If we have multiple ideals <span class="no-breaks"><img src="math145-110.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242431em; margin-top: -0.0255515151515152em; vertical-align: -0.201115151515152em; height: 0.955733333333333em"></img>,</span>
-          then we can simplify the product to get
+          If we have multiple ideals \(I_1, I_2, \ldots, I_m\), then we can
+          simplify the product to get
         </p><center>
-          <img src="math145-111.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0330181818181818em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.289115151515152em; height: 1.12892121212121em"></img>
+          \(\displaystyle I_1 I_2 \cdots I_m = \{ a_{1 1} \cdots a_{1 m} +
+          \cdots + a_{n 1} \cdots a_{n
+m} : n \in \mathbb{N}, a_{i j} \in I_j
+          \}\)
         </center></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Ideal Product of Principal Ideals
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          For \(R\) commutative, and unital, we have for \(m, n \in R\), that
+          \(\langle m \rangle \cdot \langle n \rangle = \langle mn \rangle\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Property of Comaximality
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-104.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0967272727272725em; margin-top: -0.0255515151515152em; vertical-align: -0.201115151515152em; height: 0.955733333333333em"></img> be comaximal ideals of the commutative,
-          unital ring <span class="no-breaks"><img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span> We then
-          have that <span class="no-breaks"><img src="math145-112.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0967272727272723em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span>
+          Let \(I, J\) be comaximal ideals of the commutative, unital ring
+          \(R\). We then have that \(IJ = I \cap J\).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
-          Chinese Remainder Theorem
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Chinese Remainder Theorem (CRT)
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let <img src="math145-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> be a commutative, unital ring with
-          comaximal ideals <img src="math145-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0666666666666667em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.757139393939394em"></img> and <span class="no-breaks"><img src="math145-108.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0967272727272728em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img>.</span> We have that
+          Let \(R\) be a commutative, unital ring with comaximal ideals \(I\)
+          and \(J\). We have that
         </p><center>
-          <img src="math145-113.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0492121212121212em; margin-right: -0.0512969696969696em; margin-top: -0.0534303030303029em; vertical-align: -0.184581818181818em; height: 1.09226666666667em"></img>
+          \(\displaystyle {}^R /_{IJ} \cong {}^R /_I \times {}^R /_J\)
         </center><p>
-          Where <img src="math145-114.png" style="margin-left: -0.0248242424242424em; margin-bottom: 0.0613333333333333em; margin-right: -0.0248242424242424em; margin-top: 0.0696242424242425em; vertical-align: -0.0861575757575758em; height: 0.558545454545455em"></img> is the cartesian product.
+          Where \(\times\) is the cartesian product.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Corollary of CRT
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be a commutative, untial ring with comximal ideals \(I\)
+          and \(J\). For \(a, b \in R\) the system of congruences
+        </p><center>
+          \begin{eqnarray*}
+  x & \equiv & a \quad (\operatorname{mod}I)\\
+  x
+          & \equiv & b \quad (\operatorname{mod}J)
+\end{eqnarray*}
+        </center><p>
+          has exactly one solution, which corresponds to one of the congruence
+          classes of \({}^R /_{IJ}\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Generalized Chinese Remainder Theorem
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be a commutative, unital ring with ideals \(I_1, I_2,
+          \ldots, I_n\) which are pairwise comiximal. We have that \(I_1 I_2
+          \cdots I_n = I_1 \cap I_2 \cap \cdots \cap I_n\), and that
+        </p><center>
+          \(\displaystyle {}^R /_{I_1 I_2 \cdots I_n} \cong {}^R /_{I_1}
+          \times {}^R /_{I_2} \times
+\cdots \times {}^R /_{I_n}\)
+        </center><p>
+          Where \(\times\) is the cartesian product.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; width: 25ex; background-color: #ffff0020"><p>
+          Corollary of Generalized CRT
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be a commutative, unital ring with ideals \(I_1, I_2,
+          \ldots, I_n\) which are pairwise comiximal. For \(a_1, a_2, \ldots
+          a_n \in R\) the system of congruences
+        </p><center>
+          \begin{eqnarray*}
+  x & \equiv & a_1 \quad
+          (\operatorname{mod}I_1)\\
+  & \vdots & \\
+  x & \equiv & a_n \quad
+          (\operatorname{mod}I_n)
+\end{eqnarray*}
+        </center><p>
+          has exactly one solution, which corresponds to one of the congruence
+          classes of \({}^R /_{I_1 I_2 \cdots I_n}\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020">Associates</td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Given an ID, \(R\), we say that \(a, b \in R\) are associates if
+          \((\exists u \in R^{\times}) (a = ub)\)
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Associates and Principal Ideals
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be an ID, and let \(a, b \in R\). We have that \(a\) and
+          \(b\) are associates iff \(\langle a \rangle = \langle b \rangle\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
+          Divisibility
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be an ID. For \(a, b \in R\), when \(a\) divides \(b\), we
+          denote it as \(a \mathrel{|} b\). Additionally, we define
+          divisibility such that
+        </p><center>
+          \(\displaystyle (a \mathrel{|} b) \Leftrightarrow (b \in \langle a
+          \rangle) \Leftrightarrow
+(\exists c \in R) (b = ac)\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Irreducible and Prime elements
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be an ID and let \(a \in R\), but \(a \neq 0_R\) and \(a
+          \not\in R^{\times}\) (since those values are neither prime nor
+          irreducible).
+        </p><p>
+          We define irreducibility so that
+        </p><center>
+          \(\displaystyle (a \text{ irreducible}) \Leftrightarrow ((a = bc)
+          \Rightarrow (b \in
+R^{\times}) \vee (c \in R^{\times}))\)
+        </center><p>
+          And we define primality so that
+        </p><center>
+          \begin{eqnarray*}
+  (a \text{ prime}) & \Leftrightarrow & ((a
+          \mathrel{|} bc) \Rightarrow (a
+  \mathrel{|} b) \vee (a \mathrel{|}
+          c))\\
+  & \Leftrightarrow & ((bc \in \langle a \rangle) \Rightarrow
+          (b \in \langle
+  a \rangle) \vee (c \in \langle a \rangle))\\
+  &
+          \Leftrightarrow & (\langle a \rangle \text{ nonzero prime
+          ideal})
+\end{eqnarray*}
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Prime implies Irreducible
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(R\) be an ID and let \(a \in R\). We have that \((a \text{
+          prime}) \Rightarrow (a \text{ irreducible})\).
         </p></td>
       </tr></tbody>
     </table>
@@ -729,27 +871,23 @@
       </li>
       <li>
         <p>
-          division
-        </p>
-      </li>
-      <li>
-        <p>
           Bezout's identity
         </p>
       </li>
       <li>
         <p>
-          <img src="math145-115.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: 0.0385939393939394em; vertical-align: -0.258569696969697em; height: 1.14671515151515em"></img>
+          \([a]_n \in \mathbb{Z}_n^{\times} \Leftrightarrow (a, n) = 1
+          \boldsymbol{}\)
         </p>
       </li>
       <li>
         <p>
-          <img src="math145-116.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0379636363636364em; vertical-align: -0.148363636363636em; height: 0.930327272727273em"></img> field iff n prime
+          \(\mathbb{Z}_n\) field iff n prime
         </p>
       </li>
       <li>
         <p>
-          Size of a Quotient of <img src="math145-117.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0206060606060606em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.289115151515152em; height: 1.11650909090909em"></img>
+          Size of a Quotient of \(\mathbb{Z}_p [x]\)
         </p>
       </li>
     </ul>

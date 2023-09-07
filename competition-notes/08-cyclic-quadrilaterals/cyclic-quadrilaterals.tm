@@ -81,8 +81,14 @@
 
   <\exercise>
     Let <math|A B C> be a triangle with heights <math|A D>, <math|B E>, and
-    <math|C F>. Find the measures of the internal angles of
-    <math|\<vartriangle\>D E F>.
+    <math|C F>. Show that:
+
+    <\enumerate-numeric>
+      <item>The incenter of <math|\<vartriangle\>D E F> is the orthocenter of
+      <math|\<vartriangle\>A B C>.
+
+      <item><math|\<leangle\>D E F=180<rsup|\<circ\>>-2*\<leangle\>A B C>
+    </enumerate-numeric>
   </exercise>
 
   <\exercise>
@@ -98,6 +104,16 @@
     respectively. Let <math|I> be the incenter of the triangle <math|A B C>.
     Prove that the intersection of the line <math|A I> and <math|D E> is on
     the circle whose diameter is <math|A C>.
+  </exercise>
+
+  <\exercise>
+    Let <math|A B C> be an equilateral triangle, and let <math|P> lie on the
+    minor arc <math|B C> of its circumcircle. Show <math|P A=P B+P C>.
+  </exercise>
+
+  <\exercise>
+    Let <math|A B C D E F G> be a regular heptagon. Show that <math|<frac|1|A
+    B>=<frac|1|A C>+<frac|1|A E>>.
   </exercise>
 
   KJMO refers to the Korean Junior Math Olympiad.

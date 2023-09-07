@@ -53,7 +53,7 @@
     <math|n><rsup|th> Fibonacci number is given by
 
     <\equation*>
-      F<rsub|n>\<assign\><around*|{|<tabular|<tformat|<table|<row|<cell|1>|<cell|<text|if
+      F<rsub|n>\<assign\><around*|{|<tabular|<tformat|<table|<row|<cell|n>|<cell|<text|if
       >n\<leq\>1>>|<row|<cell|F<rsub|n-1>+F<rsub|n-2>>|<cell|<text|otherwise>>>>>>|\<nobracket\>>
     </equation*>
   </definition>

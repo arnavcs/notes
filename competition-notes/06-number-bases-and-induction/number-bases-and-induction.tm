@@ -141,7 +141,8 @@
 
     <\indent>
       In this base case, we indeed have that
-      <math|a<rsub|2>=1+<around*|(|1<space|0.5em>mod 2|)>=2>
+      <math|a<rsub|2>=a<rsub|1>+<around*|(|-1|)><rsup|f<around*|(|1|)>+1>=a<rsub|1>+1=2=1+<around*|(|1<space|0.5em>mod
+      2|)>> as desired.
     </indent>
 
     <with|font-series|bold|Inductive step:> Assuming that if
@@ -152,24 +153,24 @@
     2|)>>.
 
     <\indent>
-      Let <math|j> be the smallest integer such that <math|c<rsub|j>\<neq\>0>
-      and <math|c<rsub|j>\<neq\>p-1>. Now, we see that
+      Let <math|j> be the smallest integer such that
+      <math|c<rsub|j>\<neq\>p-1>. Now, we see that
       <math|l+1=<wide|c<rsub|k>c<rsub|k-1>\<ldots\>c<rsub|j+1><around*|(|c<rsub|j>+1|)>0\<ldots\>0|\<bar\>><rsub|<around*|(|p|)>>>,
       thus <math|d<rsub|i>=c<rsub|i>> if <math|i\<gtr\>j>,
       <math|d<rsub|i>=c<rsub|i+1>> if <math|i=j>, and <math|d<rsub|i>=0>
       otherwise. Then,
 
       <\eqnarray*>
-        <tformat|<table|<row|<cell|a<rsub|l+2>>|<cell|=>|<cell|a<rsub|l+1>+<around*|(|-1|)><rsup|f<around*|(|l+1|)>+1>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=1><rsup|l><around*|(|c<rsub|i><space|0.5em>mod
-        2|)>|)>+<around*|(|-1|)><rsup|f<around*|(|l+1|)>+1>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=j+1><rsup|l><around*|(|c<rsub|i><space|0.5em>mod
+        <tformat|<table|<row|<cell|a<rsub|l+2>>|<cell|=>|<cell|a<rsub|l+1>+<around*|(|-1|)><rsup|f<around*|(|l+1|)>+1>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=0><rsup|k><around*|(|c<rsub|i><space|0.5em>mod
+        2|)>|)>+<around*|(|-1|)><rsup|f<around*|(|l+1|)>+1>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=j+1><rsup|k><around*|(|c<rsub|i><space|0.5em>mod
         2|)>|)>+<around*|(|c<rsub|j><space|0.5em>mod
-        2|)>+<around*|(|-1|)><rsup|f<around*|(|l+1|)>+1>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=j+1><rsup|l><around*|(|c<rsub|i><space|0.5em>mod
+        2|)>+<around*|(|-1|)><rsup|f<around*|(|l+1|)>+1>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=j+1><rsup|k><around*|(|c<rsub|i><space|0.5em>mod
         2|)>|)>+<around*|(|c<rsub|j><space|0.5em>mod
-        2|)>+<around*|(|-1|)><rsup|c<rsub|j>+1+1>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=j+1><rsup|l><around*|(|c<rsub|i><space|0.5em>mod
+        2|)>+<around*|(|-1|)><rsup|c<rsub|j>+1+1>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=j+1><rsup|k><around*|(|c<rsub|i><space|0.5em>mod
         2|)>|)>+<around*|(|c<rsub|j>+1<space|0.5em>mod
-        2|)>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=j+1><rsup|l><around*|(|d<rsub|i><space|0.5em>mod
+        2|)>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=j+1><rsup|k><around*|(|d<rsub|i><space|0.5em>mod
         2|)>|)>+<around*|(|d<rsub|j><space|0.5em>mod
-        2|)>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=1><rsup|l><around*|(|d<rsub|i><space|0.5em>mod
+        2|)>>>|<row|<cell|>|<cell|=>|<cell|1+<around*|(|<big|sum><rsub|i=0><rsup|k><around*|(|d<rsub|i><space|0.5em>mod
         2|)>|)>>>>>
       </eqnarray*>
 

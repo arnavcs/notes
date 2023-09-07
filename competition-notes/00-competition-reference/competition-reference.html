@@ -29,6 +29,7 @@
       white-space: nowrap; } 
     </style>
     <link href="https://arnavcs.github.io/assets/texmacs.css" type="text/css" rel="stylesheet"></link>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" language="javascript"></script>
   </head>
   <body>
     <table class="title-block" style="margin-bottom: 2em">
@@ -104,47 +105,58 @@
           Divisibility
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          For <span class="no-breaks"><img src="competition-reference-1.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242422em; margin-top: -0.0379636363636364em; vertical-align: -0.201115151515152em; height: 0.968145454545455em"></img>,</span> we have that <img
-          src="competition-reference-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> divides <span class="no-breaks"><img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img>,</span>
-          notated <span class="no-breaks"><img src="competition-reference-4.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>,</span> if <span class="no-breaks"><img
-          src="competition-reference-5.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+          For \(m, n \in \mathbb{Z}\), we have that \(m\) divides \(n\),
+          notated \(m \mathrel{|} n\), if \((\exists k \in \mathbb{Z}) (mk =
+          n)\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><p>
-          Modulo <img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> and Congruence Classes
+          Modulo \(n\) and Congruence Classes
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          For <span class="no-breaks"><img src="competition-reference-6.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242422em; margin-top: -0.0358787878787878em; vertical-align: -0.201115151515152em; height: 1.07844848484848em"></img>,</span> we say <img src="competition-reference-7.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is a congruence class, residue class, or equivalence
-          class modulo <span class="no-breaks"><img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img>.</span> It is
-          often implicit what the value of <img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> is, and we
-          can instead write <img src="competition-reference-8.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0457696969696969em; vertical-align: 0em; height: 0.6704em"></img> to refer to <span class="no-breaks"><img
-          src="competition-reference-9.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0144969696969697em; margin-right: -0.0248242424242424em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.07985454545455em"></img>.</span>
+          For \(n \in \mathbb{Z}^{+ }, a \in \mathbb{Z}\), we say \([a]_n :=
+          \{ kn + a : k \in \mathbb{Z} \}\) is a congruence class, residue
+          class, or equivalence class modulo \(n\). It is often implicit what
+          the value of \(n\) is, and we can instead write \(\bar{a}\) to refer
+          to \([a]_n\).
         </p><p>
-          Additionally, for any two <span class="no-breaks"><img src="competition-reference-10.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242422em; margin-top: -0.0264727272727273em; vertical-align: -0.201115151515152em; height: 0.968145454545455em"></img>,</span>
-          we say that <img src="competition-reference-11.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.781963636363636em"></img> and <img src="competition-reference-12.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> are
-          congruent modulo <img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> which can be denoted as
-          <span class="no-breaks"><img src="competition-reference-13.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span> This is equivalent to
-          saying <span class="no-breaks"><img src="competition-reference-14.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span> When it is
-          obvious what the modulus is, we can omit the <span class="no-breaks"><img src="competition-reference-15.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+          Additionally, for any two \(b, c \in \bar{a}\), we say that \(b\)
+          and \(c\) are congruent modulo \(n\) which can be denoted as \(b
+          \equiv c \enspace (\operatorname{mod}n)\). This is equivalent to
+          saying \(n \mathrel{|} b - c\). When it is obvious what the modulus
+          is, we can omit the \((\operatorname{mod}n)\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><p>
+          Deriving Divisibility Rules
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          To derive a divisibility rule for a number, it is important to
+          consider the form of the number as a base 10 number, and see how
+          that plays modulo the desired divisor. For example, if we consider
+          divisibility by nine, we see that if \(n = \sum_{i = 0}^k a_i \cdot
+          10^i\), then modulo 9 we have that \(n \equiv \sum_{i = 0}^k a_i
+          \cdot 10^i \equiv \sum_{i = 0}^k a_i \cdot 1^i
+\equiv \sum_{i = 0}^k
+          a_i\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020"><p>
-          Ring of Integers Mod <img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img>
+          Ring of Integers Mod \(n\)
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          <img src="competition-reference-17.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is a ring with addition and multiplication
-          of its elements being defined so that:
+          \(\)\(\mathbb{Z}_n := \{ [x]_n : x \in \mathbb{Z} \}\) is a ring
+          with addition and multiplication of its elements being defined so
+          that:
         </p><ol>
           <li>
             <p>
-              <img src="competition-reference-18.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0144969696969697em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.07985454545455em"></img>
+              \([a]_n + [b]_n = [a + b]_n\)
             </p>
           </li>
           <li>
             <p>
-              <img src="competition-reference-19.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0144969696969697em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.07985454545455em"></img>
+              \([a]_n \cdot [b]_n = [a \cdot b]_n\)
             </p>
           </li>
         </ol></td>
@@ -153,28 +165,32 @@
           Modular Arithmetic Properties
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Let <span class="no-breaks"><img src="competition-reference-20.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0202666666666667em; margin-right: -0.0248242424242422em; margin-top: -0.0379636363636364em; vertical-align: -0.203151515151515em; height: 0.968145454545455em"></img>,</span> and <span class="no-breaks"><img
-          src="competition-reference-21.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242422em; margin-top: -0.0264727272727273em; vertical-align: -0.201115151515152em; height: 0.968145454545455em"></img>,</span> then we see that if <img src="competition-reference-22.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
-          and <span class="no-breaks"><img src="competition-reference-23.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>:</span>
+          Let \(n, m \in \mathbb{Z}_{> 0}\), and \(a, b, c, d \in
+          \mathbb{Z}\), then we see that if \(a \equiv b \enspace
+          (\operatorname{mod}n)\) and \(c \equiv d \enspace 
+          (\operatorname{mod}n)\):
         </p><ol>
           <li>
             <p>
-              <img src="competition-reference-24.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \(a + c \equiv b + d \enspace (\operatorname{mod}n)\)
             </p>
           </li>
           <li>
             <p>
-              <img src="competition-reference-25.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \(ac \equiv bd \enspace  (\operatorname{mod}n)\)
             </p>
           </li>
           <li>
             <p>
-              <img src="competition-reference-26.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \(a^m \equiv b^m  \enspace (\operatorname{mod}n)\)
             </p>
           </li>
           <li>
             <p>
-              <img src="competition-reference-27.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+              \((\exists k, r_a, r_b, r_n \in \mathbb{Z}) (a = kr_a, b = kr_b,
+              n = kr_n)
+\Rightarrow \left( r_a \equiv r_n  \enspace
+              (\operatorname{mod}r_n) \right)\)
             </p>
           </li>
         </ol></td>
@@ -183,43 +199,43 @@
           Number Bases
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Given <span class="no-breaks"><img src="competition-reference-28.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242426em; margin-top: -0.0379636363636364em; vertical-align: -0.0404363636363636em; height: 0.806787878787879em"></img>,</span> and a number base
-          <span class="no-breaks"><img src="competition-reference-11.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.781963636363636em"></img>,</span> the base <img src="competition-reference-11.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.781963636363636em"></img> representation of <span class="no-breaks"><img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img>,</span>
-          <span class="no-breaks"><img src="competition-reference-29.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0176em; margin-right: -0.0248242424242422em; margin-top: -0.0258424242424242em; vertical-align: -0.415515151515152em; height: 1.33231515151515em"></img>,</span> satisfies
+          Given \(n \in \mathbb{Z}\), and a number base \(b\), the base \(b\)
+          representation of \(n\), \(\overline{d_k d_{k - 1} \ldots d_1
+          d_0}_{(b)}\), satisfies
         </p><center>
-          <img src="competition-reference-30.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363635em; margin-right: -0.0248242424242422em; margin-top: -0.0309333333333333em; vertical-align: -1.21178181818182em; height: 3.06109090909091em"></img>
+          \(\displaystyle n = \sum^k_{i = 0} d_k \cdot b^k\)
         </center><p>
-          where <img src="competition-reference-31.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242431em; margin-top: -0.0264727272727273em; vertical-align: -0.148363636363636em; height: 0.930327272727273em"></img> and <img src="competition-reference-32.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242426em; margin-top: -0.0264727272727273em; vertical-align: -0.148363636363636em; height: 0.930327272727273em"></img> for all
-          integers <span class="no-breaks"><img src="competition-reference-33.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242424em; margin-top: -0.037769696969697em; vertical-align: 0em; height: 0.744727272727273em"></img>.</span>
+          where \(0 \leq d_i < b\) and \(d_i \in \mathbb{Z}\) for all integers
+          \(i\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020"><p>
-          Multiplicative Order Mod <img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img>
+          Multiplicative Order Mod \(n\)
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          The multiplicative order of a term, <span class="no-breaks"><img src="competition-reference-34.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242426em; margin-top: -0.0379636363636364em; vertical-align: -0.148363636363636em; height: 0.930327272727273em"></img>,</span>
-          to be the smallest <img src="competition-reference-35.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242426em; margin-top: -0.0358787878787878em; vertical-align: -0.0404363636363636em; height: 0.917090909090909em"></img> such that <span class="no-breaks"><img
-          src="competition-reference-36.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242422em; margin-top: -0.0258424242424242em; vertical-align: 0em; height: 0.900848484848485em"></img>,</span> which is to say <span class="no-breaks"><img src="competition-reference-37.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+          The multiplicative order of a term, \(\bar{a} \in \mathbb{Z}_n\), to
+          be the smallest \(m \in \mathbb{Z}^+\) such that \(\bar{a}^m =
+          \overline{a^m} = \bar{1}\), which is to say \(a^m \equiv 1 \enspace
+          (\operatorname{mod}n)\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex"><p>
           Euler's Totient Function
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Define Euler's Totient function, <span class="no-breaks"><img src="competition-reference-38.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>,</span>
-          to be be number of integers <img src="competition-reference-39.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0207515151515151em; margin-right: -0.0248242424242422em; margin-top: -0.0264727272727273em; vertical-align: -0.140606060606061em; height: 0.906084848484848em"></img> which are
-          coprime with <span class="no-breaks"><img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img>.</span>
+          Define Euler's Totient function, \(\varphi (n)\), to be be number of
+          integers \(1 \leq k \leq n\) which are coprime with \(n\).
         </p><p>
-          <img src="competition-reference-38.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is multiplicative, so <span class="no-breaks"><img src="competition-reference-40.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+          \(\varphi (n)\) is multiplicative, so \((\gcd (m, n) = 1)
+          \Rightarrow \varphi (mn) = \varphi (m) \varphi (n)\)\(\).
         </p><p>
-          Let <img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> be factorized as <img src="competition-reference-41.png" style="margin-left: -0.0620606060606061em; margin-bottom: -0.0308848484848485em; margin-right: -0.0248242424242422em; margin-top: 0.0375272727272727em; vertical-align: -0.237915151515152em; height: 1.2630303030303em"></img>
-          with <img src="competition-reference-42.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242426em; margin-top: -0.0264727272727273em; vertical-align: -0.148363636363636em; height: 0.930327272727273em"></img> for all <span class="no-breaks"><img src="competition-reference-43.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0207515151515151em; margin-right: -0.0248242424242422em; margin-top: -0.037769696969697em; vertical-align: -0.140606060606061em; height: 0.881260606060606em"></img>.</span>
-          Now,
+          Let \(n\) be factorized as \(p_1^{ k_1} p_2^{k_2} \cdots p_r^{k_r}\)
+          with \(k_i \geq 1\) for all \(1 \leq i \leq r\). Now,
         </p><center>
-          <img src="competition-reference-44.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363635em; margin-right: -0.0248242424242413em; margin-top: -0.0358303030303031em; vertical-align: -1.21178181818182em; height: 2.87490909090909em"></img>
+          \(\displaystyle \varphi (n) = n \prod_{i = 1}^r \left( 1 -
+          \frac{1}{p_i} \right) = \prod^r_{i
+= 1} (p_i^{k_i} - p_i^{k_i -
+          1})\)
         </center></td>
       </tr></tbody>
     </table>
@@ -239,52 +255,71 @@
           Fibonacci Sequence
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          For <span class="no-breaks"><img src="competition-reference-45.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242426em; margin-top: -0.0225454545454545em; vertical-align: -0.0404363636363636em; height: 0.954327272727273em"></img>,</span> the <img src="competition-reference-3.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img><sup>th</sup> Fibonacci number is given by
+          For \(n \in \mathbb{Z}^{\geqslant 0}\), the \(n\)<sup>th</sup>
+          Fibonacci number is given by
         </p><center>
-          <img src="competition-reference-46.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0289939393939393em; margin-right: 0em; margin-top: -0.0331151515151515em; vertical-align: -1.0249696969697em; height: 2.58681212121212em"></img>
+          \(\displaystyle F_n := \left\{ \begin{array}{ll}
+  n & \text{if } n
+          \leq 1\\
+  F_{n - 1} + F_{n - 2} & \text{otherwise}
+\end{array}
+          \right.\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><p>
+          Reciprocal of Product of Fibonacci Terms
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          For \(n \in \mathbb{Z}, n \geq 1\), we have that
+        </p><center>
+          \(\displaystyle \frac{1}{F_{n - 1} F_{n + 1}} = \frac{1}{F_{n - 1}
+          F_n} - \frac{1}{F_n F_{n +
+1}}\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #00ffff20"><p>
-          Arithmetic Series
+          Finite Arithmetic Series
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          For <img src="competition-reference-47.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242426em; margin-top: -0.0264727272727273em; vertical-align: -0.201115151515152em; height: 0.968145454545455em"></img> and <span class="no-breaks"><img src="competition-reference-48.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242422em; margin-top: -0.0358787878787878em; vertical-align: -0.0404363636363636em; height: 0.917090909090909em"></img>,</span>
-          we have:
+          For \(a, d \in \mathbb{R}\) and \(n \in \mathbb{Z}^+\), we have:
         </p><center>
-          <img src="competition-reference-49.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363635em; margin-right: -0.0248242424242449em; margin-top: -0.0423272727272725em; vertical-align: -1.21178181818182em; height: 3.03626666666667em"></img>
+          \(\displaystyle a + (a + d) + (a + 2 d) + \cdots + (a + (n - 1) d) =
+          \sum^{n - 1}_{i = 0} (a +
+id) = \frac{1}{2} n (2 a + (n - 1) d)\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #00ffff20; background-color: #00ffff20"><p>
-          Geometric Series
+          Finite Geometric Series
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          For <span class="no-breaks"><img src="competition-reference-50.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242426em; margin-top: -0.0255515151515152em; vertical-align: -0.201115151515152em; height: 0.955733333333333em"></img>,</span> <span class="no-breaks"><img
-          src="competition-reference-51.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>,</span> and <span class="no-breaks"><img src="competition-reference-48.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242422em; margin-top: -0.0358787878787878em; vertical-align: -0.0404363636363636em; height: 0.917090909090909em"></img>,</span>
-          we have that
+          For \(a, r \in \mathbb{R}\), \(r \neq 1\), and \(n \in
+          \mathbb{Z}^+\), we have that
         </p><center>
-          <img src="competition-reference-52.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363635em; margin-right: -0.0248242424242413em; margin-top: -0.0423272727272725em; vertical-align: -1.21178181818182em; height: 3.03626666666667em"></img>
+          \(\displaystyle a + ar + ar^2 + \cdots + ar^{n - 1} = \sum^{n -
+          1}_{i = 0} ar^i = a \frac{r^n
+- 1}{r - 1}\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #00ffff20"><p>
           Sum of Powers of Natural Numbers
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          For <img src="competition-reference-53.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242422em; margin-top: -0.0255515151515152em; vertical-align: -0.0404363636363636em; height: 0.794375757575758em"></img> we have the following results:
+          For \(n \in \mathbb{N}\) we have the following results:
         </p><ol>
           <li>
             <p>
-              <img src="competition-reference-54.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242425em; margin-right: -0.0248242424242431em; margin-top: -0.0279757575757575em; vertical-align: -0.439418181818182em; height: 1.57837575757576em"></img>
+              \(1 + 2 + \cdots + n = \frac{n (n + 1)}{2}\)
             </p>
           </li>
           <li>
             <p>
-              <img src="competition-reference-55.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363637em; margin-right: -0.0248242424242431em; margin-top: -0.0279757575757575em; vertical-align: -0.439418181818182em; height: 1.59078787878788em"></img>
+              \(1^2 + 2^2 + \cdots + n^2 = \frac{n (n + 1)  (2 n + 1)}{6}\)
             </p>
           </li>
           <li>
             <p>
-              <img src="competition-reference-56.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0289939393939393em; margin-right: -0.0248242424242431em; margin-top: -0.0423272727272728em; vertical-align: -0.672290909090909em; height: 1.95447272727273em"></img>
+              \(1^3 + 2^3 + \cdots + n^3 = \left( \frac{n (n + 1)}{2}
+              \right)^2\)
             </p>
           </li>
         </ol></td>
@@ -293,46 +328,55 @@
     <h2 id="auto-3">3<span style="margin-left: 1em"></span>Geometry<span style="margin-left: 1em"></span></h2>
     <table style="width: 100%">
       <tbody><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020; background-color: #ffff0020"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020; background-color: #ffff0020; width: 25ex; background-color: #ffff0020"><p>
           Directed Angles
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          A directed angle <img src="competition-reference-57.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.067539393939394em; margin-top: -0.0535757575757576em; vertical-align: 0em; height: 0.8192em"></img> is always measured as the
-          counterclockwise angle from the line segment <img src="competition-reference-58.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242424em; margin-top: -0.0627878787878788em; vertical-align: 0em; height: 0.794375757575758em"></img>
-          to the line segment <span class="no-breaks"><img src="competition-reference-59.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img>.</span>
-          Additionally, directed angles are considered modulo <span class="no-breaks"><img
-          src="competition-reference-60.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0620606060606061em; margin-right: -0.0248242424242424em; margin-top: -0.0244848484848486em; vertical-align: 0em; height: 0.794375757575758em"></img>,</span> meaning that <span class="no-breaks"><img src="competition-reference-61.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: 0.0365090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0244848484848486em; vertical-align: -0.0861575757575758em; height: 0.781963636363636em"></img>.</span>
+          A directed angle \(\measuredangle A B C\) is always measured as the
+          counterclockwise angle from the line segment \(A B\) to the line
+          segment \(C B\). Additionally, directed angles are considered modulo
+          \(180^{\circ}\), meaning that \(135^{\circ} = - 45^{\circ}\).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #00ffff20"><p>
           Sum of Interior Angles in a Triangle
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Given a triangle <span class="no-breaks"><img src="competition-reference-62.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.067539393939394em; margin-top: -0.0627878787878788em; vertical-align: 0em; height: 0.8192em"></img>,</span> the
-          sum of the interior angles of the triangle always sum to <img src="competition-reference-60.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0620606060606061em; margin-right: -0.0248242424242424em; margin-top: -0.0244848484848486em; vertical-align: 0em; height: 0.794375757575758em"></img> or <img src="competition-reference-63.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0263272727272728em; vertical-align: 0em; height: 0.50889696969697em"></img> radians. In terms of
-          directed angles, we can say that <span class="no-breaks"><img src="competition-reference-64.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0255515151515151em; margin-right: -0.0248242424242413em; margin-top: -0.0535757575757576em; vertical-align: -0.0861575757575758em; height: 0.881260606060606em"></img>.</span>
+          Given a triangle \(\vartriangle A B C\), the sum of the interior
+          angles of the triangle always sum to \(180^{\circ}\) or \(\pi\)
+          radians. In terms of directed angles, we can say that
+          \(\measuredangle A B C + \measuredangle B C A + \measuredangle C A B
+          = 0\).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #00ffff20; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #00ffff20; background-color: #ffff0020; width: 25ex; background-color: #00ffff20"><p>
           Pythagorean Theorem
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Let <img src="competition-reference-65.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.067539393939394em; margin-top: -0.0627878787878788em; vertical-align: 0em; height: 0.8192em"></img> be a right triangle with <span class="no-breaks"><img
-          src="competition-reference-66.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242422em; margin-top: -0.0535757575757576em; vertical-align: 0em; height: 0.8192em"></img>.</span> Now we have <span class="no-breaks"><img src="competition-reference-67.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0255515151515151em; margin-right: -0.0248242424242413em; margin-top: -0.0423272727272728em; vertical-align: -0.0861575757575758em; height: 0.991563636363636em"></img>.</span>
+          Let \(A B C\) be a right triangle with \(\mathrel{\angle} A B C =
+          90^{\circ}\). Now we have \(A B^2 + B C^2 = A C^2\).
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #ffff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #00ffff20; background-color: #ffff0020; width: 25ex; background-color: #00ffff20; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #00ffff20; background-color: #ffff0020; width: 25ex; background-color: #00ffff20; background-color: #ffff0020; width: 25ex; background-color: #00ffff20"><p>
           Area of a Triangle
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Let <img src="competition-reference-68.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242422em; margin-top: -0.0627878787878788em; vertical-align: 0em; height: 0.8192em"></img> be a triangle. Let <img src="competition-reference-69.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.781963636363636em"></img>
-          be the length of the perpendicular dropped from <img src="competition-reference-70.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242424em; margin-right: -0.0248242424242425em; margin-top: -0.0627878787878788em; vertical-align: 0em; height: 0.794375757575758em"></img>
-          to <span class="no-breaks"><img src="competition-reference-71.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.067539393939394em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img>.</span> Let <img src="competition-reference-11.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.781963636363636em"></img>
-          be the length of segment <span class="no-breaks"><img src="competition-reference-71.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.067539393939394em; margin-top: -0.0503757575757576em; vertical-align: 0em; height: 0.806787878787879em"></img>.</span>
-          The area of <span class="no-breaks"><img src="competition-reference-65.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.067539393939394em; margin-top: -0.0627878787878788em; vertical-align: 0em; height: 0.8192em"></img>,</span> sometimes
-          denoted <img src="competition-reference-72.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242426em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is <span class="no-breaks"><img src="competition-reference-73.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242425em; margin-right: -0.0248242424242426em; margin-top: -0.0423272727272728em; vertical-align: -0.439418181818182em; height: 1.51626666666667em"></img>.</span>
+          Let \(A B C\) be a triangle. Let \(h\) be the length of the
+          perpendicular dropped from \(B\) to \(A C\). Let \(b\) be the length
+          of segment opposite \(B\). The area of \(A B C\), sometimes denoted
+          \(| A B C |\) is \(\frac{1}{2} bh\).
+        </p><p>
+          The area of the triangle can be alternately expressed as
+          \(\frac{1}{2} bc \cdot \sin A\) where \(b\) and \(c\) are the
+          lengths of the sides opposite veriticies \(B\) and \(C\)
+          respectively, and \(A\) is the measure of the angle at vertex \(A\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #ffff0020; width: 25ex; background-color: #00ffff20; background-color: #00ff0020"><p>
+          Scaling, Translations, Rotations, and Homothety
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          
         </p></td>
       </tr></tbody>
     </table>
@@ -343,15 +387,22 @@
           Sum of sines of the same period
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          <img src="competition-reference-74.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \((\forall a_1, a_2, \lambda_1, \lambda_2 \in \mathbb{R}) (\exists
+          a_3,
+\lambda_3 \in \mathbb{R}) (\forall \theta \in \mathbb{R})\)
         </p><center>
-          <img src="competition-reference-75.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle a_1 \sin (\theta + \lambda_1) + a_2 \sin (\theta +
+          \lambda_2) = a_3 \sin
+(\theta + \lambda_3)\)
         </center><p>
-          And specifically when we have <span class="no-breaks"><img src="competition-reference-76.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242425em; margin-right: -0.0248242424242431em; margin-top: -0.0235151515151515em; vertical-align: -0.439418181818182em; height: 1.34249696969697em"></img>,</span>
-          we see <span class="no-breaks"><img src="competition-reference-77.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>,</span> and <span class="no-breaks"><img
-          src="competition-reference-78.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span> In this case, we get
+          And specifically when we have \(\lambda_1 = 0, \lambda_2 =
+          \frac{\pi}{2}, a_1 = a, a_2 = b\), we see \(a_1 \sin (\theta +
+          \lambda_1) = a \sin (\theta)\), and \(a_2 \sin (\theta + \lambda_2)
+          = b \cos (\theta)\). In this case, we get
         </p><center>
-          <img src="competition-reference-79.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0289939393939395em; margin-right: 0em; margin-top: -0.0331151515151515em; vertical-align: -0.982593939393939em; height: 2.54448484848485em"></img>
+          \(\displaystyle a \sin (\theta) + b \cos (\theta) = \sqrt{a^2 + b^2}
+          \sin \left( \theta +
+\arctan \left( \frac{b}{a} \right) \right)\)
         </center></td>
       </tr></tbody>
     </table>
@@ -362,42 +413,59 @@
           Triangle Inequality and Reverse Triangle Inequality
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          <img src="competition-reference-80.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \((\forall \mathbf{x}, \mathbf{y}, \mathbf{z} \in \mathbb{R}^n)\)
         </p><center>
-          <img src="competition-reference-81.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle (\exists \text{ triangle in } \mathbb{R}^n \text{
+          with sides } \mathbf{x},
+\mathbf{y}, \mathbf{z}) \Leftrightarrow (\|
+          \mathbf{x} \| \leq \| \mathbf{y}
+\| + \| \mathbf{z} \|)\)
         </center><p>
-          This has many other forms. We know <img src="competition-reference-82.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0347151515151515em; margin-right: -0.0248242424242422em; margin-top: -0.0296727272727272em; vertical-align: -0.201115151515152em; height: 0.868848484848485em"></img> means
-          that there is a triangle in <img src="competition-reference-83.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0496484848484848em; margin-right: -0.0248242424242424em; margin-top: -0.0255515151515152em; vertical-align: 0em; height: 0.781963636363636em"></img> with sides <span
-          class="no-breaks"><img src="competition-reference-84.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0347151515151515em; margin-right: -0.0248242424242422em; margin-top: -0.0243878787878788em; vertical-align: -0.201115151515152em; height: 0.71990303030303em"></img>.</span> Thus,
+          This has many other forms. We know \(\mathbf{z} :=
+          \mathbf{x}+\mathbf{y}\) means that there is a triangle in
+          \(\mathbb{R}^n\) with sides \(\mathbf{x}, \mathbf{y}, \mathbf{z}\).
+          Thus,
         </p><center>
-          <img src="competition-reference-85.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle \| \mathbf{x}+\mathbf{y} \| \leq \| \mathbf{x} \| +
+          \| \mathbf{y} \|\)
         </center><p>
           And from the triangle inequality, we get the reverse triangle
           inequality.
         </p><center>
-          <img src="competition-reference-86.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0248242424242425em; margin-right: -0.0248242424242413em; margin-top: -0.0248242424242424em; vertical-align: -0.31030303030303em; height: 1.29086060606061em"></img>
+          \(\displaystyle {\large | } \| \mathbf{x} \| - \| \mathbf{y} \|
+          {\large | } \leq \|
+\mathbf{x}-\mathbf{y} \|\)
         </center></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; background-color: #ffff0020; width: 25ex; background-color: #00ffff20"><p>
           Mean Inequality Chain
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          <img src="competition-reference-87.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0358787878787878em; vertical-align: -0.258569696969697em; height: 1.14050909090909em"></img>
+          \((\forall x = \{ x_1, x_2, \ldots, x_n \}, x_i \in \mathbb{R}^+)\)
         </p><center>
-          <img src="competition-reference-88.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle \min (x) \leq \operatorname{HM} (x) \leq
+          \operatorname{GM} (x) \leq
+\operatorname{AM} (x) \leq
+          \operatorname{RMS} (x) \leq \max (x)\)
         </center><p>
-          with equality iff <span class="no-breaks"><img src="competition-reference-89.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242422em; margin-top: -0.0243878787878788em; vertical-align: -0.148363636363636em; height: 0.669672727272727em"></img>.</span>
+          with equality iff \(x_1 = x_2 = \cdots = x_n\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #00ffff20"><p>
           Cauchy-Schwarz Inequality
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          <img src="competition-reference-90.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0358787878787878em; vertical-align: -0.258569696969697em; height: 1.14050909090909em"></img>
+          \((\forall n \in \mathbb{Z}^+) (\forall \{ a_i \}_{i = 1}^n, \{ b_i
+          \}_{i = 1}^n
+\operatorname{with}a_i, b_i \in \mathbb{R})\)
         </p><center>
-          <img src="competition-reference-91.png" style="margin-left: 0em; margin-bottom: -0.0289939393939393em; margin-right: -0.0248242424242431em; margin-top: -0.0423272727272728em; vertical-align: -1.29294545454545em; height: 3.19568484848485em"></img>
+          \(\displaystyle \left( \sum_{i = 1}^n a_i^2 \right) \left( \sum_{i =
+          1}^n b_i^2 \right) \geq
+\left( \sum_{i = 1}^n a_i b_i \right)^2\)
         </center><p>
-          with equality iff <span class="no-breaks"><img src="competition-reference-92.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>.</span>
+          with equality iff \((\exists k \in \mathbb{R}) (\forall i \in
+          \mathbb{Z}, 1 \leq i \leq n) (a_i =
+kb_i)\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #00ffff20; background-color: #00ff0020"><p>
@@ -408,63 +476,92 @@
           parts of the inequalities with a trigonometric substitution and then
           trying to express the inequality as a sine function. 
         </p><p>
-          For example, if we want to maximize <img src="competition-reference-93.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0255515151515151em; margin-right: -0.0248242424242431em; margin-top: -0.0533818181818182em; vertical-align: -0.0861575757575758em; height: 0.831612121212121em"></img> where we
-          have some bound on <img src="competition-reference-2.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> and <span class="no-breaks"><img
-          src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img>,</span> we could use the substitution <img src="competition-reference-94.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> to see that
+          For example, if we want to maximize \(4 m + 3 n\) where \(\)we have
+          some bound on \(m\) and \(n\), we could use the substitution \(m = r
+          \sin (\theta), n = r \cos (\theta)\) to see that
         </p><center>
-          <img src="competition-reference-95.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242449em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img>
+          \(\displaystyle 4 m + 3 n = 4 r \sin (\theta) + 3 r \cos (\theta) =
+          5 r \sin (\theta + \phi)
+\leq 5 r\)
         </center></td>
       </tr></tbody>
     </table>
-    <h2 id="auto-6">6<span style="margin-left: 1em"></span>Miscellaneous<span style="margin-left: 1em"></span></h2>
+    <h2 id="auto-6">6<span style="margin-left: 1em"></span>Graph Theory<span style="margin-left: 1em"></span></h2>
+    <table style="width: 100%">
+      <tbody><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; width: 25ex; background-color: #00ffff20"><p>
+          Pigeonhole Principle
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          Suppose there are at least \(n \times k + 1\) pigeons and \(k\)
+          pigeonholes. If every pigeon is in a pigeonhole, then the there
+          exists at least one pigeonhole with \(n + 1\) pigeons in it.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; width: 25ex; background-color: #00ffff20"><p>
+          Ramsey's Theorem
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
+          One can find a monochromatic clique in any edge colouring of a
+          sufficiently large complete graph. If we have \(c\) colours, and we
+          want to ensure the existence of either a \(n_1\)-clique of colour
+          \(1\), a \(n_2\)-clique of colour \(2\), <span style="margin-left: 0.16665em"></span>.<span
+          style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>, or a
+          \(n_c\)-clique of colour \(c\), then the minimum required degree of
+          the graph is \(R (n_1, n_2, \ldots, n_c)\).
+        </p><p>
+          As an example, we have that \(R (3, 3) = 6\) which can be proved
+          with the pigeonhole principle.
+        </p></td>
+      </tr></tbody>
+    </table>
+    <h2 id="auto-7">7<span style="margin-left: 1em"></span>Miscellaneous<span style="margin-left: 1em"></span></h2>
     <table style="width: 100%">
       <tbody><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; width: 25ex; background-color: #00ffff20; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex"><p>
           Pigeonhole Principle
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Suppose there are at least <img src="competition-reference-96.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0255515151515151em; margin-right: -0.0248242424242422em; margin-top: -0.0264727272727273em; vertical-align: -0.0861575757575758em; height: 0.856436363636364em"></img> pigeons and <img
-          src="competition-reference-97.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.781963636363636em"></img> pigeonholes. If every pigeon is in a pigeonhole,
-          then the there exists at least one pigeonhole with <img src="competition-reference-98.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0255515151515151em; margin-right: -0.0248242424242422em; margin-top: -0.040969696969697em; vertical-align: -0.0861575757575758em; height: 0.8192em"></img>
-          pigeons in it.
+          Suppose there are at least \(n \times k + 1\) pigeons and \(k\)
+          pigeonholes. If every pigeon is in a pigeonhole, then the there
+          exists at least one pigeonhole with \(n + 1\) pigeons in it.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; width: 25ex; background-color: #00ffff20; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; background-color: #ffff0020; width: 25ex"><p>
           Generalized Pigeonhole Principle
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          If <span class="no-breaks"><img src="competition-reference-99.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242431em; margin-top: -0.0358787878787878em; vertical-align: -0.201115151515152em; height: 1.07844848484848em"></img>,</span> then if <img src="competition-reference-100.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363637em; margin-right: -0.0248242424242422em; margin-top: -0.035830303030303em; vertical-align: -0.3584em; height: 1.25585454545455em"></img> pigeons are placed into <img src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img> holes,
-          then we have that at least one <img src="competition-reference-39.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0207515151515151em; margin-right: -0.0248242424242422em; margin-top: -0.0264727272727273em; vertical-align: -0.140606060606061em; height: 0.906084848484848em"></img> satisfies
-          that the <img src="competition-reference-97.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.0264727272727273em; vertical-align: 0em; height: 0.781963636363636em"></img><sup>th</sup> pigeonhole has at
-          least <img src="competition-reference-101.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0223030303030303em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: -0.201115151515152em; height: 0.707490909090909em"></img> pigeons in it.
+          If \(q_1, q_2, \ldots, q_n \in \mathbb{Z}^+\), then if \(\left(
+          \sum_{i = 1}^n q_i \right) - n + 1\) pigeons are placed into \(n\)
+          holes, then we have that at least one \(1 \leq k \leq n\) satisfies
+          that the \(k\)<sup>th</sup> pigeonhole has at least \(q_k\) pigeons
+          in it.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; width: 25ex; background-color: #00ffff20; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex"><p>
           Principle of Mathematical Induction
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Let <img src="competition-reference-102.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> be a statement that depends on a <span
-          class="no-breaks"><img src="competition-reference-48.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242422em; margin-top: -0.0358787878787878em; vertical-align: -0.0404363636363636em; height: 0.917090909090909em"></img>.</span> If <img src="competition-reference-103.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242426em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is
-          true, and if <span class="no-breaks"><img src="competition-reference-104.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0358787878787878em; vertical-align: -0.258569696969697em; height: 1.14050909090909em"></img>,</span> then <img
-          src="competition-reference-102.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is true for all positive integers <span class="no-breaks"><img
-          src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img>.</span>
+          Let \(P (n)\) be a statement that depends on a \(n \in
+          \mathbb{Z}^+\). If \(P (1)\) is true, and if \((\forall k \in
+          \mathbb{Z}^+) (P (k) \Rightarrow P (k + 1))\), then \(P (n)\) is
+          true for all positive integers \(n\).
         </p><p>
-          Here <img src="competition-reference-105.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242426em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is called the base case, and <img src="competition-reference-106.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242431em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is the inductive step, where the assumed <img src="competition-reference-107.png"
-          style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is the inductive hypothesis.
+          Here \(P (1)\) is called the base case, and \(P (k) \Rightarrow P (k
+          + 1)\) is the inductive step, where the assumed \(P (k)\) is the
+          inductive hypothesis.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; width: 25ex; background-color: #00ffff20; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; background-color: #ffff0020; width: 25ex; background-color: #00ffff20"><p>
           Strong Induction
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex"><p>
-          Let <img src="competition-reference-102.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> be a statement that depends on a <span
-          class="no-breaks"><img src="competition-reference-48.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0216242424242424em; margin-right: -0.0248242424242422em; margin-top: -0.0358787878787878em; vertical-align: -0.0404363636363636em; height: 0.917090909090909em"></img>.</span> If <img src="competition-reference-103.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242426em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is
-          true, and if <span class="no-breaks"><img src="competition-reference-108.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242413em; margin-top: -0.0358787878787878em; vertical-align: -0.258569696969697em; height: 1.14050909090909em"></img>,</span> then <img
-          src="competition-reference-102.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0269090909090909em; margin-right: -0.0248242424242422em; margin-top: -0.0310787878787879em; vertical-align: -0.258569696969697em; height: 1.09226666666667em"></img> is true for all positive integers <span class="no-breaks"><img
-          src="competition-reference-3.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363636em; margin-right: -0.0248242424242424em; margin-top: -0.038739393939394em; vertical-align: 0em; height: 0.521309090909091em"></img>.</span>
+          Let \(P (n)\) be a statement that depends on a \(n \in
+          \mathbb{Z}^+\). If \(P (1)\) is true, and if \((\forall k \in
+          \mathbb{Z}^+) ((P (1) \wedge P (2) \wedge \cdots \wedge P
+          (k))
+\Rightarrow P (k + 1))\), then \(P (n)\) is true for all
+          positive integers \(n\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #00ff0020; width: 25ex; width: 25ex; background-color: #00ffff20; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; background-color: #ffff0020; width: 25ex; background-color: #00ff0020"><p>
@@ -477,9 +574,10 @@
           inductive step. In such a case, change the statement to something
           stronger.
         </p><p>
-          For example, proving <img src="competition-reference-109.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363637em; margin-right: -0.0248242424242431em; margin-top: -0.0423272727272728em; vertical-align: -0.439418181818182em; height: 1.52867878787879em"></img> could be tough with
-          induction, but it is much easier to prove the stronger statement
-          that <span class="no-breaks"><img src="competition-reference-110.png" style="margin-left: -0.0248242424242424em; margin-bottom: -0.0372363636363637em; margin-right: -0.0248242424242431em; margin-top: -0.0423272727272728em; vertical-align: -0.439418181818182em; height: 1.52867878787879em"></img>.</span>
+          For example, proving \(1 + \frac{1}{2^2} + \frac{1}{3^2} + \ldots +
+          \frac{1}{n^2} < 2\) could be tough with induction, but it is much
+          easier to prove the stronger statement that \(1 + \frac{1}{2^2} +
+          \frac{1}{3^2} + \ldots + \frac{1}{n^2} < 2 - \frac{1}{n}\).
         </p></td>
       </tr></tbody>
     </table>
