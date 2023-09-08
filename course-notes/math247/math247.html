@@ -98,11 +98,11 @@
     <table style="width: 100%">
       <tbody><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
-          Billinearity
+          Bilinearity
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
-          Let \(V\) be a vector space over a field \(F\). A billinear form is
-          a function \(B : V \times V \rightarrow F\) which is linear in both
+          Let \(V\) be a vector space over a field \(F\). A bilinear form is a
+          function \(B : V \times V \rightarrow F\) which is linear in both
           arguments seperately. This means that for \(\mathbf{x}, \mathbf{y},
           \mathbf{z} \in V\) and \(a, b \in F\), we have
         </p><ol>
@@ -161,8 +161,8 @@
           \langle \vec{0}, \mathbf{x} \rangle = 0\). Also, when \(F\) is
           \(\mathbb{R}\) (which is what we will consider for this course), we
           get \(\)that conjugate symmetry reduces to symmetry, and also then
-          that the inner product space is billinear. Thus, an inner product on
-          a real vector space is a positive-definite symmetric billinear form.
+          that the inner product space is bilinear. Thus, an inner product on
+          a real vector space is a positive-definite symmetric bilinear form.
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
@@ -209,8 +209,8 @@
           <li>
             <p>
               Positive Definiteness: \((\forall \mathbf{x} \in V) (\rho
-              (\mathbf{x}) \Leftrightarrow \mathbf{x}=
-\vec{0})\)
+              (\mathbf{x}) \Leftrightarrow
+\mathbf{x}=\boldsymbol{0})\)
             </p>
           </li>
         </ol><p>
@@ -218,7 +218,7 @@
           V) (\rho (\mathbf{x}) \geq 0)\), which is called non-negativity.
         </p></td>
       </tr><tr>
-        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ffff20"><p>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Euclidean, \(l^1\), \(l^{\infty}\), and \(l^p\) Norms
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
@@ -299,6 +299,98 @@
           (\mathbf{x}-\mathbf{a}) \cdot
 \mathbf{b}= 0 \}\)
         </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Linear Maps
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          We define a linear map \(T : \mathbb{R}^n \rightarrow \mathbb{R}^m\)
+          so that if \(v_1, \ldots, v_k \in \mathbb{R}^n\) and \(t_1, \ldots,
+          t_k \in \mathbb{R}\), then 
+        </p><center>
+          \(\displaystyle T \left( \sum_{j = 1}^k t_j v_j \right) = \sum_{j =
+          1}^k t_j T (v_j)\)
+        </center><p>
+          Recall that each linear map has a corresponding matrix. We say that
+          \(A\) is the matrix representing \(T\) with respect to the standard
+          bases of \(\mathbb{R}^n\) and \(\mathbb{R}^m\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          \(M_{m \times n}\) and \(L (\mathbb{R}^n, \mathbb{R}^m)\) as Vector
+          Spaces and Algebras
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          We have that \(M_{m \times n}\) is the vector space of real \(m
+          \times n\) matricies and \(L (\mathbb{R}^n, \mathbb{R}^m)\) is the
+          vector space of linear functions from \(\mathbb{R}^n\) to
+          \(\mathbb{R}^m\). Note the following vector space isomorphisms
+          exist:
+        </p><center>
+          \(\displaystyle L (\mathbb{R}^n, \mathbb{R}^m) \cong M_{m \times n}
+          \cong \mathbb{R}^{mn}\)
+        </center><p>
+          If \(m = n\), then we can also define mulitplication for \(M_{n
+          \times n}\) (and equivalently \(L (\mathbb{R}^n, \mathbb{R}^n)\)) so
+          that for \(A, B \in M_{n \times n}\), we have \((A, B) \mapsto AB\).
+          Thus, \(M_{n \times n}\) and \(L (\mathbb{R}^n, \mathbb{R}^n)\) are
+          algebras.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          \(M_{m \times n}\) and \(L (\mathbb{R}^n, \mathbb{R}^m)\) with
+          Euclidean Inner Product and Norm
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Since \(M_{m \times n} \cong \mathbb{R}^{mn}\) canonically, we see
+          that we can define the Euclidean inner product on \(M_{m \times n}\)
+          so that \(\forall A, B \in M_{m \times n}\) we have
+        </p><center>
+          \begin{eqnarray*}
+  A \cdot B & = & \sum_{i = 1}^m \sum_{j = 1}^n
+          A_{i j} B_{i j}\\
+  & = & \operatorname{tr} (AB^T)
+          =\operatorname{tr} (A^T B)\\
+  & = & \operatorname{tr} (BA^T)
+          =\operatorname{tr} (B^T A)
+\end{eqnarray*}
+        </center><p>
+          We can then induce the Euclidean norm which is also called the
+          Matrix, Frobenius, or Hilbert-Schmidt norm. We see:
+        </p><center>
+          \(\displaystyle \| A \|^2 = A \cdot A =\operatorname{tr} (A^T A) =
+          \sum^m_{i = 1} \sum_{j =
+1}^n A_{i j}^2\)
+        </center><p>
+          Equivalent norms can be taken for any value in \(L (\mathbb{R}^n,
+          \mathbb{R}^m)\) by taking the norm of the isomorphic value in \(M_{m
+          \times n}\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Relationship with Matrix Norm
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(A \in M_{m \times n}\), and let \(\mathbf{x} \in
+          \mathbb{R}^n\). We have
+        </p><center>
+          \(\displaystyle \| A\mathbf{x} \| \leq \| A \|  \| \mathbf{x} \|\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Operator Norm
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(T : \mathbb{R}^n \rightarrow \mathbb{R}^m\) be linear. The
+          operator norm is defined such that
+        </p><center>
+          \(\displaystyle \| T \|_{\operatorname{op}} := \inf \{ C > 0 :
+          (\forall x \in \mathbb{R}^n)
+(\| T (x) \| \leq C \| x \|) \}\)
+        </center><p>
+          as such, we can see that \(\| T (x) \| \leq \| T
+          \|_{\operatorname{op}}  \| x \|\).
+        </p></td>
       </tr></tbody>
     </table>
     <p>

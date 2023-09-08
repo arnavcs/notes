@@ -21,13 +21,14 @@
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|n>|<cwith|3|3|1|2|cell-hyphen|t>|<cwith|3|3|1|2|cell-halign|l>|<cwith|3|3|1|2|cell-lsep|1ex>|<cwith|3|3|1|2|cell-rsep|1ex>|<cwith|3|3|1|2|cell-bsep|1ex>|<cwith|3|3|1|2|cell-tsep|1ex>|<cwith|3|3|1|1|cell-background|pastel
-  green>|<cwith|3|3|1|1|cell-width|25ex>|<cwith|3|3|1|1|cell-hmode|exact>|<cwith|3|3|1|2|cell-tborder|1ln>|<cwith|3|3|1|2|cell-bborder|1ln>|<cwith|3|3|1|2|cell-lborder|0ln>|<cwith|3|3|1|2|cell-rborder|0ln>|<cwith|5|5|1|1|cell-background|pastel
-  cyan>|<cwith|6|6|1|1|cell-background|pastel
+  green>|<cwith|3|3|1|1|cell-width|25ex>|<cwith|3|3|1|1|cell-hmode|exact>|<cwith|3|3|1|2|cell-tborder|1ln>|<cwith|3|3|1|2|cell-bborder|1ln>|<cwith|3|3|1|2|cell-lborder|0ln>|<cwith|3|3|1|2|cell-rborder|0ln>|<cwith|6|6|1|1|cell-background|pastel
   yellow>|<cwith|7|7|1|1|cell-background|pastel
-  yellow>|<cwith|8|8|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
-    Billinearity
+  yellow>|<cwith|8|8|1|1|cell-background|pastel
+  yellow>|<cwith|14|14|1|1|cell-background|pastel
+  yellow>|<cwith|5|5|1|1|cell-background|pastel green>|<table|<row|<\cell>
+    Bilinearity
   </cell>|<\cell>
-    Let <math|V> be a vector space over a field <math|F>. A billinear form is
+    Let <math|V> be a vector space over a field <math|F>. A bilinear form is
     a function <math|B\<of\>V\<times\>V\<rightarrow\>F> which is linear in
     both arguments seperately. This means that for
     <math|\<b-up-x\>,\<b-up-y\>,\<b-up-z\>\<in\>V> and <math|a,b\<in\>F>, we
@@ -61,9 +62,9 @@
     As a result we see that <math|<around*|\<langle\>|\<b-up-x\>,<wide|0|\<vect\>>|\<rangle\>>=<around*|\<langle\>|<wide|0|\<vect\>>,\<b-up-x\>|\<rangle\>>=0>.
     Also, when <math|F> is <math|\<bbb-R\>> (which is what we will consider
     for this course), we get <math|>that conjugate symmetry reduces to
-    symmetry, and also then that the inner product space is billinear. Thus,
+    symmetry, and also then that the inner product space is bilinear. Thus,
     an inner product on a real vector space is a positive-definite symmetric
-    billinear form.
+    bilinear form.
   </cell>>|<row|<\cell>
     Euclidean Vector Space
   </cell>|<\cell>
@@ -90,7 +91,7 @@
 
       <item>Absolute Homogeneity: <math|<around*|(|\<forall\>t\<in\>F|)><around*|(|\<forall\>\<b-up-x\>\<in\>V|)><around*|(|\<rho\><around*|(|t*\<b-up-x\>|)>=<around*|\||t|\|>*\<rho\><around*|(|\<b-up-x\>|)>|)>>
 
-      <item>Positive Definiteness: <math|<around*|(|\<forall\>\<b-up-x\>\<in\>V|)><around*|(|\<rho\><around*|(|\<b-up-x\>|)>\<Leftrightarrow\>\<b-up-x\>=<wide|0|\<vect\>>|)>>
+      <item>Positive Definiteness: <math|<around*|(|\<forall\>\<b-up-x\>\<in\>V|)><around*|(|\<rho\><around*|(|\<b-up-x\>|)>\<Leftrightarrow\>\<b-up-x\>=\<b-0\>|)>>
     </enumerate-numeric>
 
     And derivable from these, we get that
@@ -161,6 +162,88 @@
     <\equation*>
       P\<assign\><around*|{|\<b-up-x\>\<in\>\<bbb-R\><rsup|n>\<suchthat\><around*|(|\<b-up-x\>-\<b-up-a\>|)>\<cdot\>\<b-up-b\>=0|}>
     </equation*>
+  </cell>>|<row|<\cell>
+    Linear Maps
+  </cell>|<\cell>
+    We define a linear map <math|T\<of\>\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|m>>
+    so that if <math|v<rsub|1>,\<ldots\>,v<rsub|k>\<in\>\<bbb-R\><rsup|n>>
+    and <math|t<rsub|1>,\<ldots\>,t<rsub|k>\<in\>\<bbb-R\>>, then\ 
+
+    <\equation*>
+      T<around*|(|<big|sum><rsub|j=1><rsup|k>t<rsub|j>*v<rsub|j>|)>
+      =<big|sum><rsub|j=1><rsup|k>t<rsub|j>*T<around*|(|v<rsub|j>|)>
+    </equation*>
+
+    Recall that each linear map has a corresponding matrix. We say that
+    <math|A> is the matrix representing <math|T> with respect to the standard
+    bases of <math|\<bbb-R\><rsup|n>> and <math|\<bbb-R\><rsup|m>>.
+  </cell>>|<row|<\cell>
+    <math|M<rsub|m\<times\>n>> and <math|L<around*|(|\<bbb-R\><rsup|n>,\<bbb-R\><rsup|m>|)>>
+    as Vector Spaces and Algebras
+  </cell>|<\cell>
+    We have that <math|M<rsub|m\<times\>n>> is the vector space of real
+    <math|m\<times\>n> matricies and <math|L<around*|(|\<bbb-R\><rsup|n>,\<bbb-R\><rsup|m>|)>>
+    is the vector space of linear functions from <math|\<bbb-R\><rsup|n>> to
+    <math|\<bbb-R\><rsup|m>>. Note the following vector space isomorphisms
+    exist:
+
+    <\equation*>
+      L<around*|(|\<bbb-R\><rsup|n>,\<bbb-R\><rsup|m>|)>\<cong\>M<rsub|m\<times\>n>\<cong\>\<bbb-R\><rsup|m*n>
+    </equation*>
+
+    If <math|m=n>, then we can also define mulitplication for
+    <math|M<rsub|n\<times\>n>> (and equivalently
+    <math|L<around*|(|\<bbb-R\><rsup|n>,\<bbb-R\><rsup|n>|)>>) so that for
+    <math|A,B\<in\>M<rsub|n\<times\>n>>, we have
+    <math|<around*|(|A,B|)>\<mapsto\>A*B>. Thus, <math|M<rsub|n\<times\>n>>
+    and <math|L<around*|(|\<bbb-R\><rsup|n>,\<bbb-R\><rsup|n>|)>> are
+    algebras.
+  </cell>>|<row|<\cell>
+    <math|M<rsub|m\<times\>n>> and <math|L<around*|(|\<bbb-R\><rsup|n>,\<bbb-R\><rsup|m>|)>>
+    with Euclidean Inner Product and Norm
+  </cell>|<\cell>
+    Since <math|M<rsub|m\<times\>n>\<cong\>\<bbb-R\><rsup|m*n>> canonically,
+    we see that we can define the Euclidean inner product on
+    <math|M<rsub|m\<times\>n>> so that <math|\<forall\>A,B\<in\>M<rsub|m\<times\>n>>
+    we have
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|A\<cdot\>B>|<cell|=>|<cell|<big|sum><rsub|i=1><rsup|m><big|sum><rsub|j=1><rsup|n>A<rsub|i
+      j>*B<rsub|i j>>>|<row|<cell|>|<cell|=>|<cell|tr<around*|(|A*B<rsup|T>|)>=tr<around*|(|A<rsup|T>B|)>>>|<row|<cell|>|<cell|=>|<cell|tr<around*|(|B*A<rsup|T>|)>=tr<around*|(|B<rsup|T>A|)>>>>>
+    </eqnarray*>
+
+    We can then induce the Euclidean norm which is also called the Matrix,
+    Frobenius, or Hilbert-Schmidt norm. We see:
+
+    <\equation*>
+      <around*|\<\|\|\>|A|\<\|\|\>><rsup|2>=A\<cdot\>A=tr<around*|(|A<rsup|T>*A|)>=<big|sum><rsup|m><rsub|i=1><big|sum><rsub|j=1><rsup|n>A<rsub|i
+      j><rsup|2>
+    </equation*>
+
+    Equivalent norms can be taken for any value in
+    <math|L<around*|(|\<bbb-R\><rsup|n>,\<bbb-R\><rsup|m>|)>> by taking the
+    norm of the isomorphic value in <math|M<rsub|m\<times\>n>>.
+  </cell>>|<row|<\cell>
+    Relationship with Matrix Norm
+  </cell>|<\cell>
+    Let <math|A\<in\>M<rsub|m\<times\>n>>, and let
+    <math|\<b-up-x\>\<in\>\<bbb-R\><rsup|n>>. We have
+
+    <\equation*>
+      <around*|\<\|\|\>|A*\<b-up-x\>|\<\|\|\>>\<leq\><around*|\<\|\|\>|A|\<\|\|\>>*<around*|\<\|\|\>|\<b-up-x\>|\<\|\|\>>
+    </equation*>
+  </cell>>|<row|<\cell>
+    Operator Norm
+  </cell>|<\cell>
+    Let <math|T\<of\>\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|m>> be
+    linear. The operator norm is defined such that
+
+    <\equation*>
+      <around*|\<\|\|\>|T|\<\|\|\>><rsub|op>\<assign\>inf
+      <around*|{|C\<gtr\>0\<suchthat\><around*|(|\<forall\>x\<in\>\<bbb-R\><rsup|n>|)><around*|(|<around*|\<\|\|\>|T<around*|(|x|)>|\<\|\|\>>\<leq\>C*<around*|\<\|\|\>|x|\<\|\|\>>|)>|}>
+    </equation*>
+
+    as such, we can see that <math|<around*|\<\|\|\>|T<around*|(|x|)>|\<\|\|\>>\<leq\><around*|\<\|\|\>|T|\<\|\|\>><rsub|op>*<around*|\<\|\|\>|x|\<\|\|\>>>.
   </cell>>>>>
 
   \;
