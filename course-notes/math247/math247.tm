@@ -21,11 +21,16 @@
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|n>|<cwith|3|3|1|2|cell-hyphen|t>|<cwith|3|3|1|2|cell-halign|l>|<cwith|3|3|1|2|cell-lsep|1ex>|<cwith|3|3|1|2|cell-rsep|1ex>|<cwith|3|3|1|2|cell-bsep|1ex>|<cwith|3|3|1|2|cell-tsep|1ex>|<cwith|3|3|1|1|cell-background|pastel
-  green>|<cwith|3|3|1|1|cell-width|25ex>|<cwith|3|3|1|1|cell-hmode|exact>|<cwith|3|3|1|2|cell-tborder|1ln>|<cwith|3|3|1|2|cell-bborder|1ln>|<cwith|3|3|1|2|cell-lborder|0ln>|<cwith|3|3|1|2|cell-rborder|0ln>|<cwith|6|6|1|1|cell-background|pastel
-  yellow>|<cwith|7|7|1|1|cell-background|pastel
+  green>|<cwith|3|3|1|1|cell-width|25ex>|<cwith|3|3|1|1|cell-hmode|exact>|<cwith|3|3|1|2|cell-tborder|1ln>|<cwith|3|3|1|2|cell-bborder|1ln>|<cwith|3|3|1|2|cell-lborder|0ln>|<cwith|3|3|1|2|cell-rborder|0ln>|<cwith|7|7|1|1|cell-background|pastel
   yellow>|<cwith|8|8|1|1|cell-background|pastel
-  yellow>|<cwith|14|14|1|1|cell-background|pastel
-  yellow>|<cwith|5|5|1|1|cell-background|pastel green>|<table|<row|<\cell>
+  yellow>|<cwith|10|10|1|1|cell-background|pastel
+  yellow>|<cwith|20|20|1|1|cell-background|pastel
+  yellow>|<cwith|6|6|1|1|cell-background|pastel
+  green>|<cwith|12|13|1|2|cell-hyphen|t>|<cwith|12|13|1|2|cell-halign|l>|<cwith|12|13|1|2|cell-lsep|1ex>|<cwith|12|13|1|2|cell-rsep|1ex>|<cwith|12|13|1|2|cell-bsep|1ex>|<cwith|12|13|1|2|cell-tsep|1ex>|<cwith|12|13|1|1|cell-background|pastel
+  green>|<cwith|12|13|1|1|cell-width|25ex>|<cwith|12|13|1|1|cell-hmode|exact>|<cwith|12|13|1|2|cell-tborder|1ln>|<cwith|12|13|1|2|cell-bborder|1ln>|<cwith|12|13|1|2|cell-lborder|0ln>|<cwith|12|13|1|2|cell-rborder|0ln>|<cwith|14|14|1|1|cell-background|pastel
+  yellow>|<cwith|22|22|1|1|cell-background|pastel
+  yellow>|<cwith|25|26|1|1|cell-background|pastel
+  yellow>|<cwith|28|28|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
     Bilinearity
   </cell>|<\cell>
     Let <math|V> be a vector space over a field <math|F>. A bilinear form is
@@ -98,6 +103,13 @@
     <math|><math|<around*|(|\<forall\>\<b-up-x\>\<in\>V|)><around*|(|\<rho\><around*|(|\<b-up-x\>|)>\<geq\>0|)>>,
     which is called non-negativity.
   </cell>>|<row|<\cell>
+    Inner Product Induced Norm
+  </cell>|<\cell>
+    If <math|<around*|\<langle\>|\<cdummy\>,\<cdummy\>|\<rangle\>>> is an
+    inner product on <math|\<bbb-R\><rsup|n>>, we can induce a norm so that
+    <math|<around*|\<\|\|\>|\<b-up-x\>|\<\|\|\>><rsup|2>=<around*|\<langle\>|\<b-up-x\>,\<b-up-x\>|\<rangle\>>>.
+    Not all norms can be induced by an inner product, though.
+  </cell>>|<row|<\cell>
     Euclidean, <math|l<rsup|1>>, <math|l<rsup|\<infty\>>>, and
     <math|l<rsup|p>> Norms
   </cell>|<\cell>
@@ -135,6 +147,21 @@
       <around*|\<\|\|\>|\<b-up-x\>+\<b-up-y\>|\<\|\|\>>\<leq\><around*|\<\|\|\>|\<b-up-x\>|\<\|\|\>>+<around*|\<\|\|\>|\<b-up-y\>|\<\|\|\>>
     </equation*>
   </cell>>|<row|<\cell>
+    Cross Product
+  </cell>|<\cell>
+    The cross product on <math|\<bbb-R\><rsup|3>> satisfies the following
+    properties:
+
+    <\enumerate-numeric>
+      <item><math|\<b-up-x\>\<times\>\<b-up-y\>=-\<b-up-y\>\<times\>\<b-up-x\>>
+
+      <item><math|<around*|(|a*\<b-up-x\>+b*\<b-up-y\>|)>\<times\>\<b-up-w\>=a*<around*|(|\<b-up-x\>\<times\>\<b-up-w\>|)>+b*<around*|(|\<b-up-y\>\<times\>\<b-up-w\>|)>>
+
+      <item><math|<around*|(|\<b-up-x\>\<times\>\<b-up-y\>|)>\<cdot\>\<b-up-x\>=<around*|(|\<b-up-x\>\<times\>\<b-up-y\>|)>\<cdot\>\<b-up-y\>=0>
+
+      <item><math|<around*|\<\|\|\>|\<b-up-x\>\<times\>\<b-up-y\>|\<\|\|\>><rsup|2>=<around*|\<\|\|\>|\<b-up-x\>|\<\|\|\>><rsup|2>*<around*|\<\|\|\>|\<b-up-y\>|\<\|\|\>><rsup|2>-<around*|(|\<b-up-x\>\<cdot\>\<b-up-y\>|)><rsup|2>>
+    </enumerate-numeric>
+  </cell>>|<row|<\cell>
     Angle between Vectors
   </cell>|<\cell>
     Let <math|\<b-up-x\>,\<b-up-y\>\<in\>\<bbb-R\><rsup|n>> both be non-zero.
@@ -152,6 +179,37 @@
   </cell>|<\cell>
     We say <math|\<b-up-x\>> and <math|\<b-up-y\>> are orthogonal iff
     <math|\<b-up-x\>\<cdot\>\<b-up-y\>=0>.
+  </cell>>|<row|<\cell>
+    Orthogonal Matrix
+  </cell>|<\cell>
+    An orthogonal matrix is a square matrix whose column vectors are
+    orthonormal and thus form an orthonormal basis. Additionally,
+    <math|A\<in\>M<rsub|n\<times\>n>> is orthogonal iff
+    <math|A<rsup|T>=A<rsup|-1>>.
+  </cell>>|<row|<\cell>
+    Isometry
+  </cell>|<\cell>
+    A norm-preserving linear operator, or an isometry is a linear operator,
+    <math|T\<of\>\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|n>> such that
+    <math|<around*|(|\<forall\>x\<in\>\<bbb-R\><rsup|n>|)><around*|(|<around*|\<\|\|\>|T<around*|(|x|)>|\<\|\|\>>=<around*|\<\|\|\>|x|\<\|\|\>>|)>>.
+    We can show that the matrix associated with the linear operator is
+    orthogonal.
+  </cell>>|<row|<\cell>
+    Spectral Theorem
+  </cell>|<\cell>
+    <math|A\<in\>M<rsub|n\<times\>n>> is symmetric iff there exists an
+    orthogonal matrix <math|P> such that <math|D\<assign\>P<rsup|T>*A*P> is
+    diagonal. We can then see that <math|A=P*D*P<rsup|T>>.
+  </cell>>|<row|<\cell>
+    Inner Product Associated with a Matrix
+  </cell>|<\cell>
+    For a matrix <math|A\<over\>\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|n>>,
+    we say that the inner product associated with <math|A> is
+    <math|<around*|\<langle\>|\<b-up-x\>,\<b-up-y\>|\<rangle\>><rsub|A>=\<b-up-x\>\<cdot\><around*|(|A*\<b-up-y\>|)>>.
+    Given any inner product <math|<around*|\<langle\>|\<cdummy\>,\<cdummy\>|\<rangle\>>>
+    on <math|\<bbb-R\><rsup|n>>, we have that there is a
+    <math|Q\<over\>\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|n>> such
+    that <math|<around*|\<langle\>|\<b-up-x\>,\<b-up-y\>|\<rangle\>>=<around*|(|Q*\<b-up-x\>|)>\<cdot\><around*|(|Q*\<b-up-y\>|)>=<around*|\<langle\>|\<b-up-x\>,\<b-up-y\>|\<rangle\>><rsub|Q<rsup|T>Q>>.
   </cell>>|<row|<\cell>
     Hyperplane
   </cell>|<\cell>
@@ -238,12 +296,128 @@
     Let <math|T\<of\>\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|m>> be
     linear. The operator norm is defined such that
 
-    <\equation*>
-      <around*|\<\|\|\>|T|\<\|\|\>><rsub|op>\<assign\>inf
-      <around*|{|C\<gtr\>0\<suchthat\><around*|(|\<forall\>x\<in\>\<bbb-R\><rsup|n>|)><around*|(|<around*|\<\|\|\>|T<around*|(|x|)>|\<\|\|\>>\<leq\>C*<around*|\<\|\|\>|x|\<\|\|\>>|)>|}>
-    </equation*>
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<around*|\<\|\|\>|T|\<\|\|\>><rsub|op>>|<cell|\<assign\>>|<cell|inf
+      <around*|{|C\<gtr\>0\<suchthat\><around*|(|\<forall\>x\<in\>\<bbb-R\><rsup|n>|)><around*|(|<around*|\<\|\|\>|T<around*|(|x|)>|\<\|\|\>>\<leq\>C*<around*|\<\|\|\>|x|\<\|\|\>>|)>|}>>>|<row|<cell|>|<cell|=>|<cell|sup<rsub|<around*|\<\|\|\>|\<b-up-x\>|\<\|\|\>>=1><around*|\<\|\|\>|T<around*|(|\<b-up-x\>|)>|\<\|\|\>>>>>>
+    </eqnarray*>
 
     as such, we can see that <math|<around*|\<\|\|\>|T<around*|(|x|)>|\<\|\|\>>\<leq\><around*|\<\|\|\>|T|\<\|\|\>><rsub|op>*<around*|\<\|\|\>|x|\<\|\|\>>>.
+  </cell>>|<row|<\cell>
+    Properties of Operator Norm and Matrix Norm
+  </cell>|<\cell>
+    If <math|T\<over\>\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|m>> and
+    <math|S\<over\>\<bbb-R\><rsup|m>\<rightarrow\>\<bbb-R\><rsup|p>> are
+    linear maps, then we have:
+
+    <\enumerate-numeric>
+      <item><math|<around*|\<\|\|\>|S\<circ\>T|\<\|\|\>><rsub|op>\<leq\><around*|\<\|\|\>|S|\<\|\|\>><rsub|op>*<around*|\<\|\|\>|T|\<\|\|\>><rsub|op>>
+
+      <item><math|><math|<around*|\<\|\|\>|S\<circ\>T|\<\|\|\>>\<leq\><around*|\<\|\|\>|S|\<\|\|\>>*<around*|\<\|\|\>|T|\<\|\|\>>>
+      where <math|<around*|\<\|\|\>|\<cdummy\>|\<\|\|\>>> is the Matrix Norm
+      of the associated matricies of <math|T> and <math|S> with respect to
+      the standard bases.
+    </enumerate-numeric>
+  </cell>>|<row|<\cell>
+    Open and Closed Balls
+  </cell>|<\cell>
+    Let <math|\<b-up-x\>\<in\>\<bbb-R\><rsup|n>> and
+    <math|\<varepsilon\>\<gtr\>0>. <math|B<rsub|\<varepsilon\>><around*|(|\<b-up-x\>|)>\<assign\><around*|{|\<b-up-y\>\<in\>\<bbb-R\><rsup|n>\<suchthat\><around*|\<\|\|\>|\<b-up-y\>-\<b-up-x\>|\<\|\|\>>\<less\>\<varepsilon\>|}>>
+    and <math|<wide|B<rsub|\<varepsilon\>><around*|(|\<b-up-x\>|)>|\<bar\>>\<assign\><around*|{|\<b-up-y\>\<in\>\<bbb-R\><rsup|n>\<suchthat\><around*|\<\|\|\>|\<b-up-y\>-\<b-up-x\>|\<\|\|\>>\<leq\>\<varepsilon\>|}>>
+    are the open and closed balls centered at <math|\<b-up-x\>> with radius
+    <math|\<varepsilon\>> respectively. When <math|n=1>, they can also be
+    called intervals, and when <math|n=2>, they can also be called disks.
+  </cell>>|<row|<\cell>
+    Open and Closed Sets
+  </cell>|<\cell>
+    A subset <math|U\<subseteq\>\<bbb-R\><rsup|n>> is open iff
+    <math|<around*|(|\<forall\>\<b-up-x\>\<in\>U|)><around*|(|\<exists\>\<delta\>\<gtr\>0|)><around*|(|B<rsub|\<delta\>><around*|(|\<b-up-x\>|)>\<subseteq\>U|)>>.
+
+    A subset <math|F\<subseteq\>\<bbb-R\><rsup|n>> is closed iff
+    <math|F<rsup|c>=\<bbb-R\><rsup|n>\\F> is open.
+
+    It might be interesting to note that <math|\<varnothing\>> and
+    <math|\<bbb-R\><rsup|n>> are both open and closed.
+  </cell>>|<row|<\cell>
+    Properties of Open and Closed Sets
+  </cell>|<\cell>
+    We have the following properties:
+
+    <\enumerate-numeric>
+      <item>Arbitrary Union of Open: If <math|U<rsub|\<alpha\>>\<subseteq\>\<bbb-R\><rsup|n>>
+      is open <math|\<forall\>\<alpha\>\<in\>A>, then
+      <math|<big|cup><rsub|\<alpha\>\<in\>A>U<rsub|\<alpha\>>> is open.
+
+      <item>Finite Intersection of Open: If
+      <math|U<rsub|1>,\<ldots\>U<rsub|k>> are open, then
+      <math|<big|cap><rsub|j=1><rsup|k>U<rsub|j>> is open.
+
+      <item>Arbitrary Intersection of Closed: If
+      <math|F<rsub|\<alpha\>>\<subseteq\>\<bbb-R\><rsup|n>> is closed
+      <math|\<forall\>\<alpha\>\<in\>A>, then
+      <math|<big|cap><rsub|\<alpha\>\<in\>A>F<rsub|\<alpha\>>> is closed.
+
+      <item>Finite Union of Closed: If <math|F<rsub|1>,\<ldots\>F<rsub|k>>
+      are closed, then <math|<big|cup><rsub|j=1><rsup|k>F<rsub|j>> is closed.
+    </enumerate-numeric>
+
+    The last two are derivable from the first two with DeMorgan's Laws.
+  </cell>>|<row|<\cell>
+    DeMorgan's Law
+  </cell>|<\cell>
+    Let <math|S<rsub|\<alpha\>>> be a set for all <math|\<alpha\>\<in\>A>, we
+    have that:
+
+    <\enumerate-numeric>
+      <item><math|<around*|(|<big|cup><rsub|\<alpha\>\<in\>A>S<rsub|\<alpha\>>|)><rsup|c>=<big|cap><rsub|\<alpha\>\<in\>A><around*|(|S<rsub|\<alpha\>><rsup|c>|)>>
+
+      <item><math|<around*|(|<big|cap><rsub|\<alpha\>\<in\>A>S<rsub|\<alpha\>>|)><rsup|c>=<big|cup><rsub|\<alpha\>\<in\>A><around*|(|S<rsub|\<alpha\>><rsup|c>|)>>
+    </enumerate-numeric>
+  </cell>>|<row|<\cell>
+    Interior and Closure
+  </cell>|<\cell>
+    Let <math|A\<subseteq\>\<bbb-R\><rsup|n>>.
+
+    We define the interior of <math|A> such that it's the union of all open
+    subsets of <math|A>.
+
+    <\equation*>
+      int<around*|(|A|)>=A<rsup|\<circ\>>\<assign\><big|cup><rsub|U\<subseteq\>A<text|
+      open>>U
+    </equation*>
+
+    We similarly define the closure of <math|A> such that it's the
+    intersection of all closed supersets of <math|A>.
+
+    <\equation*>
+      cl<around*|(|A|)>=<wide|A|\<bar\>>\<assign\><big|cap><rsub|F\<supseteq\>A<text|
+      closed>>F
+    </equation*>
+  </cell>>|<row|<\cell>
+    Properties of Interior and Closure
+  </cell>|<\cell>
+    The following properties hold for the interior:
+
+    <\enumerate-numeric>
+      <item><math|A<rsup|\<circ\>>> is open and
+      <math|A<rsup|\<circ\>>\<subseteq\>A>.
+
+      <item>If <math|V\<subseteq\>A> is open, then
+      <math|V\<subseteq\>A<rsup|\<circ\>>>.
+
+      <item><math|<around*|(|A<text| open>|)>\<Leftrightarrow\><around*|(|A=A<rsup|\<circ\>>|)>>.
+    </enumerate-numeric>
+
+    And here are equivalent properties for the closure:
+
+    <\enumerate-numeric>
+      <item><math|<wide|A|\<bar\>>> is closed and
+      <math|<wide|A|\<bar\>>\<supseteq\>A>.
+
+      <item>If <math|K\<supseteq\>A> is open, then
+      <math|K\<supseteq\><wide|A|\<bar\>>>.
+
+      <item><math|<around*|(|A<text| closed>|)>\<Leftrightarrow\><around*|(|A=<wide|A|\<bar\>>|)>>.
+    </enumerate-numeric>
   </cell>>>>>
 
   \;

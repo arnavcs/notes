@@ -218,6 +218,16 @@
           V) (\rho (\mathbf{x}) \geq 0)\), which is called non-negativity.
         </p></td>
       </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Inner Product Induced Norm
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          If \(\langle \cdot, \cdot \rangle\) is an inner product on
+          \(\mathbb{R}^n\), we can induce a norm so that \(\| \mathbf{x} \|^2
+          = \langle \mathbf{x}, \mathbf{x} \rangle\). Not all norms can be
+          induced by an inner product, though.
+        </p></td>
+      </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #00ff0020"><p>
           Euclidean, \(l^1\), \(l^{\infty}\), and \(l^p\) Norms
         </p></td>
@@ -260,6 +270,41 @@
           \| \mathbf{y} \|\)
         </center></td>
       </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Cross Product
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          The cross product on \(\mathbb{R}^3\) satisfies the following
+          properties:
+        </p><ol>
+          <li>
+            <p>
+              \(\mathbf{x} \times \mathbf{y}= -\mathbf{y} \times \mathbf{x}\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \((a\mathbf{x}+ b\mathbf{y}) \times \mathbf{w}= a (\mathbf{x}
+              \times \mathbf{w})
++ b (\mathbf{y} \times \mathbf{w})\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \((\mathbf{x} \times \mathbf{y}) \cdot \mathbf{x}= (\mathbf{x}
+              \times
+\mathbf{y}) \cdot \mathbf{y}= 0\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \(\| \mathbf{x} \times \mathbf{y} \|^2 = \| \mathbf{x} \|^2  \|
+              \mathbf{y} \|^2
+- (\mathbf{x} \cdot \mathbf{y})^2\)
+            </p>
+          </li>
+        </ol></td>
+      </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
           Angle between Vectors
         </p></td>
@@ -285,6 +330,50 @@
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           We say \(\mathbf{x}\) and \(\mathbf{y}\) are orthogonal iff
           \(\mathbf{x} \cdot \mathbf{y}= 0\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Orthogonal Matrix
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          An orthogonal matrix is a square matrix whose column vectors are
+          orthonormal and thus form an orthonormal basis. Additionally, \(A
+          \in M_{n \times n}\) is orthogonal iff \(A^T = A^{- 1}\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Isometry
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          A norm-preserving linear operator, or an isometry is a linear
+          operator, \(T : \mathbb{R}^n \rightarrow \mathbb{R}^n\) such that
+          \((\forall x \in \mathbb{R}^n) (\| T (x) \| = \| x \|)\). We can
+          show that the matrix associated with the linear operator is
+          orthogonal.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Spectral Theorem
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          \(A \in M_{n \times n}\) is symmetric iff there exists an orthogonal
+          matrix \(P\) such that \(D := P^T AP\) is diagonal. We can then see
+          that \(A = PDP^T\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Inner Product Associated with a Matrix
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          For a matrix \(A : \mathbb{R}^n \rightarrow \mathbb{R}^n\), we say
+          that the inner product associated with \(A\) is \(\langle
+          \mathbf{x}, \mathbf{y} \rangle_A =\mathbf{x} \cdot (A\mathbf{y})\).
+          Given any inner product \(\langle \cdot, \cdot \rangle\) on
+          \(\mathbb{R}^n\), we have that there is a \(Q : \mathbb{R}^n
+          \rightarrow \mathbb{R}^n\) such that \(\langle \mathbf{x},
+          \mathbf{y} \rangle = (Q\mathbf{x}) \cdot (Q\mathbf{y}) =
+\langle
+          \mathbf{x}, \mathbf{y} \rangle_{Q^T Q}\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
@@ -384,13 +473,192 @@
           Let \(T : \mathbb{R}^n \rightarrow \mathbb{R}^m\) be linear. The
           operator norm is defined such that
         </p><center>
-          \(\displaystyle \| T \|_{\operatorname{op}} := \inf \{ C > 0 :
-          (\forall x \in \mathbb{R}^n)
-(\| T (x) \| \leq C \| x \|) \}\)
+          \begin{eqnarray*}
+  \| T \|_{\operatorname{op}} & := & \inf \{ C > 0
+          : (\forall x \in
+  \mathbb{R}^n) (\| T (x) \| \leq C \| x \|) \}\\
+ 
+          & = & \sup_{\| \mathbf{x} \| = 1} \| T (\mathbf{x})
+          \|
+\end{eqnarray*}
         </center><p>
           as such, we can see that \(\| T (x) \| \leq \| T
           \|_{\operatorname{op}}  \| x \|\).
         </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Properties of Operator Norm and Matrix Norm
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          If \(T : \mathbb{R}^n \rightarrow \mathbb{R}^m\) and \(S :
+          \mathbb{R}^m \rightarrow \mathbb{R}^p\) are linear maps, then we
+          have:
+        </p><ol>
+          <li>
+            <p>
+              \(\| S \circ T \|_{\operatorname{op}} \leq \| S
+              \|_{\operatorname{op}}  \| T
+\|_{\operatorname{op}}\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \(\)\(\| S \circ T \| \leq \| S \|  \| T \|\) where \(\| \cdot
+              \|\) is the Matrix Norm of the associated matricies of \(T\) and
+              \(S\) with respect to the standard bases.
+            </p>
+          </li>
+        </ol></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Open and Closed Balls
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(\mathbf{x} \in \mathbb{R}^n\) and \(\varepsilon > 0\).
+          \(B_{\varepsilon} (\mathbf{x}) := \{ \mathbf{y} \in \mathbb{R}^n :
+          \|
+\mathbf{y}-\mathbf{x} \| < \varepsilon \}\) and
+          \(\overline{B_{\varepsilon} (\mathbf{x})} := \{ \mathbf{y} \in
+          \mathbb{R}^n : \|
+\mathbf{y}-\mathbf{x} \| \leq \varepsilon \}\) are
+          the open and closed balls centered at \(\mathbf{x}\) with radius
+          \(\varepsilon\) respectively. When \(n = 1\), they can also be
+          called intervals, and when \(n = 2\), they can also be called disks.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Open and Closed Sets
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          A subset \(U \subseteq \mathbb{R}^n\) is open iff \((\forall
+          \mathbf{x} \in U) (\exists \delta > 0) (B_{\delta}
+          (\mathbf{x})
+\subseteq U)\).
+        </p><p>
+          A subset \(F \subseteq \mathbb{R}^n\) is closed iff \(F^c
+          =\mathbb{R}^n \backslash F\) is open.
+        </p><p>
+          It might be interesting to note that \(\varnothing\) and
+          \(\mathbb{R}^n\) are both open and closed.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Properties of Open and Closed Sets
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          We have the following properties:
+        </p><ol>
+          <li>
+            <p>
+              Arbitrary Union of Open: If \(U_{\alpha} \subseteq
+              \mathbb{R}^n\) is open \(\forall \alpha \in A\), then
+              \(\bigcup_{\alpha \in A} U_{\alpha}\) is open.
+            </p>
+          </li>
+          <li>
+            <p>
+              Finite Intersection of Open: If \(U_1, \ldots U_k\) are open,
+              then \(\bigcap_{j = 1}^k U_j\) is open.
+            </p>
+          </li>
+          <li>
+            <p>
+              Arbitrary Intersection of Closed: If \(F_{\alpha} \subseteq
+              \mathbb{R}^n\) is closed \(\forall \alpha \in A\), then
+              \(\bigcap_{\alpha \in A} F_{\alpha}\) is closed.
+            </p>
+          </li>
+          <li>
+            <p>
+              Finite Union of Closed: If \(F_1, \ldots F_k\) are closed, then
+              \(\bigcup_{j = 1}^k F_j\) is closed.
+            </p>
+          </li>
+        </ol><p>
+          The last two are derivable from the first two with DeMorgan's Laws.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          DeMorgan's Law
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(S_{\alpha}\) be a set for all \(\alpha \in A\), we have that:
+        </p><ol>
+          <li>
+            <p>
+              \(\left( \bigcup_{\alpha \in A} S_{\alpha} \right)^c =
+              \bigcap_{\alpha \in A}
+(S_{\alpha}^c)\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \(\left( \bigcap_{\alpha \in A} S_{\alpha} \right)^c =
+              \bigcup_{\alpha \in A}
+(S_{\alpha}^c)\)
+            </p>
+          </li>
+        </ol></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Interior and Closure
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Let \(A \subseteq \mathbb{R}^n\).
+        </p><p>
+          We define the interior of \(A\) such that it's the union of all open
+          subsets of \(A\).
+        </p><center>
+          \(\displaystyle \operatorname{int} (A) = A^{\circ} := \bigcup_{U
+          \subseteq A \text{ open}} U\)
+        </center><p>
+          We similarly define the closure of \(A\) such that it's the
+          intersection of all closed supersets of \(A\).
+        </p><center>
+          \(\displaystyle \operatorname{cl} (A) = \bar{A} := \bigcap_{F
+          \supseteq A \text{ closed}} F\)
+        </center></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Properties of Interior and Closure
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          The following properties hold for the interior:
+        </p><ol>
+          <li>
+            <p>
+              \(A^{\circ}\) is open and \(A^{\circ} \subseteq A\).
+            </p>
+          </li>
+          <li>
+            <p>
+              If \(V \subseteq A\) is open, then \(V \subseteq A^{\circ}\).
+            </p>
+          </li>
+          <li>
+            <p>
+              \((A \text{ open}) \Leftrightarrow (A = A^{\circ})\).
+            </p>
+          </li>
+        </ol><p>
+          And here are equivalent properties for the closure:
+        </p><ol>
+          <li>
+            <p>
+              \(\bar{A}\) is closed and \(\bar{A} \supseteq A\).
+            </p>
+          </li>
+          <li>
+            <p>
+              If \(K \supseteq A\) is open, then \(K \supseteq \bar{A}\).
+            </p>
+          </li>
+          <li>
+            <p>
+              \((A \text{ closed}) \Leftrightarrow (A = \bar{A})\).
+            </p>
+          </li>
+        </ol></td>
       </tr></tbody>
     </table>
     <p>
