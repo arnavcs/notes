@@ -204,6 +204,11 @@ Which numbers can be defined by an English sentence of at most 200 characters?</
           we say that \(X\) is closed under an operation \(f : U^k \rightarrow
           U\) if \((\forall x_1, \ldots, x_k \in X) (f (x_1, \ldots, x_k) \in
           X)\).
+        </p><p>
+          We can write an operation \(f : U^k \rightarrow U\) in the format
+          \(\frac{\alpha_1, \alpha_2, \ldots, \alpha_k}{f (\alpha_1, \alpha_2,
+          \ldots,
+\alpha)}\).
         </p></td>
       </tr><tr>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
@@ -221,7 +226,7 @@ Which numbers can be defined by an English sentence of at most 200 characters?</
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Given a universe \(U\), a core set \(C \subseteq U\), and operations
           \(O\), we define the inductive set, \(I (U, C, O)\) as the minimal
-          set in \(\mathcal{F}= \{ A \subseteq U : (C \subseteq A) \wedge (A
+          set in \(\mathcal{F}= \{ A : (C \subseteq A \subseteq U) \wedge (A
           \text{ closed under
 } O) \}\). This is well defined because we have
           that \((A, B \in \mathcal{F}) \Rightarrow (A \cap B \in
@@ -234,16 +239,18 @@ Which numbers can be defined by an English sentence of at most 200 characters?</
         </p></td>
         <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
           Let \(L\) be the set of all lower case letters with or without
-          indicies. Let \(\Sigma := \{ \neg, \wedge, \vee, (,), \} \cup L\)
-          and let \(\Sigma^{\ast}\) be the set of all finite sequences of
-          elements of \(\Sigma\).
+          indicies. Let \(\Sigma := \left\{ \neg, \wedge, \vee,
+          \text{\text{{\ttfamily{(}}}},
+\text{\text{{\ttfamily{)}}}} \right\}
+          \cup L\) and let \(\Sigma^{\ast}\) be the set of all finite
+          sequences of elements of \(\Sigma\).
         </p><p>
-          If \(U = \Sigma^{\ast}\), \(C = L\), and \(O = \{ (\alpha, \beta
-          \mapsto (\alpha \vee \beta)), (\alpha, \beta \mapsto
-(\alpha \wedge
-          \beta)), (\alpha, \beta \mapsto (\alpha \rightarrow \beta)),
-(\alpha
-          \mathop{\mapsto}\limits (\neg \alpha)) \}\), then the words of
+          If \(U = \Sigma^{\ast}\), \(C = L\), and \(O = \left\{ \frac{\alpha,
+          \beta}{(\alpha \vee \beta)}, \frac{\alpha,
+\beta}{(\alpha \wedge
+          \beta)}, \frac{\alpha, \beta}{(\alpha \rightarrow
+\beta)},
+          \frac{\alpha}{(\neg \alpha)} \right\}\), then the words of
           propositional logic are \(I (U, C, O)\).
         </p></td>
       </tr><tr>
@@ -274,6 +281,94 @@ Which numbers can be defined by an English sentence of at most 200 characters?</
           We have that \(a \in U\) iff there exists a generating sequence for
           \(\alpha\) with respect to \(U, C, O\).
         </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #0000ff20"><p>
+          How do we show Something isn't a Proposition?
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          We use structural induction to prove that something isn't in \(I (U,
+          C, O)\). We show the property is satisfies by all elements of the
+          core set, and show that the operations maintain the property. Then,
+          we show that the object which we are considering does not have this
+          property.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Structural Induction
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Structural induction involves a property which we show is invariant
+          throughout the structure. We use the structure of the construction
+          to show this property is true of anything in in the structure. 
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Principle of Structural Induction for Inductive Sets
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          For an inductive set \(I (U, C, O)\), if we have a property, let \(P
+          \subseteq U\) be the subset of \(U\) which satisfies the property.
+          If we have
+        </p><ol>
+          <li>
+            <p>
+              \(C \subseteq P\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \((\forall f \in O) (P \text{ is closed under } f)\)
+            </p>
+          </li>
+        </ol><p>
+          then we have that \(I (U, C, O) \subseteq P\) which means that the
+          property is true for all members of the inductive set.
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex"><p>
+          Proper Initial Segment
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          Given a finite sequence of symbols \(\alpha = a_1, a_2, \ldots,
+          a_n\), we define a proper initial segment of \(\alpha\) to be the
+          segment \(a_1, a_2, \ldots, a_k\) for some \(1 \leq k < n\).
+        </p></td>
+      </tr><tr>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid; background-color: #00ff0020; width: 25ex; background-color: #ffff0020"><p>
+          Properties of Propositional Logic
+        </p></td>
+        <td style="text-align: left; padding-left: 1ex; padding-right: 1ex; padding-bottom: 1ex; padding-top: 1ex; border-top: 1px solid; border-bottom: 1px solid; border-left: 0px solid; border-right: 0px solid"><p>
+          We can use structural induction to determine the following for the
+          words of propositional logic \(P := I (U, C, O)\). Let \(\#_l, \#_r
+          : U \rightarrow \mathbb{N}\) be the number of left and right
+          brackets in the given word.
+        </p><ol>
+          <li>
+            <p>
+              \((\forall \alpha \in P) (\alpha \in C \vee \alpha \text{ has
+              brackets})\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \((\forall \alpha \in P) \left( \alpha \in C \vee \alpha \text{
+              starts with
+\text{{\ttfamily{(}}}} \right)\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \((\forall \alpha \in P) (\#_l (\alpha) =\#_r (\alpha))\)
+            </p>
+          </li>
+          <li>
+            <p>
+              \((\forall \alpha \in P) (\forall \alpha' \text{ proper initial
+              segmentation of
+} \alpha) (\#_l (\alpha) >\#_r (\alpha))\)
+            </p>
+          </li>
+        </ol></td>
       </tr></tbody>
     </table>
   </body>

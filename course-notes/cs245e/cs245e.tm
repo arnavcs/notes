@@ -67,7 +67,9 @@
 
   <tabular|<tformat|<twith|table-width|1par>|<twith|table-hmode|exact>|<cwith|1|-1|1|-1|cell-hyphen|t>|<cwith|1|-1|1|-1|cell-halign|l>|<cwith|1|-1|1|-1|cell-lsep|1ex>|<cwith|1|-1|1|-1|cell-rsep|1ex>|<cwith|1|-1|1|-1|cell-bsep|1ex>|<cwith|1|-1|1|-1|cell-tsep|1ex>|<cwith|1|-1|1|1|cell-background|pastel
   green>|<cwith|1|-1|1|1|cell-width|25ex>|<cwith|1|-1|1|1|cell-hmode|exact>|<cwith|1|-1|1|-1|cell-tborder|1ln>|<cwith|1|-1|1|-1|cell-bborder|1ln>|<cwith|1|-1|1|-1|cell-lborder|0ln>|<cwith|1|-1|1|-1|cell-rborder|0ln>|<twith|table-hyphen|n>|<cwith|2|2|1|1|cell-background|pastel
-  blue>|<table|<row|<\cell>
+  blue>|<cwith|8|8|1|1|cell-background|pastel
+  blue>|<cwith|10|10|1|1|cell-background|pastel
+  yellow>|<cwith|12|12|1|1|cell-background|pastel yellow>|<table|<row|<\cell>
     Syntax vs. Semantics\ 
   </cell>|<\cell>
     Logic is based on the distinction between syntax (the form) and semantics
@@ -94,6 +96,9 @@
     <math|U<rsup|k>\<rightarrow\>U> for finite <math|k>. For some subset
     <math|X\<subseteq\>U>, we say that <math|X> is closed under an operation
     <math|f:U<rsup|k>\<rightarrow\>U> if <math|<around*|(|\<forall\>x<rsub|1>,\<ldots\>,x<rsub|k>\<in\>X|)><around*|(|f<around*|(|x<rsub|1>,\<ldots\>,x<rsub|k>|)>\<in\>X|)>>.
+
+    We can write an operation <math|f\<of\>U<rsup|k>\<rightarrow\>U> in the
+    format <math|<frac|\<alpha\><rsub|1>,\<alpha\><rsub|2>,\<ldots\>,\<alpha\><rsub|k>|f<around*|(|\<alpha\><rsub|1>,\<alpha\><rsub|2>,\<ldots\>,\<alpha\>|)>>>.
   </cell>>|<row|<\cell>
     Minimal Set
   </cell>|<\cell>
@@ -106,7 +111,7 @@
     Given a universe <math|U>, a core set <math|C\<subseteq\>U>, and
     operations <math|O>, we define the inductive set,
     <math|I<around*|(|U,C,O|)>> as the minimal set in
-    <math|\<cal-F\>=<around*|{|A\<subseteq\>U\<suchthat\><around*|(|C\<subseteq\>A|)>\<wedge\><around*|(|A<text|
+    <math|\<cal-F\>=<around*|{|A\<suchthat\><around*|(|C\<subseteq\>A\<subseteq\>U|)>\<wedge\><around*|(|A<text|
     closed under >O|)>|}>>. This is well defined because we have that
     <math|<around*|(|A,B\<in\>\<cal-F\>|)>\<Rightarrow\><around*|(|A\<cap\>B\<in\>\<cal-F\>|)>>.
     Thus, we see that <math|I<around*|(|U,C,O|)>=<big|cap>\<cal-F\>>.
@@ -114,12 +119,12 @@
     Words of Propositional Logic
   </cell>|<\cell>
     Let <math|L> be the set of all lower case letters with or without
-    indicies. Let <math|\<Sigma\>\<assign\><around*|{|\<neg\>,\<wedge\>,\<vee\>,<around*|(|,|)>,|}>\<cup\>L>
+    indicies. Let <math|\<Sigma\>\<assign\><around*|{|\<neg\>,\<wedge\>,\<vee\>,<text|<verbatim|(>>,<text|<verbatim|)>>|}>\<cup\>L>
     and let <math|\<Sigma\><rsup|\<ast\>>> be the set of all finite sequences
     of elements of <math|\<Sigma\>>.
 
     If <math|U=\<Sigma\><rsup|\<ast\>>>, <math|C=L>, and
-    <math|O=<around*|{|<around*|(|\<alpha\>,\<beta\>\<mapsto\><around*|(|\<alpha\>\<vee\>\<beta\>|)>|)>,<around*|(|\<alpha\>,\<beta\>\<mapsto\><around*|(|\<alpha\>\<wedge\>\<beta\>|)>|)>,<around*|(|\<alpha\>,\<beta\>\<mapsto\><around*|(|\<alpha\>\<rightarrow\>\<beta\>|)>|)>,<around*|(|\<alpha\>\<mapstolim\><around*|(|\<neg\>\<alpha\>|)>|)>|}>>,
+    <math|O=<around*|{|<frac|\<alpha\>,\<beta\>|<around*|(|\<alpha\>\<vee\>\<beta\>|)>>,<frac|\<alpha\>,\<beta\>|<around*|(|\<alpha\>\<wedge\>\<beta\>|)>>,<frac|\<alpha\>,\<beta\>|<around*|(|\<alpha\>\<rightarrow\>\<beta\>|)>>,<frac|\<alpha\>|<around*|(|\<neg\>\<alpha\>|)>>|}>>,
     then the words of propositional logic are <math|I<around*|(|U,C,O|)>>.
   </cell>>|<row|<\cell>
     Generating Sequence
@@ -139,6 +144,63 @@
 
     We have that <math|a\<in\>U> iff there exists a generating sequence for
     <math|\<alpha\>> with respect to <math|U,C,O>.
+  </cell>>|<row|<\cell>
+    How do we show Something isn't a Proposition?
+  </cell>|<\cell>
+    We use structural induction to prove that something isn't in
+    <math|I<around*|(|U,C,O|)>>. We show the property is satisfies by all
+    elements of the core set, and show that the operations maintain the
+    property. Then, we show that the object which we are considering does not
+    have this property.
+  </cell>>|<row|<\cell>
+    Structural Induction
+  </cell>|<\cell>
+    Structural induction involves a property which we show is invariant
+    throughout the structure. We use the structure of the construction to
+    show this property is true of anything in in the structure.\ 
+  </cell>>|<row|<\cell>
+    Principle of Structural Induction for Inductive Sets
+  </cell>|<\cell>
+    For an inductive set <math|I<around*|(|U,C,O|)>>, if we have a property,
+    let <math|P\<subseteq\>U> be the subset of <math|U> which satisfies the
+    property. If we have
+
+    <\enumerate-numeric>
+      <item><math|C\<subseteq\>P>
+
+      <item><math|<around*|(|\<forall\>f\<in\>O|)><around*|(|P<text| is
+      closed under >f|)>>
+    </enumerate-numeric>
+
+    then we have that <math|I<around*|(|U,C,O|)>\<subseteq\>P> which means
+    that the property is true for all members of the inductive set.
+  </cell>>|<row|<\cell>
+    Proper Initial Segment
+  </cell>|<\cell>
+    Given a finite sequence of symbols <math|\<alpha\>=a<rsub|1>,a<rsub|2>,\<ldots\>,a<rsub|n>>,
+    we define a proper initial segment of <math|\<alpha\>> to be the segment
+    <math|a<rsub|1>,a<rsub|2>,\<ldots\>,a<rsub|k>> for some
+    <math|1\<leq\>k\<less\>n>.
+  </cell>>|<row|<\cell>
+    Properties of Propositional Logic
+  </cell>|<\cell>
+    We can use structural induction to determine the following for the words
+    of propositional logic <math|P\<assign\>I<around*|(|U,C,O|)>>. Let
+    <math|#<rsub|l>,#<rsub|r>\<suchthat\>U\<rightarrow\>\<bbb-N\>> be the
+    number of left and right brackets in the given word.
+
+    <\enumerate-numeric>
+      <item><math|<around*|(|\<forall\>\<alpha\>\<in\>P|)><around*|(|\<alpha\>\<in\>C\<vee\>\<alpha\><text|
+      has brackets>|)>>
+
+      <item><math|<around*|(|\<forall\>\<alpha\>\<in\>P|)><around*|(|\<alpha\>\<in\>C\<vee\>\<alpha\><text|
+      starts with <verbatim|(>>|)>>
+
+      <item><math|<around*|(|\<forall\>\<alpha\>\<in\>P|)><around*|(|#<rsub|l><around*|(|\<alpha\>|)>=#<rsub|r><around*|(|\<alpha\>|)>|)>>
+
+      <item><math|<around*|(|\<forall\>\<alpha\>\<in\>P|)><around*|(|\<forall\>\<alpha\><rprime|'><text|
+      proper initial segmentation of >\<alpha\>|)><around*|(|#<rsub|l><around*|(|\<alpha\>|)>\<gtr\>#<rsub|r><around*|(|\<alpha\>|)>|)>>
+    </enumerate-numeric>
   </cell>>>>>
 </body>
 
